@@ -1,0 +1,25 @@
+# Maven build output — generated on every build, not source
+target/
+
+
+# HL7 Validator binary — large binary downloaded fresh in CI
+# See Architecture Section 3.4 for validator_cli.jar handling rationale
+validator/validator_cli.jar
+
+# Environment files — may contain tokens or credentials
+.env
+*.env
+
+# IDE and OS artifacts
+.idea/
+*.iml
+.DS_Store
+*.class
+
+# Log files
+*.log
+.vscode/
+.mvn/wrapper/maven-wrapper.jar
+
+# Claude Code internal state — session transcripts and tool caches
+.claude/

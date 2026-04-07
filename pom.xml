@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.fhir.validation</groupId>
+  <artifactId>fhir-validation-suite</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>FHIR R4 API Validation Suite</name>
+  <description>
+    Regulatory-grade FHIR R4 API validation framework.
+    IEC 62304 / ISO 14971 / 21 CFR Part 11 aligned.
+  </description>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <karate.version>1.5.1</karate.version>
+    <junit.version>5.10.0</junit.version>
+    <baseUrl>https://hapi.fhir.org/baseR4</baseUrl>
+    <fhirVersion>4.0.1</fhirVersion>
+    <authToken></authToken>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.karatelabs</groupId>
+      <artifactId>karate-junit5</artifactId>
+      <version>${karate.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+      </testResource>
+    </testResources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <includes>
+            <include>**/ValidationRunner.java</include>
+          </includes>
+          <systemPropertyVariables>
+            <baseUrl>${baseUrl}</baseUrl>
+            <fhirVersion>${fhirVersion}</fhirVersion>
+            <authToken>${authToken}</authToken>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
