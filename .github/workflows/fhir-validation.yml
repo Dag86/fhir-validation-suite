@@ -51,8 +51,8 @@ jobs:
 
       - name: Run HL7 FHIR Validator scan
         run: |
-          java -jar validator_cli.jar \
-            "target/responses" \
+          find target/responses -name "*.json" -print0 | \
+          xargs -0 java -jar validator_cli.jar \
             -version 4.0.1 \
             -output target/fhir-validation-report.json \
             || true
