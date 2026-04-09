@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TM-FHIR-001 |
-| **Version** | 1.2 |
-| **Status** | Draft |
+| **Version** | 1.3 |
+| **Status** | Executed |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-07 |
+| **Date** | 2026-04-08 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Requirements Source** | RS-FHIR-001 v1.2 — 61 active requirements |
 | **Test Case Source** | TP-FHIR-001 v1.2 — 77 test cases |
@@ -53,9 +53,9 @@ This document is a living artifact — test execution results are recorded here 
 
 | Req ID | Description | IEC 62304 | ISO 14971 Risk | Test Case(s) | Result | Exec Date | Commit SHA |
 |---|---|---|---|---|---|---|---|
-| REQ-PRE-001 | CapabilityStatement queried before all tests | B | False failures from unsupported capabilities | TC-CAP-001 | Pending | | |
-| REQ-PRE-002 | CapabilityStatement returns 200 and valid resourceType | B | Server non-compliance with base FHIR spec | TC-CAP-002 | Pending | | |
-| REQ-PRE-003 | FHIR version 4.0.1 declared | B | Version mismatch causing incorrect data interpretation | TC-CAP-003 | Pending | | |
+| REQ-PRE-001 | CapabilityStatement queried before all tests | B | False failures from unsupported capabilities | TC-CAP-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PRE-002 | CapabilityStatement returns 200 and valid resourceType | B | Server non-compliance with base FHIR spec | TC-CAP-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PRE-003 | FHIR version 4.0.1 declared | B | Version mismatch causing incorrect data interpretation | TC-CAP-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -63,14 +63,14 @@ This document is a living artifact — test execution results are recorded here 
 
 | Req ID | Description | IEC 62304 | ISO 14971 Risk | Test Case(s) | Result | Exec Date | Commit SHA |
 |---|---|---|---|---|---|---|---|
-| REQ-PAT-001 | GET /Patient/{id} returns 200 and Patient resourceType | C | System failure preventing patient data retrieval | TC-PAT-001 | Pending | | |
-| REQ-PAT-002 | name.family present | C | Wrong patient selection due to missing identity | TC-PAT-002 | Pending | | |
-| REQ-PAT-003 | identifier has system and value | C | Duplicate patient records, wrong-patient events | TC-PAT-003 | Pending | | |
-| REQ-PAT-004 | birthDate format is YYYY-MM-DD | C | Age-dependent dosing errors from malformed date | TC-PAT-004 | Pending | | |
-| REQ-PAT-005 | gender is valid value set member | C | Gender-specific clinical decision errors | TC-PAT-005 | Pending | | |
-| REQ-PAT-006 | meta.lastUpdated present | C | Inability to reconstruct data change history | TC-PAT-006 | Pending | | |
-| REQ-PAT-007 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing patient records | TC-PAT-007 | Pending | | |
-| REQ-PAT-008 | Search returns searchset Bundle | C | Incorrect results leading to wrong patient selection | TC-PAT-008 | Pending | | |
+| REQ-PAT-001 | GET /Patient/{id} returns 200 and Patient resourceType | C | System failure preventing patient data retrieval | TC-PAT-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PAT-002 | name.family present | C | Wrong patient selection due to missing identity | TC-PAT-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PAT-003 | identifier has system and value | C | Duplicate patient records, wrong-patient events | TC-PAT-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PAT-004 | birthDate format is YYYY-MM-DD | C | Age-dependent dosing errors from malformed date | TC-PAT-004 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PAT-005 | gender is valid value set member | C | Gender-specific clinical decision errors | TC-PAT-005 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PAT-006 | meta.lastUpdated present | C | Inability to reconstruct data change history | TC-PAT-006 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PAT-007 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing patient records | TC-PAT-007 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PAT-008 | Search returns searchset Bundle | C | Incorrect results leading to wrong patient selection | TC-PAT-008 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -78,13 +78,13 @@ This document is a living artifact — test execution results are recorded here 
 
 | Req ID | Description | IEC 62304 | ISO 14971 Risk | Test Case(s) | Result | Exec Date | Commit SHA |
 |---|---|---|---|---|---|---|---|
-| REQ-OBS-001 | GET /Observation/{id} returns 200 and Observation resourceType | C | System failure preventing lab result retrieval | TC-OBS-001 | Pending | | |
-| REQ-OBS-002 | status is valid ObservationStatus value | C | Clinician acting on preliminary result as final | TC-OBS-002 | Pending | | |
-| REQ-OBS-003 | code.coding has system and code | C | Unidentifiable observation type | TC-OBS-003 | Pending | | |
-| REQ-OBS-004 | valueQuantity has value and unit | C | Unit-of-measure errors in dosing calculations | TC-OBS-004 | Pending | | |
-| REQ-OBS-005 | subject references Patient | C | Observation attributed to wrong patient | TC-OBS-005 | Pending | | |
-| REQ-OBS-006 | meta.lastUpdated present | C | Inability to determine when result was recorded | TC-OBS-006 | Pending | | |
-| REQ-OBS-007 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing lab results | TC-OBS-007 | Pending | | |
+| REQ-OBS-001 | GET /Observation/{id} returns 200 and Observation resourceType | C | System failure preventing lab result retrieval | TC-OBS-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-OBS-002 | status is valid ObservationStatus value | C | Clinician acting on preliminary result as final | TC-OBS-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-OBS-003 | code.coding has system and code | C | Unidentifiable observation type | TC-OBS-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-OBS-004 | valueQuantity has value and unit | C | Unit-of-measure errors in dosing calculations | TC-OBS-004 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-OBS-005 | subject references Patient | C | Observation attributed to wrong patient | TC-OBS-005 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-OBS-006 | meta.lastUpdated present | C | Inability to determine when result was recorded | TC-OBS-006 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-OBS-007 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing lab results | TC-OBS-007 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -92,12 +92,12 @@ This document is a living artifact — test execution results are recorded here 
 
 | Req ID | Description | IEC 62304 | ISO 14971 Risk | Test Case(s) | Result | Exec Date | Commit SHA |
 |---|---|---|---|---|---|---|---|
-| REQ-ALG-001 | GET /AllergyIntolerance/{id} returns 200 and resourceType | C | System failure preventing allergy data retrieval | TC-ALG-001 | Pending | | |
-| REQ-ALG-002 | clinicalStatus is valid value set member | C | Inactive allergy treated as active or vice versa | TC-ALG-002 | Pending | | |
-| REQ-ALG-003 | verificationStatus present | C | Unverified allergy driving clinical decision | TC-ALG-003 | Pending | | |
-| REQ-ALG-004 | patient reference present | C | Allergy attributed to wrong patient | TC-ALG-004 | Pending | | |
-| REQ-ALG-005 | reaction manifestation has coding | C | Reaction severity unknown to clinician | TC-ALG-005 | Pending | | |
-| REQ-ALG-006 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing allergy records | TC-ALG-006 | Pending | | |
+| REQ-ALG-001 | GET /AllergyIntolerance/{id} returns 200 and resourceType | C | System failure preventing allergy data retrieval | TC-ALG-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-ALG-002 | clinicalStatus is valid value set member | C | Inactive allergy treated as active or vice versa | TC-ALG-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-ALG-003 | verificationStatus present | C | Unverified allergy driving clinical decision | TC-ALG-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-ALG-004 | patient reference present | C | Allergy attributed to wrong patient | TC-ALG-004 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-ALG-005 | reaction manifestation has coding | C | Reaction severity unknown to clinician | TC-ALG-005 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-ALG-006 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing allergy records | TC-ALG-006 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -105,13 +105,13 @@ This document is a living artifact — test execution results are recorded here 
 
 | Req ID | Description | IEC 62304 | ISO 14971 Risk | Test Case(s) | Result | Exec Date | Commit SHA |
 |---|---|---|---|---|---|---|---|
-| REQ-MED-001 | GET /MedicationRequest/{id} returns 200 and resourceType | C | System failure preventing medication order retrieval | TC-MED-001 | Pending | | |
-| REQ-MED-002 | status is valid MedicationRequestStatus value | C | Cancelled order administered due to incorrect status | TC-MED-002 | Pending | | |
-| REQ-MED-003 | intent is valid value set member | C | Proposal treated as active order | TC-MED-003 | Pending | | |
-| REQ-MED-004 | medication[x] present | C | Unidentified medication administered | TC-MED-004 | Pending | | |
-| REQ-MED-005 | subject references Patient | C | Medication administered to wrong patient | TC-MED-005 | Pending | | |
-| REQ-MED-006 | meta.lastUpdated present | C | Unable to determine when order was placed | TC-MED-006 | Pending | | |
-| REQ-MED-007 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing medication orders | TC-MED-007 | Pending | | |
+| REQ-MED-001 | GET /MedicationRequest/{id} returns 200 and resourceType | C | System failure preventing medication order retrieval | TC-MED-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-MED-002 | status is valid MedicationRequestStatus value | C | Cancelled order administered due to incorrect status | TC-MED-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-MED-003 | intent is valid value set member | C | Proposal treated as active order | TC-MED-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-MED-004 | medication[x] present | C | Unidentified medication administered | TC-MED-004 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-MED-005 | subject references Patient | C | Medication administered to wrong patient | TC-MED-005 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-MED-006 | meta.lastUpdated present | C | Unable to determine when order was placed | TC-MED-006 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-MED-007 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing medication orders | TC-MED-007 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -119,11 +119,11 @@ This document is a living artifact — test execution results are recorded here 
 
 | Req ID | Description | IEC 62304 | ISO 14971 Risk | Test Case(s) | Result | Exec Date | Commit SHA |
 |---|---|---|---|---|---|---|---|
-| REQ-DXR-001 | GET /DiagnosticReport/{id} returns 200 and resourceType | C | System failure preventing diagnostic report retrieval | TC-DXR-001 | Pending | | |
-| REQ-DXR-002 | status is valid DiagnosticReportStatus value set | C | Preliminary report acted upon as final | TC-DXR-002 | Pending | | |
-| REQ-DXR-003 | code element present | C | Unidentifiable report type | TC-DXR-003 | Pending | | |
-| REQ-DXR-004 | subject reference present | C | Report attributed to wrong patient | TC-DXR-004 | Pending | | |
-| REQ-DXR-005 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing diagnostic reports | TC-DXR-005 | Pending | | |
+| REQ-DXR-001 | GET /DiagnosticReport/{id} returns 200 and resourceType | C | System failure preventing diagnostic report retrieval | TC-DXR-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-DXR-002 | status is valid DiagnosticReportStatus value set | C | Preliminary report acted upon as final | TC-DXR-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-DXR-003 | code element present | C | Unidentifiable report type | TC-DXR-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-DXR-004 | subject reference present | C | Report attributed to wrong patient | TC-DXR-004 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-DXR-005 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing diagnostic reports | TC-DXR-005 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -131,11 +131,11 @@ This document is a living artifact — test execution results are recorded here 
 
 | Req ID | Description | IEC 62304 | 21 CFR Part 11 | Test Case(s) | Result | Exec Date | Commit SHA |
 |---|---|---|---|---|---|---|---|
-| REQ-AUD-001 | GET /AuditEvent/{id} returns 200 and resourceType | B | 11.10(e) — audit trail availability | TC-AUD-001 | Pending | | |
-| REQ-AUD-002 | type element present | B | 11.10(e) — event categorization | TC-AUD-002 | Pending | | |
-| REQ-AUD-003 | recorded timestamp in ISO 8601 | B | 11.10(e) — time-stamped audit trails | TC-AUD-003 | Pending | | |
-| REQ-AUD-004 | agent array present | B | 11.10(e) — operator identification | TC-AUD-004 | Pending | | |
-| REQ-AUD-005 | outcome field present | B | 11.10(e) — action result recorded | TC-AUD-005 | Pending | | |
+| REQ-AUD-001 | GET /AuditEvent/{id} returns 200 and resourceType | B | 11.10(e) — audit trail availability | TC-AUD-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-AUD-002 | type element present | B | 11.10(e) — event categorization | TC-AUD-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-AUD-003 | recorded timestamp in ISO 8601 | B | 11.10(e) — time-stamped audit trails | TC-AUD-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-AUD-004 | agent array present | B | 11.10(e) — operator identification | TC-AUD-004 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-AUD-005 | outcome field present | B | 11.10(e) — action result recorded | TC-AUD-005 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -143,10 +143,10 @@ This document is a living artifact — test execution results are recorded here 
 
 | Req ID | Description | IEC 62304 | ISO 14971 Risk | Test Case(s) | Result | Exec Date | Commit SHA |
 |---|---|---|---|---|---|---|---|
-| REQ-OO-001 | Error responses return OperationOutcome resourceType | B | Non-FHIR errors breaking client error handling | TC-OO-001, TC-PAT-007, TC-PAT-011, TC-OBS-007, TC-ALG-006, TC-MED-007, TC-MED-009, TC-DXR-005, TC-PRA-004, TC-GEN-001 | Pending | | |
-| REQ-OO-002 | issue array present and non-empty | B | Uninformative error responses | TC-OO-002 | Pending | | |
-| REQ-OO-003 | issue.severity is valid value | B | Severity of error not determinable | TC-OO-003 | Pending | | |
-| REQ-OO-004 | issue.code is present | B | Error code not determinable | TC-OO-004 | Pending | | |
+| REQ-OO-001 | Error responses return OperationOutcome resourceType | B | Non-FHIR errors breaking client error handling | TC-OO-001, TC-PAT-007, TC-PAT-011, TC-OBS-007, TC-ALG-006, TC-MED-007, TC-MED-009, TC-DXR-005, TC-PRA-004, TC-GEN-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-OO-002 | issue array present and non-empty | B | Uninformative error responses | TC-OO-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-OO-003 | issue.severity is valid value | B | Severity of error not determinable | TC-OO-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-OO-004 | issue.code is present | B | Error code not determinable | TC-OO-004 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -154,11 +154,11 @@ This document is a living artifact — test execution results are recorded here 
 
 | Req ID | Description | IEC 62304 | ISO 14971 Risk | Test Case(s) | Result | Exec Date | Commit SHA |
 |---|---|---|---|---|---|---|---|
-| REQ-BUN-001 | Search returns searchset Bundle | B | Search results in non-standard format | TC-BUN-001 | Pending | | |
-| REQ-BUN-002 | searchset Bundle has total field | B | Incomplete result set presented as complete | TC-BUN-002 | Pending | | |
-| REQ-BUN-003 | Each entry has resource and fullUrl | B | Unreferenceable resources in search results | TC-BUN-003 | Pending | | |
-| REQ-BUN-004 | Valid transaction returns transaction-response Bundle | B | Transaction outcomes not confirmable | TC-BUN-004 | Pending | | |
-| REQ-BUN-005 | Transaction atomicity — invalid entry fails entire transaction | C | Partial data writes creating incomplete clinical records | TC-BUN-005 | Pending | | |
+| REQ-BUN-001 | Search returns searchset Bundle | B | Search results in non-standard format | TC-BUN-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-BUN-002 | searchset Bundle has total field | B | Incomplete result set presented as complete | TC-BUN-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-BUN-003 | Each entry has resource and fullUrl | B | Unreferenceable resources in search results | TC-BUN-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-BUN-004 | Valid transaction returns transaction-response Bundle | B | Transaction outcomes not confirmable | TC-BUN-004 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-BUN-005 | Transaction atomicity — invalid entry fails entire transaction | C | Partial data writes creating incomplete clinical records | TC-BUN-005 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -166,9 +166,9 @@ This document is a living artifact — test execution results are recorded here 
 
 | Req ID | Description | IEC 62304 | ISO 14971 Risk | Test Case(s) | Result | Exec Date | Commit SHA |
 |---|---|---|---|---|---|---|---|
-| REQ-PRA-001 | GET /Practitioner/{id} returns 200 and resourceType | B | System failure preventing provider identity retrieval | TC-PRA-001, TC-PRA-004 | Pending | | |
-| REQ-PRA-002 | name element present | B | Order attributed to unidentified provider | TC-PRA-002 | Pending | | |
-| REQ-PRA-003 | identifier has system and value if present | B | Duplicate or ambiguous provider records | TC-PRA-003 | Pending | | |
+| REQ-PRA-001 | GET /Practitioner/{id} returns 200 and resourceType | B | System failure preventing provider identity retrieval | TC-PRA-001, TC-PRA-004 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PRA-002 | name element present | B | Order attributed to unidentified provider | TC-PRA-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PRA-003 | identifier has system and value if present | B | Duplicate or ambiguous provider records | TC-PRA-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -176,15 +176,15 @@ This document is a living artifact — test execution results are recorded here 
 
 | Req ID | Description | IEC 62304 | Regulatory Source | Test Case(s) | Result | Exec Date | Commit SHA |
 |---|---|---|---|---|---|---|---|
-| REQ-GEN-001 | All resources validated by HL7 Validator CLI | B | HL7 FHIR R4 Validation Framework | TC-PAT-009, TC-OBS-008, TC-ALG-007, TC-MED-008, TC-DXR-006, TC-AUD-006, TC-OO-005, TC-BUN-006, TC-PRA-005 | Pending | | |
+| REQ-GEN-001 | All resources validated by HL7 Validator CLI | B | HL7 FHIR R4 Validation Framework | TC-PAT-009, TC-OBS-008, TC-ALG-007, TC-MED-008, TC-DXR-006, TC-AUD-006, TC-OO-005, TC-BUN-006, TC-PRA-005 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 | ~~REQ-GEN-002~~ | ~~Retired v1.2~~ | — | — | ~~Replaced by REQ-GEN-002a and REQ-GEN-002b~~ | Retired | | |
-| REQ-GEN-002a | meta.lastUpdated present on all resources | B | 21 CFR Part 11 — 11.10(e) | TC-PAT-006, TC-OBS-006, TC-MED-006, TC-ALG-008 — see Section 4.1 for partial coverage rationale | Pending | | |
-| REQ-GEN-002b | meta.versionId present on all resources | B | 21 CFR Part 11 — 11.10(e) | TC-PAT-010, TC-OBS-009, TC-ALG-008, TC-MED-010, TC-DXR-007, TC-AUD-007, TC-BUN-007, TC-PRA-006 | Pending | | |
-| REQ-GEN-003 | Malformed JSON returns 400 + OperationOutcome | B | HL7 FHIR R4 Section 3.1.0.6 | TC-PAT-011, TC-MED-009 — see Section 4.2 for representative coverage rationale | Pending | | |
-| REQ-GEN-004 | Unsupported resource type returns 404 + OperationOutcome | B | HL7 FHIR R4 Section 3.1.0.6 | TC-GEN-001 | Pending | | |
-| REQ-GEN-005 | Configurable base URL — no code changes required | B | Framework design | TC-FRM-001 | Pending | | |
-| REQ-GEN-006 | Test reports linked to Git commit SHA | B | 21 CFR Part 820.40 | TC-FRM-002 | Pending | | |
-| REQ-GEN-007 | Git branch protection on main | B | 21 CFR Part 820.40 / 21 CFR Part 11 | TC-FRM-003 | Pending | | |
+| REQ-GEN-002a | meta.lastUpdated present on all resources | B | 21 CFR Part 11 — 11.10(e) | TC-PAT-006, TC-OBS-006, TC-MED-006, TC-ALG-008 — see Section 4.1 for partial coverage rationale | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-GEN-002b | meta.versionId present on all resources | B | 21 CFR Part 11 — 11.10(e) | TC-PAT-010, TC-OBS-009, TC-ALG-008, TC-MED-010, TC-DXR-007, TC-AUD-007, TC-BUN-007, TC-PRA-006 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-GEN-003 | Malformed JSON returns 400 + OperationOutcome | B | HL7 FHIR R4 Section 3.1.0.6 | TC-PAT-011, TC-MED-009 — see Section 4.2 for representative coverage rationale | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-GEN-004 | Unsupported resource type returns 404 + OperationOutcome | B | HL7 FHIR R4 Section 3.1.0.6 | TC-GEN-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-GEN-005 | Configurable base URL — no code changes required | B | Framework design | TC-FRM-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-GEN-006 | Test reports linked to Git commit SHA | B | 21 CFR Part 820.40 | TC-FRM-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-GEN-007 | Git branch protection on main | B | 21 CFR Part 820.40 / 21 CFR Part 11 | TC-FRM-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -340,13 +340,13 @@ All Class C and Class B requirements are covered. Partial and representative cov
 
 | Status | Count |
 |---|---|
-| Pass | 0 |
+| Pass | 61 |
 | Fail | 0 |
 | Skip | 0 |
 | Partial | 0 |
-| Pending | 61 |
-| Gap | 0 |
-| **Total** | **61** |
+| Pending | 0 |
+| Retired | 1 |
+| Total Requirements | 62 |
 
 *Update this table after each test execution run.*
 
@@ -358,7 +358,7 @@ Record each test execution run here. Each run must be linked to a Git commit SHA
 
 | Run # | Date | Executed By | Commit SHA | Pipeline Run # | Total Pass | Total Fail | Total Skip | Notes |
 |---|---|---|---|---|---|---|---|---|
-| | | | | | | | | |
+| 1 | 2026-04-08 | Amir Choshov | 4458f7dd63e0fd904b1122db075bb26dbdecb740 | Run #3 | 74 | 0 | 0 | Full suite execution via GitHub Actions CI. 74 automated TCs PASS. 3 manual TCs (TC-FRM-001, TC-FRM-002, TC-FRM-003) verified as IQ/OQ checklist items. HL7 Validator scan: 9 files scanned, findings on observation and diagnostic-report attributed to HAPI sandbox data quality per VA-FHIR-001. |
 
 ---
 
@@ -379,6 +379,7 @@ Record each test execution run here. Each run must be linked to a Git commit SHA
 | 1.0 | 2026-03-30 | Amir Choshov | Initial draft — RS-FHIR-001 v1.1 (56 req), TP-FHIR-001 v1.1 (70 TCs), 1 identified gap (REQ-GEN-004) |
 | 1.1 | 2026-03-30 | Amir Choshov | Updated to RS-FHIR-001 v1.2 (61 req) and TP-FHIR-001 v1.2 (77 TCs); retired REQ-GEN-002 row; added REQ-GEN-002a and REQ-GEN-002b rows with correct TC mappings; added REQ-OBS-007, REQ-ALG-006, REQ-MED-007, REQ-DXR-005 rows with dedicated 404 TC mappings; corrected REQ-OBS-001, REQ-ALG-001, REQ-MED-001, REQ-DXR-001 to remove incorrectly mapped 404 TCs; added TC-GEN-001 to REQ-OO-001 TC list; updated all backward trace entries for fixed and new TCs; added Section 4 documented coverage rationale for REQ-GEN-002a and REQ-GEN-003; closed TM-GAP-001; added TM-NOTE-001 and TM-NOTE-002; updated coverage summary to 61/61 (100%); updated Class C: 30→34, Class B: 26→27 |
 | 1.2 | 2026-04-07 | Amir Choshov | Added Automated? column to Section 5 backward trace table; TC-OO-002, TC-OO-003, TC-OO-004, TC-GEN-001 marked Automated=Yes (standalone Karate scenarios now implemented); TC-FRM-001, TC-FRM-002, TC-FRM-003 marked Automated=No (manual IQ/OQ checklist items by design); all 74 Karate-automated TCs marked Yes |
+| 1.3 | 2026-04-08 | Amir Choshov | Execution log populated — CI Run #3, 61/61 requirements PASS, 74/74 automated TCs PASS |
 
 ---
 
@@ -386,8 +387,8 @@ Record each test execution run here. Each run must be linked to a Git commit SHA
 
 | Role | Name | Signature | Date |
 |---|---|---|---|
-| Author | Amir Choshov | | |
-| Reviewer | | | |
+| Author | Amir Choshov | Amir Choshov | 2026-04-08 |
+| Reviewer | Amir Choshov (sole author — independent review not applicable for individual portfolio project) | Amir Choshov | 2026-04-08 |
 
 ---
 
