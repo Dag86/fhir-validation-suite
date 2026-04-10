@@ -6,7 +6,7 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | VA-FHIR-001 |
-| **Version** | 1.0 |
+| **Version** | 1.1 |
 | **Status** | Final |
 | **Author** | Amir Choshov |
 | **Date** | 2026-04-09 |
@@ -163,17 +163,17 @@ enable meaningful validation.
 
 | ID | Source | Description | Severity | Status |
 |---|---|---|---|---|
-| DEV-IQ-001 | TQ-FHIR-IQ-001 | Branch protection on main not configured at time of IQ execution. Repository was newly created and push had not yet occurred. Branch protection is a GitHub repository setting requiring at least one commit on main before it can be enforced. | Low | Open — to be configured post-initial-push |
+| DEV-IQ-001 | TQ-FHIR-IQ-001 | Branch protection on main not configured at time of IQ execution. Repository was newly created and push had not yet occurred. Branch protection is a GitHub repository setting requiring at least one commit on main before it can be enforced. | Low | Resolved — branch protection configured on main 2026-04-09. Requires PR and passing CI status check (validate job). |
 | DEV-OQ-001 | TQ-FHIR-OQ-001 | GitHub Actions Node.js 20 deprecation warning. Actions running on Node.js 20 which will be removed from runners September 2026. No functional impact on current execution. | Low | Open — action versions to be updated before September 2026 |
 | DEV-PQ-001 | TQ-FHIR-PQ-001 | Same as DEV-OQ-001 — deprecation warning recurred in PQ CI run. Carried forward. | Low | Open — same resolution as DEV-OQ-001 |
 
-**Open deviation impact assessment:** All three open deviations are
-Low severity. None affect the functional validation scope, test
-execution results, or evidence integrity. The two Node.js deprecation
-deviations (DEV-OQ-001, DEV-PQ-001) require a workflow update before
-September 2026 but have no current impact. DEV-IQ-001 (branch
-protection) is a configuration item that does not affect FHIR API
-test execution or audit trail integrity.
+**Open deviation impact assessment:** Two open deviations remain
+(DEV-OQ-001, DEV-PQ-001), both Low severity. Neither affects the
+functional validation scope, test execution results, or evidence
+integrity. The Node.js deprecation deviations require a workflow
+update before September 2026 but have no current impact.
+DEV-IQ-001 (branch protection) is resolved — branch protection
+configured on main 2026-04-09.
 
 **Conclusion: open deviations do not affect the validation
 conclusion. The suite is qualified for use.**
@@ -217,7 +217,7 @@ Based on the evidence summarized in this report:
 | Test execution | PASS — 74/74 automated TCs passing, 3/3 manual TCs verified |
 | Traceability | COMPLETE — 100% bidirectional, 0 gaps |
 | Tool qualification | PASS — IQ/OQ/PQ all passed |
-| Deviations | 3 open, all Low severity, none affecting validation scope |
+| Deviations | 2 open (DEV-OQ-001, DEV-PQ-001), 1 resolved (DEV-IQ-001), all Low severity, none affecting validation scope |
 | HL7 Validator findings | Dispositioned — attributable to sandbox data quality |
 
 **The FHIR R4 API Validation Suite is hereby declared VALIDATED.**
@@ -237,8 +237,6 @@ This conclusion is contingent on:
 1. No changes to the validated configuration without following
    the requalification triggers defined in TQ-FHIR-PQ-001 §11
 2. Resolution of DEV-OQ-001 / DEV-PQ-001 before September 2026
-3. Branch protection configuration (DEV-IQ-001) to close the
-   open IQ deviation
 
 ---
 
@@ -256,3 +254,4 @@ This conclusion is contingent on:
 | Version | Date | Author | Description |
 |---|---|---|---|
 | 1.0 | 2026-04-09 | Amir Choshov | Initial release — validation lifecycle closed, suite declared validated |
+| 1.1 | 2026-04-09 | Amir Choshov | DEV-IQ-001 resolved — branch protection active on main. Deviation count updated from 3 open to 2 open + 1 resolved. |

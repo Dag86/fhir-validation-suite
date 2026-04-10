@@ -135,7 +135,7 @@ ALL MILESTONES COMPLETE.
 
 | ID | Description | Severity | Action Required |
 |---|---|---|---|
-| DEV-IQ-001 | Branch protection on main not configured | Low | Configure in GitHub settings |
+| DEV-IQ-001 | Branch protection on main not configured | Low | RESOLVED 2026-04-09 — branch protection active on main |
 | DEV-OQ-001 | GitHub Actions Node.js 20 deprecation warning | Low | Update action versions before Sep 2026 |
 | DEV-PQ-001 | Same as DEV-OQ-001 — recurred in PQ run | Low | Same as DEV-OQ-001 |
 
