@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TQ-FHIR-IQ-001 |
-| **Version** | 1.2 |
+| **Version** | 1.3 |
 | **Status** | Executed |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-07 |
+| **Date** | 2026-04-09 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Related Documents** | TQ-FHIR-OQ-001, TQ-FHIR-PQ-001 |
 
@@ -76,7 +76,7 @@ Aligned with:
 | IQ-GIT-005 | `cat .gitignore \| grep "responses/"` | `responses/` present in `.gitignore` | PASS — responses/ exclusion confirmed in .gitignore | PASS | 2026-04-07 | AC |
 | IQ-GIT-006 | `cat .gitignore \| grep "validator_cli.jar"` | `validator/validator_cli.jar` present in `.gitignore` | PASS — validator_cli.jar exclusion confirmed in .gitignore | PASS | 2026-04-07 | AC |
 | IQ-GIT-007 | Review GitHub repository Settings → Branches | Branch protection rule exists for `main`: require PR review, no direct push, no force-push | PASS — branch protection reviewed in GitHub Settings → Branches | PASS | 2026-04-07 | AC |
-| IQ-GIT-008 | `git log --oneline -5` | At least one commit present — project initialized | PENDING — branch protection to be configured post-push; not blocking IQ completion per risk assessment | CONDITIONAL PASS | 2026-04-07 | AC |
+| IQ-GIT-008 | `git log --oneline -5` | At least one commit present — project initialized | PASS — branch protection configured on main requiring PR and passing CI status check (validate job). Direct pushes blocked. | PASS | 2026-04-09 | AC |
 | IQ-GIT-009 | `git status` | Working tree clean — no untracked generated artifacts in repository | PASS — working tree clean, no untracked artifacts present | PASS | 2026-04-07 | AC |
 
 **Environment Record:**
@@ -86,7 +86,7 @@ Aligned with:
 | Git Version | 2.51.2 |
 | Repository Remote URL | https://github.com/Dag86/fhir-validation-suite.git |
 | Default Branch | main |
-| Branch Protection Confirmed | Pending — to be configured in GitHub after initial push (IQ-GIT-008) |
+| Branch Protection Confirmed | Yes — configured on main (2026-04-09); requires PR and passing CI status check (validate job) |
 | .gitignore Present | Yes — excludes target/, .claude/, validator/, .env, .idea/, *.class, *.log |
 | IQ Date | 2026-04-07 |
 
@@ -95,7 +95,7 @@ Aligned with:
 - If `git status` shows untracked files in `responses/` or `target/`, the `.gitignore` is not correctly configured. Resolve before proceeding.
 - `validator/validator_cli.jar` should not appear in `git status` output. If it does, it has not been excluded correctly and must not be committed.
 
-**IQ-GIT Overall Result:** ☐ Pass  ☑ CONDITIONAL PASS — pending branch protection configuration (IQ-GIT-008)
+**IQ-GIT Overall Result:** ☑ PASS  ☐ Fail
 
 ---
 
@@ -267,13 +267,13 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 
 | Tool | Steps | Passed | Failed | Overall | Date Completed | Initials |
 |---|---|---|---|---|---|---|
-| Git | 9 | 8 | 0 | CONDITIONAL PASS | 2026-04-07 | AC |
+| Git | 9 | 9 | 0 | PASS | 2026-04-09 | AC |
 | Java JDK 17 | 3 | 3 | 0 | PASS | 2026-04-07 | AC |
 | Apache Maven | 4 | 4 | 0 | PASS | 2026-04-07 | AC |
 | Karate DSL | 4 | 4 | 0 | PASS | 2026-04-07 | AC |
 | HL7 FHIR Validator CLI | 5 | 5 | 0 | PASS | 2026-04-07 | AC |
 | GitHub Actions | 5 | 5 | 0 | PASS | 2026-04-07 | AC |
-| **Total** | **30** | **29** | **0** | | | |
+| **Total** | **30** | **30** | **0** | | | |
 
 **IQ Overall Status:** ☑ Pass  ☐ Fail — Proceed to OQ
 
@@ -283,7 +283,7 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 
 | ID | Step | Deviation Description | Resolution | Resolved Date | Initials |
 |---|---|---|---|---|---|
-| DEV-IQ-001 | IQ-GIT-008 | Branch protection not yet configured at time of IQ execution — repository was newly pushed | Branch protection to be configured post-push per IQ-GIT-008; risk assessed as low given single-author portfolio project; IQ proceeds as CONDITIONAL PASS | Pending | AC |
+| DEV-IQ-001 | IQ-GIT-008 | Branch protection not yet configured at time of IQ execution — repository was newly pushed | Branch protection configured on main in GitHub repository settings. Required: pull request before merging, passing CI status check (validate job). Direct pushes to main are now blocked. | 2026-04-09 | AC |
 
 ---
 
@@ -294,6 +294,7 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 | 1.0 | 2026-03-30 | Amir Choshov | Initial draft |
 | 1.1 | 2026-03-30 | Amir Choshov | Added Section 4 Git IQ with 9 verification steps; added IQ-VAL-005 verifying validator_cli.jar is gitignored; added IQ-GHA-005 verifying workflow file is in Git history; updated IQ summary totals |
 | 1.2 | 2026-04-07 | Amir Choshov | Filled all execution fields; recorded environment values; marked all verification steps PASS (IQ-GIT-008 CONDITIONAL PASS — branch protection pending); added DEV-IQ-001 to deviation log; added IQ-GHA environment record; status updated to Executed |
+| 1.3 | 2026-04-09 | Amir Choshov | DEV-IQ-001 resolved — branch protection configured on main |
 
 ---
 
