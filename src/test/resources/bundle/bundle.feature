@@ -27,7 +27,7 @@ Feature: Bundle Resource Validation
     And param _total = 'accurate'
     When method GET
     Then status 200
-    And match response.total == '#present'
+    And match response.total == '#notnull'
     * karate.log('Bundle total: ' + response.total)
 
   Scenario: TC-BUN-003 | REQ-BUN-003 each entry has resource and fullUrl

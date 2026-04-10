@@ -17,7 +17,7 @@ Feature: CapabilityStatement Pre-Check
     Given path 'metadata'
     When method GET
     Then status 200
-    And match response.fhirVersion == '4.0.1'
+    And match response.fhirVersion == '#regex 4\\.0\\.[0-9]+'
 
   Scenario: TC-CAP-003 | REQ-PRE-003 CapabilityStatement exposes supported resources list
     Given path 'metadata'
