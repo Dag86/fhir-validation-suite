@@ -13,7 +13,7 @@ Feature: CapabilityStatement Pre-Check
     Then status 200
     And match response.resourceType == 'CapabilityStatement'
 
-  Scenario: TC-CAP-002 | REQ-PRE-002 CapabilityStatement declares FHIR version 4.0.1
+  Scenario: TC-CAP-002 | REQ-PRE-002 CapabilityStatement declares FHIR R4 version
     Given path 'metadata'
     When method GET
     Then status 200
