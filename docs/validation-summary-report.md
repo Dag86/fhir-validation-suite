@@ -1,0 +1,258 @@
+# Validation Summary Report
+## FHIR R4 API Validation Suite
+
+---
+
+| Field | Detail |
+|---|---|
+| **Document ID** | VA-FHIR-001 |
+| **Version** | 1.0 |
+| **Status** | Final |
+| **Author** | Amir Choshov |
+| **Date** | 2026-04-09 |
+| **Project** | FHIR R4 API Validation Suite |
+| **Related Documents** | VP-FHIR-001, RS-FHIR-001, TP-FHIR-001, TM-FHIR-001, GA-FHIR-001, TQ-FHIR-IQ-001, TQ-FHIR-OQ-001, TQ-FHIR-PQ-001 |
+
+---
+
+## 1. Purpose
+
+This Validation Summary Report (VSR) formally closes the validation
+lifecycle for the FHIR R4 API Validation Suite. It summarizes the
+outcomes of all validation activities, documents the disposition of
+all deviations and findings, and issues the formal conclusion that
+the suite is qualified for use in regulated validation activities.
+
+Per FDA General Principles of Software Validation (2002) Section 5.2
+and GAMP 5 Chapter 10, a VSR is required to formally close a
+validation cycle. The VSR is the authoritative document an auditor
+or inspector would review to determine whether the system has been
+adequately validated.
+
+---
+
+## 2. System Description
+
+| Field | Value |
+|---|---|
+| System Name | FHIR R4 API Validation Suite |
+| System Type | Custom automated API test framework (GAMP 5 Category 5) |
+| Software Safety Class | IEC 62304 Class C |
+| Primary Function | Automated validation of HL7 FHIR R4 API conformance |
+| Target System Under Test | HAPI FHIR public sandbox (hapi.fhir.org/baseR4) |
+| Validation Scope | API behavior, FHIR R4 structural conformance, audit trail integrity |
+| Regulatory Standards | IEC 62304, ISO 14971, 21 CFR Part 11, 21 CFR Part 820 / QMSR, GAMP 5 |
+| Repository | https://github.com/Dag86/fhir-validation-suite |
+| Closing Commit SHA | 4115c2484897569c4d46b1a015883fe13e9f8d81 |
+
+---
+
+## 3. Validation Lifecycle Summary
+
+### 3.1 Document Package
+
+| Document | ID | Version | Status | Date |
+|---|---|---|---|---|
+| Validation Plan | VP-FHIR-001 | 1.2 | Approved | 2026-03-30 |
+| Requirements Specification | RS-FHIR-001 | 1.2 | Approved | 2026-03-30 |
+| Architecture Document | AD-FHIR-001 | 1.1 | Approved | 2026-03-30 |
+| Test Plan | TP-FHIR-001 | 1.3 | Approved | 2026-04-07 |
+| Traceability Matrix | TM-FHIR-001 | 1.3 | Executed | 2026-04-08 |
+| Installation Qualification | TQ-FHIR-IQ-001 | 1.2 | Executed | 2026-04-08 |
+| Operational Qualification | TQ-FHIR-OQ-001 | 1.2 | Executed | 2026-04-08 |
+| Performance Qualification | TQ-FHIR-PQ-001 | 1.3 | Executed | 2026-04-09 |
+| Gap Analysis | GA-FHIR-001 | 1.0 | Final | 2026-04-08 |
+| Validation Summary Report | VA-FHIR-001 | 1.0 | Final | 2026-04-09 |
+
+### 3.2 Qualification Phase Outcomes
+
+| Phase | Document | Result | Date | Executor |
+|---|---|---|---|---|
+| Installation Qualification (IQ) | TQ-FHIR-IQ-001 v1.2 | PASS | 2026-04-08 | Amir Choshov |
+| Operational Qualification (OQ) | TQ-FHIR-OQ-001 v1.2 | PASS | 2026-04-08 | Amir Choshov |
+| Performance Qualification (PQ) | TQ-FHIR-PQ-001 v1.3 | PASS | 2026-04-09 | Amir Choshov |
+
+### 3.3 Test Execution Summary
+
+| Metric | Value |
+|---|---|
+| Total test cases (TP-FHIR-001 v1.3) | 77 |
+| Automated test cases | 74 |
+| Non-automated test cases | 3 (TC-FRM-001, TC-FRM-002, TC-FRM-003) |
+| Automated TCs executed | 74 |
+| Automated TCs passed | 74 |
+| Automated TCs failed | 0 |
+| Non-automated TCs verified | 3 (via IQ/OQ qualification evidence) |
+| Active requirements (RS-FHIR-001 v1.2) | 61 |
+| Requirements with passing test coverage | 61 |
+| Traceability gaps | 0 |
+| CI pipeline runs | 3 |
+| CI run used for PQ evidence | Run #3 |
+| PQ evidence commit SHA | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+
+---
+
+## 4. Traceability Verification
+
+Bidirectional traceability was verified in GA-FHIR-001 v1.0
+(2026-04-08) against TM-FHIR-001 v1.3.
+
+| Trace Direction | Result |
+|---|---|
+| Forward (requirement → test case) | 100% — 61/61 active requirements covered |
+| Backward (test case → requirement) | 100% — 77/77 test cases mapped |
+| Orphaned requirements | 0 |
+| Orphaned test cases | 0 |
+
+REQ-GEN-002 was formally retired and replaced by REQ-GEN-002a
+(meta.lastUpdated) and REQ-GEN-002b (meta.versionId) to enable
+independent testability. This split is documented in RS-FHIR-001
+v1.2 and TM-FHIR-001 v1.3.
+
+---
+
+## 5. HL7 FHIR Validator Findings
+
+The HL7 FHIR Validator CLI (version 6.4.0, pinned) was executed
+as a second validation layer in CI Run #3 against 9 captured FHIR
+response files.
+
+### 5.1 Files Scanned
+
+| File | Result |
+|---|---|
+| patient-read.json | All OK |
+| practitioner-read.json | All OK |
+| allergy-read.json | All OK |
+| medication-read.json | All OK |
+| bundle-transaction-response.json | All OK |
+| operation-outcome-*.json | All OK |
+| observation-read.json | Findings — see §5.2 |
+| diagnostic-report-read.json | Findings — see §5.2 |
+| audit-event-read.json | Warning — see §5.2 |
+
+### 5.2 Findings and Disposition
+
+| File | Severity | Finding | Disposition |
+|---|---|---|---|
+| observation-read.json | Error | CodeSystem URL `http://hl7.org/fhir/observation-category` does not resolve — deprecated DSTU2-era URL | HAPI sandbox data quality issue. The correct R4 URL is `http://terminology.hl7.org/CodeSystem/observation-category`. No suite defect. |
+| observation-read.json | Error | Body weight profile (bodyweight\|4.0.1) slice mismatch — validator auto-applied profile based on LOINC code 29463-7 | HAPI sandbox data does not conform to the bodyweight profile. Sandbox data quality issue, not a suite defect. |
+| diagnostic-report-read.json | Error | Unknown code 'LAB' in LOINC CodeSystem version 2.82 | Legacy HL7 v2 category code used in sandbox data. Not a valid LOINC code in R4. Sandbox data quality issue. |
+| diagnostic-report-read.json | Error | Wrong display name for LOINC 24323-8 — sandbox uses Spanish display text | Sandbox resource populated with non-English display name not matching LOINC canonical. Sandbox data quality issue. |
+| audit-event-read.json | Warning | dom-6 constraint: resource should have narrative text | Best practice recommendation only. AuditEvent resources rarely include narrative in production implementations. No corrective action required. |
+
+### 5.3 Overall Validator Assessment
+
+All findings are attributable to HAPI public sandbox data quality,
+not to the validation suite implementation or FHIR R4 specification
+violations introduced by the suite. The validator correctly detected
+and reported these issues — demonstrating that the second validation
+layer is functioning as designed.
+
+No corrective action is required against the suite. These findings
+are informational and do not affect the validation conclusion.
+
+The validator findings are a positive quality signal: the HL7
+Validator is performing its role as an independent conformance check,
+and the suite's captured responses are sufficiently detailed to
+enable meaningful validation.
+
+---
+
+## 6. Deviation Summary
+
+| ID | Source | Description | Severity | Status |
+|---|---|---|---|---|
+| DEV-IQ-001 | TQ-FHIR-IQ-001 | Branch protection on main not configured at time of IQ execution. Repository was newly created and push had not yet occurred. Branch protection is a GitHub repository setting requiring at least one commit on main before it can be enforced. | Low | Open — to be configured post-initial-push |
+| DEV-OQ-001 | TQ-FHIR-OQ-001 | GitHub Actions Node.js 20 deprecation warning. Actions running on Node.js 20 which will be removed from runners September 2026. No functional impact on current execution. | Low | Open — action versions to be updated before September 2026 |
+| DEV-PQ-001 | TQ-FHIR-PQ-001 | Same as DEV-OQ-001 — deprecation warning recurred in PQ CI run. Carried forward. | Low | Open — same resolution as DEV-OQ-001 |
+
+**Open deviation impact assessment:** All three open deviations are
+Low severity. None affect the functional validation scope, test
+execution results, or evidence integrity. The two Node.js deprecation
+deviations (DEV-OQ-001, DEV-PQ-001) require a workflow update before
+September 2026 but have no current impact. DEV-IQ-001 (branch
+protection) is a configuration item that does not affect FHIR API
+test execution or audit trail integrity.
+
+**Conclusion: open deviations do not affect the validation
+conclusion. The suite is qualified for use.**
+
+---
+
+## 7. Risk Assessment
+
+The suite was classified as IEC 62304 Class C based on credible
+patient harm paths across five FHIR resource types:
+
+| Resource | Harm Path |
+|---|---|
+| AllergyIntolerance | Missed allergy → contraindicated medication administered |
+| MedicationRequest | Incorrect dose or drug → patient harm |
+| Observation | Incorrect lab result → wrong clinical decision |
+| Patient | Identity mismatch → treatment delivered to wrong patient |
+| DiagnosticReport | Missed or incorrect finding → delayed or wrong treatment |
+
+Class C classification drove full documentation rigor: bidirectional
+traceability, ISO 14971 risk linkage, exhaustive boundary and
+negative test coverage, and SOUP documentation throughout the
+validation lifecycle.
+
+Risk controls implemented:
+- Negative test cases for all five high-risk resource types
+- Boundary value testing for critical fields
+- HL7 Validator as independent second validation layer
+- Immutable CI artifact archiving for evidence integrity
+- Commit SHA traceability from source to evidence
+
+---
+
+## 8. Validation Conclusion
+
+Based on the evidence summarized in this report:
+
+| Assessment Area | Conclusion |
+|---|---|
+| Requirements coverage | COMPLETE — 61/61 active requirements tested |
+| Test execution | PASS — 74/74 automated TCs passing, 3/3 manual TCs verified |
+| Traceability | COMPLETE — 100% bidirectional, 0 gaps |
+| Tool qualification | PASS — IQ/OQ/PQ all passed |
+| Deviations | 3 open, all Low severity, none affecting validation scope |
+| HL7 Validator findings | Dispositioned — attributable to sandbox data quality |
+
+**The FHIR R4 API Validation Suite is hereby declared VALIDATED.**
+
+The suite is qualified for use in generating regulated validation
+evidence for FHIR R4 API conformance testing. Evidence generated
+by this suite, when traceable to a specific commit SHA and CI run,
+constitutes valid validation evidence under:
+
+- 21 CFR Part 820.30(f) — Design Verification
+- 21 CFR Part 11.10 — Electronic Records Controls
+- IEC 62304 §5.7 — Software Integration Testing
+- FDA General Principles of Software Validation (2002)
+- FDA Computer Software Assurance (2022)
+
+This conclusion is contingent on:
+1. No changes to the validated configuration without following
+   the requalification triggers defined in TQ-FHIR-PQ-001 §11
+2. Resolution of DEV-OQ-001 / DEV-PQ-001 before September 2026
+3. Branch protection configuration (DEV-IQ-001) to close the
+   open IQ deviation
+
+---
+
+## 9. Approval
+
+| Role | Name | Signature | Date |
+|---|---|---|---|
+| Author | Amir Choshov | Amir Choshov | 2026-04-09 |
+| Reviewer | Amir Choshov (sole author — independent review not applicable for individual portfolio project) | Amir Choshov | 2026-04-09 |
+
+---
+
+## 10. Change History
+
+| Version | Date | Author | Description |
+|---|---|---|---|
+| 1.0 | 2026-04-09 | Amir Choshov | Initial release — validation lifecycle closed, suite declared validated |
