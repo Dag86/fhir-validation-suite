@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TM-FHIR-001 |
-| **Version** | 1.3 |
+| **Version** | 1.4 |
 | **Status** | Executed |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-08 |
+| **Date** | 2026-04-09 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Requirements Source** | RS-FHIR-001 v1.2 — 61 active requirements |
 | **Test Case Source** | TP-FHIR-001 v1.2 — 77 test cases |
@@ -55,7 +55,7 @@ This document is a living artifact — test execution results are recorded here 
 |---|---|---|---|---|---|---|---|
 | REQ-PRE-001 | CapabilityStatement queried before all tests | B | False failures from unsupported capabilities | TC-CAP-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 | REQ-PRE-002 | CapabilityStatement returns 200 and valid resourceType | B | Server non-compliance with base FHIR spec | TC-CAP-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
-| REQ-PRE-003 | FHIR version 4.0.1 declared | B | Version mismatch causing incorrect data interpretation | TC-CAP-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PRE-003 | FHIR R4 version declared (4.0.x) | B | Version mismatch causing incorrect data interpretation | TC-CAP-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 
 ---
 
@@ -380,6 +380,7 @@ Record each test execution run here. Each run must be linked to a Git commit SHA
 | 1.1 | 2026-03-30 | Amir Choshov | Updated to RS-FHIR-001 v1.2 (61 req) and TP-FHIR-001 v1.2 (77 TCs); retired REQ-GEN-002 row; added REQ-GEN-002a and REQ-GEN-002b rows with correct TC mappings; added REQ-OBS-007, REQ-ALG-006, REQ-MED-007, REQ-DXR-005 rows with dedicated 404 TC mappings; corrected REQ-OBS-001, REQ-ALG-001, REQ-MED-001, REQ-DXR-001 to remove incorrectly mapped 404 TCs; added TC-GEN-001 to REQ-OO-001 TC list; updated all backward trace entries for fixed and new TCs; added Section 4 documented coverage rationale for REQ-GEN-002a and REQ-GEN-003; closed TM-GAP-001; added TM-NOTE-001 and TM-NOTE-002; updated coverage summary to 61/61 (100%); updated Class C: 30→34, Class B: 26→27 |
 | 1.2 | 2026-04-07 | Amir Choshov | Added Automated? column to Section 5 backward trace table; TC-OO-002, TC-OO-003, TC-OO-004, TC-GEN-001 marked Automated=Yes (standalone Karate scenarios now implemented); TC-FRM-001, TC-FRM-002, TC-FRM-003 marked Automated=No (manual IQ/OQ checklist items by design); all 74 Karate-automated TCs marked Yes |
 | 1.3 | 2026-04-08 | Amir Choshov | Execution log populated — CI Run #3, 61/61 requirements PASS, 74/74 automated TCs PASS |
+| 1.4 | 2026-04-09 | Amir Choshov | REQ-PRE-003 description updated — version assertion now accepts any valid R4 patch version per portability fix. |
 
 ---
 

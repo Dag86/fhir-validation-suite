@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TP-FHIR-001 |
-| **Version** | 1.3 |
+| **Version** | 1.4 |
 | **Status** | Draft |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-07 |
+| **Date** | 2026-04-09 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Governed By** | VP-FHIR-001 Validation Plan |
 | **Requirements Source** | RS-FHIR-001 Requirements Specification |
@@ -144,7 +144,7 @@ A test run executed against uncommitted changes produces evidence that cannot be
 |---|---|---|---|---|
 | TC-CAP-001 | REQ-PRE-001 | GET /metadata returns 200 | Positive | HTTP 200, resourceType = CapabilityStatement |
 | TC-CAP-002 | REQ-PRE-002 | CapabilityStatement has valid structure | Schema | resourceType, fhirVersion, rest[] present |
-| TC-CAP-003 | REQ-PRE-003 | FHIR version declared as 4.0.1 | Positive | fhirVersion = "4.0.1" |
+| TC-CAP-003 | REQ-PRE-003 | FHIR version declared as valid R4 patch version | Positive | fhirVersion matches regex 4\.0\.[0-9]+ |
 
 ---
 
@@ -445,6 +445,7 @@ This record links the completed validation package to the exact source state und
 | 1.1 | 2026-03-30 | Amir Choshov | Added Section 3.4 evidence traceability chain; added Step 0 pre-execution Git state check and post-execution git status check to execution sequence; added Section 5.11 framework test cases TC-FRM-001, TC-FRM-002, TC-FRM-003; updated test case summary totals to 70; updated suite-level pass criteria to include framework TCs and commit SHA; updated entry criteria to include Git and IQ/OQ/PQ Git steps; updated exit criteria to include TC-FRM coverage and commit SHA recording; added evidence archiving requirement table; added generated artifacts excluded from Git to test data management; added Git to environment requirements |
 | 1.2 | 2026-03-30 | Amir Choshov | Fixed TC-OBS-007, TC-ALG-006, TC-MED-007, TC-DXR-005 requirement mappings to correct dedicated 404 requirements; fixed TC-PAT-010 and TC-ALG-008 mappings to REQ-GEN-002b and REQ-GEN-002a/002b; fixed TC-DXR-002 expected result to enumerate full DiagnosticReport status value set including partial and appended; added search precondition blocks for TC-OBS-004, TC-ALG-005, TC-PRA-003 to prevent vacuous passes; added AuditEvent search precondition block; expanded TC-BUN-005 to include follow-up GET atomicity verification steps; added TC-OBS-009, TC-MED-010, TC-DXR-007, TC-AUD-007, TC-BUN-007, TC-PRA-006 for REQ-GEN-002b meta.versionId coverage; added TC-GEN-001 for REQ-GEN-004; updated summary totals 70 → 77; updated entry/exit criteria counts 56 → 61, 70 → 77 |
 | 1.3 | 2026-04-07 | Amir Choshov | Added implementation notes to TC-OO-002, TC-OO-003, TC-OO-004 (standalone Scenarios in common/operation-outcome.feature); added implementation note to TC-GEN-001 (standalone Scenario in common/general.feature); added non-automated notes to TC-FRM-001, TC-FRM-002, TC-FRM-003 (manual IQ/OQ checklist items, no feature file counterpart by design) |
+| 1.4 | 2026-04-09 | Amir Choshov | TC-CAP-003 expected value updated — fhirVersion assertion accepts any valid R4 patch version (4.0.x) not just 4.0.1. Reflects portability fix for multi-server conformance testing. |
 
 ---
 
