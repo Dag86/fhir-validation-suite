@@ -67,6 +67,20 @@ jobs:
           name: fhir-validation-report
           path: target/fhir-validation-report.json
 
+      - name: Create index.html redirect for GitHub Pages
+        if: always()
+        run: |
+          echo '<!DOCTYPE html>
+          <html>
+            <head>
+              <meta http-equiv="refresh" content="0; url=karate-summary.html">
+              <title>FHIR R4 Validation Suite - Test Report</title>
+            </head>
+            <body>
+              <p>Redirecting to <a href="karate-summary.html">test report</a>...</p>
+            </body>
+          </html>' > target/karate-reports/index.html
+
       - name: Publish Karate report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
