@@ -187,12 +187,18 @@ mvn test
 ```
 
 Expected:
-
-```
 scenarios:   74 | passed:    74 | failed: 0
 BUILD SUCCESS
 Total time:  ~02:10 min
+
+View the full interactive test report after the run:
+
+```bash
+open target/karate-reports/karate-summary.html
 ```
+
+Or view the latest CI report published live at:
+https://dag86.github.io/fhir-validation-suite/
 
 ---
 
