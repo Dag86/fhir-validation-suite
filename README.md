@@ -1,0 +1,320 @@
+# FHIR R4 API Validation Suite
+
+> Regulatory-grade automated API validation framework for HL7 FHIR R4.
+> Built to IEC 62304 Class C with a complete IQ/OQ/PQ qualification
+> lifecycle, bidirectional requirements traceability, and GitHub Actions CI.
+
+[![CI](https://github.com/Dag86/fhir-validation-suite/actions/workflows/fhir-validation.yml/badge.svg)](https://github.com/Dag86/fhir-validation-suite/actions/workflows/fhir-validation.yml)
+![Java](https://img.shields.io/badge/Java-17%20Temurin-orange)
+![Karate](https://img.shields.io/badge/Karate-1.5.1-blue)
+![FHIR](https://img.shields.io/badge/FHIR-R4%204.0.x-green)
+![IEC 62304](https://img.shields.io/badge/IEC%2062304-Class%20C-red)
+![Status](https://img.shields.io/badge/Validation-COMPLETE-brightgreen)
+
+---
+
+## Table of Contents
+
+- [For Regulatory Affairs and Healthcare QA](#for-regulatory-affairs-and-healthcare-qa)
+- [For Engineers and Technical Reviewers](#for-engineers-and-technical-reviewers)
+- [Quick Start](#quick-start)
+- [Multi-Server Conformance Results](#multi-server-conformance-results)
+- [Project Structure](#project-structure)
+- [Validation Document Package](#validation-document-package)
+- [Regulatory Standards](#regulatory-standards)
+- [Built By](#built-by)
+
+---
+
+## For Regulatory Affairs and Healthcare QA
+
+This project demonstrates a complete FDA-regulated software validation
+lifecycle applied to a custom automated test framework â the kind of
+rigor required for tools used to generate evidence in clinical trials,
+medical device development, and healthcare software quality systems.
+
+### What Was Validated
+
+The suite is classified as **IEC 62304 Class C** based on credible
+patient harm paths across five FHIR resource types:
+
+| Resource | Patient Harm Path |
+|---|---|
+| AllergyIntolerance | Missed allergy â contraindicated medication administered |
+| MedicationRequest | Incorrect dose or drug â patient harm |
+| Observation | Incorrect lab result â wrong clinical decision |
+| Patient | Identity mismatch â treatment delivered to wrong patient |
+| DiagnosticReport | Missed or incorrect finding â delayed or wrong treatment |
+
+Class C drove the full documentation rigor: bidirectional requirements
+traceability, ISO 14971 risk linkage, exhaustive boundary and negative
+test coverage, and SOUP documentation throughout.
+
+### Validation Lifecycle
+
+| Phase | Document | Version | Status |
+|---|---|---|---|
+| Planning | Validation Plan (VP-FHIR-001) | 1.2 | Approved |
+| Requirements | Requirements Specification (RS-FHIR-001) | 1.2 | Approved â 61 requirements |
+| Architecture | Architecture Document (AD-FHIR-001) | 1.1 | Approved |
+| Testing | Test Plan (TP-FHIR-001) | 1.3 | Approved â 77 TCs |
+| Traceability | Traceability Matrix (TM-FHIR-001) | 1.3 | Executed â 100% coverage |
+| Installation | IQ (TQ-FHIR-IQ-001) | 1.3 | **PASS** |
+| Operation | OQ (TQ-FHIR-OQ-001) | 1.2 | **PASS** |
+| Performance | PQ (TQ-FHIR-PQ-001) | 1.3 | **PASS** |
+| Coverage | Gap Analysis (GA-FHIR-001) | 1.0 | Final â 0 gaps |
+| Closure | Validation Summary Report (VA-FHIR-001) | 1.1 | **VALIDATED** |
+
+All documents live in [`docs/`](docs/) and are versioned under
+21 CFR Part 820.40 document control requirements.
+
+### Traceability Chain
+
+```
+RS-FHIR-001 (61 requirements)
+    â TP-FHIR-001 (77 test cases)
+        â Feature files (74 automated scenarios)
+            â CI Run #3 (GitHub Actions execution evidence)
+                â Commit SHA 4458f7dd (immutable audit anchor)
+```
+
+- Forward coverage (requirement â test): 100% â 61/61 requirements covered
+- Backward coverage (test â requirement): 100% â 77/77 TCs mapped
+- Orphaned requirements: 0
+- Orphaned test cases: 0
+
+### Negative Controls
+
+The OQ execution included three negative controls to verify the
+framework correctly detects failures â a requirement under GAMP 5 Â§10.3
+and FDA General Principles of Software Validation Â§4.5. A suite that
+only produces green results is not a validated detection system.
+
+| Control | Purpose | Result |
+|---|---|---|
+| Known false assertion (1 == 2) | Karate detects equality failure | PASS â FAIL correctly reported |
+| Schema match with missing field | Karate detects schema violation | PASS â FAIL correctly reported |
+| Non-conformant FHIR resource | HL7 Validator detects errors | PASS â errors correctly flagged |
+
+---
+
+## For Engineers and Technical Reviewers
+
+### Architecture
+
+```
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+â                    GitHub Actions CI                      â
+â   push to main â Java 17 â mvn test â artifact upload    â
+â   artifacts: karate-report Â· fhir-responses Â· hl7-report â
+âââââââââââââââââââââââââââââ¬âââââââââââââââââââââââââââââââ
+                            â
+               ââââââââââââââ¼âââââââââââââ
+               â    ValidationRunner     â
+               â    JUnit 5 + Karate     â
+               â    parallel(5) threads  â
+               ââââââââââââââ¬âââââââââââââ
+                            â
+          âââââââââââââââââââ¼âââââââââââââââââââ
+          â        11 Feature Directories       â
+          â  capability Â· patient Â· practitionerâ
+          â  allergy Â· observation Â· medication â
+          â  diagnostic Â· audit Â· bundle        â
+          â  common (OperationOutcome + general)â
+          âââââââââââââââââââ¬âââââââââââââââââââ
+                            â
+               ââââââââââââââ¼âââââââââââââ
+               â  FHIR R4 Target Server  â
+               â  configurable via       â
+               â  -DbaseUrl=...          â
+               ââââââââââââââ¬âââââââââââââ
+                            â
+               ââââââââââââââ¼âââââââââââââ
+               â  HL7 FHIR Validator CLI â
+               â  v6.4.0 (pinned)        â
+               â  independent conformanceâ
+               â  layer in CI            â
+               âââââââââââââââââââââââââââ
+```
+
+### Test Design Patterns
+
+**BâC Background pattern** â each feature file's `Background` performs
+a live search (`GET /{Resource}?_count=1`) to extract a real resource ID
+from the target server. All subsequent scenarios in the file operate on
+that resource. No hardcoded IDs â the suite works against any FHIR R4
+server with data.
+
+**Negative test coverage** â every resource type has dedicated negative
+TCs: 404 on nonexistent IDs, 400 on malformed payloads, OperationOutcome
+structure validation. The suite detects non-conformance, not just
+conformance.
+
+**Conditional guards vs. hard assertions** â a deliberate distinction:
+- Hard assertion: resource field must be present regardless of server
+  state (e.g. `patient` on AllergyIntolerance â absence is a conformance
+  failure)
+- Conditional guard: resource type may not exist on the target server
+  (e.g. AuditEvent â absence is environmental, not a conformance failure)
+
+**Response capture** â key responses are written to `target/responses/`
+via `karate.write()` and scanned by the HL7 Validator CLI in CI,
+producing a `fhir-validation-report.json` Bundle of OperationOutcome
+resources â one per scanned file.
+
+### Key Technical Decisions
+
+| Decision | Rationale |
+|---|---|
+| Karate DSL over Postman/Newman | Native schema matching, Java interop, assertion DSL suited to regulatory-grade suites |
+| FHIR R4 over R5 | ONC 21st Century Cures Act and CMS Interoperability Rule mandate R4 in production |
+| HL7 Validator pinned to 6.4.0 | Floating version is a change control violation in regulated context |
+| `classpath:oq` excluded from `ALL_PATHS` | OQ qualifies the test framework itself â merging into the main runner corrupts IQ/OQ/PQ evidence separation |
+| `request {}` in OperationOutcome tests | Empty body fails at FHIR parse layer (HAPI-1843) guaranteeing a 400 with a validation-specific OperationOutcome â a body with `resourceType: Patient` reaches the database and returns 412 |
+| `fhirVersion` regex match | Accepts `4.0.0` and `4.0.1` â hardcoding a patch version breaks portability across valid R4 servers |
+
+### Running the Suite
+
+**Prerequisites:** Java 17 Temurin, Apache Maven 3.9.x
+
+```bash
+# Clone
+git clone https://github.com/Dag86/fhir-validation-suite.git
+cd fhir-validation-suite
+
+# Run against HAPI FHIR sandbox (default)
+mvn test
+
+# Run against any FHIR R4 server
+mvn test -DbaseUrl=https://your.fhir.server/baseR4
+
+# Run against SMART Health IT sandbox
+mvn test -DbaseUrl=https://launch.smarthealthit.org/v/r4/fhir
+
+# Run OQ qualification suite only
+mvn test -Dkarate.options="classpath:oq"
+```
+
+Reports: `target/karate-reports/karate-summary.html`
+
+---
+
+## Quick Start
+
+```bash
+git clone https://github.com/Dag86/fhir-validation-suite.git
+cd fhir-validation-suite
+mvn test
+```
+
+Expected:
+
+```
+scenarios:   74 | passed:    74 | failed: 0
+BUILD SUCCESS
+Total time:  ~02:10 min
+```
+
+---
+
+## Multi-Server Conformance Results
+
+| Server | URL | Result | Notes |
+|---|---|---|---|
+| HAPI FHIR sandbox | `hapi.fhir.org/baseR4` | **74/74 PASS** | Primary validation target |
+| SMART Health IT | `launch.smarthealthit.org/v/r4/fhir` | **73/74** | TC-BUN-002 correctly flags `_total` non-compliance |
+
+TC-BUN-002 failure on SMART Health IT is a **correct conformance
+finding** â the server ignores `_total=accurate` and omits `total` from
+searchset Bundle responses. This is the suite working as designed:
+differentiating compliant from partially compliant server behavior.
+
+---
+
+## Project Structure
+
+```
+fhir-validation-suite/
+âââ src/test/java/fhir/
+â   âââ ValidationRunner.java         # JUnit 5 entry point
+âââ src/test/resources/
+â   âââ karate-config.js              # Configurable baseUrl, fhirVersion, authToken
+â   âââ capability/                   # TC-CAP-001 to 003
+â   âââ patient/                      # TC-PAT-001 to 011
+â   âââ practitioner/                 # TC-PRA-001 to 006
+â   âââ allergy/                      # TC-ALG-001 to 008
+â   âââ observation/                  # TC-OBS-001 to 009
+â   âââ medication/                   # TC-MED-001 to 010
+â   âââ diagnostic/                   # TC-DXR-001 to 007
+â   âââ audit/                        # TC-AUD-001 to 007
+â   âââ bundle/                       # TC-BUN-001 to 007
+â   âââ common/                       # TC-OO-001 to 005, TC-GEN-001
+â   âââ oq/                           # OQ qualification scenarios (5)
+âââ docs/
+â   âââ validation-plan.md            # VP-FHIR-001
+â   âââ requirements-specification.md # RS-FHIR-001
+â   âââ architecture.md               # AD-FHIR-001
+â   âââ test-plan.md                  # TP-FHIR-001
+â   âââ traceability-matrix.md        # TM-FHIR-001
+â   âââ gap-analysis.md               # GA-FHIR-001
+â   âââ validation-summary-report.md  # VA-FHIR-001
+â   âââ qualification/
+â       âââ IQ.md                     # TQ-FHIR-IQ-001
+â       âââ OQ.md                     # TQ-FHIR-OQ-001
+â       âââ PQ.md                     # TQ-FHIR-PQ-001
+âââ .github/workflows/
+â   âââ fhir-validation.yml           # CI pipeline
+âââ CLAUDE.md                         # Project context for AI-assisted development
+âââ pom.xml
+```
+
+---
+
+## Validation Document Package
+
+| Document | Purpose |
+|---|---|
+| [Validation Plan](docs/validation-plan.md) | Scope, approach, risk classification, acceptance criteria |
+| [Requirements Specification](docs/requirements-specification.md) | 61 functional and non-functional requirements |
+| [Architecture Document](docs/architecture.md) | System design, component relationships, SOUP inventory |
+| [Test Plan](docs/test-plan.md) | 77 test cases with risk linkage and coverage rationale |
+| [Traceability Matrix](docs/traceability-matrix.md) | Bidirectional requirements â test case mapping |
+| [IQ](docs/qualification/IQ.md) | Installation qualification â toolchain verification |
+| [OQ](docs/qualification/OQ.md) | Operational qualification â negative control evidence |
+| [PQ](docs/qualification/PQ.md) | Performance qualification â end-to-end execution evidence |
+| [Gap Analysis](docs/gap-analysis.md) | Coverage analysis â 0 gaps confirmed |
+| [Validation Summary Report](docs/validation-summary-report.md) | Formal closure â suite declared VALIDATED |
+
+---
+
+## Regulatory Standards
+
+| Standard | Application |
+|---|---|
+| IEC 62304 | Software lifecycle â Class C classification |
+| ISO 14971 | Risk management â hazard analysis and risk controls |
+| 21 CFR Part 11 | Electronic records and audit trail requirements |
+| 21 CFR Part 820 / QMSR | Quality system â document control per Â§820.40 |
+| GAMP 5 Category 5 | Custom software â full CSV lifecycle |
+| FDA General Principles of Software Validation (2002) | Validation methodology |
+| FDA Computer Software Assurance (2022) | Risk-based validation approach |
+| ONC 21st Century Cures Act | FHIR R4 mandate â rationale for R4 over R5 |
+| CMS Interoperability Rule | FHIR R4 production adoption basis |
+
+---
+
+## Built By
+
+**Amir Choshov** â SDET with 8+ years in regulated software, transitioning
+into healthcare and medical device QA. Background includes 21 CFR Part 11
+compliance on clinical trials platforms.
+
+[LinkedIn](https://www.linkedin.com/in/amirchoshov) Â·
+[GitHub](https://github.com/Dag86)
+
+---
+
+*Validation evidence is anchored to commit
+[`de3c025`](https://github.com/Dag86/fhir-validation-suite/commit/de3c0255187dfb5efe7a348518b0d360aafd95e3).
+All CI artifacts are archived in
+[GitHub Actions](https://github.com/Dag86/fhir-validation-suite/actions).*
