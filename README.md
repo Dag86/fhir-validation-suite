@@ -102,39 +102,18 @@ only produces green results is not a validated detection system.
 
 ### Architecture
 
-```
-------------------------------------------------------------
-|                    GitHub Actions CI                      |
-|   push to main -> Java 17 -> mvn test -> artifact upload    |
-|   artifacts: karate-report  |  fhir-responses  |  hl7-report |
------------------------------+-------------------------------
-                            |
-               --------------+-------------
-               ->    ValidationRunner     |
-               ->    JUnit 5 + Karate     |
-               ->    parallel(5) threads  |
-               --------------+-------------
-                            |
-          -------------------+-------------------
-          ->        11 Feature Directories       |
-          ->  capability  |  patient  |  practitioner|
-          ->  allergy  |  observation  |  medication |
-          ->  diagnostic  |  audit  |  bundle        |
-          ->  common (OperationOutcome + general)|
-          -------------------+-------------------
-                            |
-               --------------+-------------
-               ->  FHIR R4 Target Server  |
-               ->  configurable via       |
-               ->  -DbaseUrl=...          |
-               --------------+-------------
-                            |
-               --------------+-------------
-               ->  HL7 FHIR Validator CLI |
-               ->  v6.4.0 (pinned)        |
-               ->  independent conformance|
-               ->  layer in CI            |
-               ---------------------------
+```mermaid
+flowchart TD
+    A["GitHub Actions CI\npush to main -- Java 17 -- mvn test\nartifacts: karate-report, fhir-responses, hl7-report"]
+    B["ValidationRunner\nJUnit 5 + Karate -- parallel 5 threads"]
+    C["11 Feature Directories\ncapability, patient, practitioner, allergy\nobservation, medication, diagnostic\naudit, bundle, common"]
+    D["FHIR R4 Target Server\nconfigurable via -DbaseUrl=..."]
+    E["HL7 FHIR Validator CLI v6.4.0\npinned -- independent conformance layer in CI"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
 ```
 
 ### Test Design Patterns
