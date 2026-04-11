@@ -1,0 +1,5399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"b01720ba-010a-43c4-9406-cad27a4419ed",karate_version:"1.5.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>audit.audit-event</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">7</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2026-04-11 05:56:38 AM</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:23]"><span>[1:23]</span> <span>TC-AUD-001 | REQ-AUD-001 GET /AuditEvent/{id} returns 200 and resourceType = AuditEvent</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:27]"><span>[2:27]</span> <span>TC-AUD-002 | REQ-AUD-002 type.system and type.code are present</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[3:31]"><span>[3:31]</span> <span>TC-AUD-003 | REQ-AUD-003 recorded timestamp is present</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[4:35]"><span>[4:35]</span> <span>TC-AUD-004 | REQ-AUD-004 agent array is present</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[5:39]"><span>[5:39]</span> <span>TC-AUD-005 | REQ-AUD-005 outcome field is present</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[6:43]"><span>[6:43]</span> <span>TC-AUD-006 | REQ-GEN-001 captured audit-event-read.json exists for HL7 Validator</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[7:47]"><span>[7:47]</span> <span>TC-AUD-007 | REQ-GEN-002b meta.versionId is present</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">audit/audit-event.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">AuditEvent Resource Validation</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:23]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">audit</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:23]</span>
+                <span class="scenario-name">TC-AUD-001 | REQ-AUD-001 GET /AuditEvent/{id} returns 200 and resourceType = AuditEvent</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9997</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:23]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:17.410 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:17.411 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;AuditEvent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _count = &#39;1&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5010</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:56:17.413 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent?_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:22.421 response time in milliseconds: 5007
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:22 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: eARKhQhJIO1xk7Y9
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:56:22 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;2667a3ac-0c47-4e2b-b428-28208d50c6a1&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:56:22.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent?_count=1&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=2667a3ac-0c47-4e2b-b428-28208d50c6a1&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent/121538577&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+      &quot;id&quot;: &quot;121538577&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+        &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+      },
+      &quot;type&quot;: {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+        &quot;code&quot;: &quot;rest&quot;,
+        &quot;display&quot;: &quot;RESTful Operation&quot;
+      },
+      &quot;subtype&quot;: [ {
+        &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+        &quot;code&quot;: &quot;read&quot;,
+        &quot;display&quot;: &quot;read&quot;
+      } ],
+      &quot;action&quot;: &quot;R&quot;,
+      &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+      &quot;outcome&quot;: &quot;0&quot;,
+      &quot;agent&quot;: [ {
+        &quot;type&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+            &quot;code&quot;: &quot;CST&quot;,
+            &quot;display&quot;: &quot;Custodian&quot;
+          } ]
+        },
+        &quot;who&quot;: {
+          &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+        },
+        &quot;requestor&quot;: true
+      } ],
+      &quot;source&quot;: {
+        &quot;observer&quot;: {
+          &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+        }
+      },
+      &quot;entity&quot;: [ {
+        &quot;what&quot;: {
+          &quot;reference&quot;: &quot;Patient/121537908&quot;
+        },
+        &quot;type&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Person&quot;
+        },
+        &quot;role&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Patient&quot;
+        },
+        &quot;detail&quot;: [ {
+          &quot;type&quot;: &quot;receipt_id&quot;,
+          &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+        }, {
+          &quot;type&quot;: &quot;cdt&quot;,
+          &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventAvailable = hasEntry</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventId = hasEntry ? response.entry[0].resource.id : null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.log(&#39;Resolved auditEventId: &#39; + auditEventId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:56:22.425 Resolved auditEventId: 121538577 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD block: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD-001: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.call(&#39;classpath:audit/assert-audit-read.feature&#39;, { auditEventId: auditEventId, baseUrl: baseUrl })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4982</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.25.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">audit.assert-audit-read</div>
+      </div>
+      <div class="time-cell passed">4973</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.25.0.call">
+    <div class="step-container" id="0.25.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.25.0.call">
+    <div class="step-container" id="0.25.0.call.0.5">
+      <div class="step-ref passed">5</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>path &#39;AuditEvent&#39;, auditEventId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.25.0.call">
+    <div class="step-container" id="0.25.0.call.0.6">
+      <div class="step-ref passed">6</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4967</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.25.0.call.0.6">05:56:22.437 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent/121538577
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:27.402 response time in milliseconds: 4964
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:27 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; ETag: W/&quot;1&quot;
+1 &lt; X-Request-ID: i7BEASzRhV7lZIgE
+1 &lt; Content-Location: https://hapi.fhir.org/baseR4/AuditEvent/121538577/_history/1
+1 &lt; Last-Modified: Wed, 11 Feb 2026 18:07:19 GMT
+{
+  &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+  &quot;id&quot;: &quot;121538577&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+    &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+  },
+  &quot;type&quot;: {
+    &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+    &quot;code&quot;: &quot;rest&quot;,
+    &quot;display&quot;: &quot;RESTful Operation&quot;
+  },
+  &quot;subtype&quot;: [ {
+    &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+    &quot;code&quot;: &quot;read&quot;,
+    &quot;display&quot;: &quot;read&quot;
+  } ],
+  &quot;action&quot;: &quot;R&quot;,
+  &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+  &quot;outcome&quot;: &quot;0&quot;,
+  &quot;agent&quot;: [ {
+    &quot;type&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+        &quot;code&quot;: &quot;CST&quot;,
+        &quot;display&quot;: &quot;Custodian&quot;
+      } ]
+    },
+    &quot;who&quot;: {
+      &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+    },
+    &quot;requestor&quot;: true
+  } ],
+  &quot;source&quot;: {
+    &quot;observer&quot;: {
+      &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+    }
+  },
+  &quot;entity&quot;: [ {
+    &quot;what&quot;: {
+      &quot;reference&quot;: &quot;Patient/121537908&quot;
+    },
+    &quot;type&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Person&quot;
+    },
+    &quot;role&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Patient&quot;
+    },
+    &quot;detail&quot;: [ {
+      &quot;type&quot;: &quot;receipt_id&quot;,
+      &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+    }, {
+      &quot;type&quot;: &quot;cdt&quot;,
+      &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.25.0.call">
+    <div class="step-container" id="0.25.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.25.0.call">
+    <div class="step-container" id="0.25.0.call.0.8">
+      <div class="step-ref passed">8</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.resourceType == &#39;AuditEvent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.25.0.call">
+    <div class="step-container" id="0.25.0.call.0.9">
+      <div class="step-ref passed">9</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.write(response, &#39;responses/audit/audit-event-read.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.25.0.call.0.9">05:56:27.408 write to file: target/responses/audit/audit-event-read.json
+</div>   
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:27]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">audit</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:27]</span>
+                <span class="scenario-name">TC-AUD-002 | REQ-AUD-002 type.system and type.code are present</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9981</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:27]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:27]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:18.427 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:18.427 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:27]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;AuditEvent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:27]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _count = &#39;1&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:27]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4985</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:56:18.430 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent?_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:23.413 response time in milliseconds: 4982
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:23 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: 9VRWmoSwyVA82jAQ
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:56:22 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;2667a3ac-0c47-4e2b-b428-28208d50c6a1&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:56:22.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent?_count=1&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=2667a3ac-0c47-4e2b-b428-28208d50c6a1&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent/121538577&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+      &quot;id&quot;: &quot;121538577&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+        &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+      },
+      &quot;type&quot;: {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+        &quot;code&quot;: &quot;rest&quot;,
+        &quot;display&quot;: &quot;RESTful Operation&quot;
+      },
+      &quot;subtype&quot;: [ {
+        &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+        &quot;code&quot;: &quot;read&quot;,
+        &quot;display&quot;: &quot;read&quot;
+      } ],
+      &quot;action&quot;: &quot;R&quot;,
+      &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+      &quot;outcome&quot;: &quot;0&quot;,
+      &quot;agent&quot;: [ {
+        &quot;type&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+            &quot;code&quot;: &quot;CST&quot;,
+            &quot;display&quot;: &quot;Custodian&quot;
+          } ]
+        },
+        &quot;who&quot;: {
+          &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+        },
+        &quot;requestor&quot;: true
+      } ],
+      &quot;source&quot;: {
+        &quot;observer&quot;: {
+          &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+        }
+      },
+      &quot;entity&quot;: [ {
+        &quot;what&quot;: {
+          &quot;reference&quot;: &quot;Patient/121537908&quot;
+        },
+        &quot;type&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Person&quot;
+        },
+        &quot;role&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Patient&quot;
+        },
+        &quot;detail&quot;: [ {
+          &quot;type&quot;: &quot;receipt_id&quot;,
+          &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+        }, {
+          &quot;type&quot;: &quot;cdt&quot;,
+          &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:27]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:27]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:27]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventAvailable = hasEntry</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:27]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventId = hasEntry ? response.entry[0].resource.id : null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:27]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.log(&#39;Resolved auditEventId: &#39; + auditEventId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:56:23.418 Resolved auditEventId: 121538577 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:27]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD block: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD-002: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.29">
+      <div class="step-ref passed">29</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.call(&#39;classpath:audit/assert-audit-type.feature&#39;, { auditEventId: auditEventId, baseUrl: baseUrl })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4990</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.29.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">audit.assert-audit-type</div>
+      </div>
+      <div class="time-cell passed">4982</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.5">
+      <div class="step-ref passed">5</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.6">
+      <div class="step-ref passed">6</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>path &#39;AuditEvent&#39;, auditEventId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4975</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.29.0.call.0.7">05:56:23.428 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent/121538577
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:28.401 response time in milliseconds: 4972
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:28 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; ETag: W/&quot;1&quot;
+1 &lt; X-Request-ID: RZctZti9ZqdEXE5O
+1 &lt; Content-Location: https://hapi.fhir.org/baseR4/AuditEvent/121538577/_history/1
+1 &lt; Last-Modified: Wed, 11 Feb 2026 18:07:19 GMT
+{
+  &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+  &quot;id&quot;: &quot;121538577&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+    &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+  },
+  &quot;type&quot;: {
+    &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+    &quot;code&quot;: &quot;rest&quot;,
+    &quot;display&quot;: &quot;RESTful Operation&quot;
+  },
+  &quot;subtype&quot;: [ {
+    &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+    &quot;code&quot;: &quot;read&quot;,
+    &quot;display&quot;: &quot;read&quot;
+  } ],
+  &quot;action&quot;: &quot;R&quot;,
+  &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+  &quot;outcome&quot;: &quot;0&quot;,
+  &quot;agent&quot;: [ {
+    &quot;type&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+        &quot;code&quot;: &quot;CST&quot;,
+        &quot;display&quot;: &quot;Custodian&quot;
+      } ]
+    },
+    &quot;who&quot;: {
+      &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+    },
+    &quot;requestor&quot;: true
+  } ],
+  &quot;source&quot;: {
+    &quot;observer&quot;: {
+      &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+    }
+  },
+  &quot;entity&quot;: [ {
+    &quot;what&quot;: {
+      &quot;reference&quot;: &quot;Patient/121537908&quot;
+    },
+    &quot;type&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Person&quot;
+    },
+    &quot;role&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Patient&quot;
+    },
+    &quot;detail&quot;: [ {
+      &quot;type&quot;: &quot;receipt_id&quot;,
+      &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+    }, {
+      &quot;type&quot;: &quot;cdt&quot;,
+      &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.8">
+      <div class="step-ref passed">8</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.9">
+      <div class="step-ref passed">9</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.type == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.10">
+      <div class="step-ref passed">10</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def typeIsArray = response.type instanceof Array</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.11">
+      <div class="step-ref passed">11</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def typeSystem = typeIsArray ? response.type[0].system : response.type.system</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.12">
+      <div class="step-ref passed">12</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def typeCode = typeIsArray ? response.type[0].code : response.type.code</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.13">
+      <div class="step-ref passed">13</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match typeSystem == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.14">
+      <div class="step-ref passed">14</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match typeCode == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.15">
+      <div class="step-ref passed">15</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;type.system: &#39; + typeSystem)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.29.0.call.0.15">05:56:28.408 type.system: http://terminology.hl7.org/CodeSystem/audit-event-type 
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.29.0.call">
+    <div class="step-container" id="0.29.0.call.0.16">
+      <div class="step-ref passed">16</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;type.code: &#39; + typeCode)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.29.0.call.0.16">05:56:28.409 type.code: rest 
+</div>   
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:31]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">audit</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:31]</span>
+                <span class="scenario-name">TC-AUD-003 | REQ-AUD-003 recorded timestamp is present</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9968</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:31]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:31]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:20.432 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:20.432 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:31]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;AuditEvent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:31]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _count = &#39;1&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:31]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4985</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:56:20.435 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent?_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:25.418 response time in milliseconds: 4982
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:25 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: ZNY5tQpJzQf1HY4I
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:56:22 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;2667a3ac-0c47-4e2b-b428-28208d50c6a1&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:56:22.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent?_count=1&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=2667a3ac-0c47-4e2b-b428-28208d50c6a1&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent/121538577&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+      &quot;id&quot;: &quot;121538577&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+        &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+      },
+      &quot;type&quot;: {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+        &quot;code&quot;: &quot;rest&quot;,
+        &quot;display&quot;: &quot;RESTful Operation&quot;
+      },
+      &quot;subtype&quot;: [ {
+        &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+        &quot;code&quot;: &quot;read&quot;,
+        &quot;display&quot;: &quot;read&quot;
+      } ],
+      &quot;action&quot;: &quot;R&quot;,
+      &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+      &quot;outcome&quot;: &quot;0&quot;,
+      &quot;agent&quot;: [ {
+        &quot;type&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+            &quot;code&quot;: &quot;CST&quot;,
+            &quot;display&quot;: &quot;Custodian&quot;
+          } ]
+        },
+        &quot;who&quot;: {
+          &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+        },
+        &quot;requestor&quot;: true
+      } ],
+      &quot;source&quot;: {
+        &quot;observer&quot;: {
+          &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+        }
+      },
+      &quot;entity&quot;: [ {
+        &quot;what&quot;: {
+          &quot;reference&quot;: &quot;Patient/121537908&quot;
+        },
+        &quot;type&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Person&quot;
+        },
+        &quot;role&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Patient&quot;
+        },
+        &quot;detail&quot;: [ {
+          &quot;type&quot;: &quot;receipt_id&quot;,
+          &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+        }, {
+          &quot;type&quot;: &quot;cdt&quot;,
+          &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:31]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:31]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:31]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventAvailable = hasEntry</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:31]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventId = hasEntry ? response.entry[0].resource.id : null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:31]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.log(&#39;Resolved auditEventId: &#39; + auditEventId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:56:25.423 Resolved auditEventId: 121538577 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:31]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD block: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD-003: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.call(&#39;classpath:audit/assert-audit-recorded.feature&#39;, { auditEventId: auditEventId, baseUrl: baseUrl })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4978</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.33.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">audit.assert-audit-recorded</div>
+      </div>
+      <div class="time-cell passed">4971</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.33.0.call">
+    <div class="step-container" id="0.33.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.33.0.call">
+    <div class="step-container" id="0.33.0.call.0.5">
+      <div class="step-ref passed">5</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>path &#39;AuditEvent&#39;, auditEventId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.33.0.call">
+    <div class="step-container" id="0.33.0.call.0.6">
+      <div class="step-ref passed">6</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4968</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.33.0.call.0.6">05:56:25.432 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent/121538577
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:30.399 response time in milliseconds: 4966
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:30 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; ETag: W/&quot;1&quot;
+1 &lt; X-Request-ID: fKAPlCD4xMll0lul
+1 &lt; Content-Location: https://hapi.fhir.org/baseR4/AuditEvent/121538577/_history/1
+1 &lt; Last-Modified: Wed, 11 Feb 2026 18:07:19 GMT
+{
+  &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+  &quot;id&quot;: &quot;121538577&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+    &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+  },
+  &quot;type&quot;: {
+    &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+    &quot;code&quot;: &quot;rest&quot;,
+    &quot;display&quot;: &quot;RESTful Operation&quot;
+  },
+  &quot;subtype&quot;: [ {
+    &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+    &quot;code&quot;: &quot;read&quot;,
+    &quot;display&quot;: &quot;read&quot;
+  } ],
+  &quot;action&quot;: &quot;R&quot;,
+  &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+  &quot;outcome&quot;: &quot;0&quot;,
+  &quot;agent&quot;: [ {
+    &quot;type&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+        &quot;code&quot;: &quot;CST&quot;,
+        &quot;display&quot;: &quot;Custodian&quot;
+      } ]
+    },
+    &quot;who&quot;: {
+      &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+    },
+    &quot;requestor&quot;: true
+  } ],
+  &quot;source&quot;: {
+    &quot;observer&quot;: {
+      &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+    }
+  },
+  &quot;entity&quot;: [ {
+    &quot;what&quot;: {
+      &quot;reference&quot;: &quot;Patient/121537908&quot;
+    },
+    &quot;type&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Person&quot;
+    },
+    &quot;role&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Patient&quot;
+    },
+    &quot;detail&quot;: [ {
+      &quot;type&quot;: &quot;receipt_id&quot;,
+      &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+    }, {
+      &quot;type&quot;: &quot;cdt&quot;,
+      &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.33.0.call">
+    <div class="step-container" id="0.33.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.33.0.call">
+    <div class="step-container" id="0.33.0.call.0.8">
+      <div class="step-ref passed">8</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.recorded == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.33.0.call">
+    <div class="step-container" id="0.33.0.call.0.9">
+      <div class="step-ref passed">9</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;recorded: &#39; + response.recorded)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.33.0.call.0.9">05:56:30.402 recorded: 2026-02-11T18:07:16Z 
+</div>   
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4:35]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">audit</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4:35]</span>
+                <span class="scenario-name">TC-AUD-004 | REQ-AUD-004 agent array is present</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9983</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4:35]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4:35]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:24.419 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:24.420 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:35]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;AuditEvent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:35]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _count = &#39;1&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:35]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4995</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:56:24.422 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent?_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:29.415 response time in milliseconds: 4993
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:29 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: TvMTc3PCd82caN2t
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:56:22 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;2667a3ac-0c47-4e2b-b428-28208d50c6a1&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:56:22.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent?_count=1&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=2667a3ac-0c47-4e2b-b428-28208d50c6a1&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent/121538577&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+      &quot;id&quot;: &quot;121538577&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+        &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+      },
+      &quot;type&quot;: {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+        &quot;code&quot;: &quot;rest&quot;,
+        &quot;display&quot;: &quot;RESTful Operation&quot;
+      },
+      &quot;subtype&quot;: [ {
+        &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+        &quot;code&quot;: &quot;read&quot;,
+        &quot;display&quot;: &quot;read&quot;
+      } ],
+      &quot;action&quot;: &quot;R&quot;,
+      &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+      &quot;outcome&quot;: &quot;0&quot;,
+      &quot;agent&quot;: [ {
+        &quot;type&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+            &quot;code&quot;: &quot;CST&quot;,
+            &quot;display&quot;: &quot;Custodian&quot;
+          } ]
+        },
+        &quot;who&quot;: {
+          &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+        },
+        &quot;requestor&quot;: true
+      } ],
+      &quot;source&quot;: {
+        &quot;observer&quot;: {
+          &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+        }
+      },
+      &quot;entity&quot;: [ {
+        &quot;what&quot;: {
+          &quot;reference&quot;: &quot;Patient/121537908&quot;
+        },
+        &quot;type&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Person&quot;
+        },
+        &quot;role&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Patient&quot;
+        },
+        &quot;detail&quot;: [ {
+          &quot;type&quot;: &quot;receipt_id&quot;,
+          &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+        }, {
+          &quot;type&quot;: &quot;cdt&quot;,
+          &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:35]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:35]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:35]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventAvailable = hasEntry</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:35]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventId = hasEntry ? response.entry[0].resource.id : null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:35]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.log(&#39;Resolved auditEventId: &#39; + auditEventId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:56:29.419 Resolved auditEventId: 121538577 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:35]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD block: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.36">
+      <div class="step-ref passed">36</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD-004: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.call(&#39;classpath:audit/assert-audit-agent.feature&#39;, { auditEventId: auditEventId, baseUrl: baseUrl })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4984</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.37.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">audit.assert-audit-agent</div>
+      </div>
+      <div class="time-cell passed">4978</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.37.0.call">
+    <div class="step-container" id="0.37.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.37.0.call">
+    <div class="step-container" id="0.37.0.call.0.5">
+      <div class="step-ref passed">5</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>path &#39;AuditEvent&#39;, auditEventId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.37.0.call">
+    <div class="step-container" id="0.37.0.call.0.6">
+      <div class="step-ref passed">6</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4975</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.37.0.call.0.6">05:56:29.426 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent/121538577
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:34.400 response time in milliseconds: 4973
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:34 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; ETag: W/&quot;1&quot;
+1 &lt; X-Request-ID: WVjLLpeFu1qaF5xa
+1 &lt; Content-Location: https://hapi.fhir.org/baseR4/AuditEvent/121538577/_history/1
+1 &lt; Last-Modified: Wed, 11 Feb 2026 18:07:19 GMT
+{
+  &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+  &quot;id&quot;: &quot;121538577&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+    &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+  },
+  &quot;type&quot;: {
+    &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+    &quot;code&quot;: &quot;rest&quot;,
+    &quot;display&quot;: &quot;RESTful Operation&quot;
+  },
+  &quot;subtype&quot;: [ {
+    &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+    &quot;code&quot;: &quot;read&quot;,
+    &quot;display&quot;: &quot;read&quot;
+  } ],
+  &quot;action&quot;: &quot;R&quot;,
+  &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+  &quot;outcome&quot;: &quot;0&quot;,
+  &quot;agent&quot;: [ {
+    &quot;type&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+        &quot;code&quot;: &quot;CST&quot;,
+        &quot;display&quot;: &quot;Custodian&quot;
+      } ]
+    },
+    &quot;who&quot;: {
+      &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+    },
+    &quot;requestor&quot;: true
+  } ],
+  &quot;source&quot;: {
+    &quot;observer&quot;: {
+      &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+    }
+  },
+  &quot;entity&quot;: [ {
+    &quot;what&quot;: {
+      &quot;reference&quot;: &quot;Patient/121537908&quot;
+    },
+    &quot;type&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Person&quot;
+    },
+    &quot;role&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Patient&quot;
+    },
+    &quot;detail&quot;: [ {
+      &quot;type&quot;: &quot;receipt_id&quot;,
+      &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+    }, {
+      &quot;type&quot;: &quot;cdt&quot;,
+      &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.37.0.call">
+    <div class="step-container" id="0.37.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.37.0.call">
+    <div class="step-container" id="0.37.0.call.0.8">
+      <div class="step-ref passed">8</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.agent == &#39;#[_ &gt; 0]&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.37.0.call">
+    <div class="step-container" id="0.37.0.call.0.9">
+      <div class="step-ref passed">9</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;agent count: &#39; + response.agent.length)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.37.0.call.0.9">05:56:34.403 agent count: 1 
+</div>   
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[5:39]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">audit</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[5:39]</span>
+                <span class="scenario-name">TC-AUD-005 | REQ-AUD-005 outcome field is present</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9985</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[5:39]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[5:39]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:26.420 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:26.420 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:39]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;AuditEvent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:39]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _count = &#39;1&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:39]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4993</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:56:26.422 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent?_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:31.414 response time in milliseconds: 4991
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:31 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: INhJceBORSTeiXqZ
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:56:22 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;2667a3ac-0c47-4e2b-b428-28208d50c6a1&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:56:22.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent?_count=1&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=2667a3ac-0c47-4e2b-b428-28208d50c6a1&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent/121538577&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+      &quot;id&quot;: &quot;121538577&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+        &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+      },
+      &quot;type&quot;: {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+        &quot;code&quot;: &quot;rest&quot;,
+        &quot;display&quot;: &quot;RESTful Operation&quot;
+      },
+      &quot;subtype&quot;: [ {
+        &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+        &quot;code&quot;: &quot;read&quot;,
+        &quot;display&quot;: &quot;read&quot;
+      } ],
+      &quot;action&quot;: &quot;R&quot;,
+      &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+      &quot;outcome&quot;: &quot;0&quot;,
+      &quot;agent&quot;: [ {
+        &quot;type&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+            &quot;code&quot;: &quot;CST&quot;,
+            &quot;display&quot;: &quot;Custodian&quot;
+          } ]
+        },
+        &quot;who&quot;: {
+          &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+        },
+        &quot;requestor&quot;: true
+      } ],
+      &quot;source&quot;: {
+        &quot;observer&quot;: {
+          &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+        }
+      },
+      &quot;entity&quot;: [ {
+        &quot;what&quot;: {
+          &quot;reference&quot;: &quot;Patient/121537908&quot;
+        },
+        &quot;type&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Person&quot;
+        },
+        &quot;role&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Patient&quot;
+        },
+        &quot;detail&quot;: [ {
+          &quot;type&quot;: &quot;receipt_id&quot;,
+          &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+        }, {
+          &quot;type&quot;: &quot;cdt&quot;,
+          &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:39]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:39]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:39]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventAvailable = hasEntry</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:39]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventId = hasEntry ? response.entry[0].resource.id : null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:39]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.log(&#39;Resolved auditEventId: &#39; + auditEventId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:56:31.417 Resolved auditEventId: 121538577 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:39]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD block: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.40">
+      <div class="step-ref passed">40</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD-005: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.41">
+      <div class="step-ref passed">41</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.call(&#39;classpath:audit/assert-audit-outcome.feature&#39;, { auditEventId: auditEventId, baseUrl: baseUrl })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4988</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.41.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">audit.assert-audit-outcome</div>
+      </div>
+      <div class="time-cell passed">4983</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.41.0.call">
+    <div class="step-container" id="0.41.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.41.0.call">
+    <div class="step-container" id="0.41.0.call.0.5">
+      <div class="step-ref passed">5</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>path &#39;AuditEvent&#39;, auditEventId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.41.0.call">
+    <div class="step-container" id="0.41.0.call.0.6">
+      <div class="step-ref passed">6</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4981</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.41.0.call.0.6">05:56:31.424 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent/121538577
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:36.404 response time in milliseconds: 4979
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:36 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; ETag: W/&quot;1&quot;
+1 &lt; X-Request-ID: 7FWOWnKwopraoqjY
+1 &lt; Content-Location: https://hapi.fhir.org/baseR4/AuditEvent/121538577/_history/1
+1 &lt; Last-Modified: Wed, 11 Feb 2026 18:07:19 GMT
+{
+  &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+  &quot;id&quot;: &quot;121538577&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+    &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+  },
+  &quot;type&quot;: {
+    &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+    &quot;code&quot;: &quot;rest&quot;,
+    &quot;display&quot;: &quot;RESTful Operation&quot;
+  },
+  &quot;subtype&quot;: [ {
+    &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+    &quot;code&quot;: &quot;read&quot;,
+    &quot;display&quot;: &quot;read&quot;
+  } ],
+  &quot;action&quot;: &quot;R&quot;,
+  &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+  &quot;outcome&quot;: &quot;0&quot;,
+  &quot;agent&quot;: [ {
+    &quot;type&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+        &quot;code&quot;: &quot;CST&quot;,
+        &quot;display&quot;: &quot;Custodian&quot;
+      } ]
+    },
+    &quot;who&quot;: {
+      &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+    },
+    &quot;requestor&quot;: true
+  } ],
+  &quot;source&quot;: {
+    &quot;observer&quot;: {
+      &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+    }
+  },
+  &quot;entity&quot;: [ {
+    &quot;what&quot;: {
+      &quot;reference&quot;: &quot;Patient/121537908&quot;
+    },
+    &quot;type&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Person&quot;
+    },
+    &quot;role&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Patient&quot;
+    },
+    &quot;detail&quot;: [ {
+      &quot;type&quot;: &quot;receipt_id&quot;,
+      &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+    }, {
+      &quot;type&quot;: &quot;cdt&quot;,
+      &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.41.0.call">
+    <div class="step-container" id="0.41.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.41.0.call">
+    <div class="step-container" id="0.41.0.call.0.8">
+      <div class="step-ref passed">8</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.outcome == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.41.0.call">
+    <div class="step-container" id="0.41.0.call.0.9">
+      <div class="step-ref passed">9</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;outcome: &#39; + response.outcome)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.41.0.call.0.9">05:56:36.406 outcome: 0 
+</div>   
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[6:43]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">audit</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[6:43]</span>
+                <span class="scenario-name">TC-AUD-006 | REQ-GEN-001 captured audit-event-read.json exists for HL7 Validator</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9990</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[6:43]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[6:43]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:27.414 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:27.415 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:43]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;AuditEvent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:43]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _count = &#39;1&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:43]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4997</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:56:27.416 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent?_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:32.412 response time in milliseconds: 4995
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:32 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: eN0WIbIcLAUZhmOZ
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:56:22 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;2667a3ac-0c47-4e2b-b428-28208d50c6a1&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:56:22.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent?_count=1&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=2667a3ac-0c47-4e2b-b428-28208d50c6a1&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent/121538577&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+      &quot;id&quot;: &quot;121538577&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+        &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+      },
+      &quot;type&quot;: {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+        &quot;code&quot;: &quot;rest&quot;,
+        &quot;display&quot;: &quot;RESTful Operation&quot;
+      },
+      &quot;subtype&quot;: [ {
+        &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+        &quot;code&quot;: &quot;read&quot;,
+        &quot;display&quot;: &quot;read&quot;
+      } ],
+      &quot;action&quot;: &quot;R&quot;,
+      &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+      &quot;outcome&quot;: &quot;0&quot;,
+      &quot;agent&quot;: [ {
+        &quot;type&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+            &quot;code&quot;: &quot;CST&quot;,
+            &quot;display&quot;: &quot;Custodian&quot;
+          } ]
+        },
+        &quot;who&quot;: {
+          &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+        },
+        &quot;requestor&quot;: true
+      } ],
+      &quot;source&quot;: {
+        &quot;observer&quot;: {
+          &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+        }
+      },
+      &quot;entity&quot;: [ {
+        &quot;what&quot;: {
+          &quot;reference&quot;: &quot;Patient/121537908&quot;
+        },
+        &quot;type&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Person&quot;
+        },
+        &quot;role&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Patient&quot;
+        },
+        &quot;detail&quot;: [ {
+          &quot;type&quot;: &quot;receipt_id&quot;,
+          &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+        }, {
+          &quot;type&quot;: &quot;cdt&quot;,
+          &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:43]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:43]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:43]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventAvailable = hasEntry</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:43]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventId = hasEntry ? response.entry[0].resource.id : null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:43]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.log(&#39;Resolved auditEventId: &#39; + auditEventId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:56:32.415 Resolved auditEventId: 121538577 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:43]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD block: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.44">
+      <div class="step-ref passed">44</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD-006: SKIP — no AuditEvent captured, server returned no resources&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.45">
+      <div class="step-ref passed">45</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.call(&#39;classpath:audit/assert-audit-capture.feature&#39;, { auditEventId: auditEventId, baseUrl: baseUrl })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4990</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.45.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">audit.assert-audit-capture</div>
+      </div>
+      <div class="time-cell passed">4985</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.45.0.call">
+    <div class="step-container" id="0.45.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.45.0.call">
+    <div class="step-container" id="0.45.0.call.0.5">
+      <div class="step-ref passed">5</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>path &#39;AuditEvent&#39;, auditEventId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.45.0.call">
+    <div class="step-container" id="0.45.0.call.0.6">
+      <div class="step-ref passed">6</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4980</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.45.0.call.0.6">05:56:32.422 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent/121538577
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:37.401 response time in milliseconds: 4978
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:37 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; ETag: W/&quot;1&quot;
+1 &lt; X-Request-ID: mifSsNHcbeng3JkD
+1 &lt; Content-Location: https://hapi.fhir.org/baseR4/AuditEvent/121538577/_history/1
+1 &lt; Last-Modified: Wed, 11 Feb 2026 18:07:19 GMT
+{
+  &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+  &quot;id&quot;: &quot;121538577&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+    &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+  },
+  &quot;type&quot;: {
+    &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+    &quot;code&quot;: &quot;rest&quot;,
+    &quot;display&quot;: &quot;RESTful Operation&quot;
+  },
+  &quot;subtype&quot;: [ {
+    &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+    &quot;code&quot;: &quot;read&quot;,
+    &quot;display&quot;: &quot;read&quot;
+  } ],
+  &quot;action&quot;: &quot;R&quot;,
+  &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+  &quot;outcome&quot;: &quot;0&quot;,
+  &quot;agent&quot;: [ {
+    &quot;type&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+        &quot;code&quot;: &quot;CST&quot;,
+        &quot;display&quot;: &quot;Custodian&quot;
+      } ]
+    },
+    &quot;who&quot;: {
+      &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+    },
+    &quot;requestor&quot;: true
+  } ],
+  &quot;source&quot;: {
+    &quot;observer&quot;: {
+      &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+    }
+  },
+  &quot;entity&quot;: [ {
+    &quot;what&quot;: {
+      &quot;reference&quot;: &quot;Patient/121537908&quot;
+    },
+    &quot;type&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Person&quot;
+    },
+    &quot;role&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Patient&quot;
+    },
+    &quot;detail&quot;: [ {
+      &quot;type&quot;: &quot;receipt_id&quot;,
+      &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+    }, {
+      &quot;type&quot;: &quot;cdt&quot;,
+      &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.45.0.call">
+    <div class="step-container" id="0.45.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.45.0.call">
+    <div class="step-container" id="0.45.0.call.0.8">
+      <div class="step-ref passed">8</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.write(response, &#39;responses/audit/audit-event-read.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.45.0.call.0.8">05:56:37.403 write to file: target/responses/audit/audit-event-read.json
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.45.0.call">
+    <div class="step-container" id="0.45.0.call.0.9">
+      <div class="step-ref passed">9</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def fileExists = java.nio.file.Files.exists(java.nio.file.Paths.get(&#39;target/responses/audit/audit-event-read.json&#39;))</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.45.0.call">
+    <div class="step-container" id="0.45.0.call.0.10">
+      <div class="step-ref passed">10</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>assert fileExists == true</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[7:47]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">audit</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[7:47]</span>
+                <span class="scenario-name">TC-AUD-007 | REQ-GEN-002b meta.versionId is present</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9987</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[7:47]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[7:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:28.414 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:28.414 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;AuditEvent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _count = &#39;1&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5001</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:56:28.416 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent?_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:33.416 response time in milliseconds: 4999
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:33 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: EIoKBdQlSXWSPKlV
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:56:22 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;2667a3ac-0c47-4e2b-b428-28208d50c6a1&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:56:22.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent?_count=1&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=2667a3ac-0c47-4e2b-b428-28208d50c6a1&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AuditEvent/121538577&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+      &quot;id&quot;: &quot;121538577&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+        &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+      },
+      &quot;type&quot;: {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+        &quot;code&quot;: &quot;rest&quot;,
+        &quot;display&quot;: &quot;RESTful Operation&quot;
+      },
+      &quot;subtype&quot;: [ {
+        &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+        &quot;code&quot;: &quot;read&quot;,
+        &quot;display&quot;: &quot;read&quot;
+      } ],
+      &quot;action&quot;: &quot;R&quot;,
+      &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+      &quot;outcome&quot;: &quot;0&quot;,
+      &quot;agent&quot;: [ {
+        &quot;type&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+            &quot;code&quot;: &quot;CST&quot;,
+            &quot;display&quot;: &quot;Custodian&quot;
+          } ]
+        },
+        &quot;who&quot;: {
+          &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+        },
+        &quot;requestor&quot;: true
+      } ],
+      &quot;source&quot;: {
+        &quot;observer&quot;: {
+          &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+        }
+      },
+      &quot;entity&quot;: [ {
+        &quot;what&quot;: {
+          &quot;reference&quot;: &quot;Patient/121537908&quot;
+        },
+        &quot;type&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Person&quot;
+        },
+        &quot;role&quot;: {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+          &quot;code&quot;: &quot;1&quot;,
+          &quot;display&quot;: &quot;Patient&quot;
+        },
+        &quot;detail&quot;: [ {
+          &quot;type&quot;: &quot;receipt_id&quot;,
+          &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+        }, {
+          &quot;type&quot;: &quot;cdt&quot;,
+          &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventAvailable = hasEntry</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def auditEventId = hasEntry ? response.entry[0].resource.id : null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.log(&#39;Resolved auditEventId: &#39; + auditEventId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:56:33.418 Resolved auditEventId: 121538577 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD block: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!auditEventAvailable) karate.log(&#39;TC-AUD-007: SKIP — no AuditEvent resources on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (auditEventAvailable) karate.call(&#39;classpath:audit/assert-audit-version.feature&#39;, { auditEventId: auditEventId, baseUrl: baseUrl })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4983</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.49.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">audit.assert-audit-version</div>
+      </div>
+      <div class="time-cell passed">4978</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.49.0.call">
+    <div class="step-container" id="0.49.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.49.0.call">
+    <div class="step-container" id="0.49.0.call.0.5">
+      <div class="step-ref passed">5</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>path &#39;AuditEvent&#39;, auditEventId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.49.0.call">
+    <div class="step-container" id="0.49.0.call.0.6">
+      <div class="step-ref passed">6</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4977</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.49.0.call.0.6">05:56:33.425 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/AuditEvent/121538577
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:38.401 response time in milliseconds: 4975
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:38 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; ETag: W/&quot;1&quot;
+1 &lt; X-Request-ID: ejDPR8atLCUp9tAK
+1 &lt; Content-Location: https://hapi.fhir.org/baseR4/AuditEvent/121538577/_history/1
+1 &lt; Last-Modified: Wed, 11 Feb 2026 18:07:19 GMT
+{
+  &quot;resourceType&quot;: &quot;AuditEvent&quot;,
+  &quot;id&quot;: &quot;121538577&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-11T18:07:19.357+00:00&quot;,
+    &quot;source&quot;: &quot;#E5nvD1zU87MuFOWe&quot;
+  },
+  &quot;type&quot;: {
+    &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-event-type&quot;,
+    &quot;code&quot;: &quot;rest&quot;,
+    &quot;display&quot;: &quot;RESTful Operation&quot;
+  },
+  &quot;subtype&quot;: [ {
+    &quot;system&quot;: &quot;http://hl7.org/fhir/restful-interaction&quot;,
+    &quot;code&quot;: &quot;read&quot;,
+    &quot;display&quot;: &quot;read&quot;
+  } ],
+  &quot;action&quot;: &quot;R&quot;,
+  &quot;recorded&quot;: &quot;2026-02-11T18:07:16Z&quot;,
+  &quot;outcome&quot;: &quot;0&quot;,
+  &quot;agent&quot;: [ {
+    &quot;type&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ParticipationType&quot;,
+        &quot;code&quot;: &quot;CST&quot;,
+        &quot;display&quot;: &quot;Custodian&quot;
+      } ]
+    },
+    &quot;who&quot;: {
+      &quot;display&quot;: &quot;Rail FHIR Agent&quot;
+    },
+    &quot;requestor&quot;: true
+  } ],
+  &quot;source&quot;: {
+    &quot;observer&quot;: {
+      &quot;display&quot;: &quot;Juggernaut Rail Platform&quot;
+    }
+  },
+  &quot;entity&quot;: [ {
+    &quot;what&quot;: {
+      &quot;reference&quot;: &quot;Patient/121537908&quot;
+    },
+    &quot;type&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/audit-entity-type&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Person&quot;
+    },
+    &quot;role&quot;: {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/object-role&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;display&quot;: &quot;Patient&quot;
+    },
+    &quot;detail&quot;: [ {
+      &quot;type&quot;: &quot;receipt_id&quot;,
+      &quot;valueString&quot;: &quot;9cce92a2a63c6c4f&quot;
+    }, {
+      &quot;type&quot;: &quot;cdt&quot;,
+      &quot;valueString&quot;: &quot;7b18d26bcbdf8b02bd779080a844aeb44cb432c8d13205f9903ded0959236b52&quot;
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.49.0.call">
+    <div class="step-container" id="0.49.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.49.0.call">
+    <div class="step-container" id="0.49.0.call.0.8">
+      <div class="step-ref passed">8</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.meta.versionId == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.49.0.call">
+    <div class="step-container" id="0.49.0.call.0.9">
+      <div class="step-ref passed">9</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;meta.versionId: &#39; + response.meta.versionId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.49.0.call.0.9">05:56:38.402 meta.versionId: 1 
+</div>   
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

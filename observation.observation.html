@@ -1,0 +1,5240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"b01720ba-010a-43c4-9406-cad27a4419ed",karate_version:"1.5.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>observation.observation</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">9</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2026-04-11 05:57:41 AM</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:22]"><span>[1:22]</span> <span>TC-OBS-001 | REQ-OBS-001 GET /Observation/{id} returns 200 and resourceType = Observation</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:29]"><span>[2:29]</span> <span>TC-OBS-002 | REQ-OBS-002 status is a valid ObservationStatus value</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[3:36]"><span>[3:36]</span> <span>TC-OBS-003 | REQ-OBS-003 code.coding has system and code</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[4:47]"><span>[4:47]</span> <span>TC-OBS-004 | REQ-OBS-004 valueQuantity has value and unit (conditional)</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[5:57]"><span>[5:57]</span> <span>TC-OBS-005 | REQ-OBS-005 subject references Patient</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[6:66]"><span>[6:66]</span> <span>TC-OBS-006 | REQ-OBS-006 | REQ-GEN-002a meta.lastUpdated is present</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[7:73]"><span>[7:73]</span> <span>TC-OBS-007 | REQ-OBS-007 | REQ-OO-001 non-existent ID returns 404 and OperationOutcome</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[8:82]"><span>[8:82]</span> <span>TC-OBS-008 | REQ-GEN-001 captured observation-read.json exists for HL7 Validator</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[9:87]"><span>[9:87]</span> <span>TC-OBS-009 | REQ-GEN-002b meta.versionId is present</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">observation/observation.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Observation Resource Validation</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:22]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">observation</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:22]</span>
+                <span class="scenario-name">TC-OBS-001 | REQ-OBS-001 GET /Observation/{id} returns 200 and resourceType = Observation</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>10004</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:22]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:22]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">05:57:14.403 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:14.403 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:22]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:22]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:22]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5018</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.17">05:57:14.404 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Observation?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:19.422 response time in milliseconds: 5017
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:19 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: H8fHQYJQeJSu02cO
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:19 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;b15d6eae-713c-4cfd-9aa9-af211c102b61&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:19.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Observation?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=b15d6eae-713c-4cfd-9aa9-af211c102b61&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Observation/131289234&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;131289234&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;2&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+        &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+        &quot;tag&quot;: [ {
+          &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+          &quot;code&quot;: &quot;EX20&quot;
+        } ]
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;category&quot;: [ {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+          &quot;code&quot;: &quot;vital-signs&quot;,
+          &quot;display&quot;: &quot;Vital Signs&quot;
+        } ],
+        &quot;text&quot;: &quot;Vital Signs&quot;
+      } ],
+      &quot;code&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://loinc.org&quot;,
+          &quot;code&quot;: &quot;29463-7&quot;,
+          &quot;display&quot;: &quot;Body weight&quot;
+        } ],
+        &quot;text&quot;: &quot;Body weight&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      },
+      &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+      &quot;performer&quot;: [ {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      } ],
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 70,
+        &quot;unit&quot;: &quot;Kg&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;kg&quot;
+      }
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:22]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:22]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def observationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:22]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved observationId: &#39; + observationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:57:19.423 Resolved observationId: 131289234 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.23">
+      <div class="step-ref passed">23</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;, observationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4982</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.24">05:57:19.424 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/Observation/131289234
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:24.405 response time in milliseconds: 4980
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:24 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;2&quot;
+2 &lt; X-Request-ID: UKkg3EC9tpNnrzbo
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/Observation/131289234/_history/2
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:06:09 GMT
+{
+  &quot;resourceType&quot;: &quot;Observation&quot;,
+  &quot;id&quot;: &quot;131289234&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;2&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+    &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+    &quot;tag&quot;: [ {
+      &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+      &quot;code&quot;: &quot;EX20&quot;
+    } ]
+  },
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+  },
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;category&quot;: [ {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+      &quot;code&quot;: &quot;vital-signs&quot;,
+      &quot;display&quot;: &quot;Vital Signs&quot;
+    } ],
+    &quot;text&quot;: &quot;Vital Signs&quot;
+  } ],
+  &quot;code&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://loinc.org&quot;,
+      &quot;code&quot;: &quot;29463-7&quot;,
+      &quot;display&quot;: &quot;Body weight&quot;
+    } ],
+    &quot;text&quot;: &quot;Body weight&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  },
+  &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+  &quot;performer&quot;: [ {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  } ],
+  &quot;valueQuantity&quot;: {
+    &quot;value&quot;: 70,
+    &quot;unit&quot;: &quot;Kg&quot;,
+    &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+    &quot;code&quot;: &quot;kg&quot;
+  }
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.resourceType == &#39;Observation&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.27">
+      <div class="step-ref passed">27</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.write(response, &#39;responses/observation/observation-read.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.27">05:57:24.407 write to file: target/responses/observation/observation-read.json
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:29]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">observation</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:29]</span>
+                <span class="scenario-name">TC-OBS-002 | REQ-OBS-002 status is a valid ObservationStatus value</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>10000</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:29]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:29]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">05:57:15.403 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:15.403 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:29]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:29]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:29]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5015</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.17">05:57:15.404 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Observation?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:20.418 response time in milliseconds: 5013
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:20 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: knZ9aogJDiD6Gbva
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:19 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;b15d6eae-713c-4cfd-9aa9-af211c102b61&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:19.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Observation?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=b15d6eae-713c-4cfd-9aa9-af211c102b61&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Observation/131289234&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;131289234&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;2&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+        &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+        &quot;tag&quot;: [ {
+          &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+          &quot;code&quot;: &quot;EX20&quot;
+        } ]
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;category&quot;: [ {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+          &quot;code&quot;: &quot;vital-signs&quot;,
+          &quot;display&quot;: &quot;Vital Signs&quot;
+        } ],
+        &quot;text&quot;: &quot;Vital Signs&quot;
+      } ],
+      &quot;code&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://loinc.org&quot;,
+          &quot;code&quot;: &quot;29463-7&quot;,
+          &quot;display&quot;: &quot;Body weight&quot;
+        } ],
+        &quot;text&quot;: &quot;Body weight&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      },
+      &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+      &quot;performer&quot;: [ {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      } ],
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 70,
+        &quot;unit&quot;: &quot;Kg&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;kg&quot;
+      }
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:29]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:29]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def observationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:29]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved observationId: &#39; + observationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:57:20.419 Resolved observationId: 131289234 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;, observationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4984</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.31">05:57:20.419 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/Observation/131289234
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:25.402 response time in milliseconds: 4983
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:25 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;2&quot;
+2 &lt; X-Request-ID: KGXN9xAqWCielZfS
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/Observation/131289234/_history/2
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:06:09 GMT
+{
+  &quot;resourceType&quot;: &quot;Observation&quot;,
+  &quot;id&quot;: &quot;131289234&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;2&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+    &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+    &quot;tag&quot;: [ {
+      &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+      &quot;code&quot;: &quot;EX20&quot;
+    } ]
+  },
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+  },
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;category&quot;: [ {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+      &quot;code&quot;: &quot;vital-signs&quot;,
+      &quot;display&quot;: &quot;Vital Signs&quot;
+    } ],
+    &quot;text&quot;: &quot;Vital Signs&quot;
+  } ],
+  &quot;code&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://loinc.org&quot;,
+      &quot;code&quot;: &quot;29463-7&quot;,
+      &quot;display&quot;: &quot;Body weight&quot;
+    } ],
+    &quot;text&quot;: &quot;Body weight&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  },
+  &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+  &quot;performer&quot;: [ {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  } ],
+  &quot;valueQuantity&quot;: {
+    &quot;value&quot;: 70,
+    &quot;unit&quot;: &quot;Kg&quot;,
+    &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+    &quot;code&quot;: &quot;kg&quot;
+  }
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.status == &#39;#regex (registered|preliminary|final|amended|corrected|cancelled|entered-in-error|unknown)&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.34">
+      <div class="step-ref passed">34</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;status: &#39; + response.status)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.34">05:57:25.403 status: final 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:36]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">observation</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:36]</span>
+                <span class="scenario-name">TC-OBS-003 | REQ-OBS-003 code.coding has system and code</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9993</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:36]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">05:57:16.409 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:16.409 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5005</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.17">05:57:16.410 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Observation?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:21.414 response time in milliseconds: 5003
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:21 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: l0Hy9Bd0JA9i6JMt
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:19 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;b15d6eae-713c-4cfd-9aa9-af211c102b61&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:19.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Observation?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=b15d6eae-713c-4cfd-9aa9-af211c102b61&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Observation/131289234&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;131289234&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;2&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+        &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+        &quot;tag&quot;: [ {
+          &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+          &quot;code&quot;: &quot;EX20&quot;
+        } ]
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;category&quot;: [ {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+          &quot;code&quot;: &quot;vital-signs&quot;,
+          &quot;display&quot;: &quot;Vital Signs&quot;
+        } ],
+        &quot;text&quot;: &quot;Vital Signs&quot;
+      } ],
+      &quot;code&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://loinc.org&quot;,
+          &quot;code&quot;: &quot;29463-7&quot;,
+          &quot;display&quot;: &quot;Body weight&quot;
+        } ],
+        &quot;text&quot;: &quot;Body weight&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      },
+      &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+      &quot;performer&quot;: [ {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      } ],
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 70,
+        &quot;unit&quot;: &quot;Kg&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;kg&quot;
+      }
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def observationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved observationId: &#39; + observationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:57:21.415 Resolved observationId: 131289234 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;, observationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4985</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.38">05:57:21.415 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/Observation/131289234
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:26.400 response time in milliseconds: 4984
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:26 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;2&quot;
+2 &lt; X-Request-ID: OBKAHbnA6WCVeQEl
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/Observation/131289234/_history/2
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:06:09 GMT
+{
+  &quot;resourceType&quot;: &quot;Observation&quot;,
+  &quot;id&quot;: &quot;131289234&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;2&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+    &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+    &quot;tag&quot;: [ {
+      &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+      &quot;code&quot;: &quot;EX20&quot;
+    } ]
+  },
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+  },
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;category&quot;: [ {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+      &quot;code&quot;: &quot;vital-signs&quot;,
+      &quot;display&quot;: &quot;Vital Signs&quot;
+    } ],
+    &quot;text&quot;: &quot;Vital Signs&quot;
+  } ],
+  &quot;code&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://loinc.org&quot;,
+      &quot;code&quot;: &quot;29463-7&quot;,
+      &quot;display&quot;: &quot;Body weight&quot;
+    } ],
+    &quot;text&quot;: &quot;Body weight&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  },
+  &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+  &quot;performer&quot;: [ {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  } ],
+  &quot;valueQuantity&quot;: {
+    &quot;value&quot;: 70,
+    &quot;unit&quot;: &quot;Kg&quot;,
+    &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+    &quot;code&quot;: &quot;kg&quot;
+  }
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.39">
+      <div class="step-ref passed">39</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.40">
+      <div class="step-ref passed">40</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.code == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.41">
+      <div class="step-ref passed">41</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.code.coding == &#39;#[_ &gt; 0]&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.42">
+      <div class="step-ref passed">42</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.code.coding[0].system == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.43">
+      <div class="step-ref passed">43</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.code.coding[0].code == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.44">
+      <div class="step-ref passed">44</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;code system: &#39; + response.code.coding[0].system)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.44">05:57:26.402 code system: http://loinc.org 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.45">
+      <div class="step-ref passed">45</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;code code: &#39; + response.code.coding[0].code)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.45">05:57:26.402 code code: 29463-7 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4:47]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">observation</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4:47]</span>
+                <span class="scenario-name">TC-OBS-004 | REQ-OBS-004 valueQuantity has value and unit (conditional)</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>14994</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4:47]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">05:57:18.411 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:18.411 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5002</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.17">05:57:18.412 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Observation?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:23.414 response time in milliseconds: 5001
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:23 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: ppaG7SIveZfrwI4V
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:19 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;b15d6eae-713c-4cfd-9aa9-af211c102b61&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:19.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Observation?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=b15d6eae-713c-4cfd-9aa9-af211c102b61&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Observation/131289234&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;131289234&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;2&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+        &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+        &quot;tag&quot;: [ {
+          &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+          &quot;code&quot;: &quot;EX20&quot;
+        } ]
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;category&quot;: [ {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+          &quot;code&quot;: &quot;vital-signs&quot;,
+          &quot;display&quot;: &quot;Vital Signs&quot;
+        } ],
+        &quot;text&quot;: &quot;Vital Signs&quot;
+      } ],
+      &quot;code&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://loinc.org&quot;,
+          &quot;code&quot;: &quot;29463-7&quot;,
+          &quot;display&quot;: &quot;Body weight&quot;
+        } ],
+        &quot;text&quot;: &quot;Body weight&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      },
+      &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+      &quot;performer&quot;: [ {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      } ],
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 70,
+        &quot;unit&quot;: &quot;Kg&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;kg&quot;
+      }
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def observationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved observationId: &#39; + observationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:57:23.415 Resolved observationId: 131289234 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;value-quantity&#39;: &#39;gt0&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5005</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.50">05:57:23.416 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/Observation?value-quantity=gt0&amp;_count=1
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:28.421 response time in milliseconds: 5004
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:28 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; X-Request-ID: QNsakpwL299sKxUe
+2 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:28 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;3b8d27da-2512-4f53-aef7-f12cd1e010d2&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:28.366+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Observation?_count=1&amp;value-quantity=gt0&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=3b8d27da-2512-4f53-aef7-f12cd1e010d2&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Observation/131448423&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;131448423&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-03-22T06:03:32.940+00:00&quot;,
+        &quot;source&quot;: &quot;#HhYxWEeAj93a8Rp9&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;category&quot;: [ {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+          &quot;code&quot;: &quot;laboratory&quot;,
+          &quot;display&quot;: &quot;Laboratory&quot;
+        } ]
+      } ],
+      &quot;code&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://loinc.org&quot;,
+          &quot;code&quot;: &quot;89579-7&quot;,
+          &quot;display&quot;: &quot;Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method&quot;
+        } ],
+        &quot;text&quot;: &quot;Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/131445867&quot;
+      },
+      &quot;encounter&quot;: {
+        &quot;reference&quot;: &quot;Encounter/131446293&quot;
+      },
+      &quot;effectiveDateTime&quot;: &quot;2024-03-18T02:38:26-05:00&quot;,
+      &quot;issued&quot;: &quot;2024-03-18T02:38:26.284-05:00&quot;,
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 0.0037566,
+        &quot;unit&quot;: &quot;pg/mL&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;pg/mL&quot;
+      }
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.53">
+      <div class="step-ref passed">53</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!hasEntry) karate.log(&#39;TC-OBS-004: SKIP — no Observation with valueQuantity found on server&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.54">
+      <div class="step-ref passed">54</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def vqId = hasEntry ? response.entry[0].resource.id : null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (hasEntry) karate.call(&#39;classpath:observation/assert-value-quantity.feature&#39;, { vqId: vqId, baseUrl: baseUrl })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4984</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.55.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">observation.assert-value-quantity</div>
+      </div>
+      <div class="time-cell passed">4981</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.55.0.call">
+    <div class="step-container" id="0.55.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.55.0.call">
+    <div class="step-container" id="0.55.0.call.0.8">
+      <div class="step-ref passed">8</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>path &#39;Observation&#39;, vqId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.55.0.call">
+    <div class="step-container" id="0.55.0.call.0.9">
+      <div class="step-ref passed">9</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4976</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.55.0.call.0.9">05:57:28.426 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Observation/131448423
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:33.401 response time in milliseconds: 4974
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:33 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; ETag: W/&quot;1&quot;
+1 &lt; X-Request-ID: TIdUe8qux7hDGKck
+1 &lt; Content-Location: https://hapi.fhir.org/baseR4/Observation/131448423/_history/1
+1 &lt; Last-Modified: Sun, 22 Mar 2026 06:03:32 GMT
+{
+  &quot;resourceType&quot;: &quot;Observation&quot;,
+  &quot;id&quot;: &quot;131448423&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-03-22T06:03:32.940+00:00&quot;,
+    &quot;source&quot;: &quot;#HhYxWEeAj93a8Rp9&quot;
+  },
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;category&quot;: [ {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/observation-category&quot;,
+      &quot;code&quot;: &quot;laboratory&quot;,
+      &quot;display&quot;: &quot;Laboratory&quot;
+    } ]
+  } ],
+  &quot;code&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://loinc.org&quot;,
+      &quot;code&quot;: &quot;89579-7&quot;,
+      &quot;display&quot;: &quot;Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method&quot;
+    } ],
+    &quot;text&quot;: &quot;Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/131445867&quot;
+  },
+  &quot;encounter&quot;: {
+    &quot;reference&quot;: &quot;Encounter/131446293&quot;
+  },
+  &quot;effectiveDateTime&quot;: &quot;2024-03-18T02:38:26-05:00&quot;,
+  &quot;issued&quot;: &quot;2024-03-18T02:38:26.284-05:00&quot;,
+  &quot;valueQuantity&quot;: {
+    &quot;value&quot;: 0.0037566,
+    &quot;unit&quot;: &quot;pg/mL&quot;,
+    &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+    &quot;code&quot;: &quot;pg/mL&quot;
+  }
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.55.0.call">
+    <div class="step-container" id="0.55.0.call.0.10">
+      <div class="step-ref passed">10</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.55.0.call">
+    <div class="step-container" id="0.55.0.call.0.11">
+      <div class="step-ref passed">11</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.valueQuantity == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.55.0.call">
+    <div class="step-container" id="0.55.0.call.0.12">
+      <div class="step-ref passed">12</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.valueQuantity.value == &#39;#number&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.55.0.call">
+    <div class="step-container" id="0.55.0.call.0.13">
+      <div class="step-ref passed">13</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.valueQuantity.unit == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.55.0.call">
+    <div class="step-container" id="0.55.0.call.0.14">
+      <div class="step-ref passed">14</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;valueQuantity.value: &#39; + response.valueQuantity.value)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.55.0.call.0.14">05:57:33.405 valueQuantity.value: 0.0037566 
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.55.0.call">
+    <div class="step-container" id="0.55.0.call.0.15">
+      <div class="step-ref passed">15</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;valueQuantity.unit: &#39; + response.valueQuantity.unit)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.55.0.call.0.15">05:57:33.405 valueQuantity.unit: pg/mL 
+</div>   
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[5:57]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">observation</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[5:57]</span>
+                <span class="scenario-name">TC-OBS-005 | REQ-OBS-005 subject references Patient</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9997</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[5:57]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[5:57]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">05:57:22.403 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:22.403 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:57]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:57]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:57]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5009</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.17">05:57:22.404 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Observation?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:27.413 response time in milliseconds: 5008
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:27 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: yJZAnbZrLtIfhxSJ
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:19 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;b15d6eae-713c-4cfd-9aa9-af211c102b61&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:19.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Observation?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=b15d6eae-713c-4cfd-9aa9-af211c102b61&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Observation/131289234&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;131289234&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;2&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+        &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+        &quot;tag&quot;: [ {
+          &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+          &quot;code&quot;: &quot;EX20&quot;
+        } ]
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;category&quot;: [ {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+          &quot;code&quot;: &quot;vital-signs&quot;,
+          &quot;display&quot;: &quot;Vital Signs&quot;
+        } ],
+        &quot;text&quot;: &quot;Vital Signs&quot;
+      } ],
+      &quot;code&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://loinc.org&quot;,
+          &quot;code&quot;: &quot;29463-7&quot;,
+          &quot;display&quot;: &quot;Body weight&quot;
+        } ],
+        &quot;text&quot;: &quot;Body weight&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      },
+      &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+      &quot;performer&quot;: [ {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      } ],
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 70,
+        &quot;unit&quot;: &quot;Kg&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;kg&quot;
+      }
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:57]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:57]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def observationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:57]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved observationId: &#39; + observationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:57:27.414 Resolved observationId: 131289234 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;, observationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4986</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.59">05:57:27.414 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/Observation/131289234
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:32.399 response time in milliseconds: 4985
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:32 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;2&quot;
+2 &lt; X-Request-ID: usMUQcArzWfaJAia
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/Observation/131289234/_history/2
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:06:09 GMT
+{
+  &quot;resourceType&quot;: &quot;Observation&quot;,
+  &quot;id&quot;: &quot;131289234&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;2&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+    &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+    &quot;tag&quot;: [ {
+      &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+      &quot;code&quot;: &quot;EX20&quot;
+    } ]
+  },
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+  },
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;category&quot;: [ {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+      &quot;code&quot;: &quot;vital-signs&quot;,
+      &quot;display&quot;: &quot;Vital Signs&quot;
+    } ],
+    &quot;text&quot;: &quot;Vital Signs&quot;
+  } ],
+  &quot;code&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://loinc.org&quot;,
+      &quot;code&quot;: &quot;29463-7&quot;,
+      &quot;display&quot;: &quot;Body weight&quot;
+    } ],
+    &quot;text&quot;: &quot;Body weight&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  },
+  &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+  &quot;performer&quot;: [ {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  } ],
+  &quot;valueQuantity&quot;: {
+    &quot;value&quot;: 70,
+    &quot;unit&quot;: &quot;Kg&quot;,
+    &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+    &quot;code&quot;: &quot;kg&quot;
+  }
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.60">
+      <div class="step-ref passed">60</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.61">
+      <div class="step-ref passed">61</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.subject == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.62">
+      <div class="step-ref passed">62</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.subject.reference == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.63">
+      <div class="step-ref passed">63</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.subject.reference == &#39;#regex .*Patient.*&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.64">
+      <div class="step-ref passed">64</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;subject reference: &#39; + response.subject.reference)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.64">05:57:32.401 subject reference: Patient/131289233 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[6:66]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">observation</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[6:66]</span>
+                <span class="scenario-name">TC-OBS-006 | REQ-OBS-006 | REQ-GEN-002a meta.lastUpdated is present</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9990</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[6:66]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[6:66]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">05:57:24.410 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:24.410 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:66]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:66]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:66]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5001</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.17">05:57:24.411 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Observation?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:29.412 response time in milliseconds: 5000
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:29 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: 3np5Q9XOlQaFsO9q
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:19 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;b15d6eae-713c-4cfd-9aa9-af211c102b61&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:19.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Observation?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=b15d6eae-713c-4cfd-9aa9-af211c102b61&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Observation/131289234&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;131289234&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;2&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+        &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+        &quot;tag&quot;: [ {
+          &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+          &quot;code&quot;: &quot;EX20&quot;
+        } ]
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;category&quot;: [ {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+          &quot;code&quot;: &quot;vital-signs&quot;,
+          &quot;display&quot;: &quot;Vital Signs&quot;
+        } ],
+        &quot;text&quot;: &quot;Vital Signs&quot;
+      } ],
+      &quot;code&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://loinc.org&quot;,
+          &quot;code&quot;: &quot;29463-7&quot;,
+          &quot;display&quot;: &quot;Body weight&quot;
+        } ],
+        &quot;text&quot;: &quot;Body weight&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      },
+      &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+      &quot;performer&quot;: [ {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      } ],
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 70,
+        &quot;unit&quot;: &quot;Kg&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;kg&quot;
+      }
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:66]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:66]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def observationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:66]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved observationId: &#39; + observationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:57:29.412 Resolved observationId: 131289234 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.67">
+      <div class="step-ref passed">67</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;, observationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.68">
+      <div class="step-ref passed">68</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4988</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.68">05:57:29.413 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/Observation/131289234
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:34.400 response time in milliseconds: 4987
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:34 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;2&quot;
+2 &lt; X-Request-ID: yGyyAm4YEgXbP7eK
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/Observation/131289234/_history/2
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:06:09 GMT
+{
+  &quot;resourceType&quot;: &quot;Observation&quot;,
+  &quot;id&quot;: &quot;131289234&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;2&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+    &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+    &quot;tag&quot;: [ {
+      &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+      &quot;code&quot;: &quot;EX20&quot;
+    } ]
+  },
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+  },
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;category&quot;: [ {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+      &quot;code&quot;: &quot;vital-signs&quot;,
+      &quot;display&quot;: &quot;Vital Signs&quot;
+    } ],
+    &quot;text&quot;: &quot;Vital Signs&quot;
+  } ],
+  &quot;code&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://loinc.org&quot;,
+      &quot;code&quot;: &quot;29463-7&quot;,
+      &quot;display&quot;: &quot;Body weight&quot;
+    } ],
+    &quot;text&quot;: &quot;Body weight&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  },
+  &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+  &quot;performer&quot;: [ {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  } ],
+  &quot;valueQuantity&quot;: {
+    &quot;value&quot;: 70,
+    &quot;unit&quot;: &quot;Kg&quot;,
+    &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+    &quot;code&quot;: &quot;kg&quot;
+  }
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.69">
+      <div class="step-ref passed">69</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.70">
+      <div class="step-ref passed">70</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.meta.lastUpdated == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.71">
+      <div class="step-ref passed">71</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;meta.lastUpdated: &#39; + response.meta.lastUpdated)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.71">05:57:34.401 meta.lastUpdated: 2026-02-26T18:06:09.535+00:00 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[7:73]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">observation</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[7:73]</span>
+                <span class="scenario-name">TC-OBS-007 | REQ-OBS-007 | REQ-OO-001 non-existent ID returns 404 and OperationOutcome</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>10009</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[7:73]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[7:73]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">05:57:25.405 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:25.405 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:73]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:73]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:73]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5012</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.17">05:57:25.406 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Observation?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:30.417 response time in milliseconds: 5011
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:30 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: PLUErRWswOwV4285
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:19 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;b15d6eae-713c-4cfd-9aa9-af211c102b61&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:19.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Observation?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=b15d6eae-713c-4cfd-9aa9-af211c102b61&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Observation/131289234&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;131289234&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;2&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+        &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+        &quot;tag&quot;: [ {
+          &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+          &quot;code&quot;: &quot;EX20&quot;
+        } ]
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;category&quot;: [ {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+          &quot;code&quot;: &quot;vital-signs&quot;,
+          &quot;display&quot;: &quot;Vital Signs&quot;
+        } ],
+        &quot;text&quot;: &quot;Vital Signs&quot;
+      } ],
+      &quot;code&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://loinc.org&quot;,
+          &quot;code&quot;: &quot;29463-7&quot;,
+          &quot;display&quot;: &quot;Body weight&quot;
+        } ],
+        &quot;text&quot;: &quot;Body weight&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      },
+      &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+      &quot;performer&quot;: [ {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      } ],
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 70,
+        &quot;unit&quot;: &quot;Kg&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;kg&quot;
+      }
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:73]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:73]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def observationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:73]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved observationId: &#39; + observationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:57:30.418 Resolved observationId: 131289234 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.74">
+      <div class="step-ref passed">74</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;, &#39;INVALID-ID-99999&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.75">
+      <div class="step-ref passed">75</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4994</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.75">05:57:30.419 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/Observation/INVALID-ID-99999
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:35.412 response time in milliseconds: 4993
+2 &lt; 404
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:35 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; X-Request-ID: z2VUIyYGMxOVYsjw
+{
+  &quot;resourceType&quot;: &quot;OperationOutcome&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=\&quot;0\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;font-weight: bold;\&quot;&gt;ERROR&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;HAPI-2001: Resource Observation/INVALID-ID-99999 is not known&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+  },
+  &quot;issue&quot;: [ {
+    &quot;severity&quot;: &quot;error&quot;,
+    &quot;code&quot;: &quot;processing&quot;,
+    &quot;diagnostics&quot;: &quot;HAPI-2001: Resource Observation/INVALID-ID-99999 is not known&quot;
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.76">
+      <div class="step-ref passed">76</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 404</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.77">
+      <div class="step-ref passed">77</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.resourceType == &#39;OperationOutcome&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.78">
+      <div class="step-ref passed">78</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.issue == &#39;#[_ &gt; 0]&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.79">
+      <div class="step-ref passed">79</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;404 severity: &#39; + response.issue[0].severity)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.79">05:57:35.414 404 severity: error 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.80">
+      <div class="step-ref passed">80</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;404 code: &#39; + response.issue[0].code)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.80">05:57:35.415 404 code: processing 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[8:82]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">observation</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[8:82]</span>
+                <span class="scenario-name">TC-OBS-008 | REQ-GEN-001 captured observation-read.json exists for HL7 Validator</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>5016</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[8:82]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[8:82]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">05:57:26.405 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:26.405 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:82]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:82]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:82]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5013</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.17">05:57:26.406 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Observation?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:31.418 response time in milliseconds: 5012
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:31 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: DxRzIrpCWyeiF71B
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:19 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;b15d6eae-713c-4cfd-9aa9-af211c102b61&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:19.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Observation?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=b15d6eae-713c-4cfd-9aa9-af211c102b61&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Observation/131289234&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;131289234&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;2&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+        &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+        &quot;tag&quot;: [ {
+          &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+          &quot;code&quot;: &quot;EX20&quot;
+        } ]
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;category&quot;: [ {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+          &quot;code&quot;: &quot;vital-signs&quot;,
+          &quot;display&quot;: &quot;Vital Signs&quot;
+        } ],
+        &quot;text&quot;: &quot;Vital Signs&quot;
+      } ],
+      &quot;code&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://loinc.org&quot;,
+          &quot;code&quot;: &quot;29463-7&quot;,
+          &quot;display&quot;: &quot;Body weight&quot;
+        } ],
+        &quot;text&quot;: &quot;Body weight&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      },
+      &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+      &quot;performer&quot;: [ {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      } ],
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 70,
+        &quot;unit&quot;: &quot;Kg&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;kg&quot;
+      }
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:82]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:82]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def observationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:82]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved observationId: &#39; + observationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:57:31.419 Resolved observationId: 131289234 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># karate.write() resolves paths under target/ when running under Maven</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.84">
+      <div class="step-ref passed">84</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def fileExists = java.nio.file.Files.exists(java.nio.file.Paths.get(&#39;target/responses/observation/observation-read.json&#39;))</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.85">
+      <div class="step-ref passed">85</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>assert fileExists == true</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[9:87]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">observation</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[9:87]</span>
+                <span class="scenario-name">TC-OBS-009 | REQ-GEN-002b meta.versionId is present</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9982</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[9:87]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[9:87]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">05:57:31.423 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:31.423 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:87]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:87]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:87]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4988</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.17">05:57:31.424 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Observation?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:36.411 response time in milliseconds: 4987
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:36 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: 0oCT4WONpeHfqsNR
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:19 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;b15d6eae-713c-4cfd-9aa9-af211c102b61&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:19.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Observation?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=b15d6eae-713c-4cfd-9aa9-af211c102b61&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Observation/131289234&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;131289234&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;2&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+        &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+        &quot;tag&quot;: [ {
+          &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+          &quot;code&quot;: &quot;EX20&quot;
+        } ]
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;category&quot;: [ {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+          &quot;code&quot;: &quot;vital-signs&quot;,
+          &quot;display&quot;: &quot;Vital Signs&quot;
+        } ],
+        &quot;text&quot;: &quot;Vital Signs&quot;
+      } ],
+      &quot;code&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://loinc.org&quot;,
+          &quot;code&quot;: &quot;29463-7&quot;,
+          &quot;display&quot;: &quot;Body weight&quot;
+        } ],
+        &quot;text&quot;: &quot;Body weight&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      },
+      &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+      &quot;performer&quot;: [ {
+        &quot;reference&quot;: &quot;Patient/131289233&quot;
+      } ],
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 70,
+        &quot;unit&quot;: &quot;Kg&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;kg&quot;
+      }
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:87]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:87]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def observationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:87]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved observationId: &#39; + observationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.20">05:57:36.412 Resolved observationId: 131289234 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.88">
+      <div class="step-ref passed">88</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Observation&#39;, observationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.89">
+      <div class="step-ref passed">89</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4993</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.89">05:57:36.412 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/Observation/131289234
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:41.405 response time in milliseconds: 4993
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:41 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;2&quot;
+2 &lt; X-Request-ID: ZKxE6VmzpmNWNPjj
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/Observation/131289234/_history/2
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:06:09 GMT
+{
+  &quot;resourceType&quot;: &quot;Observation&quot;,
+  &quot;id&quot;: &quot;131289234&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;2&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:06:09.535+00:00&quot;,
+    &quot;source&quot;: &quot;#HFJx5CCCm9qAIakp&quot;,
+    &quot;tag&quot;: [ {
+      &quot;system&quot;: &quot;http://www.alpha.alp/use-case&quot;,
+      &quot;code&quot;: &quot;EX20&quot;
+    } ]
+  },
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Observation: Body weight, 70 Kg&lt;/p&gt;&lt;/div&gt;&quot;
+  },
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;category&quot;: [ {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://hl7.org/fhir/observation-category&quot;,
+      &quot;code&quot;: &quot;vital-signs&quot;,
+      &quot;display&quot;: &quot;Vital Signs&quot;
+    } ],
+    &quot;text&quot;: &quot;Vital Signs&quot;
+  } ],
+  &quot;code&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://loinc.org&quot;,
+      &quot;code&quot;: &quot;29463-7&quot;,
+      &quot;display&quot;: &quot;Body weight&quot;
+    } ],
+    &quot;text&quot;: &quot;Body weight&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  },
+  &quot;effectiveDateTime&quot;: &quot;2016-06-14&quot;,
+  &quot;performer&quot;: [ {
+    &quot;reference&quot;: &quot;Patient/131289233&quot;
+  } ],
+  &quot;valueQuantity&quot;: {
+    &quot;value&quot;: 70,
+    &quot;unit&quot;: &quot;Kg&quot;,
+    &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+    &quot;code&quot;: &quot;kg&quot;
+  }
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.90">
+      <div class="step-ref passed">90</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.91">
+      <div class="step-ref passed">91</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.meta.versionId == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.92">
+      <div class="step-ref passed">92</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;meta.versionId: &#39; + response.meta.versionId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.92">05:57:41.406 meta.versionId: 2 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

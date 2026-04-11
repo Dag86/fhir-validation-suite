@@ -1,0 +1,5589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"b01720ba-010a-43c4-9406-cad27a4419ed",karate_version:"1.5.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>medication.medication</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">10</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2026-04-11 05:57:22 AM</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:23]"><span>[1:23]</span> <span>TC-MED-001 | REQ-MED-001 GET /MedicationRequest/{id} returns 200 and resourceType = MedicationRequest</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:30]"><span>[2:30]</span> <span>TC-MED-002 | REQ-MED-002 status is a valid MedicationRequest status value</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[3:37]"><span>[3:37]</span> <span>TC-MED-003 | REQ-MED-003 intent is a valid MedicationRequest intent value</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[4:44]"><span>[4:44]</span> <span>TC-MED-004 | REQ-MED-004 subject references Patient</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[5:53]"><span>[5:53]</span> <span>TC-MED-005 | REQ-MED-005 medicationCodeableConcept or medicationReference is present</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[6:64]"><span>[6:64]</span> <span>TC-MED-006 | REQ-MED-006 | REQ-GEN-002a meta.lastUpdated is present</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[7:71]"><span>[7:71]</span> <span>TC-MED-007 | REQ-MED-007 | REQ-OO-001 non-existent ID returns 404 and OperationOutcome</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[8:80]"><span>[8:80]</span> <span>TC-MED-008 | REQ-GEN-001 captured medication-read.json exists for HL7 Validator</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[9:85]"><span>[9:85]</span> <span>TC-MED-009 | REQ-GEN-003 | REQ-OO-001 malformed JSON returns 400 and OperationOutcome</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[10:95]"><span>[10:95]</span> <span>TC-MED-010 | REQ-GEN-002b meta.versionId is present</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">medication/medication.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">MedicationRequest Resource Validation</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:23]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">medication</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:23]</span>
+                <span class="scenario-name">TC-MED-001 | REQ-MED-001 GET /MedicationRequest/{id} returns 200 and resourceType = MedicationRequest</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9993</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:23]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:56:55.409 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:55.409 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5007</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">05:56:55.411 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:00.417 response time in milliseconds: 5006
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:00 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: DXmxTmrmH4ypkHQK
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:00 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;5db36760-5e8f-4c4b-936b-efb400b63d72&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:00.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=5db36760-5e8f-4c4b-936b-efb400b63d72&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest/131289270&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+      &quot;id&quot;: &quot;131289270&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+        &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+      },
+      &quot;contained&quot;: [ {
+        &quot;resourceType&quot;: &quot;Practitioner&quot;,
+        &quot;id&quot;: &quot;drsmith&quot;,
+        &quot;name&quot;: [ {
+          &quot;family&quot;: &quot;Smith&quot;,
+          &quot;given&quot;: [ &quot;John&quot; ]
+        } ]
+      } ],
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;intent&quot;: &quot;order&quot;,
+      &quot;medicationCodeableConcept&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;860975&quot;,
+          &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+        } ],
+        &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+        &quot;display&quot;: &quot;Martin Spangenberg&quot;
+      },
+      &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+      &quot;requester&quot;: {
+        &quot;reference&quot;: &quot;#drsmith&quot;,
+        &quot;display&quot;: &quot;Dr. John Smith&quot;
+      },
+      &quot;dosageInstruction&quot;: [ {
+        &quot;sequence&quot;: 1,
+        &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+        &quot;timing&quot;: {
+          &quot;repeat&quot;: {
+            &quot;frequency&quot;: 3,
+            &quot;period&quot;: 1,
+            &quot;periodUnit&quot;: &quot;d&quot;
+          }
+        },
+        &quot;route&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+            &quot;code&quot;: &quot;PO&quot;,
+            &quot;display&quot;: &quot;Oral&quot;
+          } ]
+        },
+        &quot;doseAndRate&quot;: [ {
+          &quot;doseQuantity&quot;: {
+            &quot;value&quot;: 1,
+            &quot;unit&quot;: &quot;capsule&quot;
+          }
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def medicationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved medicationId: &#39; + medicationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.21">05:57:00.418 Resolved medicationId: 131289270 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;, medicationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4983</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.25">05:57:00.419 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest/131289270
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:05.401 response time in milliseconds: 4981
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:05 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;1&quot;
+2 &lt; X-Request-ID: 5D5r10LonmHsxWyv
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/MedicationRequest/131289270/_history/1
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:49:38 GMT
+{
+  &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+  &quot;id&quot;: &quot;131289270&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+    &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+  },
+  &quot;contained&quot;: [ {
+    &quot;resourceType&quot;: &quot;Practitioner&quot;,
+    &quot;id&quot;: &quot;drsmith&quot;,
+    &quot;name&quot;: [ {
+      &quot;family&quot;: &quot;Smith&quot;,
+      &quot;given&quot;: [ &quot;John&quot; ]
+    } ]
+  } ],
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;intent&quot;: &quot;order&quot;,
+  &quot;medicationCodeableConcept&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+      &quot;code&quot;: &quot;860975&quot;,
+      &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+    } ],
+    &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+    &quot;display&quot;: &quot;Martin Spangenberg&quot;
+  },
+  &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+  &quot;requester&quot;: {
+    &quot;reference&quot;: &quot;#drsmith&quot;,
+    &quot;display&quot;: &quot;Dr. John Smith&quot;
+  },
+  &quot;dosageInstruction&quot;: [ {
+    &quot;sequence&quot;: 1,
+    &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+    &quot;timing&quot;: {
+      &quot;repeat&quot;: {
+        &quot;frequency&quot;: 3,
+        &quot;period&quot;: 1,
+        &quot;periodUnit&quot;: &quot;d&quot;
+      }
+    },
+    &quot;route&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+        &quot;code&quot;: &quot;PO&quot;,
+        &quot;display&quot;: &quot;Oral&quot;
+      } ]
+    },
+    &quot;doseAndRate&quot;: [ {
+      &quot;doseQuantity&quot;: {
+        &quot;value&quot;: 1,
+        &quot;unit&quot;: &quot;capsule&quot;
+      }
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.27">
+      <div class="step-ref passed">27</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.resourceType == &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.write(response, &#39;responses/medication/medication-read.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.28">05:57:05.403 write to file: target/responses/medication/medication-read.json
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:30]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">medication</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:30]</span>
+                <span class="scenario-name">TC-MED-002 | REQ-MED-002 status is a valid MedicationRequest status value</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>10002</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:30]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:56:56.403 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:56.403 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5009</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">05:56:56.404 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:01.413 response time in milliseconds: 5008
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:01 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: srSMpMndZcYNsgrN
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:00 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;5db36760-5e8f-4c4b-936b-efb400b63d72&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:00.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=5db36760-5e8f-4c4b-936b-efb400b63d72&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest/131289270&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+      &quot;id&quot;: &quot;131289270&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+        &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+      },
+      &quot;contained&quot;: [ {
+        &quot;resourceType&quot;: &quot;Practitioner&quot;,
+        &quot;id&quot;: &quot;drsmith&quot;,
+        &quot;name&quot;: [ {
+          &quot;family&quot;: &quot;Smith&quot;,
+          &quot;given&quot;: [ &quot;John&quot; ]
+        } ]
+      } ],
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;intent&quot;: &quot;order&quot;,
+      &quot;medicationCodeableConcept&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;860975&quot;,
+          &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+        } ],
+        &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+        &quot;display&quot;: &quot;Martin Spangenberg&quot;
+      },
+      &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+      &quot;requester&quot;: {
+        &quot;reference&quot;: &quot;#drsmith&quot;,
+        &quot;display&quot;: &quot;Dr. John Smith&quot;
+      },
+      &quot;dosageInstruction&quot;: [ {
+        &quot;sequence&quot;: 1,
+        &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+        &quot;timing&quot;: {
+          &quot;repeat&quot;: {
+            &quot;frequency&quot;: 3,
+            &quot;period&quot;: 1,
+            &quot;periodUnit&quot;: &quot;d&quot;
+          }
+        },
+        &quot;route&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+            &quot;code&quot;: &quot;PO&quot;,
+            &quot;display&quot;: &quot;Oral&quot;
+          } ]
+        },
+        &quot;doseAndRate&quot;: [ {
+          &quot;doseQuantity&quot;: {
+            &quot;value&quot;: 1,
+            &quot;unit&quot;: &quot;capsule&quot;
+          }
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def medicationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved medicationId: &#39; + medicationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.21">05:57:01.413 Resolved medicationId: 131289270 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;, medicationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4990</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.32">05:57:01.414 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest/131289270
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:06.404 response time in milliseconds: 4990
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:06 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;1&quot;
+2 &lt; X-Request-ID: n7v1otK8mD0uuOCq
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/MedicationRequest/131289270/_history/1
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:49:38 GMT
+{
+  &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+  &quot;id&quot;: &quot;131289270&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+    &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+  },
+  &quot;contained&quot;: [ {
+    &quot;resourceType&quot;: &quot;Practitioner&quot;,
+    &quot;id&quot;: &quot;drsmith&quot;,
+    &quot;name&quot;: [ {
+      &quot;family&quot;: &quot;Smith&quot;,
+      &quot;given&quot;: [ &quot;John&quot; ]
+    } ]
+  } ],
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;intent&quot;: &quot;order&quot;,
+  &quot;medicationCodeableConcept&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+      &quot;code&quot;: &quot;860975&quot;,
+      &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+    } ],
+    &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+    &quot;display&quot;: &quot;Martin Spangenberg&quot;
+  },
+  &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+  &quot;requester&quot;: {
+    &quot;reference&quot;: &quot;#drsmith&quot;,
+    &quot;display&quot;: &quot;Dr. John Smith&quot;
+  },
+  &quot;dosageInstruction&quot;: [ {
+    &quot;sequence&quot;: 1,
+    &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+    &quot;timing&quot;: {
+      &quot;repeat&quot;: {
+        &quot;frequency&quot;: 3,
+        &quot;period&quot;: 1,
+        &quot;periodUnit&quot;: &quot;d&quot;
+      }
+    },
+    &quot;route&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+        &quot;code&quot;: &quot;PO&quot;,
+        &quot;display&quot;: &quot;Oral&quot;
+      } ]
+    },
+    &quot;doseAndRate&quot;: [ {
+      &quot;doseQuantity&quot;: {
+        &quot;value&quot;: 1,
+        &quot;unit&quot;: &quot;capsule&quot;
+      }
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.34">
+      <div class="step-ref passed">34</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.status == &#39;#regex (active|on-hold|cancelled|completed|entered-in-error|stopped|draft|unknown)&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.35">
+      <div class="step-ref passed">35</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;status: &#39; + response.status)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.35">05:57:06.405 status: active 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:37]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">medication</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:37]</span>
+                <span class="scenario-name">TC-MED-003 | REQ-MED-003 intent is a valid MedicationRequest intent value</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9987</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:37]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:56:57.414 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:57.414 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5002</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">05:56:57.415 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:02.416 response time in milliseconds: 5000
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:02 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: 7uz96BZUnNXkGCRP
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:00 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;5db36760-5e8f-4c4b-936b-efb400b63d72&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:00.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=5db36760-5e8f-4c4b-936b-efb400b63d72&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest/131289270&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+      &quot;id&quot;: &quot;131289270&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+        &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+      },
+      &quot;contained&quot;: [ {
+        &quot;resourceType&quot;: &quot;Practitioner&quot;,
+        &quot;id&quot;: &quot;drsmith&quot;,
+        &quot;name&quot;: [ {
+          &quot;family&quot;: &quot;Smith&quot;,
+          &quot;given&quot;: [ &quot;John&quot; ]
+        } ]
+      } ],
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;intent&quot;: &quot;order&quot;,
+      &quot;medicationCodeableConcept&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;860975&quot;,
+          &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+        } ],
+        &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+        &quot;display&quot;: &quot;Martin Spangenberg&quot;
+      },
+      &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+      &quot;requester&quot;: {
+        &quot;reference&quot;: &quot;#drsmith&quot;,
+        &quot;display&quot;: &quot;Dr. John Smith&quot;
+      },
+      &quot;dosageInstruction&quot;: [ {
+        &quot;sequence&quot;: 1,
+        &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+        &quot;timing&quot;: {
+          &quot;repeat&quot;: {
+            &quot;frequency&quot;: 3,
+            &quot;period&quot;: 1,
+            &quot;periodUnit&quot;: &quot;d&quot;
+          }
+        },
+        &quot;route&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+            &quot;code&quot;: &quot;PO&quot;,
+            &quot;display&quot;: &quot;Oral&quot;
+          } ]
+        },
+        &quot;doseAndRate&quot;: [ {
+          &quot;doseQuantity&quot;: {
+            &quot;value&quot;: 1,
+            &quot;unit&quot;: &quot;capsule&quot;
+          }
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def medicationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved medicationId: &#39; + medicationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.21">05:57:02.417 Resolved medicationId: 131289270 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;, medicationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.39">
+      <div class="step-ref passed">39</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4983</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.39">05:57:02.418 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest/131289270
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:07.400 response time in milliseconds: 4981
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:07 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;1&quot;
+2 &lt; X-Request-ID: ldWfsRlwGoYGDjuI
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/MedicationRequest/131289270/_history/1
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:49:38 GMT
+{
+  &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+  &quot;id&quot;: &quot;131289270&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+    &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+  },
+  &quot;contained&quot;: [ {
+    &quot;resourceType&quot;: &quot;Practitioner&quot;,
+    &quot;id&quot;: &quot;drsmith&quot;,
+    &quot;name&quot;: [ {
+      &quot;family&quot;: &quot;Smith&quot;,
+      &quot;given&quot;: [ &quot;John&quot; ]
+    } ]
+  } ],
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;intent&quot;: &quot;order&quot;,
+  &quot;medicationCodeableConcept&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+      &quot;code&quot;: &quot;860975&quot;,
+      &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+    } ],
+    &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+    &quot;display&quot;: &quot;Martin Spangenberg&quot;
+  },
+  &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+  &quot;requester&quot;: {
+    &quot;reference&quot;: &quot;#drsmith&quot;,
+    &quot;display&quot;: &quot;Dr. John Smith&quot;
+  },
+  &quot;dosageInstruction&quot;: [ {
+    &quot;sequence&quot;: 1,
+    &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+    &quot;timing&quot;: {
+      &quot;repeat&quot;: {
+        &quot;frequency&quot;: 3,
+        &quot;period&quot;: 1,
+        &quot;periodUnit&quot;: &quot;d&quot;
+      }
+    },
+    &quot;route&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+        &quot;code&quot;: &quot;PO&quot;,
+        &quot;display&quot;: &quot;Oral&quot;
+      } ]
+    },
+    &quot;doseAndRate&quot;: [ {
+      &quot;doseQuantity&quot;: {
+        &quot;value&quot;: 1,
+        &quot;unit&quot;: &quot;capsule&quot;
+      }
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.40">
+      <div class="step-ref passed">40</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.41">
+      <div class="step-ref passed">41</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.intent == &#39;#regex (proposal|plan|order|original-order|reflex-order|filler-order|instance-order|option)&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.42">
+      <div class="step-ref passed">42</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;intent: &#39; + response.intent)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.42">05:57:07.401 intent: order 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4:44]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">medication</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4:44]</span>
+                <span class="scenario-name">TC-MED-004 | REQ-MED-004 subject references Patient</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9984</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4:44]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:56:58.422 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:58.422 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4990</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">05:56:58.423 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:03.412 response time in milliseconds: 4989
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:03 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: E6Z1jSUsnteIE2jd
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:00 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;5db36760-5e8f-4c4b-936b-efb400b63d72&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:00.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=5db36760-5e8f-4c4b-936b-efb400b63d72&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest/131289270&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+      &quot;id&quot;: &quot;131289270&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+        &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+      },
+      &quot;contained&quot;: [ {
+        &quot;resourceType&quot;: &quot;Practitioner&quot;,
+        &quot;id&quot;: &quot;drsmith&quot;,
+        &quot;name&quot;: [ {
+          &quot;family&quot;: &quot;Smith&quot;,
+          &quot;given&quot;: [ &quot;John&quot; ]
+        } ]
+      } ],
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;intent&quot;: &quot;order&quot;,
+      &quot;medicationCodeableConcept&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;860975&quot;,
+          &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+        } ],
+        &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+        &quot;display&quot;: &quot;Martin Spangenberg&quot;
+      },
+      &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+      &quot;requester&quot;: {
+        &quot;reference&quot;: &quot;#drsmith&quot;,
+        &quot;display&quot;: &quot;Dr. John Smith&quot;
+      },
+      &quot;dosageInstruction&quot;: [ {
+        &quot;sequence&quot;: 1,
+        &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+        &quot;timing&quot;: {
+          &quot;repeat&quot;: {
+            &quot;frequency&quot;: 3,
+            &quot;period&quot;: 1,
+            &quot;periodUnit&quot;: &quot;d&quot;
+          }
+        },
+        &quot;route&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+            &quot;code&quot;: &quot;PO&quot;,
+            &quot;display&quot;: &quot;Oral&quot;
+          } ]
+        },
+        &quot;doseAndRate&quot;: [ {
+          &quot;doseQuantity&quot;: {
+            &quot;value&quot;: 1,
+            &quot;unit&quot;: &quot;capsule&quot;
+          }
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def medicationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved medicationId: &#39; + medicationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.21">05:57:03.413 Resolved medicationId: 131289270 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.45">
+      <div class="step-ref passed">45</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;, medicationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4991</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.46">05:57:03.414 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest/131289270
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:08.404 response time in milliseconds: 4990
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:08 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;1&quot;
+2 &lt; X-Request-ID: ZHULJRToQyx9wfSp
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/MedicationRequest/131289270/_history/1
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:49:38 GMT
+{
+  &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+  &quot;id&quot;: &quot;131289270&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+    &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+  },
+  &quot;contained&quot;: [ {
+    &quot;resourceType&quot;: &quot;Practitioner&quot;,
+    &quot;id&quot;: &quot;drsmith&quot;,
+    &quot;name&quot;: [ {
+      &quot;family&quot;: &quot;Smith&quot;,
+      &quot;given&quot;: [ &quot;John&quot; ]
+    } ]
+  } ],
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;intent&quot;: &quot;order&quot;,
+  &quot;medicationCodeableConcept&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+      &quot;code&quot;: &quot;860975&quot;,
+      &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+    } ],
+    &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+    &quot;display&quot;: &quot;Martin Spangenberg&quot;
+  },
+  &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+  &quot;requester&quot;: {
+    &quot;reference&quot;: &quot;#drsmith&quot;,
+    &quot;display&quot;: &quot;Dr. John Smith&quot;
+  },
+  &quot;dosageInstruction&quot;: [ {
+    &quot;sequence&quot;: 1,
+    &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+    &quot;timing&quot;: {
+      &quot;repeat&quot;: {
+        &quot;frequency&quot;: 3,
+        &quot;period&quot;: 1,
+        &quot;periodUnit&quot;: &quot;d&quot;
+      }
+    },
+    &quot;route&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+        &quot;code&quot;: &quot;PO&quot;,
+        &quot;display&quot;: &quot;Oral&quot;
+      } ]
+    },
+    &quot;doseAndRate&quot;: [ {
+      &quot;doseQuantity&quot;: {
+        &quot;value&quot;: 1,
+        &quot;unit&quot;: &quot;capsule&quot;
+      }
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.subject == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.subject.reference == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.subject.reference == &#39;#regex .*Patient.*&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;subject reference: &#39; + response.subject.reference)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.51">05:57:08.406 subject reference: Patient/testmartin 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[5:53]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">medication</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[5:53]</span>
+                <span class="scenario-name">TC-MED-005 | REQ-MED-005 medicationCodeableConcept or medicationReference is present</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9997</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[5:53]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[5:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:57:04.404 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:04.404 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5012</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">05:57:04.405 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:09.416 response time in milliseconds: 5010
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:09 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: HLuaLDtO8yoMnzNG
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:00 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;5db36760-5e8f-4c4b-936b-efb400b63d72&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:00.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=5db36760-5e8f-4c4b-936b-efb400b63d72&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest/131289270&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+      &quot;id&quot;: &quot;131289270&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+        &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+      },
+      &quot;contained&quot;: [ {
+        &quot;resourceType&quot;: &quot;Practitioner&quot;,
+        &quot;id&quot;: &quot;drsmith&quot;,
+        &quot;name&quot;: [ {
+          &quot;family&quot;: &quot;Smith&quot;,
+          &quot;given&quot;: [ &quot;John&quot; ]
+        } ]
+      } ],
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;intent&quot;: &quot;order&quot;,
+      &quot;medicationCodeableConcept&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;860975&quot;,
+          &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+        } ],
+        &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+        &quot;display&quot;: &quot;Martin Spangenberg&quot;
+      },
+      &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+      &quot;requester&quot;: {
+        &quot;reference&quot;: &quot;#drsmith&quot;,
+        &quot;display&quot;: &quot;Dr. John Smith&quot;
+      },
+      &quot;dosageInstruction&quot;: [ {
+        &quot;sequence&quot;: 1,
+        &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+        &quot;timing&quot;: {
+          &quot;repeat&quot;: {
+            &quot;frequency&quot;: 3,
+            &quot;period&quot;: 1,
+            &quot;periodUnit&quot;: &quot;d&quot;
+          }
+        },
+        &quot;route&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+            &quot;code&quot;: &quot;PO&quot;,
+            &quot;display&quot;: &quot;Oral&quot;
+          } ]
+        },
+        &quot;doseAndRate&quot;: [ {
+          &quot;doseQuantity&quot;: {
+            &quot;value&quot;: 1,
+            &quot;unit&quot;: &quot;capsule&quot;
+          }
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def medicationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved medicationId: &#39; + medicationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.21">05:57:09.417 Resolved medicationId: 131289270 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.54">
+      <div class="step-ref passed">54</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;, medicationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4982</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.55">05:57:09.417 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest/131289270
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:14.399 response time in milliseconds: 4982
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:14 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;1&quot;
+2 &lt; X-Request-ID: Vj0XFGZjwPzScgYK
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/MedicationRequest/131289270/_history/1
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:49:38 GMT
+{
+  &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+  &quot;id&quot;: &quot;131289270&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+    &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+  },
+  &quot;contained&quot;: [ {
+    &quot;resourceType&quot;: &quot;Practitioner&quot;,
+    &quot;id&quot;: &quot;drsmith&quot;,
+    &quot;name&quot;: [ {
+      &quot;family&quot;: &quot;Smith&quot;,
+      &quot;given&quot;: [ &quot;John&quot; ]
+    } ]
+  } ],
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;intent&quot;: &quot;order&quot;,
+  &quot;medicationCodeableConcept&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+      &quot;code&quot;: &quot;860975&quot;,
+      &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+    } ],
+    &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+    &quot;display&quot;: &quot;Martin Spangenberg&quot;
+  },
+  &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+  &quot;requester&quot;: {
+    &quot;reference&quot;: &quot;#drsmith&quot;,
+    &quot;display&quot;: &quot;Dr. John Smith&quot;
+  },
+  &quot;dosageInstruction&quot;: [ {
+    &quot;sequence&quot;: 1,
+    &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+    &quot;timing&quot;: {
+      &quot;repeat&quot;: {
+        &quot;frequency&quot;: 3,
+        &quot;period&quot;: 1,
+        &quot;periodUnit&quot;: &quot;d&quot;
+      }
+    },
+    &quot;route&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+        &quot;code&quot;: &quot;PO&quot;,
+        &quot;display&quot;: &quot;Oral&quot;
+      } ]
+    },
+    &quot;doseAndRate&quot;: [ {
+      &quot;doseQuantity&quot;: {
+        &quot;value&quot;: 1,
+        &quot;unit&quot;: &quot;capsule&quot;
+      }
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasMedCC = response.medicationCodeableConcept != null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasMedRef = response.medicationReference != null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasMedication = hasMedCC || hasMedRef</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.60">
+      <div class="step-ref passed">60</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match hasMedication == true</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.61">
+      <div class="step-ref passed">61</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (hasMedCC) karate.log(&#39;medication: medicationCodeableConcept present&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.61">05:57:14.401 medication: medicationCodeableConcept present 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.62">
+      <div class="step-ref passed">62</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (hasMedRef) karate.log(&#39;medication: medicationReference present&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[6:64]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">medication</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[6:64]</span>
+                <span class="scenario-name">TC-MED-006 | REQ-MED-006 | REQ-GEN-002a meta.lastUpdated is present</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9994</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[6:64]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[6:64]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:57:05.406 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:05.406 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:64]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:64]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:64]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5006</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">05:57:05.407 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:10.411 response time in milliseconds: 5004
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:10 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: yGn4jI5kDKT83EZt
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:00 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;5db36760-5e8f-4c4b-936b-efb400b63d72&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:00.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=5db36760-5e8f-4c4b-936b-efb400b63d72&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest/131289270&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+      &quot;id&quot;: &quot;131289270&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+        &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+      },
+      &quot;contained&quot;: [ {
+        &quot;resourceType&quot;: &quot;Practitioner&quot;,
+        &quot;id&quot;: &quot;drsmith&quot;,
+        &quot;name&quot;: [ {
+          &quot;family&quot;: &quot;Smith&quot;,
+          &quot;given&quot;: [ &quot;John&quot; ]
+        } ]
+      } ],
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;intent&quot;: &quot;order&quot;,
+      &quot;medicationCodeableConcept&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;860975&quot;,
+          &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+        } ],
+        &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+        &quot;display&quot;: &quot;Martin Spangenberg&quot;
+      },
+      &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+      &quot;requester&quot;: {
+        &quot;reference&quot;: &quot;#drsmith&quot;,
+        &quot;display&quot;: &quot;Dr. John Smith&quot;
+      },
+      &quot;dosageInstruction&quot;: [ {
+        &quot;sequence&quot;: 1,
+        &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+        &quot;timing&quot;: {
+          &quot;repeat&quot;: {
+            &quot;frequency&quot;: 3,
+            &quot;period&quot;: 1,
+            &quot;periodUnit&quot;: &quot;d&quot;
+          }
+        },
+        &quot;route&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+            &quot;code&quot;: &quot;PO&quot;,
+            &quot;display&quot;: &quot;Oral&quot;
+          } ]
+        },
+        &quot;doseAndRate&quot;: [ {
+          &quot;doseQuantity&quot;: {
+            &quot;value&quot;: 1,
+            &quot;unit&quot;: &quot;capsule&quot;
+          }
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:64]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:64]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def medicationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:64]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved medicationId: &#39; + medicationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.21">05:57:10.412 Resolved medicationId: 131289270 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.65">
+      <div class="step-ref passed">65</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;, medicationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.66">
+      <div class="step-ref passed">66</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4987</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.66">05:57:10.413 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest/131289270
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:15.399 response time in milliseconds: 4986
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:15 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;1&quot;
+2 &lt; X-Request-ID: YtcUNOlOK96wSCfB
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/MedicationRequest/131289270/_history/1
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:49:38 GMT
+{
+  &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+  &quot;id&quot;: &quot;131289270&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+    &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+  },
+  &quot;contained&quot;: [ {
+    &quot;resourceType&quot;: &quot;Practitioner&quot;,
+    &quot;id&quot;: &quot;drsmith&quot;,
+    &quot;name&quot;: [ {
+      &quot;family&quot;: &quot;Smith&quot;,
+      &quot;given&quot;: [ &quot;John&quot; ]
+    } ]
+  } ],
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;intent&quot;: &quot;order&quot;,
+  &quot;medicationCodeableConcept&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+      &quot;code&quot;: &quot;860975&quot;,
+      &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+    } ],
+    &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+    &quot;display&quot;: &quot;Martin Spangenberg&quot;
+  },
+  &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+  &quot;requester&quot;: {
+    &quot;reference&quot;: &quot;#drsmith&quot;,
+    &quot;display&quot;: &quot;Dr. John Smith&quot;
+  },
+  &quot;dosageInstruction&quot;: [ {
+    &quot;sequence&quot;: 1,
+    &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+    &quot;timing&quot;: {
+      &quot;repeat&quot;: {
+        &quot;frequency&quot;: 3,
+        &quot;period&quot;: 1,
+        &quot;periodUnit&quot;: &quot;d&quot;
+      }
+    },
+    &quot;route&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+        &quot;code&quot;: &quot;PO&quot;,
+        &quot;display&quot;: &quot;Oral&quot;
+      } ]
+    },
+    &quot;doseAndRate&quot;: [ {
+      &quot;doseQuantity&quot;: {
+        &quot;value&quot;: 1,
+        &quot;unit&quot;: &quot;capsule&quot;
+      }
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.67">
+      <div class="step-ref passed">67</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.68">
+      <div class="step-ref passed">68</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.meta.lastUpdated == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.69">
+      <div class="step-ref passed">69</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;meta.lastUpdated: &#39; + response.meta.lastUpdated)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.69">05:57:15.400 meta.lastUpdated: 2026-02-26T18:49:38.875+00:00 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[7:71]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">medication</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[7:71]</span>
+                <span class="scenario-name">TC-MED-007 | REQ-MED-007 | REQ-OO-001 non-existent ID returns 404 and OperationOutcome</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9999</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[7:71]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[7:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:57:06.407 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:06.407 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5004</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">05:57:06.408 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:11.412 response time in milliseconds: 5003
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:11 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: PcoOFmi22J9g3v6R
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:00 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;5db36760-5e8f-4c4b-936b-efb400b63d72&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:00.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=5db36760-5e8f-4c4b-936b-efb400b63d72&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest/131289270&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+      &quot;id&quot;: &quot;131289270&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+        &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+      },
+      &quot;contained&quot;: [ {
+        &quot;resourceType&quot;: &quot;Practitioner&quot;,
+        &quot;id&quot;: &quot;drsmith&quot;,
+        &quot;name&quot;: [ {
+          &quot;family&quot;: &quot;Smith&quot;,
+          &quot;given&quot;: [ &quot;John&quot; ]
+        } ]
+      } ],
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;intent&quot;: &quot;order&quot;,
+      &quot;medicationCodeableConcept&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;860975&quot;,
+          &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+        } ],
+        &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+        &quot;display&quot;: &quot;Martin Spangenberg&quot;
+      },
+      &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+      &quot;requester&quot;: {
+        &quot;reference&quot;: &quot;#drsmith&quot;,
+        &quot;display&quot;: &quot;Dr. John Smith&quot;
+      },
+      &quot;dosageInstruction&quot;: [ {
+        &quot;sequence&quot;: 1,
+        &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+        &quot;timing&quot;: {
+          &quot;repeat&quot;: {
+            &quot;frequency&quot;: 3,
+            &quot;period&quot;: 1,
+            &quot;periodUnit&quot;: &quot;d&quot;
+          }
+        },
+        &quot;route&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+            &quot;code&quot;: &quot;PO&quot;,
+            &quot;display&quot;: &quot;Oral&quot;
+          } ]
+        },
+        &quot;doseAndRate&quot;: [ {
+          &quot;doseQuantity&quot;: {
+            &quot;value&quot;: 1,
+            &quot;unit&quot;: &quot;capsule&quot;
+          }
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def medicationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:71]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved medicationId: &#39; + medicationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.21">05:57:11.412 Resolved medicationId: 131289270 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.72">
+      <div class="step-ref passed">72</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;, &#39;INVALID-ID-99999&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.73">
+      <div class="step-ref passed">73</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4992</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.73">05:57:11.413 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest/INVALID-ID-99999
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:16.405 response time in milliseconds: 4991
+2 &lt; 404
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:16 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; X-Request-ID: pmSbWqCaCX3JoiVU
+{
+  &quot;resourceType&quot;: &quot;OperationOutcome&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=\&quot;0\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;font-weight: bold;\&quot;&gt;ERROR&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;HAPI-2001: Resource MedicationRequest/INVALID-ID-99999 is not known&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+  },
+  &quot;issue&quot;: [ {
+    &quot;severity&quot;: &quot;error&quot;,
+    &quot;code&quot;: &quot;processing&quot;,
+    &quot;diagnostics&quot;: &quot;HAPI-2001: Resource MedicationRequest/INVALID-ID-99999 is not known&quot;
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.74">
+      <div class="step-ref passed">74</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 404</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.75">
+      <div class="step-ref passed">75</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.resourceType == &#39;OperationOutcome&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.76">
+      <div class="step-ref passed">76</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.issue == &#39;#[_ &gt; 0]&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.77">
+      <div class="step-ref passed">77</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;404 severity: &#39; + response.issue[0].severity)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.77">05:57:16.406 404 severity: error 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.78">
+      <div class="step-ref passed">78</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;404 code: &#39; + response.issue[0].code)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.78">05:57:16.407 404 code: processing 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[8:80]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">medication</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[8:80]</span>
+                <span class="scenario-name">TC-MED-008 | REQ-GEN-001 captured medication-read.json exists for HL7 Validator</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>5009</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[8:80]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[8:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:57:07.403 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:07.403 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5008</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">05:57:07.404 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:12.411 response time in milliseconds: 5007
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:12 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: N8qTy5CrNF8022Z5
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:00 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;5db36760-5e8f-4c4b-936b-efb400b63d72&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:00.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=5db36760-5e8f-4c4b-936b-efb400b63d72&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest/131289270&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+      &quot;id&quot;: &quot;131289270&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+        &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+      },
+      &quot;contained&quot;: [ {
+        &quot;resourceType&quot;: &quot;Practitioner&quot;,
+        &quot;id&quot;: &quot;drsmith&quot;,
+        &quot;name&quot;: [ {
+          &quot;family&quot;: &quot;Smith&quot;,
+          &quot;given&quot;: [ &quot;John&quot; ]
+        } ]
+      } ],
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;intent&quot;: &quot;order&quot;,
+      &quot;medicationCodeableConcept&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;860975&quot;,
+          &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+        } ],
+        &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+        &quot;display&quot;: &quot;Martin Spangenberg&quot;
+      },
+      &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+      &quot;requester&quot;: {
+        &quot;reference&quot;: &quot;#drsmith&quot;,
+        &quot;display&quot;: &quot;Dr. John Smith&quot;
+      },
+      &quot;dosageInstruction&quot;: [ {
+        &quot;sequence&quot;: 1,
+        &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+        &quot;timing&quot;: {
+          &quot;repeat&quot;: {
+            &quot;frequency&quot;: 3,
+            &quot;period&quot;: 1,
+            &quot;periodUnit&quot;: &quot;d&quot;
+          }
+        },
+        &quot;route&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+            &quot;code&quot;: &quot;PO&quot;,
+            &quot;display&quot;: &quot;Oral&quot;
+          } ]
+        },
+        &quot;doseAndRate&quot;: [ {
+          &quot;doseQuantity&quot;: {
+            &quot;value&quot;: 1,
+            &quot;unit&quot;: &quot;capsule&quot;
+          }
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def medicationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[8:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved medicationId: &#39; + medicationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.21">05:57:12.411 Resolved medicationId: 131289270 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># karate.write() resolves paths under target/ when running under Maven</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.82">
+      <div class="step-ref passed">82</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def fileExists = java.nio.file.Files.exists(java.nio.file.Paths.get(&#39;target/responses/medication/medication-read.json&#39;))</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.83">
+      <div class="step-ref passed">83</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>assert fileExists == true</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[9:85]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">medication</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[9:85]</span>
+                <span class="scenario-name">TC-MED-009 | REQ-GEN-003 | REQ-OO-001 malformed JSON returns 400 and OperationOutcome</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>10000</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[9:85]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[9:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:57:08.408 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:08.409 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5007</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">05:57:08.410 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:13.416 response time in milliseconds: 5005
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:13 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: diarBV4Fvgi958ZK
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:00 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;5db36760-5e8f-4c4b-936b-efb400b63d72&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:00.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=5db36760-5e8f-4c4b-936b-efb400b63d72&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest/131289270&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+      &quot;id&quot;: &quot;131289270&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+        &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+      },
+      &quot;contained&quot;: [ {
+        &quot;resourceType&quot;: &quot;Practitioner&quot;,
+        &quot;id&quot;: &quot;drsmith&quot;,
+        &quot;name&quot;: [ {
+          &quot;family&quot;: &quot;Smith&quot;,
+          &quot;given&quot;: [ &quot;John&quot; ]
+        } ]
+      } ],
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;intent&quot;: &quot;order&quot;,
+      &quot;medicationCodeableConcept&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;860975&quot;,
+          &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+        } ],
+        &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+        &quot;display&quot;: &quot;Martin Spangenberg&quot;
+      },
+      &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+      &quot;requester&quot;: {
+        &quot;reference&quot;: &quot;#drsmith&quot;,
+        &quot;display&quot;: &quot;Dr. John Smith&quot;
+      },
+      &quot;dosageInstruction&quot;: [ {
+        &quot;sequence&quot;: 1,
+        &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+        &quot;timing&quot;: {
+          &quot;repeat&quot;: {
+            &quot;frequency&quot;: 3,
+            &quot;period&quot;: 1,
+            &quot;periodUnit&quot;: &quot;d&quot;
+          }
+        },
+        &quot;route&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+            &quot;code&quot;: &quot;PO&quot;,
+            &quot;display&quot;: &quot;Oral&quot;
+          } ]
+        },
+        &quot;doseAndRate&quot;: [ {
+          &quot;doseQuantity&quot;: {
+            &quot;value&quot;: 1,
+            &quot;unit&quot;: &quot;capsule&quot;
+          }
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def medicationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[9:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved medicationId: &#39; + medicationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.21">05:57:13.416 Resolved medicationId: 131289270 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># HAPI may return 422 instead of 400 — report as finding if so</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.87">
+      <div class="step-ref passed">87</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.88">
+      <div class="step-ref passed">88</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Content-Type = &#39;application/fhir+json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.89">
+      <div class="step-ref passed">89</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request &#39;this is not valid json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.90">
+      <div class="step-ref passed">90</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4991</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.90">05:57:13.417 request:
+2 &gt; POST https://hapi.fhir.org/baseR4/MedicationRequest
+2 &gt; Content-Type: application/fhir+json; charset=UTF-8
+2 &gt; Content-Length: 22
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+this is not valid json
+
+05:57:18.407 response time in milliseconds: 4989
+2 &lt; 400
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:18 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; X-Request-ID: Z53LuON5svsWE4Z4
+{
+  &quot;resourceType&quot;: &quot;OperationOutcome&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=\&quot;0\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;font-weight: bold;\&quot;&gt;ERROR&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;HAPI-0450: Failed to parse request body as JSON resource. Error was: HAPI-1861: Failed to parse JSON encoded FHIR content: HAPI-1859: Content does not appear to be FHIR JSON, first non-whitespace character was: &#39;t&#39; (must be &#39;{&#39;)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+  },
+  &quot;issue&quot;: [ {
+    &quot;severity&quot;: &quot;error&quot;,
+    &quot;code&quot;: &quot;processing&quot;,
+    &quot;diagnostics&quot;: &quot;HAPI-0450: Failed to parse request body as JSON resource. Error was: HAPI-1861: Failed to parse JSON encoded FHIR content: HAPI-1859: Content does not appear to be FHIR JSON, first non-whitespace character was: &#39;t&#39; (must be &#39;{&#39;)&quot;
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.91">
+      <div class="step-ref passed">91</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.92">
+      <div class="step-ref passed">92</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.resourceType == &#39;OperationOutcome&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.93">
+      <div class="step-ref passed">93</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.issue == &#39;#[_ &gt; 0]&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[10:95]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">medication</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[10:95]</span>
+                <span class="scenario-name">TC-MED-010 | REQ-GEN-002b meta.versionId is present</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>9986</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[10:95]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[10:95]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">05:57:12.415 baseUrl: https://hapi.fhir.org/baseR4 
+05:57:12.415 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[10:95]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[10:95]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>params ({ &#39;subject:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[10:95]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5000</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">05:57:12.416 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest?subject%3Amissing=false&amp;_count=1
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:17.415 response time in milliseconds: 4999
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:57:17 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: bFkeJjanPJWZzweQ
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:57:00 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;5db36760-5e8f-4c4b-936b-efb400b63d72&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:57:00.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest?_count=1&amp;subject%3Amissing=false&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=5db36760-5e8f-4c4b-936b-efb400b63d72&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/MedicationRequest/131289270&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+      &quot;id&quot;: &quot;131289270&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+        &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+      },
+      &quot;contained&quot;: [ {
+        &quot;resourceType&quot;: &quot;Practitioner&quot;,
+        &quot;id&quot;: &quot;drsmith&quot;,
+        &quot;name&quot;: [ {
+          &quot;family&quot;: &quot;Smith&quot;,
+          &quot;given&quot;: [ &quot;John&quot; ]
+        } ]
+      } ],
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;intent&quot;: &quot;order&quot;,
+      &quot;medicationCodeableConcept&quot;: {
+        &quot;coding&quot;: [ {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;860975&quot;,
+          &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+        } ],
+        &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+      },
+      &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+        &quot;display&quot;: &quot;Martin Spangenberg&quot;
+      },
+      &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+      &quot;requester&quot;: {
+        &quot;reference&quot;: &quot;#drsmith&quot;,
+        &quot;display&quot;: &quot;Dr. John Smith&quot;
+      },
+      &quot;dosageInstruction&quot;: [ {
+        &quot;sequence&quot;: 1,
+        &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+        &quot;timing&quot;: {
+          &quot;repeat&quot;: {
+            &quot;frequency&quot;: 3,
+            &quot;period&quot;: 1,
+            &quot;periodUnit&quot;: &quot;d&quot;
+          }
+        },
+        &quot;route&quot;: {
+          &quot;coding&quot;: [ {
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+            &quot;code&quot;: &quot;PO&quot;,
+            &quot;display&quot;: &quot;Oral&quot;
+          } ]
+        },
+        &quot;doseAndRate&quot;: [ {
+          &quot;doseQuantity&quot;: {
+            &quot;value&quot;: 1,
+            &quot;unit&quot;: &quot;capsule&quot;
+          }
+        } ]
+      } ]
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[10:95]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[10:95]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def medicationId = response.entry[0].resource.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[10:95]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Resolved medicationId: &#39; + medicationId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.21">05:57:17.416 Resolved medicationId: 131289270 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.96">
+      <div class="step-ref passed">96</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;MedicationRequest&#39;, medicationId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.97">
+      <div class="step-ref passed">97</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4984</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.97">05:57:17.416 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/MedicationRequest/131289270
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:57:22.400 response time in milliseconds: 4983
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:57:22 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; ETag: W/&quot;1&quot;
+2 &lt; X-Request-ID: HJ8VHEd6iOW2Fsgr
+2 &lt; Content-Location: https://hapi.fhir.org/baseR4/MedicationRequest/131289270/_history/1
+2 &lt; Last-Modified: Thu, 26 Feb 2026 18:49:38 GMT
+{
+  &quot;resourceType&quot;: &quot;MedicationRequest&quot;,
+  &quot;id&quot;: &quot;131289270&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2026-02-26T18:49:38.875+00:00&quot;,
+    &quot;source&quot;: &quot;#pcqQcDegw1DzifFo&quot;
+  },
+  &quot;contained&quot;: [ {
+    &quot;resourceType&quot;: &quot;Practitioner&quot;,
+    &quot;id&quot;: &quot;drsmith&quot;,
+    &quot;name&quot;: [ {
+      &quot;family&quot;: &quot;Smith&quot;,
+      &quot;given&quot;: [ &quot;John&quot; ]
+    } ]
+  } ],
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;intent&quot;: &quot;order&quot;,
+  &quot;medicationCodeableConcept&quot;: {
+    &quot;coding&quot;: [ {
+      &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+      &quot;code&quot;: &quot;860975&quot;,
+      &quot;display&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+    } ],
+    &quot;text&quot;: &quot;Amoxicillin 500mg Capsule&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/testmartin&quot;,
+    &quot;display&quot;: &quot;Martin Spangenberg&quot;
+  },
+  &quot;authoredOn&quot;: &quot;2026-02-26&quot;,
+  &quot;requester&quot;: {
+    &quot;reference&quot;: &quot;#drsmith&quot;,
+    &quot;display&quot;: &quot;Dr. John Smith&quot;
+  },
+  &quot;dosageInstruction&quot;: [ {
+    &quot;sequence&quot;: 1,
+    &quot;text&quot;: &quot;Take 1 capsule by mouth three times a day for 7 days&quot;,
+    &quot;timing&quot;: {
+      &quot;repeat&quot;: {
+        &quot;frequency&quot;: 3,
+        &quot;period&quot;: 1,
+        &quot;periodUnit&quot;: &quot;d&quot;
+      }
+    },
+    &quot;route&quot;: {
+      &quot;coding&quot;: [ {
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/route-codes&quot;,
+        &quot;code&quot;: &quot;PO&quot;,
+        &quot;display&quot;: &quot;Oral&quot;
+      } ]
+    },
+    &quot;doseAndRate&quot;: [ {
+      &quot;doseQuantity&quot;: {
+        &quot;value&quot;: 1,
+        &quot;unit&quot;: &quot;capsule&quot;
+      }
+    } ]
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.98">
+      <div class="step-ref passed">98</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.99">
+      <div class="step-ref passed">99</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.meta.versionId == &#39;#present&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.100">
+      <div class="step-ref passed">100</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;meta.versionId: &#39; + response.meta.versionId)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.100">05:57:22.401 meta.versionId: 1 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

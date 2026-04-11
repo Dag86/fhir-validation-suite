@@ -1,0 +1,3285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"b01720ba-010a-43c4-9406-cad27a4419ed",karate_version:"1.5.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>bundle.bundle</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">7</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2026-04-11 05:56:41 AM</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:15]"><span>[1:15]</span> <span>TC-BUN-001 | REQ-BUN-001 search returns searchset Bundle</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:24]"><span>[2:24]</span> <span>TC-BUN-002 | REQ-BUN-002 searchset Bundle has total field</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[3:33]"><span>[3:33]</span> <span>TC-BUN-003 | REQ-BUN-003 each entry has resource and fullUrl</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[4:44]"><span>[4:44]</span> <span>TC-BUN-004 | REQ-BUN-004 valid transaction returns transaction-response Bundle</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[5:57]"><span>[5:57]</span> <span>TC-BUN-005 | REQ-BUN-005 invalid transaction entry fails entire transaction and is atomic</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[6:78]"><span>[6:78]</span> <span>TC-BUN-006 | REQ-GEN-001 captured bundle-transaction-response.json exists for HL7 Validator</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[7:89]"><span>[7:89]</span> <span>TC-BUN-007 | REQ-GEN-002b transaction response location confirms versionId tracking</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">bundle/bundle.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Bundle Resource Validation</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:15]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">parallel=false</a><a class="badge badge-primary" href="karate-tags.html">bundle</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:15]</span>
+                <span class="scenario-name">TC-BUN-001 | REQ-BUN-001 search returns searchset Bundle</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>5020</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:15]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:15]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:30.407 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:30.407 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:15]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def uniqueSuffix = java.lang.System.currentTimeMillis() + &#39;&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">7</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref passed">16</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Patient&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref passed">17</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _count = &#39;5&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref passed">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5011</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">05:56:30.415 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Patient?_count=5
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:35.424 response time in milliseconds: 5006
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:35 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: UxWXXCXQp3W4CNrP
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:56:35 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;e3e9e7f3-70d2-402e-a570-e21b215ef29e&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:56:35.366+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Patient?_count=5&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=e3e9e7f3-70d2-402e-a570-e21b215ef29e&amp;_getpagesoffset=5&amp;_count=5&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90257875&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90257875&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:35:36.642+00:00&quot;,
+        &quot;source&quot;: &quot;#ltdnkJaX04DbLduH&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90258979&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90258979&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:35:41.648+00:00&quot;,
+        &quot;source&quot;: &quot;#BfRAg1eYZvPEEllH&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90262192&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90262192&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:35:56.639+00:00&quot;,
+        &quot;source&quot;: &quot;#MiP77J2m7xeeu01E&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90263196&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90263196&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:36:01.650+00:00&quot;,
+        &quot;source&quot;: &quot;#sXfyQ8msVLImkGJU&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90264223&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90264223&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:36:06.639+00:00&quot;,
+        &quot;source&quot;: &quot;#nV78G4bswjDzmYjA&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref passed">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref passed">20</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.resourceType == &#39;Bundle&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref passed">21</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.type == &#39;searchset&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Bundle type: &#39; + response.type)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.22">05:56:35.427 Bundle type: searchset 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:24]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">parallel=false</a><a class="badge badge-primary" href="karate-tags.html">bundle</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:24]</span>
+                <span class="scenario-name">TC-BUN-002 | REQ-BUN-002 searchset Bundle has total field</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>4007</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:24]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:24]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:35.431 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:35.431 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:24]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def uniqueSuffix = java.lang.System.currentTimeMillis() + &#39;&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Patient&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _count = &#39;5&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.27">
+      <div class="step-ref passed">27</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _total = &#39;accurate&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4005</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.28">05:56:35.433 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Patient?_count=5&amp;_total=accurate
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:39.436 response time in milliseconds: 4003
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:39 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: SSVAqXmHIztiBRD7
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:56:39 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;f1134472-aa6e-4553-bc02-18985e81c21f&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:56:39.366+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;total&quot;: 24634,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Patient?_count=5&amp;_total=accurate&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=f1134472-aa6e-4553-bc02-18985e81c21f&amp;_getpagesoffset=5&amp;_count=5&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90257875&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90257875&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:35:36.642+00:00&quot;,
+        &quot;source&quot;: &quot;#ltdnkJaX04DbLduH&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90258979&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90258979&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:35:41.648+00:00&quot;,
+        &quot;source&quot;: &quot;#BfRAg1eYZvPEEllH&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90262192&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90262192&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:35:56.639+00:00&quot;,
+        &quot;source&quot;: &quot;#MiP77J2m7xeeu01E&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90263196&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90263196&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:36:01.650+00:00&quot;,
+        &quot;source&quot;: &quot;#sXfyQ8msVLImkGJU&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90264223&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90264223&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:36:06.639+00:00&quot;,
+        &quot;source&quot;: &quot;#nV78G4bswjDzmYjA&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.29">
+      <div class="step-ref passed">29</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.total == &#39;#notnull&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Bundle total: &#39; + response.total)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.31">05:56:39.438 Bundle total: 24634 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:33]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">parallel=false</a><a class="badge badge-primary" href="karate-tags.html">bundle</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:33]</span>
+                <span class="scenario-name">TC-BUN-003 | REQ-BUN-003 each entry has resource and fullUrl</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>980</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:33]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:33]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:39.442 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:39.442 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:33]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def uniqueSuffix = java.lang.System.currentTimeMillis() + &#39;&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.34">
+      <div class="step-ref passed">34</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;Patient&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.35">
+      <div class="step-ref passed">35</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _count = &#39;5&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.36">
+      <div class="step-ref passed">36</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">976</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.36">05:56:39.444 request:
+1 &gt; GET https://hapi.fhir.org/baseR4/Patient?_count=5
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:40.419 response time in milliseconds: 974
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:40 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: pm133rRlIaR0oGhP
+1 &lt; Last-Modified: Sat, 11 Apr 2026 05:56:35 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;e3e9e7f3-70d2-402e-a570-e21b215ef29e&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:56:35.366+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Patient?_count=5&quot;
+  }, {
+    &quot;relation&quot;: &quot;next&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=e3e9e7f3-70d2-402e-a570-e21b215ef29e&amp;_getpagesoffset=5&amp;_count=5&amp;_pretty=true&amp;_bundletype=searchset&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90257875&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90257875&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:35:36.642+00:00&quot;,
+        &quot;source&quot;: &quot;#ltdnkJaX04DbLduH&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90258979&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90258979&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:35:41.648+00:00&quot;,
+        &quot;source&quot;: &quot;#BfRAg1eYZvPEEllH&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90262192&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90262192&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:35:56.639+00:00&quot;,
+        &quot;source&quot;: &quot;#MiP77J2m7xeeu01E&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90263196&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90263196&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:36:01.650+00:00&quot;,
+        &quot;source&quot;: &quot;#sXfyQ8msVLImkGJU&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  }, {
+    &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/Patient/90264223&quot;,
+    &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;90264223&quot;,
+      &quot;meta&quot;: {
+        &quot;versionId&quot;: &quot;1&quot;,
+        &quot;lastUpdated&quot;: &quot;2026-02-09T18:36:06.639+00:00&quot;,
+        &quot;source&quot;: &quot;#nV78G4bswjDzmYjA&quot;
+      },
+      &quot;text&quot;: {
+        &quot;status&quot;: &quot;generated&quot;,
+        &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt;NuÃ±ez &lt;b&gt;KARLA &lt;/b&gt;&lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Date of birth&lt;/td&gt;&lt;td&gt;&lt;span&gt;02 January 1980&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+      },
+      &quot;name&quot;: [ {
+        &quot;family&quot;: &quot;Karla&quot;,
+        &quot;given&quot;: [ &quot;NuÃ±ez&quot; ]
+      } ],
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birthDate&quot;: &quot;1980-01-02&quot;
+    },
+    &quot;search&quot;: {
+      &quot;mode&quot;: &quot;match&quot;
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.39">
+      <div class="step-ref passed">39</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (!hasEntry) karate.log(&#39;TC-BUN-003: SKIP — search returned zero entries&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.40">
+      <div class="step-ref passed">40</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (hasEntry) karate.match(response.entry[0].fullUrl, &#39;#present&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.41">
+      <div class="step-ref passed">41</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (hasEntry) karate.match(response.entry[0].resource, &#39;#present&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.42">
+      <div class="step-ref passed">42</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (hasEntry) karate.log(&#39;entry[0].fullUrl: &#39; + response.entry[0].fullUrl)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.42">05:56:40.423 entry[0].fullUrl: https://hapi.fhir.org/baseR4/Patient/90257875 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4:44]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">parallel=false</a><a class="badge badge-primary" href="karate-tags.html">bundle</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4:44]</span>
+                <span class="scenario-name">TC-BUN-004 | REQ-BUN-004 valid transaction returns transaction-response Bundle</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>291</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4:44]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:40.429 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:40.429 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def uniqueSuffix = java.lang.System.currentTimeMillis() + &#39;&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.45">
+      <div class="step-ref passed">45</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Content-Type = &#39;application/fhir+json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request ({ &quot;resourceType&quot;: &quot;Bundle&quot;, &quot;type&quot;: &quot;transaction&quot;, &quot;entry&quot;: [{ &quot;resource&quot;: { &quot;resourceType&quot;: &quot;Patient&quot;, &quot;name&quot;: [{ &quot;family&quot;: &quot;BundleTestPatient&quot;, &quot;given&quot;: [&quot;TC-BUN-004-&quot; + uniqueSuffix] }] }, &quot;request&quot;: { &quot;method&quot;: &quot;POST&quot;, &quot;url&quot;: &quot;Patient&quot; } }] })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">284</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.48">05:56:40.469 request:
+1 &gt; POST https://hapi.fhir.org/baseR4
+1 &gt; Content-Type: application/fhir+json; charset=UTF-8
+1 &gt; Content-Length: 217
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;resourceType&quot;:&quot;Bundle&quot;,&quot;type&quot;:&quot;transaction&quot;,&quot;entry&quot;:[{&quot;resource&quot;:{&quot;resourceType&quot;:&quot;Patient&quot;,&quot;name&quot;:[{&quot;family&quot;:&quot;BundleTestPatient&quot;,&quot;given&quot;:[&quot;TC-BUN-004-1775887000430&quot;]}]},&quot;request&quot;:{&quot;method&quot;:&quot;POST&quot;,&quot;url&quot;:&quot;Patient&quot;}}]}
+
+05:56:40.716 response time in milliseconds: 246
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:40 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: lr5nECbDIytrmX9f
+1 &lt; Content-Location: https://hapi.fhir.org/baseR4/Bundle/92b3731f-074e-42e7-a260-22656610d347
+1 &lt; Location: https://hapi.fhir.org/baseR4/Bundle/92b3731f-074e-42e7-a260-22656610d347
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;92b3731f-074e-42e7-a260-22656610d347&quot;,
+  &quot;type&quot;: &quot;transaction-response&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;response&quot;: {
+      &quot;status&quot;: &quot;201 Created&quot;,
+      &quot;location&quot;: &quot;Patient/131897979/_history/1&quot;,
+      &quot;etag&quot;: &quot;1&quot;,
+      &quot;lastModified&quot;: &quot;2026-04-11T05:56:40.639+00:00&quot;,
+      &quot;outcome&quot;: {
+        &quot;resourceType&quot;: &quot;OperationOutcome&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=\&quot;0\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;font-weight: bold;\&quot;&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;Successfully created resource &amp;quot;Patient/131897979/_history/1&amp;quot;. Took 14ms.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+        },
+        &quot;issue&quot;: [ {
+          &quot;severity&quot;: &quot;information&quot;,
+          &quot;code&quot;: &quot;informational&quot;,
+          &quot;details&quot;: {
+            &quot;coding&quot;: [ {
+              &quot;system&quot;: &quot;https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code&quot;,
+              &quot;code&quot;: &quot;SUCCESSFUL_CREATE&quot;,
+              &quot;display&quot;: &quot;Create succeeded.&quot;
+            } ]
+          },
+          &quot;diagnostics&quot;: &quot;Successfully created resource \&quot;Patient/131897979/_history/1\&quot;. Took 14ms.&quot;
+        } ]
+      }
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.resourceType == &#39;Bundle&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.type == &#39;transaction-response&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.entry == &#39;#[_ &gt; 0]&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.53">
+      <div class="step-ref passed">53</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.entry[0].response.status == &#39;#regex 201.*&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.54">
+      <div class="step-ref passed">54</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;transaction-response status: &#39; + response.entry[0].response.status)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.54">05:56:40.719 transaction-response status: 201 Created 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.write(response, &#39;responses/bundle/bundle-transaction-response.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.55">05:56:40.721 write to file: target/responses/bundle/bundle-transaction-response.json
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[5:57]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">parallel=false</a><a class="badge badge-primary" href="karate-tags.html">bundle</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[5:57]</span>
+                <span class="scenario-name">TC-BUN-005 | REQ-BUN-005 invalid transaction entry fails entire transaction and is atomic</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>698</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[5:57]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[5:57]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:40.725 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:40.725 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:57]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def uniqueSuffix = java.lang.System.currentTimeMillis() + &#39;&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Step 1: POST a transaction with one valid and one invalid entry (missing resourceType)</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.60">
+      <div class="step-ref passed">60</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Content-Type = &#39;application/fhir+json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.61">
+      <div class="step-ref passed">61</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request ({ &quot;resourceType&quot;: &quot;Bundle&quot;, &quot;type&quot;: &quot;transaction&quot;, &quot;entry&quot;: [{ &quot;resource&quot;: { &quot;resourceType&quot;: &quot;Patient&quot;, &quot;name&quot;: [{ &quot;family&quot;: &quot;AtomicityTestPatient&quot;, &quot;given&quot;: [&quot;ShouldNotExist-&quot; + uniqueSuffix] }] }, &quot;request&quot;: { &quot;method&quot;: &quot;POST&quot;, &quot;url&quot;: &quot;Patient&quot; } }, { &quot;resource&quot;: { &quot;name&quot;: [{ &quot;family&quot;: &quot;InvalidEntry-&quot; + uniqueSuffix }] }, &quot;request&quot;: { &quot;method&quot;: &quot;POST&quot;, &quot;url&quot;: &quot;Patient&quot; } }] })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.62">
+      <div class="step-ref passed">62</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">231</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.62">05:56:40.728 request:
+1 &gt; POST https://hapi.fhir.org/baseR4
+1 &gt; Content-Type: application/fhir+json; charset=UTF-8
+1 &gt; Content-Length: 332
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;resourceType&quot;:&quot;Bundle&quot;,&quot;type&quot;:&quot;transaction&quot;,&quot;entry&quot;:[{&quot;resource&quot;:{&quot;resourceType&quot;:&quot;Patient&quot;,&quot;name&quot;:[{&quot;family&quot;:&quot;AtomicityTestPatient&quot;,&quot;given&quot;:[&quot;ShouldNotExist-1775887000726&quot;]}]},&quot;request&quot;:{&quot;method&quot;:&quot;POST&quot;,&quot;url&quot;:&quot;Patient&quot;}},{&quot;resource&quot;:{&quot;name&quot;:[{&quot;family&quot;:&quot;InvalidEntry-1775887000726&quot;}]},&quot;request&quot;:{&quot;method&quot;:&quot;POST&quot;,&quot;url&quot;:&quot;Patient&quot;}}]}
+
+05:56:40.957 response time in milliseconds: 229
+1 &lt; 400
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:40 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: NAXDROFQrdr5RWXm
+{
+  &quot;resourceType&quot;: &quot;OperationOutcome&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=\&quot;0\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;font-weight: bold;\&quot;&gt;ERROR&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;HAPI-0450: Failed to parse request body as JSON resource. Error was: HAPI-1843: Missing required element &#39;resourceType&#39; from JSON resource object, unable to parse&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+  },
+  &quot;issue&quot;: [ {
+    &quot;severity&quot;: &quot;error&quot;,
+    &quot;code&quot;: &quot;processing&quot;,
+    &quot;diagnostics&quot;: &quot;HAPI-0450: Failed to parse request body as JSON resource. Error was: HAPI-1843: Missing required element &#39;resourceType&#39; from JSON resource object, unable to parse&quot;
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.63">
+      <div class="step-ref passed">63</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def txStatus = responseStatus</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.64">
+      <div class="step-ref passed">64</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;TC-BUN-005 transaction rejected with: &#39; + txStatus)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.64">05:56:40.963 TC-BUN-005 transaction rejected with: 400 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.65">
+      <div class="step-ref passed">65</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>assert txStatus &gt;= 400 &amp;&amp; txStatus &lt; 500</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.66">
+      <div class="step-ref passed">66</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.resourceType == &#39;OperationOutcome&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Step 2: Confirm atomicity — the valid Patient entry MUST NOT have been written</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.68">
+      <div class="step-ref passed">68</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.69">
+      <div class="step-ref passed">69</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>path &#39;Patient&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.70">
+      <div class="step-ref passed">70</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param family = &#39;AtomicityTestPatient&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.71">
+      <div class="step-ref passed">71</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param given = &#39;ShouldNotExist-&#39; + uniqueSuffix</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.72">
+      <div class="step-ref passed">72</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param _count = &#39;1&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.73">
+      <div class="step-ref passed">73</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">442</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.73">05:56:40.976 request:
+2 &gt; GET https://hapi.fhir.org/baseR4/Patient?family=AtomicityTestPatient&amp;given=ShouldNotExist-1775887000726&amp;_count=1
+2 &gt; Host: hapi.fhir.org
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+05:56:41.409 response time in milliseconds: 430
+2 &lt; 200
+2 &lt; Server: nginx/1.24.0 (Ubuntu)
+2 &lt; Date: Sat, 11 Apr 2026 05:56:41 GMT
+2 &lt; Content-Type: application/fhir+json;charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+2 &lt; X-Request-ID: JFxmxHFChjWbHIPJ
+2 &lt; Last-Modified: Sat, 11 Apr 2026 05:56:41 GMT
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;25d4f9aa-64f8-4969-b7cc-cd0fd6e3dbdc&quot;,
+  &quot;meta&quot;: {
+    &quot;lastUpdated&quot;: &quot;2026-04-11T05:56:41.365+00:00&quot;
+  },
+  &quot;type&quot;: &quot;searchset&quot;,
+  &quot;total&quot;: 0,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/Patient?_count=1&amp;family=AtomicityTestPatient&amp;given=ShouldNotExist-1775887000726&quot;
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.74">
+      <div class="step-ref passed">74</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.75">
+      <div class="step-ref passed">75</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;TC-BUN-005 atomicity confirmed — partial write count: &#39; + response.total)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">6</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.75">05:56:41.422 TC-BUN-005 atomicity confirmed — partial write count: 0 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.76">
+      <div class="step-ref passed">76</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.total == 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[6:78]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">parallel=false</a><a class="badge badge-primary" href="karate-tags.html">bundle</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[6:78]</span>
+                <span class="scenario-name">TC-BUN-006 | REQ-GEN-001 captured bundle-transaction-response.json exists for HL7 Validator</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>268</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[6:78]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[6:78]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:41.436 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:41.447 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:78]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def uniqueSuffix = java.lang.System.currentTimeMillis() + &#39;&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Self-contained: POST transaction, write, then assert file exists</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.80">
+      <div class="step-ref passed">80</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.81">
+      <div class="step-ref passed">81</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Content-Type = &#39;application/fhir+json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.82">
+      <div class="step-ref passed">82</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request ({ &quot;resourceType&quot;: &quot;Bundle&quot;, &quot;type&quot;: &quot;transaction&quot;, &quot;entry&quot;: [{ &quot;resource&quot;: { &quot;resourceType&quot;: &quot;Patient&quot;, &quot;name&quot;: [{ &quot;family&quot;: &quot;BundleTestPatient&quot;, &quot;given&quot;: [&quot;TC-BUN-006-&quot; + uniqueSuffix] }] }, &quot;request&quot;: { &quot;method&quot;: &quot;POST&quot;, &quot;url&quot;: &quot;Patient&quot; } }] })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.83">
+      <div class="step-ref passed">83</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">256</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.83">05:56:41.456 request:
+1 &gt; POST https://hapi.fhir.org/baseR4
+1 &gt; Content-Type: application/fhir+json; charset=UTF-8
+1 &gt; Content-Length: 217
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;resourceType&quot;:&quot;Bundle&quot;,&quot;type&quot;:&quot;transaction&quot;,&quot;entry&quot;:[{&quot;resource&quot;:{&quot;resourceType&quot;:&quot;Patient&quot;,&quot;name&quot;:[{&quot;family&quot;:&quot;BundleTestPatient&quot;,&quot;given&quot;:[&quot;TC-BUN-006-1775887001448&quot;]}]},&quot;request&quot;:{&quot;method&quot;:&quot;POST&quot;,&quot;url&quot;:&quot;Patient&quot;}}]}
+
+05:56:41.708 response time in milliseconds: 251
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:41 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: RRpul6N0KPDdnCHV
+1 &lt; Content-Location: https://hapi.fhir.org/baseR4/Bundle/8f1001f9-9027-40e3-b900-ea867eaea5c9
+1 &lt; Location: https://hapi.fhir.org/baseR4/Bundle/8f1001f9-9027-40e3-b900-ea867eaea5c9
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;8f1001f9-9027-40e3-b900-ea867eaea5c9&quot;,
+  &quot;type&quot;: &quot;transaction-response&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;response&quot;: {
+      &quot;status&quot;: &quot;201 Created&quot;,
+      &quot;location&quot;: &quot;Patient/131897980/_history/1&quot;,
+      &quot;etag&quot;: &quot;1&quot;,
+      &quot;lastModified&quot;: &quot;2026-04-11T05:56:41.634+00:00&quot;,
+      &quot;outcome&quot;: {
+        &quot;resourceType&quot;: &quot;OperationOutcome&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=\&quot;0\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;font-weight: bold;\&quot;&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;Successfully created resource &amp;quot;Patient/131897980/_history/1&amp;quot;. Took 13ms.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+        },
+        &quot;issue&quot;: [ {
+          &quot;severity&quot;: &quot;information&quot;,
+          &quot;code&quot;: &quot;informational&quot;,
+          &quot;details&quot;: {
+            &quot;coding&quot;: [ {
+              &quot;system&quot;: &quot;https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code&quot;,
+              &quot;code&quot;: &quot;SUCCESSFUL_CREATE&quot;,
+              &quot;display&quot;: &quot;Create succeeded.&quot;
+            } ]
+          },
+          &quot;diagnostics&quot;: &quot;Successfully created resource \&quot;Patient/131897980/_history/1\&quot;. Took 13ms.&quot;
+        } ]
+      }
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.84">
+      <div class="step-ref passed">84</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.85">
+      <div class="step-ref passed">85</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.write(response, &#39;responses/bundle/bundle-transaction-response.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.85">05:56:41.711 write to file: target/responses/bundle/bundle-transaction-response.json
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.86">
+      <div class="step-ref passed">86</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def fileExists = java.nio.file.Files.exists(java.nio.file.Paths.get(&#39;target/responses/bundle/bundle-transaction-response.json&#39;))</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.87">
+      <div class="step-ref passed">87</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>assert fileExists == true</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[7:89]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">parallel=false</a><a class="badge badge-primary" href="karate-tags.html">bundle</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[7:89]</span>
+                <span class="scenario-name">TC-BUN-007 | REQ-GEN-002b transaction response location confirms versionId tracking</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>248</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[7:89]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[7:89]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">05:56:41.731 baseUrl: https://hapi.fhir.org/baseR4 
+05:56:41.731 fhirVersion: 4.0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[7:89]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def uniqueSuffix = java.lang.System.currentTimeMillis() + &#39;&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Self-contained: POST transaction and inspect location in the same scenario</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.91">
+      <div class="step-ref passed">91</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.92">
+      <div class="step-ref passed">92</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Content-Type = &#39;application/fhir+json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.93">
+      <div class="step-ref passed">93</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request ({ &quot;resourceType&quot;: &quot;Bundle&quot;, &quot;type&quot;: &quot;transaction&quot;, &quot;entry&quot;: [{ &quot;resource&quot;: { &quot;resourceType&quot;: &quot;Patient&quot;, &quot;name&quot;: [{ &quot;family&quot;: &quot;BundleTestPatient&quot;, &quot;given&quot;: [&quot;TC-BUN-007-&quot; + uniqueSuffix] }] }, &quot;request&quot;: { &quot;method&quot;: &quot;POST&quot;, &quot;url&quot;: &quot;Patient&quot; } }] })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.94">
+      <div class="step-ref passed">94</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">240</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.94">05:56:41.737 request:
+1 &gt; POST https://hapi.fhir.org/baseR4
+1 &gt; Content-Type: application/fhir+json; charset=UTF-8
+1 &gt; Content-Length: 217
+1 &gt; Host: hapi.fhir.org
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;resourceType&quot;:&quot;Bundle&quot;,&quot;type&quot;:&quot;transaction&quot;,&quot;entry&quot;:[{&quot;resource&quot;:{&quot;resourceType&quot;:&quot;Patient&quot;,&quot;name&quot;:[{&quot;family&quot;:&quot;BundleTestPatient&quot;,&quot;given&quot;:[&quot;TC-BUN-007-1775887001732&quot;]}]},&quot;request&quot;:{&quot;method&quot;:&quot;POST&quot;,&quot;url&quot;:&quot;Patient&quot;}}]}
+
+05:56:41.976 response time in milliseconds: 238
+1 &lt; 200
+1 &lt; Server: nginx/1.24.0 (Ubuntu)
+1 &lt; Date: Sat, 11 Apr 2026 05:56:41 GMT
+1 &lt; Content-Type: application/fhir+json;charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
+1 &lt; X-Request-ID: uuktnvxqBkBAMWbk
+1 &lt; Content-Location: https://hapi.fhir.org/baseR4/Bundle/ca521312-3e27-44fc-bcf9-847858510475
+1 &lt; Location: https://hapi.fhir.org/baseR4/Bundle/ca521312-3e27-44fc-bcf9-847858510475
+{
+  &quot;resourceType&quot;: &quot;Bundle&quot;,
+  &quot;id&quot;: &quot;ca521312-3e27-44fc-bcf9-847858510475&quot;,
+  &quot;type&quot;: &quot;transaction-response&quot;,
+  &quot;link&quot;: [ {
+    &quot;relation&quot;: &quot;self&quot;,
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4&quot;
+  } ],
+  &quot;entry&quot;: [ {
+    &quot;response&quot;: {
+      &quot;status&quot;: &quot;201 Created&quot;,
+      &quot;location&quot;: &quot;Patient/131897981/_history/1&quot;,
+      &quot;etag&quot;: &quot;1&quot;,
+      &quot;lastModified&quot;: &quot;2026-04-11T05:56:41.907+00:00&quot;,
+      &quot;outcome&quot;: {
+        &quot;resourceType&quot;: &quot;OperationOutcome&quot;,
+        &quot;text&quot;: {
+          &quot;status&quot;: &quot;generated&quot;,
+          &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=\&quot;0\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;font-weight: bold;\&quot;&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;Successfully created resource &amp;quot;Patient/131897981/_history/1&amp;quot;. Took 14ms.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+        },
+        &quot;issue&quot;: [ {
+          &quot;severity&quot;: &quot;information&quot;,
+          &quot;code&quot;: &quot;informational&quot;,
+          &quot;details&quot;: {
+            &quot;coding&quot;: [ {
+              &quot;system&quot;: &quot;https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code&quot;,
+              &quot;code&quot;: &quot;SUCCESSFUL_CREATE&quot;,
+              &quot;display&quot;: &quot;Create succeeded.&quot;
+            } ]
+          },
+          &quot;diagnostics&quot;: &quot;Successfully created resource \&quot;Patient/131897981/_history/1\&quot;. Took 14ms.&quot;
+        } ]
+      }
+    }
+  } ]
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.95">
+      <div class="step-ref passed">95</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.96">
+      <div class="step-ref passed">96</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def createdLocation = response.entry[0].response.location</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.97">
+      <div class="step-ref passed">97</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;TC-BUN-007 created resource location: &#39; + createdLocation)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.97">05:56:41.979 TC-BUN-007 created resource location: Patient/131897981/_history/1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.98">
+      <div class="step-ref passed">98</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match createdLocation == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
