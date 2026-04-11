@@ -17,6 +17,7 @@ Feature: Observation Resource Validation
     When method GET
     Then status 200
     * def observationId = response.entry[0].resource.id
+    * match response.entry[0].resource.resourceType == 'Observation'
     * karate.log('Resolved observationId: ' + observationId)
 
   Scenario: TC-OBS-001 | REQ-OBS-001 GET /Observation/{id} returns 200 and resourceType = Observation

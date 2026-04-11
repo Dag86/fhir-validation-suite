@@ -14,6 +14,7 @@ Feature: Practitioner Resource Validation
     When method GET
     Then status 200
     * def practitionerId = response.entry[0].resource.id
+    * match response.entry[0].resource.resourceType == 'Practitioner'
     * karate.log('Resolved practitionerId: ' + practitionerId)
 
   Scenario: TC-PRA-001 | REQ-PRA-001 GET /Practitioner/{id} returns 200 and resourceType = Practitioner

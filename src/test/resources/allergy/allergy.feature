@@ -17,6 +17,7 @@ Feature: AllergyIntolerance Resource Validation
     When method GET
     Then status 200
     * def allergyId = response.entry[0].resource.id
+    * match response.entry[0].resource.resourceType == 'AllergyIntolerance'
     * karate.log('Resolved allergyId: ' + allergyId)
 
   Scenario: TC-ALG-001 | REQ-ALG-001 GET /AllergyIntolerance/{id} returns 200 and resourceType = AllergyIntolerance

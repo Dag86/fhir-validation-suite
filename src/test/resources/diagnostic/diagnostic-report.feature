@@ -15,6 +15,7 @@ Feature: DiagnosticReport Resource Validation
     When method GET
     Then status 200
     * def diagnosticReportId = response.entry[0].resource.id
+    * match response.entry[0].resource.resourceType == 'DiagnosticReport'
     * karate.log('Resolved diagnosticReportId: ' + diagnosticReportId)
 
   Scenario: TC-DXR-001 | REQ-DXR-001 GET /DiagnosticReport/{id} returns 200 and resourceType = DiagnosticReport

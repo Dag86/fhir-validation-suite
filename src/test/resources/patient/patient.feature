@@ -24,6 +24,7 @@ Feature: Patient Resource Validation
     When method GET
     Then status 200
     * def patientResponse = response
+    * match patientResponse.resourceType == 'Patient'
 
   Scenario: TC-PAT-001 | REQ-PAT-001 GET /Patient/{id} returns 200 and resourceType = Patient
     Then match patientResponse.resourceType == 'Patient'

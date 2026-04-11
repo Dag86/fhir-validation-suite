@@ -17,6 +17,8 @@ Feature: AuditEvent Resource Validation
     * def hasEntry = response.entry != null && response.entry.length > 0
     * def auditEventAvailable = hasEntry
     * def auditEventId = hasEntry ? response.entry[0].resource.id : null
+    * def auditResourceType = auditEventAvailable ? response.entry[0].resource.resourceType : 'AuditEvent'
+    * match auditResourceType == 'AuditEvent'
     * if (auditEventAvailable) karate.log('Resolved auditEventId: ' + auditEventId)
     * if (!auditEventAvailable) karate.log('TC-AUD block: SKIP — no AuditEvent resources on server')
 

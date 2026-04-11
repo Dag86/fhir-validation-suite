@@ -18,6 +18,7 @@ Feature: MedicationRequest Resource Validation
     When method GET
     Then status 200
     * def medicationId = response.entry[0].resource.id
+    * match response.entry[0].resource.resourceType == 'MedicationRequest'
     * karate.log('Resolved medicationId: ' + medicationId)
 
   Scenario: TC-MED-001 | REQ-MED-001 GET /MedicationRequest/{id} returns 200 and resourceType = MedicationRequest
