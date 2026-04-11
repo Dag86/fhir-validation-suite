@@ -25,6 +25,7 @@ Feature: MedicationRequest Resource Validation
     Given path 'MedicationRequest', medicationId
     When method GET
     Then status 200
+    And assert responseTime < 10000
     And match response.resourceType == 'MedicationRequest'
     * karate.write(response, 'responses/medication/medication-read.json')
 

@@ -9,6 +9,7 @@ Feature: General FHIR API Behaviour
     Given path 'UnsupportedResourceXYZ'
     When method get
     Then status 404
+    And assert responseTime < 10000
     And match response.resourceType == 'OperationOutcome'
     And match response.issue == '#[_ > 0]'
     And match each response.issue contains { severity: '#present', code: '#present' }

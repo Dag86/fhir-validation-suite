@@ -11,6 +11,7 @@ Feature: OperationOutcome Validation
     And header Content-Type = 'application/fhir+json'
     When method post
     Then status 400
+    And assert responseTime < 10000
     And match response.resourceType == 'OperationOutcome'
 
   Scenario: TC-OO-002 OperationOutcome issue array is present and non-empty

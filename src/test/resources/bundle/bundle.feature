@@ -17,6 +17,7 @@ Feature: Bundle Resource Validation
     And param _count = '5'
     When method GET
     Then status 200
+    And assert responseTime < 10000
     And match response.resourceType == 'Bundle'
     And match response.type == 'searchset'
     * karate.log('Bundle type: ' + response.type)

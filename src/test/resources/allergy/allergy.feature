@@ -24,6 +24,7 @@ Feature: AllergyIntolerance Resource Validation
     Given path 'AllergyIntolerance', allergyId
     When method GET
     Then status 200
+    And assert responseTime < 10000
     And match response.resourceType == 'AllergyIntolerance'
     * karate.write(response, 'responses/allergy/allergy-read.json')
 

@@ -24,6 +24,7 @@ Feature: Observation Resource Validation
     Given path 'Observation', observationId
     When method GET
     Then status 200
+    And assert responseTime < 10000
     And match response.resourceType == 'Observation'
     * karate.write(response, 'responses/observation/observation-read.json')
 

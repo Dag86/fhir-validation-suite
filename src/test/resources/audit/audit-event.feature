@@ -25,6 +25,7 @@ Feature: AuditEvent Resource Validation
   Scenario: TC-AUD-001 | REQ-AUD-001 GET /AuditEvent/{id} returns 200 and resourceType = AuditEvent
     * if (!auditEventAvailable) karate.log('TC-AUD-001: SKIP — no AuditEvent resources on server')
     * if (auditEventAvailable) karate.call('classpath:audit/assert-audit-read.feature', { auditEventId: auditEventId, baseUrl: baseUrl })
+    * if (auditEventAvailable) karate.match(responseTime < 10000, true)
 
   Scenario: TC-AUD-002 | REQ-AUD-002 type.system and type.code are present
     * if (!auditEventAvailable) karate.log('TC-AUD-002: SKIP — no AuditEvent resources on server')

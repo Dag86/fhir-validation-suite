@@ -22,6 +22,7 @@ Feature: DiagnosticReport Resource Validation
     Given path 'DiagnosticReport', diagnosticReportId
     When method GET
     Then status 200
+    And assert responseTime < 10000
     And match response.resourceType == 'DiagnosticReport'
     * karate.write(response, 'responses/diagnostic/diagnostic-report-read.json')
 

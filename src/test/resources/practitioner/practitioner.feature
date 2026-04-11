@@ -21,6 +21,7 @@ Feature: Practitioner Resource Validation
     Given path 'Practitioner', practitionerId
     When method GET
     Then status 200
+    And assert responseTime < 10000
     And match response.resourceType == 'Practitioner'
     * karate.write(response, 'responses/practitioner/practitioner-read.json')
 
