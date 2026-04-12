@@ -7,6 +7,7 @@ Feature: Bundle Resource Validation
   # REQ-BUN-005: Transaction atomicity — invalid entry fails entire transaction
   # REQ-GEN-001: HL7 Validator can process the captured response
   # REQ-GEN-002b: meta.versionId present on transaction response resource
+  # REQ-BUN-006: searchset Bundle contains self link relation
 
   Background:
     * url baseUrl
@@ -98,3 +99,14 @@ Feature: Bundle Resource Validation
     * def createdLocation = response.entry[0].response.location
     * karate.log('TC-BUN-007 created resource location: ' + createdLocation)
     * match createdLocation == '#string'
+
+  Scenario: TC-BUN-008 | REQ-BUN-006 searchset Bundle contains self link relation
+    Given path 'Patient'
+    And param _count = '5'
+    When method GET
+    Then status 200
+    And assert responseTime < 10000
+    And match responseHeaders['Content-Type'][0] contains 'application/fhir+json'
+    * def selfLink = response.link.filter(l => l.relation == 'self')[0]
+    * match selfLink == '#present'
+    * karate.log('Self link URL: ' + selfLink.url)
