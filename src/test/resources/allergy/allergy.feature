@@ -16,6 +16,8 @@ Feature: AllergyIntolerance Resource Validation
     And params ({ 'patient:missing': 'false', '_count': '1' })
     When method GET
     Then status 200
+    * def hasEntry = response.entry != null && response.entry.length > 0
+    * match hasEntry == true
     * def allergyId = response.entry[0].resource.id
     * match response.entry[0].resource.resourceType == 'AllergyIntolerance'
     * karate.log('Resolved allergyId: ' + allergyId)

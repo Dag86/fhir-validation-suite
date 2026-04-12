@@ -17,6 +17,8 @@ Feature: MedicationRequest Resource Validation
     And params ({ 'subject:missing': 'false', '_count': '1' })
     When method GET
     Then status 200
+    * def hasEntry = response.entry != null && response.entry.length > 0
+    * match hasEntry == true
     * def medicationId = response.entry[0].resource.id
     * match response.entry[0].resource.resourceType == 'MedicationRequest'
     * karate.log('Resolved medicationId: ' + medicationId)
