@@ -21,7 +21,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"9f5c0d54-d8b4-4798-9e09-d541b8dfa0e9",karate_version:"1.5.1",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"cf3c4147-5f7e-4589-89ee-d44062717397",karate_version:"1.5.1",karate_meta:null});
   }
 });
 </script>
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-04-12 01:25:16 AM</div>
+    <div>2026-04-12 06:29:04 AM</div>
   </div>
 </div>
 
@@ -102,7 +102,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>9921</span>
+              <span>ms:</span>&nbsp;<span>9129</span>
             </div>
           </div>
           <div class="step-row">
@@ -125,7 +125,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -134,8 +134,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.14">01:24:58.234 baseUrl: https://hapi.fhir.org/baseR4 
-01:24:58.237 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.14">06:28:46.506 baseUrl: https://hapi.fhir.org/baseR4 
+06:28:46.507 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -155,7 +155,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;AllergyIntolerance&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -183,7 +183,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>params ({ &#39;patient:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
       </div>
     </div>
-    <div class="time-cell passed">7</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -211,7 +211,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4903</div>
+    <div class="time-cell passed">4113</div>
   </div>
 
    
@@ -220,7 +220,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.17">01:24:58.662 request:
+  <div class="preformatted" data-parent="0.17">06:28:47.264 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance?patient%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -228,22 +228,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:03.173 response time in milliseconds: 4510
+06:28:50.657 response time in milliseconds: 3392
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 12 Apr 2026 01:25:03 GMT
+1 &lt; Date: Sun, 12 Apr 2026 06:28:50 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: GVU8zGvMmXM4wqI3
-1 &lt; Last-Modified: Sun, 12 Apr 2026 01:24:59 GMT
+1 &lt; X-Request-ID: XpktbEwEJfn6c2DS
+1 &lt; Last-Modified: Sun, 12 Apr 2026 06:28:47 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;075b784a-c17f-4f6c-a6aa-bdd5287f8a39&quot;,
+  &quot;id&quot;: &quot;f0858ee3-24a9-444c-aee4-64522f712967&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-12T01:24:59.142+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-12T06:28:47.628+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -251,7 +251,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance?_count=1&amp;patient%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=075b784a-c17f-4f6c-a6aa-bdd5287f8a39&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=f0858ee3-24a9-444c-aee4-64522f712967&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1&quot;,
@@ -486,7 +486,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.23">01:25:03.181 Resolved allergyId: pharyngitis-traj1-allergy-v1 
+  <div class="preformatted" data-parent="0.23">06:28:50.666 Resolved allergyId: pharyngitis-traj1-allergy-v1 
 </div>   
 
   
@@ -534,7 +534,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4976</div>
+    <div class="time-cell passed">4978</div>
   </div>
 
    
@@ -543,7 +543,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.27">01:25:03.184 request:
+  <div class="preformatted" data-parent="0.27">06:28:50.668 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -551,16 +551,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:08.158 response time in milliseconds: 4973
+06:28:55.644 response time in milliseconds: 4975
 2 &lt; 200
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 12 Apr 2026 01:25:08 GMT
+2 &lt; Date: Sun, 12 Apr 2026 06:28:55 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
 2 &lt; ETag: W/&quot;7&quot;
-2 &lt; X-Request-ID: VZNws9XcOnwtbgrI
+2 &lt; X-Request-ID: AqG4ZpgvNVG6Pnpx
 2 &lt; Content-Location: https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1/_history/7
 2 &lt; Last-Modified: Sun, 22 Feb 2026 23:14:57 GMT
 {
@@ -668,7 +668,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>assert responseTime &lt; 10000</span>
       </div>
     </div>
-    <div class="time-cell passed">5</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -752,7 +752,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.resourceType == &#39;AllergyIntolerance&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -780,7 +780,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>karate.write(response, &#39;responses/allergy/allergy-read.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">20</div>
+    <div class="time-cell passed">21</div>
   </div>
 
    
@@ -789,7 +789,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.33">01:25:08.185 write to file: target/responses/allergy/allergy-read.json
+  <div class="preformatted" data-parent="0.33">06:28:55.673 write to file: target/responses/allergy/allergy-read.json
 </div>   
 
   
@@ -810,7 +810,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>6903</span>
+              <span>ms:</span>&nbsp;<span>6117</span>
             </div>
           </div>
           <div class="step-row">
@@ -833,7 +833,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -842,8 +842,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.14">01:24:58.236 baseUrl: https://hapi.fhir.org/baseR4 
-01:24:58.237 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.14">06:28:46.506 baseUrl: https://hapi.fhir.org/baseR4 
+06:28:46.508 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -891,7 +891,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>params ({ &#39;patient:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -919,7 +919,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">1906</div>
+    <div class="time-cell passed">1168</div>
   </div>
 
    
@@ -928,7 +928,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.17">01:24:58.661 request:
+  <div class="preformatted" data-parent="0.17">06:28:47.263 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance?patient%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -936,22 +936,21 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:00.174 response time in milliseconds: 1511
+06:28:47.691 response time in milliseconds: 423
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 12 Apr 2026 01:25:00 GMT
+1 &lt; Date: Sun, 12 Apr 2026 06:28:47 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
-1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: 9ccPO8TkipTBbKI0
-1 &lt; Last-Modified: Sun, 12 Apr 2026 01:24:59 GMT
+1 &lt; X-Request-ID: khrPJNnLWMSoJGrR
+1 &lt; Last-Modified: Sun, 12 Apr 2026 06:28:47 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;075b784a-c17f-4f6c-a6aa-bdd5287f8a39&quot;,
+  &quot;id&quot;: &quot;f0858ee3-24a9-444c-aee4-64522f712967&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-12T01:24:59.142+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-12T06:28:47.628+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -959,7 +958,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance?_count=1&amp;patient%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=075b784a-c17f-4f6c-a6aa-bdd5287f8a39&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=f0858ee3-24a9-444c-aee4-64522f712967&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1&quot;,
@@ -1073,7 +1072,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -1101,7 +1100,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match hasEntry == true</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">9</div>
   </div>
 
    
@@ -1157,7 +1156,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match response.entry[0].resource.resourceType == &#39;AllergyIntolerance&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">10</div>
   </div>
 
    
@@ -1185,7 +1184,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>karate.log(&#39;Resolved allergyId: &#39; + allergyId)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -1194,7 +1193,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.23">01:25:00.182 Resolved allergyId: pharyngitis-traj1-allergy-v1 
+  <div class="preformatted" data-parent="0.23">06:28:47.742 Resolved allergyId: pharyngitis-traj1-allergy-v1 
 </div>   
 
   
@@ -1214,7 +1213,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;AllergyIntolerance&#39;, allergyId</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -1242,7 +1241,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4978</div>
+    <div class="time-cell passed">4900</div>
   </div>
 
    
@@ -1251,7 +1250,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.37">01:25:00.185 request:
+  <div class="preformatted" data-parent="0.37">06:28:47.750 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -1259,16 +1258,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:05.160 response time in milliseconds: 4974
+06:28:52.647 response time in milliseconds: 4896
 2 &lt; 200
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 12 Apr 2026 01:25:05 GMT
+2 &lt; Date: Sun, 12 Apr 2026 06:28:52 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
 2 &lt; ETag: W/&quot;7&quot;
-2 &lt; X-Request-ID: b9AIuzJJ7rVqVjub
+2 &lt; X-Request-ID: sSYC9rsNKAGHsOPq
 2 &lt; Content-Location: https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1/_history/7
 2 &lt; Last-Modified: Sun, 22 Feb 2026 23:14:57 GMT
 {
@@ -1469,7 +1468,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.42">01:25:05.169 clinicalStatus: active 
+  <div class="preformatted" data-parent="0.42">06:28:52.656 clinicalStatus: active 
 </div>   
 
   
@@ -1490,7 +1489,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>5900</span>
+              <span>ms:</span>&nbsp;<span>8111</span>
             </div>
           </div>
           <div class="step-row">
@@ -1513,7 +1512,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1522,8 +1521,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.14">01:24:58.237 baseUrl: https://hapi.fhir.org/baseR4 
-01:24:58.238 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.14">06:28:46.505 baseUrl: https://hapi.fhir.org/baseR4 
+06:28:46.510 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -1571,7 +1570,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>params ({ &#39;patient:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -1599,7 +1598,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">934</div>
+    <div class="time-cell passed">3113</div>
   </div>
 
    
@@ -1608,7 +1607,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.17">01:24:58.662 request:
+  <div class="preformatted" data-parent="0.17">06:28:47.263 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance?patient%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -1616,21 +1615,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-01:24:59.187 response time in milliseconds: 522
+06:28:49.657 response time in milliseconds: 2393
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 12 Apr 2026 01:24:59 GMT
+1 &lt; Date: Sun, 12 Apr 2026 06:28:49 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
+1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: KZUGUJesVFW38Lyv
-1 &lt; Last-Modified: Sun, 12 Apr 2026 01:24:59 GMT
+1 &lt; X-Request-ID: y0WbAiJaDW6EJuBC
+1 &lt; Last-Modified: Sun, 12 Apr 2026 06:28:47 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;075b784a-c17f-4f6c-a6aa-bdd5287f8a39&quot;,
+  &quot;id&quot;: &quot;f0858ee3-24a9-444c-aee4-64522f712967&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-12T01:24:59.142+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-12T06:28:47.628+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -1638,7 +1638,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance?_count=1&amp;patient%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=075b784a-c17f-4f6c-a6aa-bdd5287f8a39&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=f0858ee3-24a9-444c-aee4-64522f712967&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1&quot;,
@@ -1752,7 +1752,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
       </div>
     </div>
-    <div class="time-cell passed">5</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -1780,7 +1780,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match hasEntry == true</span>
       </div>
     </div>
-    <div class="time-cell passed">10</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1836,7 +1836,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match response.entry[0].resource.resourceType == &#39;AllergyIntolerance&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">16</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1864,7 +1864,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>karate.log(&#39;Resolved allergyId: &#39; + allergyId)</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1873,7 +1873,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.23">01:24:59.243 Resolved allergyId: pharyngitis-traj1-allergy-v1 
+  <div class="preformatted" data-parent="0.23">06:28:49.666 Resolved allergyId: pharyngitis-traj1-allergy-v1 
 </div>   
 
   
@@ -1893,7 +1893,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;AllergyIntolerance&#39;, allergyId</span>
       </div>
     </div>
-    <div class="time-cell passed">8</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1921,7 +1921,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4913</div>
+    <div class="time-cell passed">4979</div>
   </div>
 
    
@@ -1930,7 +1930,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.46">01:24:59.253 request:
+  <div class="preformatted" data-parent="0.46">06:28:49.668 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -1938,16 +1938,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:04.162 response time in milliseconds: 4908
+06:28:54.645 response time in milliseconds: 4976
 2 &lt; 200
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 12 Apr 2026 01:25:04 GMT
+2 &lt; Date: Sun, 12 Apr 2026 06:28:54 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
 2 &lt; ETag: W/&quot;7&quot;
-2 &lt; X-Request-ID: Fp5X068q1HTXAXj3
+2 &lt; X-Request-ID: hOrx92pIgdjzD2u6
 2 &lt; Content-Location: https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1/_history/7
 2 &lt; Last-Modified: Sun, 22 Feb 2026 23:14:57 GMT
 {
@@ -2055,7 +2055,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.verificationStatus == &#39;#present&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -2083,7 +2083,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>karate.log(&#39;verificationStatus: &#39; + response.verificationStatus.coding[0].code)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2092,7 +2092,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.49">01:25:04.167 verificationStatus: confirmed 
+  <div class="preformatted" data-parent="0.49">06:28:54.650 verificationStatus: confirmed 
 </div>   
 
   
@@ -2113,7 +2113,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>7898</span>
+              <span>ms:</span>&nbsp;<span>7109</span>
             </div>
           </div>
           <div class="step-row">
@@ -2136,7 +2136,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2145,8 +2145,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.14">01:24:58.234 baseUrl: https://hapi.fhir.org/baseR4 
-01:24:58.235 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.14">06:28:46.506 baseUrl: https://hapi.fhir.org/baseR4 
+06:28:46.506 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -2166,7 +2166,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;AllergyIntolerance&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -2194,7 +2194,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>params ({ &#39;patient:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -2222,7 +2222,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">2904</div>
+    <div class="time-cell passed">2115</div>
   </div>
 
    
@@ -2231,7 +2231,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.17">01:24:58.661 request:
+  <div class="preformatted" data-parent="0.17">06:28:47.263 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance?patient%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -2239,22 +2239,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:01.173 response time in milliseconds: 2511
+06:28:48.658 response time in milliseconds: 1394
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 12 Apr 2026 01:25:01 GMT
+1 &lt; Date: Sun, 12 Apr 2026 06:28:48 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: ob6eqFrJ5MvBEi9s
-1 &lt; Last-Modified: Sun, 12 Apr 2026 01:24:59 GMT
+1 &lt; X-Request-ID: U3ME3a35MdzqPD9M
+1 &lt; Last-Modified: Sun, 12 Apr 2026 06:28:47 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;075b784a-c17f-4f6c-a6aa-bdd5287f8a39&quot;,
+  &quot;id&quot;: &quot;f0858ee3-24a9-444c-aee4-64522f712967&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-12T01:24:59.142+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-12T06:28:47.628+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -2262,7 +2262,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance?_count=1&amp;patient%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=075b784a-c17f-4f6c-a6aa-bdd5287f8a39&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=f0858ee3-24a9-444c-aee4-64522f712967&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1&quot;,
@@ -2497,7 +2497,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.23">01:25:01.181 Resolved allergyId: pharyngitis-traj1-allergy-v1 
+  <div class="preformatted" data-parent="0.23">06:28:48.667 Resolved allergyId: pharyngitis-traj1-allergy-v1 
 </div>   
 
   
@@ -2545,7 +2545,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4977</div>
+    <div class="time-cell passed">4976</div>
   </div>
 
    
@@ -2554,7 +2554,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.53">01:25:01.184 request:
+  <div class="preformatted" data-parent="0.53">06:28:48.670 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -2562,16 +2562,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:06.158 response time in milliseconds: 4974
+06:28:53.644 response time in milliseconds: 4973
 2 &lt; 200
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 12 Apr 2026 01:25:06 GMT
+2 &lt; Date: Sun, 12 Apr 2026 06:28:53 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
 2 &lt; ETag: W/&quot;7&quot;
-2 &lt; X-Request-ID: SdwOdcgKQRlgGcsg
+2 &lt; X-Request-ID: GBrlsL2yajVaaUsG
 2 &lt; Content-Location: https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1/_history/7
 2 &lt; Last-Modified: Sun, 22 Feb 2026 23:14:57 GMT
 {
@@ -2744,7 +2744,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.57">01:25:06.163 patient reference: Patient/pharyngitis-traj1-pt-v1 
+  <div class="preformatted" data-parent="0.57">06:28:53.648 patient reference: Patient/pharyngitis-traj1-pt-v1 
 </div>   
 
   
@@ -2765,7 +2765,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>8898</span>
+              <span>ms:</span>&nbsp;<span>10117</span>
             </div>
           </div>
           <div class="step-row">
@@ -2797,8 +2797,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.14">01:24:58.234 baseUrl: https://hapi.fhir.org/baseR4 
-01:24:58.236 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.14">06:28:46.507 baseUrl: https://hapi.fhir.org/baseR4 
+06:28:46.508 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -2818,7 +2818,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;AllergyIntolerance&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2846,7 +2846,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>params ({ &#39;patient:missing&#39;: &#39;false&#39;, &#39;_count&#39;: &#39;1&#39; })</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -2874,7 +2874,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">3905</div>
+    <div class="time-cell passed">5117</div>
   </div>
 
    
@@ -2883,7 +2883,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.17">01:24:58.661 request:
+  <div class="preformatted" data-parent="0.17">06:28:47.263 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance?patient%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -2891,22 +2891,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:02.176 response time in milliseconds: 3514
+06:28:51.658 response time in milliseconds: 4394
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 12 Apr 2026 01:25:02 GMT
+1 &lt; Date: Sun, 12 Apr 2026 06:28:51 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: tO1qybA1LWuR89ci
-1 &lt; Last-Modified: Sun, 12 Apr 2026 01:24:59 GMT
+1 &lt; X-Request-ID: czDCgXasUoJybSEA
+1 &lt; Last-Modified: Sun, 12 Apr 2026 06:28:47 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;075b784a-c17f-4f6c-a6aa-bdd5287f8a39&quot;,
+  &quot;id&quot;: &quot;f0858ee3-24a9-444c-aee4-64522f712967&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-12T01:24:59.142+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-12T06:28:47.628+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -2914,7 +2914,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance?_count=1&amp;patient%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=075b784a-c17f-4f6c-a6aa-bdd5287f8a39&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=f0858ee3-24a9-444c-aee4-64522f712967&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1&quot;,
@@ -3149,7 +3149,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.23">01:25:02.185 Resolved allergyId: pharyngitis-traj1-allergy-v1 
+  <div class="preformatted" data-parent="0.23">06:28:51.666 Resolved allergyId: pharyngitis-traj1-allergy-v1 
 </div>   
 
   
@@ -3197,7 +3197,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4974</div>
+    <div class="time-cell passed">4978</div>
   </div>
 
    
@@ -3206,7 +3206,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.62">01:25:02.188 request:
+  <div class="preformatted" data-parent="0.62">06:28:51.669 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -3214,16 +3214,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:07.159 response time in milliseconds: 4970
+06:28:56.644 response time in milliseconds: 4975
 2 &lt; 200
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 12 Apr 2026 01:25:07 GMT
+2 &lt; Date: Sun, 12 Apr 2026 06:28:56 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
 2 &lt; ETag: W/&quot;7&quot;
-2 &lt; X-Request-ID: p8uAflOVVXQkaRi6
+2 &lt; X-Request-ID: CBf8wnqXeHcbI6Km
 2 &lt; Content-Location: https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1/_history/7
 2 &lt; Last-Modified: Sun, 22 Feb 2026 23:14:57 GMT
 {
@@ -3359,7 +3359,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>if (!hasReaction) karate.log(&#39;TC-ALG-005: SKIP — no reaction element on resolved AllergyIntolerance &#39; + allergyId)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -3415,7 +3415,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>if (hasReaction) karate.match(response.reaction[0].manifestation[0].coding, &#39;#[_ &gt; 0]&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -3452,7 +3452,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.68">01:25:07.169 reaction manifestation coding present 
+  <div class="preformatted" data-parent="0.68">06:28:56.656 reaction manifestation coding present 
 </div>   
 
   
@@ -3473,7 +3473,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>9990</span>
+              <span>ms:</span>&nbsp;<span>9986</span>
             </div>
           </div>
           <div class="step-row">
@@ -3505,8 +3505,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.14">01:25:04.178 baseUrl: https://hapi.fhir.org/baseR4 
-01:25:04.178 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.14">06:28:52.667 baseUrl: https://hapi.fhir.org/baseR4 
+06:28:52.667 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -3582,7 +3582,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4991</div>
+    <div class="time-cell passed">4993</div>
   </div>
 
    
@@ -3591,7 +3591,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.17">01:25:04.182 request:
+  <div class="preformatted" data-parent="0.17">06:28:52.671 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance?patient%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -3599,22 +3599,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:09.171 response time in milliseconds: 4988
+06:28:57.661 response time in milliseconds: 4989
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 12 Apr 2026 01:25:09 GMT
+1 &lt; Date: Sun, 12 Apr 2026 06:28:57 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: F4V3lffB9ffHHLXs
-1 &lt; Last-Modified: Sun, 12 Apr 2026 01:24:59 GMT
+1 &lt; X-Request-ID: N4T3IrqnOQz8SoQC
+1 &lt; Last-Modified: Sun, 12 Apr 2026 06:28:47 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;075b784a-c17f-4f6c-a6aa-bdd5287f8a39&quot;,
+  &quot;id&quot;: &quot;f0858ee3-24a9-444c-aee4-64522f712967&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-12T01:24:59.142+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-12T06:28:47.628+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -3622,7 +3622,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance?_count=1&amp;patient%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=075b784a-c17f-4f6c-a6aa-bdd5287f8a39&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=f0858ee3-24a9-444c-aee4-64522f712967&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1&quot;,
@@ -3736,7 +3736,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -3764,7 +3764,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match hasEntry == true</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -3820,7 +3820,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match response.entry[0].resource.resourceType == &#39;AllergyIntolerance&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -3857,7 +3857,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.23">01:25:09.174 Resolved allergyId: pharyngitis-traj1-allergy-v1 
+  <div class="preformatted" data-parent="0.23">06:28:57.665 Resolved allergyId: pharyngitis-traj1-allergy-v1 
 </div>   
 
   
@@ -3905,7 +3905,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4989</div>
+    <div class="time-cell passed">4983</div>
   </div>
 
    
@@ -3914,7 +3914,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.72">01:25:09.177 request:
+  <div class="preformatted" data-parent="0.72">06:28:57.669 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance/INVALID-ID-99999
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -3922,15 +3922,15 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:14.164 response time in milliseconds: 4986
+06:29:02.650 response time in milliseconds: 4980
 2 &lt; 404
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 12 Apr 2026 01:25:14 GMT
+2 &lt; Date: Sun, 12 Apr 2026 06:29:02 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-2 &lt; X-Request-ID: llTPFuee4gUXcO3V
+2 &lt; X-Request-ID: YFVIRdeOUBGhE99t
 {
   &quot;resourceType&quot;: &quot;OperationOutcome&quot;,
   &quot;text&quot;: {
@@ -4019,7 +4019,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.issue == &#39;#[_ &gt; 0]&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -4056,7 +4056,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.76">01:25:14.168 404 severity: error 
+  <div class="preformatted" data-parent="0.76">06:29:02.654 404 severity: error 
 </div>   
 
   
@@ -4085,7 +4085,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.77">01:25:14.169 404 code: processing 
+  <div class="preformatted" data-parent="0.77">06:29:02.654 404 code: processing 
 </div>   
 
   
@@ -4106,7 +4106,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>5010</span>
+              <span>ms:</span>&nbsp;<span>5015</span>
             </div>
           </div>
           <div class="step-row">
@@ -4138,8 +4138,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.14">01:25:05.177 baseUrl: https://hapi.fhir.org/baseR4 
-01:25:05.178 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.14">06:28:53.656 baseUrl: https://hapi.fhir.org/baseR4 
+06:28:53.656 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -4215,7 +4215,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4993</div>
+    <div class="time-cell passed">4999</div>
   </div>
 
    
@@ -4224,7 +4224,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.17">01:25:05.181 request:
+  <div class="preformatted" data-parent="0.17">06:28:53.660 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance?patient%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -4232,22 +4232,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:10.172 response time in milliseconds: 4990
+06:28:58.656 response time in milliseconds: 4995
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 12 Apr 2026 01:25:10 GMT
+1 &lt; Date: Sun, 12 Apr 2026 06:28:58 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: Yso2gAgUoWIyLhK0
-1 &lt; Last-Modified: Sun, 12 Apr 2026 01:24:59 GMT
+1 &lt; X-Request-ID: 0tCDqXoZs09tcdnZ
+1 &lt; Last-Modified: Sun, 12 Apr 2026 06:28:47 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;075b784a-c17f-4f6c-a6aa-bdd5287f8a39&quot;,
+  &quot;id&quot;: &quot;f0858ee3-24a9-444c-aee4-64522f712967&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-12T01:24:59.142+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-12T06:28:47.628+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -4255,7 +4255,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance?_count=1&amp;patient%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=075b784a-c17f-4f6c-a6aa-bdd5287f8a39&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=f0858ee3-24a9-444c-aee4-64522f712967&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1&quot;,
@@ -4369,7 +4369,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4397,7 +4397,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match hasEntry == true</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4490,7 +4490,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.23">01:25:10.175 Resolved allergyId: pharyngitis-traj1-allergy-v1 
+  <div class="preformatted" data-parent="0.23">06:28:58.659 Resolved allergyId: pharyngitis-traj1-allergy-v1 
 </div>   
 
   
@@ -4538,7 +4538,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>assert fileExists == true</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -4567,7 +4567,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>9990</span>
+              <span>ms:</span>&nbsp;<span>10076</span>
             </div>
           </div>
           <div class="step-row">
@@ -4599,8 +4599,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.14">01:25:06.171 baseUrl: https://hapi.fhir.org/baseR4 
-01:25:06.171 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.14">06:28:54.658 baseUrl: https://hapi.fhir.org/baseR4 
+06:28:54.659 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -4676,7 +4676,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">5001</div>
+    <div class="time-cell passed">4996</div>
   </div>
 
    
@@ -4685,7 +4685,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.17">01:25:06.174 request:
+  <div class="preformatted" data-parent="0.17">06:28:54.662 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance?patient%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -4693,22 +4693,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:11.173 response time in milliseconds: 4998
+06:28:59.656 response time in milliseconds: 4993
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 12 Apr 2026 01:25:11 GMT
+1 &lt; Date: Sun, 12 Apr 2026 06:28:59 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: X1wETn5FWFtqxwU2
-1 &lt; Last-Modified: Sun, 12 Apr 2026 01:24:59 GMT
+1 &lt; X-Request-ID: xcxwNqxyoGLJWKIq
+1 &lt; Last-Modified: Sun, 12 Apr 2026 06:28:47 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;075b784a-c17f-4f6c-a6aa-bdd5287f8a39&quot;,
+  &quot;id&quot;: &quot;f0858ee3-24a9-444c-aee4-64522f712967&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-12T01:24:59.142+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-12T06:28:47.628+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -4716,7 +4716,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance?_count=1&amp;patient%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=075b784a-c17f-4f6c-a6aa-bdd5287f8a39&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=f0858ee3-24a9-444c-aee4-64522f712967&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1&quot;,
@@ -4830,7 +4830,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4951,7 +4951,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.23">01:25:11.176 Resolved allergyId: pharyngitis-traj1-allergy-v1 
+  <div class="preformatted" data-parent="0.23">06:28:59.659 Resolved allergyId: pharyngitis-traj1-allergy-v1 
 </div>   
 
   
@@ -4999,7 +4999,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4982</div>
+    <div class="time-cell passed">5074</div>
   </div>
 
    
@@ -5008,7 +5008,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.85">01:25:11.178 request:
+  <div class="preformatted" data-parent="0.85">06:28:59.660 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -5016,16 +5016,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-01:25:16.158 response time in milliseconds: 4980
+06:29:04.732 response time in milliseconds: 5072
 2 &lt; 200
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 12 Apr 2026 01:25:16 GMT
+2 &lt; Date: Sun, 12 Apr 2026 06:29:04 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
 2 &lt; ETag: W/&quot;7&quot;
-2 &lt; X-Request-ID: uZ6qxH2FC5NuEwae
+2 &lt; X-Request-ID: XArHEiaiyIiimmD5
 2 &lt; Content-Location: https://hapi.fhir.org/baseR4/AllergyIntolerance/pharyngitis-traj1-allergy-v1/_history/7
 2 &lt; Last-Modified: Sun, 22 Feb 2026 23:14:57 GMT
 {
@@ -5198,7 +5198,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.89">01:25:16.162 meta.lastUpdated: 2026-02-22T23:14:57.613+00:00 
+  <div class="preformatted" data-parent="0.89">06:29:04.735 meta.lastUpdated: 2026-02-22T23:14:57.613+00:00 
 </div>   
 
   
@@ -5227,7 +5227,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.90">01:25:16.163 meta.versionId: 7 
+  <div class="preformatted" data-parent="0.90">06:29:04.736 meta.versionId: 7 
 </div>   
 
   
