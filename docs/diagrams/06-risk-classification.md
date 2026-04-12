@@ -25,7 +25,7 @@ flowchart TD
         end
 
         subgraph IDENTITY["Identity — Never Event Risk"]
-            PAT["Patient\n──────────────────\nFailure path:\nWrong patient selected\n→ wrong treatment / wrong surgery\n(classified as Never Event)\n──────────────────\n8 requirements · 11 test cases"]
+            PAT["Patient\n──────────────────\nFailure path:\nWrong patient selected\n→ wrong treatment / wrong surgery\n(classified as Never Event)\n──────────────────\n8 requirements · 16 test cases"]
         end
 
         subgraph ATOMIC["Atomicity — Data Integrity"]
@@ -45,7 +45,7 @@ flowchart TD
         end
 
         subgraph INTEROP["Interoperability"]
-            BUN_B["Bundle searchset\n──────────────────\nSearch result structure\nReal FHIR transactions\nuse Bundle not single resources\n──────────────────\n4 requirements · 6 test cases"]
+            BUN_B["Bundle searchset\n──────────────────\nSearch result structure\nReal FHIR transactions\nuse Bundle not single resources\n──────────────────\n4 requirements · 7 test cases"]
 
             PRA["Practitioner\n──────────────────\nProvider attribution\nOrder traceability\n──────────────────\n3 requirements · 6 test cases"]
 

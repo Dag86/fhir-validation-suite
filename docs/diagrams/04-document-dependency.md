@@ -21,9 +21,9 @@ flowchart TD
 
     PQ["Performance Qualification\nTQ-FHIR-PQ-001\n─────────────\nIntegrated execution verified\nGit audit trail end-to-end\nReproducibility confirmed"]
 
-    TP["Test Plan\nTP-FHIR-001\n─────────────\n77 test cases\nPreconditions · expected results\nPass/fail criteria"]
+    TP["Test Plan\nTP-FHIR-001\n─────────────\n83 test cases\nPreconditions · expected results\nPass/fail criteria"]
 
-    TM["Traceability Matrix\nTM-FHIR-001\n─────────────\nREQ → TC bidirectional\n61 reqs · 77 TCs\n100% coverage · 0 orphans"]
+    TM["Traceability Matrix\nTM-FHIR-001\n─────────────\nREQ → TC bidirectional\n61 reqs · 83 TCs\n100% coverage · 0 orphans"]
 
     BUILD["Build Phase\nKarate feature files\npom.xml · karate-config.js\nGitHub Actions workflow"]
 
