@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TP-FHIR-001 |
-| **Version** | 1.4 |
+| **Version** | 1.5 |
 | **Status** | Draft |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-09 |
+| **Date** | 2026-04-11 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Governed By** | VP-FHIR-001 Validation Plan |
 | **Requirements Source** | RS-FHIR-001 Requirements Specification |
@@ -163,6 +163,11 @@ A test run executed against uncommitted changes produces evidence that cannot be
 | TC-PAT-009 | REQ-GEN-001 | HL7 Validator confirms Patient conformance | Schema | Validator reports no errors |
 | TC-PAT-010 | REQ-GEN-002b | meta.versionId present | Audit | meta.versionId is non-null string |
 | TC-PAT-011 | REQ-GEN-003 | Malformed JSON returns 400 + OperationOutcome | Negative | HTTP 400, resourceType = OperationOutcome |
+| TC-PAT-012 | REQ-PAT-012 | Conditional read returns 304 Not Modified when ETag matches | Positive | Status 304 returned when If-None-Match matches current ETag |
+| TC-PAT-013 | REQ-PAT-013 | Search by gender returns searchset Bundle | Positive | gender=female returns Bundle type=searchset |
+| TC-PAT-014 | REQ-PAT-014 | Search by birthdate returns searchset Bundle | Positive | birthdate=ge1980-01-01 returns Bundle type=searchset |
+| TC-PAT-015 | REQ-PAT-015 | Search by identifier returns searchset Bundle | Positive | identifier={value} returns Bundle type=searchset |
+| TC-PAT-016 | REQ-PAT-016 | Search by _id returns searchset Bundle | Positive | _id={patientId} returns Bundle with matching entry |
 
 ---
 
@@ -275,6 +280,7 @@ A test run executed against uncommitted changes produces evidence that cannot be
 | TC-BUN-005 | REQ-BUN-005 | Transaction with invalid entry fails atomically | Negative | Step 1: POST transaction with valid Patient (client-assigned id=atomicity-test-pat) + invalid resource → HTTP 4xx, resourceType = OperationOutcome. Step 2: GET /Patient/atomicity-test-pat → HTTP 404, confirming no partial write occurred |
 | TC-BUN-006 | REQ-GEN-001 | HL7 Validator confirms Bundle conformance | Schema | Validator reports no errors |
 | TC-BUN-007 | REQ-GEN-002b | meta.versionId present on Bundle response | Audit | meta.versionId is non-null string |
+| TC-BUN-008 | REQ-BUN-006 | searchset Bundle contains self link relation | Positive | response.link contains entry with relation=self |
 
 ---
 
@@ -319,7 +325,7 @@ A test run executed against uncommitted changes produces evidence that cannot be
 | Bundle | 7 | 3 | 1 | 0 | 1 | 1 | 0 |
 | Practitioner | 6 | 2 | 1 | 1 | 1 | 1 | 0 |
 | Framework | 4 | 0 | 1 | 0 | 0 | 0 | 0 |
-| **Total** | **77** | **34** | **11** | **3** | **10** | **12** | **4** |
+| **Total** | **83** | **34** | **11** | **3** | **10** | **12** | **4** |
 
 *Audit column increase from 6 → 12 reflects addition of meta.versionId assertions (TC-OBS-009, TC-MED-010, TC-DXR-007, TC-AUD-007, TC-BUN-007, TC-PRA-006) — closing the REQ-GEN-002b coverage gap identified in gap analysis.*
 
@@ -446,6 +452,7 @@ This record links the completed validation package to the exact source state und
 | 1.2 | 2026-03-30 | Amir Choshov | Fixed TC-OBS-007, TC-ALG-006, TC-MED-007, TC-DXR-005 requirement mappings to correct dedicated 404 requirements; fixed TC-PAT-010 and TC-ALG-008 mappings to REQ-GEN-002b and REQ-GEN-002a/002b; fixed TC-DXR-002 expected result to enumerate full DiagnosticReport status value set including partial and appended; added search precondition blocks for TC-OBS-004, TC-ALG-005, TC-PRA-003 to prevent vacuous passes; added AuditEvent search precondition block; expanded TC-BUN-005 to include follow-up GET atomicity verification steps; added TC-OBS-009, TC-MED-010, TC-DXR-007, TC-AUD-007, TC-BUN-007, TC-PRA-006 for REQ-GEN-002b meta.versionId coverage; added TC-GEN-001 for REQ-GEN-004; updated summary totals 70 → 77; updated entry/exit criteria counts 56 → 61, 70 → 77 |
 | 1.3 | 2026-04-07 | Amir Choshov | Added implementation notes to TC-OO-002, TC-OO-003, TC-OO-004 (standalone Scenarios in common/operation-outcome.feature); added implementation note to TC-GEN-001 (standalone Scenario in common/general.feature); added non-automated notes to TC-FRM-001, TC-FRM-002, TC-FRM-003 (manual IQ/OQ checklist items, no feature file counterpart by design) |
 | 1.4 | 2026-04-09 | Amir Choshov | TC-CAP-003 expected value updated — fhirVersion assertion accepts any valid R4 patch version (4.0.x) not just 4.0.1. Reflects portability fix for multi-server conformance testing. |
+| 1.5 | 2026-04-11 | Amir Choshov | Added TC-PAT-012 through TC-PAT-016 and TC-BUN-008 from hardening pass. Total TC count updated from 77 to 83. |
 
 ---
 

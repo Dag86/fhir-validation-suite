@@ -6,13 +6,13 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TM-FHIR-001 |
-| **Version** | 1.4 |
+| **Version** | 1.5 |
 | **Status** | Executed |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-09 |
+| **Date** | 2026-04-11 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Requirements Source** | RS-FHIR-001 v1.2 — 61 active requirements |
-| **Test Case Source** | TP-FHIR-001 v1.2 — 77 test cases |
+| **Test Case Source** | TP-FHIR-001 v1.5 — 83 test cases |
 
 ---
 
@@ -71,6 +71,11 @@ This document is a living artifact — test execution results are recorded here 
 | REQ-PAT-006 | meta.lastUpdated present | C | Inability to reconstruct data change history | TC-PAT-006 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 | REQ-PAT-007 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing patient records | TC-PAT-007 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 | REQ-PAT-008 | Search returns searchset Bundle | C | Incorrect results leading to wrong patient selection | TC-PAT-008 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-PAT-012 | Conditional read returns 304 when ETag matches | Patient | TC-PAT-012 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
+| REQ-PAT-013 | Search by gender returns searchset Bundle | Patient | TC-PAT-013 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
+| REQ-PAT-014 | Search by birthdate returns searchset Bundle | Patient | TC-PAT-014 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
+| REQ-PAT-015 | Search by identifier returns searchset Bundle | Patient | TC-PAT-015 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
+| REQ-PAT-016 | Search by _id returns searchset Bundle | Patient | TC-PAT-016 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
 
 ---
 
@@ -159,6 +164,7 @@ This document is a living artifact — test execution results are recorded here 
 | REQ-BUN-003 | Each entry has resource and fullUrl | B | Unreferenceable resources in search results | TC-BUN-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 | REQ-BUN-004 | Valid transaction returns transaction-response Bundle | B | Transaction outcomes not confirmable | TC-BUN-004 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 | REQ-BUN-005 | Transaction atomicity — invalid entry fails entire transaction | C | Partial data writes creating incomplete clinical records | TC-BUN-005 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-BUN-006 | Searchset Bundle contains self link relation | B | Client unable to verify page context or self-reference | TC-BUN-008 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
 
 ---
 
@@ -234,6 +240,11 @@ This section confirms every test case traces to at least one requirement. Orphan
 | TC-PAT-009 | REQ-GEN-001 | No | Yes |
 | TC-PAT-010 | REQ-GEN-002b | No | Yes |
 | TC-PAT-011 | REQ-GEN-003, REQ-OO-001 | No | Yes |
+| TC-PAT-012 | REQ-PAT-012 | No | Yes |
+| TC-PAT-013 | REQ-PAT-013 | No | Yes |
+| TC-PAT-014 | REQ-PAT-014 | No | Yes |
+| TC-PAT-015 | REQ-PAT-015 | No | Yes |
+| TC-PAT-016 | REQ-PAT-016 | No | Yes |
 | TC-OBS-001 | REQ-OBS-001 | No | Yes |
 | TC-OBS-002 | REQ-OBS-002 | No | Yes |
 | TC-OBS-003 | REQ-OBS-003 | No | Yes |
@@ -287,6 +298,7 @@ This section confirms every test case traces to at least one requirement. Orphan
 | TC-BUN-005 | REQ-BUN-005 | No | Yes |
 | TC-BUN-006 | REQ-GEN-001 | No | Yes |
 | TC-BUN-007 | REQ-GEN-002b | No | Yes |
+| TC-BUN-008 | REQ-BUN-006 | No | Yes |
 | TC-PRA-001 | REQ-PRA-001 | No | Yes |
 | TC-PRA-002 | REQ-PRA-002 | No | Yes |
 | TC-PRA-003 | REQ-PRA-003 | No | Yes |
@@ -299,7 +311,7 @@ This section confirms every test case traces to at least one requirement. Orphan
 | TC-GEN-001 | REQ-GEN-004, REQ-OO-001 | No | Yes |
 
 **Orphan test cases: 0**
-**Total test cases traced: 77**
+**Total test cases traced: 83**
 
 ---
 
@@ -359,6 +371,7 @@ Record each test execution run here. Each run must be linked to a Git commit SHA
 | Run # | Date | Executed By | Commit SHA | Pipeline Run # | Total Pass | Total Fail | Total Skip | Notes |
 |---|---|---|---|---|---|---|---|---|
 | 1 | 2026-04-08 | Amir Choshov | 4458f7dd63e0fd904b1122db075bb26dbdecb740 | Run #3 | 74 | 0 | 0 | Full suite execution via GitHub Actions CI. 74 automated TCs PASS. 3 manual TCs (TC-FRM-001, TC-FRM-002, TC-FRM-003) verified as IQ/OQ checklist items. HL7 Validator scan: 9 files scanned, findings on observation and diagnostic-report attributed to HAPI sandbox data quality per VA-FHIR-001. |
+| 2 | 2026-04-11 | Amir Choshov | af2bf2c5d540652079d27d632bb8c06f296d9aa8 | Local | 80 | 0 | 0 | Hardening pass — 6 new TCs added (TC-PAT-012 through TC-PAT-016, TC-BUN-008). 80 automated TCs PASS against HAPI FHIR sandbox. TP-FHIR-001 updated to v1.5 (83 total TCs). |
 
 ---
 
@@ -381,6 +394,7 @@ Record each test execution run here. Each run must be linked to a Git commit SHA
 | 1.2 | 2026-04-07 | Amir Choshov | Added Automated? column to Section 5 backward trace table; TC-OO-002, TC-OO-003, TC-OO-004, TC-GEN-001 marked Automated=Yes (standalone Karate scenarios now implemented); TC-FRM-001, TC-FRM-002, TC-FRM-003 marked Automated=No (manual IQ/OQ checklist items by design); all 74 Karate-automated TCs marked Yes |
 | 1.3 | 2026-04-08 | Amir Choshov | Execution log populated — CI Run #3, 61/61 requirements PASS, 74/74 automated TCs PASS |
 | 1.4 | 2026-04-09 | Amir Choshov | REQ-PRE-003 description updated — version assertion now accepts any valid R4 patch version per portability fix. |
+| 1.5 | 2026-04-11 | Amir Choshov | 6 new TCs added from hardening pass (TC-PAT-012 through TC-PAT-016, TC-BUN-008). REQ-PAT-012 through REQ-PAT-016 and REQ-BUN-006 forward trace rows added. Backward trace updated with 6 new rows. Execution log run #2 added. TP source updated to v1.5 (83 TCs). Counts updated: 83 total, 80 automated. |
 
 ---
 
@@ -393,4 +407,4 @@ Record each test execution run here. Each run must be linked to a Git commit SHA
 
 ---
 
-*This Traceability Matrix reflects 100% coverage of all 61 active requirements in RS-FHIR-001 v1.2 with 77 test cases from TP-FHIR-001 v1.2. Two documented coverage rationale notes (Section 4.1, 4.2) are on record. Zero orphan test cases. All Class C requirements are fully covered. Validation exit criteria in TP-FHIR-001 Section 11.2 can be satisfied when all 77 test cases are executed and results recorded with Git commit SHAs.*
+*This Traceability Matrix reflects 100% coverage of all 61 active requirements in RS-FHIR-001 v1.2 with 83 test cases from TP-FHIR-001 v1.5. Two documented coverage rationale notes (Section 4.1, 4.2) are on record. Zero orphan test cases. All Class C requirements are fully covered. Validation exit criteria in TP-FHIR-001 Section 11.2 can be satisfied when all 83 test cases are executed and results recorded with Git commit SHAs.*

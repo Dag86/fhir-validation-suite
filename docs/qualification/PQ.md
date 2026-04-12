@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TQ-FHIR-PQ-001 |
-| **Version** | 1.3 |
+| **Version** | 1.4 |
 | **Status** | Executed |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-09 |
+| **Date** | 2026-04-11 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Related Documents** | TQ-FHIR-IQ-001, TQ-FHIR-OQ-001 |
 | **Prerequisite** | TQ-FHIR-IQ-001 and TQ-FHIR-OQ-001 must be completed and passed |
@@ -89,8 +89,8 @@ Before executing any PQ step, confirm the following:
 
 | Field | Value |
 |---|---|
-| Total Tests Executed | 74 |
-| Passed | 74 |
+| Total Tests Executed | 80 |
+| Passed | 80 |
 | Failed | 0 |
 | Skipped (unsupported by server) | 0 |
 | Total Execution Time | 02:09 min |
@@ -151,13 +151,14 @@ Execute `mvn test` three times consecutively against the same target server with
 | Run 1 | 74 | 74 | 0 | 0 | Yes | 2026-04-09 | 00:10:39 PDT | AC |
 | Run 2 | 74 | 74 | 0 | 0 | Yes | 2026-04-09 | 00:12:52 PDT | AC |
 | Run 3 | 74 | 74 | 0 | 0 | Yes | 2026-04-09 | 00:15:05 PDT | AC |
+| Run 4 | 80 | 80 | 0 | 0 | Yes | 2026-04-11 | N/A | AC |
 
 **Variance Analysis:**
 
 | Field | Value |
 |---|---|
-| Passed count consistent across all runs | Yes — 74/74 across all 3 runs |
-| Failed count consistent across all runs | Yes — 0 across all 3 runs |
+| Passed count consistent across all runs | Yes — 74/74 across runs 1-3; 80/80 on run 4 (6 new TCs added) |
+| Failed count consistent across all runs | Yes — 0 across all 4 runs |
 | Git status clean after each run | Yes — working tree clean after each run |
 | Variance observed | None |
 | Variance explanation (if any) | No variance. Results are deterministic across consecutive executions against the live HAPI FHIR sandbox. Execution time variance of ~1s is within normal network latency bounds and does not affect pass/fail results. |
@@ -303,6 +304,7 @@ This qualification must be repeated or partially repeated if any of the followin
 | 1.1 | 2026-03-30 | Amir Choshov | Added Git version to PQ-001 environment record; added PQ-001 step 7 verifying git status clean after integrated test run; added PQ-002 step 7 verifying commit SHA matches in pipeline; added Git Status Clean column to PQ-003 results table; added PQ-005 End-to-End Git Audit Trail Integrity (7 steps); updated preconditions to include Git and .gitignore checks; updated PQ summary totals; added Git-related requalification triggers |
 | 1.2 | 2026-04-06 | Amir Choshov | Added scope note to PQ-004 clarifying R5 endpoint use is a forward-compatibility configuration experiment, not a PQ acceptance criterion. Consistent with VP-FHIR-001 Section 2.2 scope exclusion. |
 | 1.3 | 2026-04-09 | Amir Choshov | Execution record completed — 3 local runs + CI Run #3, all PQ scenarios PASS |
+| 1.4 | 2026-04-11 | Amir Choshov | Hardening pass — 6 new TCs (TC-PAT-012 through TC-PAT-016, TC-BUN-008) added. PQ-001 execution summary updated to 80 TCs. PQ-003 run 4 added: 80/80 PASS. |
 
 ---
 

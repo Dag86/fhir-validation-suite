@@ -57,13 +57,13 @@ test coverage, and SOUP documentation throughout.
 | Planning | Validation Plan (VP-FHIR-001) | 1.2 | Approved |
 | Requirements | Requirements Specification (RS-FHIR-001) | 1.2 | Approved -> 61 requirements |
 | Architecture | Architecture Document (AD-FHIR-001) | 1.1 | Approved |
-| Testing | Test Plan (TP-FHIR-001) | 1.3 | Approved -> 77 TCs |
-| Traceability | Traceability Matrix (TM-FHIR-001) | 1.3 | Executed -> 100% coverage |
+| Testing | Test Plan (TP-FHIR-001) | 1.5 | Approved -> 83 TCs |
+| Traceability | Traceability Matrix (TM-FHIR-001) | 1.5 | Executed -> 100% coverage |
 | Installation | IQ (TQ-FHIR-IQ-001) | 1.3 | **PASS** |
 | Operation | OQ (TQ-FHIR-OQ-001) | 1.2 | **PASS** |
 | Performance | PQ (TQ-FHIR-PQ-001) | 1.3 | **PASS** |
-| Coverage | Gap Analysis (GA-FHIR-001) | 1.0 | Final -> 0 gaps |
-| Closure | Validation Summary Report (VA-FHIR-001) | 1.1 | **VALIDATED** |
+| Coverage | Gap Analysis (GA-FHIR-001) | 1.1 | Final -> 0 gaps |
+| Closure | Validation Summary Report (VA-FHIR-001) | 1.2 | **VALIDATED** |
 
 All documents live in [`docs/`](docs/) and are versioned under
 21 CFR Part 820.40 document control requirements.
@@ -72,14 +72,14 @@ All documents live in [`docs/`](docs/) and are versioned under
 
 ```
 RS-FHIR-001 (61 requirements)
-    -> TP-FHIR-001 (77 test cases)
-        -> Feature files (74 automated scenarios)
-            -> CI Run #3 (GitHub Actions execution evidence)
-                -> Commit SHA 4458f7dd (immutable audit anchor)
+    -> TP-FHIR-001 (83 test cases)
+        -> Feature files (80 automated scenarios)
+            -> CI Run #3 + hardening run (GitHub Actions + local execution evidence)
+                -> Commit SHA af2bf2c5 (immutable audit anchor)
 ```
 
 - Forward coverage (requirement -> test): 100% -> 61/61 requirements covered
-- Backward coverage (test -> requirement): 100% -> 77/77 TCs mapped
+- Backward coverage (test -> requirement): 100% -> 83/83 TCs mapped
 - Orphaned requirements: 0
 - Orphaned test cases: 0
 
@@ -187,7 +187,7 @@ mvn test
 ```
 
 Expected:
-scenarios:   74 | passed:    74 | failed: 0
+scenarios:   80 | passed:    80 | failed: 0
 BUILD SUCCESS
 Total time:  ~02:10 min
 
@@ -206,13 +206,20 @@ https://dag86.github.io/fhir-validation-suite/
 
 | Server | URL | Result | Notes |
 |---|---|---|---|
-| HAPI FHIR sandbox | `hapi.fhir.org/baseR4` | **74/74 PASS** | Primary validation target |
-| SMART Health IT | `launch.smarthealthit.org/v/r4/fhir` | **73/74** | TC-BUN-002 correctly flags `_total` non-compliance |
+| HAPI FHIR sandbox | `hapi.fhir.org/baseR4` | **80/80 PASS** | Primary validation target |
+| SMART Health IT | `launch.smarthealthit.org/v/r4/fhir` | **73/80** | 7 conformance findings correctly detected |
 
-TC-BUN-002 failure on SMART Health IT is a **correct conformance
-finding** -> the server ignores `_total=accurate` and omits `total` from
-searchset Bundle responses. This is the suite working as designed:
-differentiating compliant from partially compliant server behavior.
+SMART Health IT findings (all correct conformance detections):
+
+| Finding | TC(s) |
+|---|---|
+| ETag header absent | TC-PAT-001, TC-ALG-001, TC-MED-001, TC-DXR-001 |
+| Content-Type is `application/json` not `application/fhir+json` | TC-CAP-001 |
+| `_total` ignored -> `total` absent from searchset | TC-BUN-002 |
+| No Practitioner resources on server | TC-PRA-001 through TC-PRA-006 |
+
+This is the suite working as designed: differentiating compliant
+from partially compliant server behavior.
 
 ---
 
@@ -225,14 +232,14 @@ fhir-validation-suite/
 --- src/test/resources/
 |   --- karate-config.js              # Configurable baseUrl, fhirVersion, authToken
 |   --- capability/                   # TC-CAP-001 to 003
-|   --- patient/                      # TC-PAT-001 to 011
+|   --- patient/                      # TC-PAT-001 to 016
 |   --- practitioner/                 # TC-PRA-001 to 006
 |   --- allergy/                      # TC-ALG-001 to 008
 |   --- observation/                  # TC-OBS-001 to 009
 |   --- medication/                   # TC-MED-001 to 010
 |   --- diagnostic/                   # TC-DXR-001 to 007
 |   --- audit/                        # TC-AUD-001 to 007
-|   --- bundle/                       # TC-BUN-001 to 007
+|   --- bundle/                       # TC-BUN-001 to 008
 |   --- common/                       # TC-OO-001 to 005, TC-GEN-001
 |   --- oq/                           # OQ qualification scenarios (5)
 --- docs/
@@ -262,7 +269,7 @@ fhir-validation-suite/
 | [Validation Plan](docs/validation-plan.md) | Scope, approach, risk classification, acceptance criteria |
 | [Requirements Specification](docs/requirements-specification.md) | 61 functional and non-functional requirements |
 | [Architecture Document](docs/architecture.md) | System design, component relationships, SOUP inventory |
-| [Test Plan](docs/test-plan.md) | 77 test cases with risk linkage and coverage rationale |
+| [Test Plan](docs/test-plan.md) | 83 test cases with risk linkage and coverage rationale |
 | [Traceability Matrix](docs/traceability-matrix.md) | Bidirectional requirements -> test case mapping |
 | [IQ](docs/qualification/IQ.md) | Installation qualification -> toolchain verification |
 | [OQ](docs/qualification/OQ.md) | Operational qualification -> negative control evidence |

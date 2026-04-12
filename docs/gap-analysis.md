@@ -6,12 +6,12 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | GA-FHIR-001 |
-| **Version** | 1.0 |
+| **Version** | 1.1 |
 | **Status** | Final |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-08 |
+| **Date** | 2026-04-11 |
 | **Project** | FHIR R4 API Validation Suite |
-| **Related Documents** | RS-FHIR-001 v1.2, TP-FHIR-001 v1.3, TM-FHIR-001 v1.3 |
+| **Related Documents** | RS-FHIR-001 v1.2, TP-FHIR-001 v1.5, TM-FHIR-001 v1.5 |
 
 ---
 
@@ -37,12 +37,12 @@ document provides that verification.
 | Requirements source | RS-FHIR-001 v1.2 |
 | Active requirements | 61 |
 | Retired requirements | 1 (REQ-GEN-002 — split into REQ-GEN-002a and REQ-GEN-002b) |
-| Test plan source | TP-FHIR-001 v1.3 |
-| Total test cases | 77 |
-| Automated test cases | 74 |
+| Test plan source | TP-FHIR-001 v1.5 |
+| Total test cases | 83 |
+| Automated test cases | 80 |
 | Non-automated test cases | 3 (TC-FRM-001, TC-FRM-002, TC-FRM-003) |
-| Traceability source | TM-FHIR-001 v1.3 |
-| Analysis date | 2026-04-08 |
+| Traceability source | TM-FHIR-001 v1.5 |
+| Analysis date | 2026-04-11 |
 | Analyst | Amir Choshov |
 
 ---
@@ -50,7 +50,7 @@ document provides that verification.
 ## 3. Methodology
 
 Coverage was verified by bidirectional traceability review of
-TM-FHIR-001 v1.3:
+TM-FHIR-001 v1.5:
 
 1. **Forward trace** — each active requirement mapped to at least
    one test case (requirement → test). Orphaned requirements
@@ -62,11 +62,12 @@ TM-FHIR-001 v1.3:
 
 3. **Automated coverage** — each automated test case confirmed
    present as a Scenario block in the corresponding feature file
-   and executed in CI Run #3 (commit 4458f7dd).
+   and executed through CI Run #3 (commit 4458f7dd) and local run
+   (commit af2bf2c5).
 
 4. **Non-automated coverage** — TC-FRM-001, TC-FRM-002, TC-FRM-003
    verified as manual IQ/OQ checklist items per their disposition
-   in TP-FHIR-001 v1.3.
+   in TP-FHIR-001 v1.5.
 
 ---
 
@@ -86,8 +87,8 @@ TM-FHIR-001 v1.3:
 
 | Metric | Count |
 |---|---|
-| Total test cases analyzed | 77 |
-| Test cases with ≥1 requirement | 77 |
+| Total test cases analyzed | 83 |
+| Test cases with ≥1 requirement | 83 |
 | Orphaned test cases (no requirement) | 0 |
 
 **Result: No orphaned test cases. 100% backward coverage confirmed.**
@@ -96,14 +97,15 @@ TM-FHIR-001 v1.3:
 
 | Metric | Count |
 |---|---|
-| Automated TCs in feature files | 74 |
-| Automated TCs executed in CI Run #3 | 74 |
-| Passed | 74 |
+| Automated TCs in feature files | 80 |
+| Automated TCs executed (CI Run #3 + hardening run) | 80 |
+| Passed | 80 |
 | Failed | 0 |
 | Skipped | 0 |
 
-**Result: 100% automated execution coverage. All 74 automated TCs
-passed in CI Run #3 (commit 4458f7dd, 2026-04-08).**
+**Result: 100% automated execution coverage. All 80 automated TCs
+passed — 74 in CI Run #3 (commit 4458f7dd, 2026-04-08) and 6 new
+TCs in hardening pass (commit af2bf2c5, 2026-04-11).**
 
 ### 4.4 Non-Automated TC Disposition
 
@@ -137,9 +139,10 @@ passed in CI Run #3 (commit 4458f7dd, 2026-04-08).**
 
 Coverage analysis is complete. No gaps were identified in forward
 or backward traceability. All 61 active requirements are tested by
-at least one of the 77 test cases. All 74 automated test cases
-passed execution in CI Run #3. Non-automated TCs are formally
-verified via IQ/OQ qualification evidence.
+at least one of the 83 test cases. All 80 automated test cases
+passed execution across CI Run #3 and the hardening pass.
+Non-automated TCs are formally verified via IQ/OQ qualification
+evidence.
 
 One open deviation (DEV-IQ-001) affects TC-FRM-003 (branch
 protection). This is assessed as LOW risk — branch protection is
@@ -168,3 +171,4 @@ project. Author serves as sole reviewer.*
 | Version | Date | Author | Description |
 |---|---|---|---|
 | 1.0 | 2026-04-08 | Amir Choshov | Initial release — coverage analysis complete, no gaps found |
+| 1.1 | 2026-04-11 | Amir Choshov | Updated to TP-FHIR-001 v1.5 (83 TCs, 80 automated) and TM-FHIR-001 v1.5. Counts updated throughout. No new gaps identified. |

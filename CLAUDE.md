@@ -39,7 +39,7 @@ src/test/java/fhir/
 src/test/resources/
   karate-config.js               — baseUrl and fhirVersion config
   capability/capability-check.feature    — TC-CAP-001 to 003
-  patient/patient.feature                — TC-PAT-001 to 011
+  patient/patient.feature                — TC-PAT-001 to 016
   practitioner/practitioner.feature      — TC-PRA-001 to 006
   allergy/allergy.feature                — TC-ALG-001 to 008
   observation/observation.feature        — TC-OBS-001 to 009
@@ -48,7 +48,7 @@ src/test/resources/
   diagnostic/diagnostic-report.feature   — TC-DXR-001 to 007
   audit/audit-event.feature              — TC-AUD-001 to 007
   audit/assert-audit-*.feature           — @ignore helpers (8 files)
-  bundle/bundle.feature                  — TC-BUN-001 to 007
+  bundle/bundle.feature                  — TC-BUN-001 to 008
   common/operation-outcome.feature       — TC-OO-001 to 005
   common/general.feature                 — TC-GEN-001
   common/capture-response.feature        — @ignore helper
@@ -58,13 +58,13 @@ docs/
   validation-plan.md             — VP-FHIR-001 v1.2
   requirements-specification.md  — RS-FHIR-001 v1.2 (61 requirements)
   architecture.md                — AD-FHIR-001 v1.1
-  test-plan.md                   — TP-FHIR-001 v1.3 (77 TCs)
-  traceability-matrix.md         — TM-FHIR-001 v1.3 (executed, 100% coverage)
-  gap-analysis.md                — GA-FHIR-001 v1.0 (final)
-  validation-summary-report.md   — VA-FHIR-001 v1.0 (final)
+  test-plan.md                   — TP-FHIR-001 v1.5 (83 TCs)
+  traceability-matrix.md         — TM-FHIR-001 v1.5 (executed, 100% coverage)
+  gap-analysis.md                — GA-FHIR-001 v1.1 (final)
+  validation-summary-report.md   — VA-FHIR-001 v1.2 (final)
   qualification/IQ.md            — TQ-FHIR-IQ-001 v1.2 (executed)
   qualification/OQ.md            — TQ-FHIR-OQ-001 v1.2 (executed)
-  qualification/PQ.md            — TQ-FHIR-PQ-001 v1.3 (executed)
+  qualification/PQ.md            — TQ-FHIR-PQ-001 v1.4 (executed)
 
 .github/workflows/
   fhir-validation.yml            — CI pipeline (active)
@@ -77,21 +77,21 @@ CLAUDE.md                        — this file
 
 ## Current Test Suite State
 
-**VALIDATION COMPLETE — 2026-04-09**
+**VALIDATION COMPLETE — 2026-04-11**
 
 | Metric | Value |
 |---|---|
-| Scenarios executed | 74 |
-| Passed | 74 |
+| Scenarios executed | 80 |
+| Passed | 80 |
 | Failed | 0 |
 | Build | SUCCESS |
 | Run time | ~02:09 min |
-| Last local run | 2026-04-09 |
+| Last local run | 2026-04-11 |
 | CI runs completed | 3 |
-| Closing commit SHA | 2a56d659992ff648022c0815f2d5547fc5b1c31e |
+| Closing commit SHA | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
 
-TC count breakdown (77 total in TP-FHIR-001 v1.3):
-- 74 automated scenarios — implemented and passing
+TC count breakdown (83 total in TP-FHIR-001 v1.5):
+- 80 automated scenarios — implemented and passing
 - 3 non-automated (TC-FRM-001, TC-FRM-002, TC-FRM-003) — verified
   as IQ/OQ checklist items, no feature file by design
 
@@ -109,6 +109,12 @@ TC count breakdown (77 total in TP-FHIR-001 v1.3):
 | b1c5f2f | GA-FHIR-001 created |
 | 4115c24 | PQ.md executed |
 | 2a56d65 | VA-FHIR-001 — validation lifecycle closed |
+| 259e61a | ci: add index.html redirect for GitHub Pages Karate report |
+| b671fc5 | ci: grant GITHUB_TOKEN write permission for gh-pages publish |
+| b0cf7ab | ci: publish Karate report to GitHub Pages after every CI run |
+| dc3d1d7 | docs: replace ASCII architecture diagram with Mermaid flowchart |
+| 1411863 | test: add resourceType precondition assertions to all B->C Backgrounds |
+| af2bf2c | docs: consolidation — TP v1.5, TM v1.5, GA v1.1, VA v1.2, PQ v1.4, README, CLAUDE.md |
 
 ---
 
@@ -121,13 +127,13 @@ ALL MILESTONES COMPLETE.
 | Validation Plan | VP-FHIR-001 | 1.2 | Approved |
 | Requirements Specification | RS-FHIR-001 | 1.2 | Approved |
 | Architecture | AD-FHIR-001 | 1.1 | Approved |
-| Test Plan | TP-FHIR-001 | 1.3 | Approved |
-| Traceability Matrix | TM-FHIR-001 | 1.3 | Executed |
+| Test Plan | TP-FHIR-001 | 1.5 | Approved |
+| Traceability Matrix | TM-FHIR-001 | 1.5 | Executed |
 | Installation Qualification | TQ-FHIR-IQ-001 | 1.2 | PASS |
 | Operational Qualification | TQ-FHIR-OQ-001 | 1.2 | PASS |
-| Performance Qualification | TQ-FHIR-PQ-001 | 1.3 | PASS |
-| Gap Analysis | GA-FHIR-001 | 1.0 | Final |
-| Validation Summary Report | VA-FHIR-001 | 1.0 | Final — VALIDATED |
+| Performance Qualification | TQ-FHIR-PQ-001 | 1.4 | PASS |
+| Gap Analysis | GA-FHIR-001 | 1.1 | Final |
+| Validation Summary Report | VA-FHIR-001 | 1.2 | Final — VALIDATED |
 
 ---
 

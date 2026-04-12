@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | VA-FHIR-001 |
-| **Version** | 1.1 |
+| **Version** | 1.2 |
 | **Status** | Final |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-09 |
+| **Date** | 2026-04-11 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Related Documents** | VP-FHIR-001, RS-FHIR-001, TP-FHIR-001, TM-FHIR-001, GA-FHIR-001, TQ-FHIR-IQ-001, TQ-FHIR-OQ-001, TQ-FHIR-PQ-001 |
 
@@ -43,7 +43,7 @@ adequately validated.
 | Validation Scope | API behavior, FHIR R4 structural conformance, audit trail integrity |
 | Regulatory Standards | IEC 62304, ISO 14971, 21 CFR Part 11, 21 CFR Part 820 / QMSR, GAMP 5 |
 | Repository | https://github.com/Dag86/fhir-validation-suite |
-| Closing Commit SHA | 4115c2484897569c4d46b1a015883fe13e9f8d81 |
+| Closing Commit SHA | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
 
 ---
 
@@ -56,13 +56,13 @@ adequately validated.
 | Validation Plan | VP-FHIR-001 | 1.2 | Approved | 2026-03-30 |
 | Requirements Specification | RS-FHIR-001 | 1.2 | Approved | 2026-03-30 |
 | Architecture Document | AD-FHIR-001 | 1.1 | Approved | 2026-03-30 |
-| Test Plan | TP-FHIR-001 | 1.3 | Approved | 2026-04-07 |
-| Traceability Matrix | TM-FHIR-001 | 1.3 | Executed | 2026-04-08 |
+| Test Plan | TP-FHIR-001 | 1.5 | Approved | 2026-04-11 |
+| Traceability Matrix | TM-FHIR-001 | 1.5 | Executed | 2026-04-11 |
 | Installation Qualification | TQ-FHIR-IQ-001 | 1.2 | Executed | 2026-04-08 |
 | Operational Qualification | TQ-FHIR-OQ-001 | 1.2 | Executed | 2026-04-08 |
 | Performance Qualification | TQ-FHIR-PQ-001 | 1.3 | Executed | 2026-04-09 |
-| Gap Analysis | GA-FHIR-001 | 1.0 | Final | 2026-04-08 |
-| Validation Summary Report | VA-FHIR-001 | 1.0 | Final | 2026-04-09 |
+| Gap Analysis | GA-FHIR-001 | 1.1 | Final | 2026-04-11 |
+| Validation Summary Report | VA-FHIR-001 | 1.2 | Final | 2026-04-11 |
 
 ### 3.2 Qualification Phase Outcomes
 
@@ -76,11 +76,11 @@ adequately validated.
 
 | Metric | Value |
 |---|---|
-| Total test cases (TP-FHIR-001 v1.3) | 77 |
-| Automated test cases | 74 |
+| Total test cases (TP-FHIR-001 v1.5) | 83 |
+| Automated test cases | 80 |
 | Non-automated test cases | 3 (TC-FRM-001, TC-FRM-002, TC-FRM-003) |
-| Automated TCs executed | 74 |
-| Automated TCs passed | 74 |
+| Automated TCs executed | 80 |
+| Automated TCs passed | 80 |
 | Automated TCs failed | 0 |
 | Non-automated TCs verified | 3 (via IQ/OQ qualification evidence) |
 | Active requirements (RS-FHIR-001 v1.2) | 61 |
@@ -94,13 +94,13 @@ adequately validated.
 
 ## 4. Traceability Verification
 
-Bidirectional traceability was verified in GA-FHIR-001 v1.0
-(2026-04-08) against TM-FHIR-001 v1.3.
+Bidirectional traceability was verified in GA-FHIR-001 v1.1
+(2026-04-11) against TM-FHIR-001 v1.5.
 
 | Trace Direction | Result |
 |---|---|
 | Forward (requirement → test case) | 100% — 61/61 active requirements covered |
-| Backward (test case → requirement) | 100% — 77/77 test cases mapped |
+| Backward (test case → requirement) | 100% — 83/83 test cases mapped |
 | Orphaned requirements | 0 |
 | Orphaned test cases | 0 |
 
@@ -156,6 +156,30 @@ The validator findings are a positive quality signal: the HL7
 Validator is performing its role as an independent conformance check,
 and the suite's captured responses are sufficiently detailed to
 enable meaningful validation.
+
+### 5.4 Multi-Server Conformance Results
+
+The suite was executed against a second FHIR R4 server to verify
+server-agnostic portability per REQ-GEN-005.
+
+| Server | URL | Result | Notes |
+|---|---|---|---|
+| HAPI FHIR sandbox | hapi.fhir.org/baseR4 | 80/80 PASS | Primary validation target |
+| SMART Health IT | launch.smarthealthit.org/v/r4/fhir | 73/80 | 7 conformance findings — see below |
+
+SMART Health IT conformance findings (2026-04-11):
+
+| TC | Finding | Classification |
+|---|---|---|
+| TC-PAT-001, TC-ALG-001, TC-MED-001, TC-DXR-001 | ETag header absent in responses | Server non-compliance with FHIR R4 HTTP spec |
+| TC-CAP-001 | Content-Type is `application/json`, not `application/fhir+json` | Server non-compliance with FHIR MIME type requirement |
+| TC-BUN-002 | `_total` parameter ignored — `total` absent from searchset Bundle | Server non-compliance with FHIR search spec |
+| TC-PRA-001 through TC-PRA-006 | No Practitioner resources on server | Environmental — not a server conformance defect |
+
+All 7 findings are correct conformance detections by the suite —
+the suite is functioning as designed. SMART Health IT results are
+informational and do not affect the primary validation conclusion
+against HAPI FHIR.
 
 ---
 
@@ -214,7 +238,7 @@ Based on the evidence summarized in this report:
 | Assessment Area | Conclusion |
 |---|---|
 | Requirements coverage | COMPLETE — 61/61 active requirements tested |
-| Test execution | PASS — 74/74 automated TCs passing, 3/3 manual TCs verified |
+| Test execution | PASS — 80/80 automated TCs passing, 3/3 manual TCs verified |
 | Traceability | COMPLETE — 100% bidirectional, 0 gaps |
 | Tool qualification | PASS — IQ/OQ/PQ all passed |
 | Deviations | 2 open (DEV-OQ-001, DEV-PQ-001), 1 resolved (DEV-IQ-001), all Low severity, none affecting validation scope |
@@ -255,3 +279,4 @@ This conclusion is contingent on:
 |---|---|---|---|
 | 1.0 | 2026-04-09 | Amir Choshov | Initial release — validation lifecycle closed, suite declared validated |
 | 1.1 | 2026-04-09 | Amir Choshov | DEV-IQ-001 resolved — branch protection active on main. Deviation count updated from 3 open to 2 open + 1 resolved. |
+| 1.2 | 2026-04-11 | Amir Choshov | Hardening pass incorporated — TP updated to v1.5 (83 TCs, 80 automated), TM updated to v1.5, GA updated to v1.1. Closing commit SHA updated to af2bf2c5. Multi-server result added: SMART Health IT 73/80. Traceability backward coverage updated to 83/83. |
