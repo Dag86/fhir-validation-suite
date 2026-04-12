@@ -11,6 +11,7 @@ Feature: Patient Resource Validation
   # REQ-GEN-001: HL7 Validator can process the captured response
   # REQ-GEN-002b: meta.versionId is present and non-null
   # REQ-GEN-003: Malformed JSON body returns 400 + OperationOutcome
+  # REQ-PAT-012: Conditional read returns 304 when resource unchanged
 
   Background:
     * url baseUrl
@@ -86,3 +87,12 @@ Feature: Patient Resource Validation
     Then status 400
     And match response.resourceType == 'OperationOutcome'
     And match response.issue == '#[_ > 0]'
+
+  Scenario: TC-PAT-012 | REQ-PAT-012 Conditional read returns 304 Not Modified when ETag matches
+    * def versionId = patientResponse.meta.versionId
+    * def etag = 'W/"' + versionId + '"'
+    Given path 'Patient', patientId
+    And header If-None-Match = etag
+    When method GET
+    Then status 304
+    * karate.log('Conditional read 304 confirmed for ETag: ' + etag)
