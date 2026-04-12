@@ -18,6 +18,7 @@ Feature: Bundle Resource Validation
     When method GET
     Then status 200
     And assert responseTime < 10000
+    And match responseHeaders['Content-Type'][0] contains 'application/fhir+json'
     And match response.resourceType == 'Bundle'
     And match response.type == 'searchset'
     * karate.log('Bundle type: ' + response.type)

@@ -22,6 +22,8 @@ Feature: Practitioner Resource Validation
     When method GET
     Then status 200
     And assert responseTime < 10000
+    And match responseHeaders['Content-Type'][0] contains 'application/fhir+json'
+    And match responseHeaders['ETag'][0] == '#present'
     And match response.resourceType == 'Practitioner'
     * karate.write(response, 'responses/practitioner/practitioner-read.json')
 

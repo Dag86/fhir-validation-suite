@@ -26,6 +26,8 @@ Feature: MedicationRequest Resource Validation
     When method GET
     Then status 200
     And assert responseTime < 10000
+    And match responseHeaders['Content-Type'][0] contains 'application/fhir+json'
+    And match responseHeaders['ETag'][0] == '#present'
     And match response.resourceType == 'MedicationRequest'
     * karate.write(response, 'responses/medication/medication-read.json')
 

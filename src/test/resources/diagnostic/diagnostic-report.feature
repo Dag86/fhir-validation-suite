@@ -23,6 +23,8 @@ Feature: DiagnosticReport Resource Validation
     When method GET
     Then status 200
     And assert responseTime < 10000
+    And match responseHeaders['Content-Type'][0] contains 'application/fhir+json'
+    And match responseHeaders['ETag'][0] == '#present'
     And match response.resourceType == 'DiagnosticReport'
     * karate.write(response, 'responses/diagnostic/diagnostic-report-read.json')
 

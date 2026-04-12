@@ -12,6 +12,7 @@ Feature: CapabilityStatement Pre-Check
     When method GET
     Then status 200
     And assert responseTime < 10000
+    And match responseHeaders['Content-Type'][0] contains 'application/fhir+json'
     And match response.resourceType == 'CapabilityStatement'
 
   Scenario: TC-CAP-002 | REQ-PRE-002 CapabilityStatement declares FHIR R4 version
