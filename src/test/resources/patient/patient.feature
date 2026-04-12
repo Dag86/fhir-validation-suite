@@ -12,6 +12,10 @@ Feature: Patient Resource Validation
   # REQ-GEN-002b: meta.versionId is present and non-null
   # REQ-GEN-003: Malformed JSON body returns 400 + OperationOutcome
   # REQ-PAT-012: Conditional read returns 304 when resource unchanged
+  # REQ-PAT-013: Search by gender returns searchset Bundle
+  # REQ-PAT-014: Search by birthdate returns searchset Bundle
+  # REQ-PAT-015: Search by identifier returns searchset Bundle
+  # REQ-PAT-016: Search by _id returns searchset Bundle
 
   Background:
     * url baseUrl
@@ -96,3 +100,53 @@ Feature: Patient Resource Validation
     When method GET
     Then status 304
     * karate.log('Conditional read 304 confirmed for ETag: ' + etag)
+
+  Scenario: TC-PAT-013 | REQ-PAT-013 search by gender returns searchset Bundle
+    Given path 'Patient'
+    And param gender = 'female'
+    And param _count = '5'
+    When method GET
+    Then status 200
+    And assert responseTime < 10000
+    And match responseHeaders['Content-Type'][0] contains 'application/fhir+json'
+    And match response.resourceType == 'Bundle'
+    And match response.type == 'searchset'
+    * karate.log('Gender search total: ' + response.total)
+
+  Scenario: TC-PAT-014 | REQ-PAT-014 search by birthdate returns searchset Bundle
+    Given path 'Patient'
+    And param birthdate = 'ge1980-01-01'
+    And param _count = '5'
+    When method GET
+    Then status 200
+    And assert responseTime < 10000
+    And match responseHeaders['Content-Type'][0] contains 'application/fhir+json'
+    And match response.resourceType == 'Bundle'
+    And match response.type == 'searchset'
+    * karate.log('Birthdate search total: ' + response.total)
+
+  Scenario: TC-PAT-015 | REQ-PAT-015 search by identifier returns searchset Bundle
+    * def identifierValue = patientResponse.identifier != null && patientResponse.identifier.length > 0 ? patientResponse.identifier[0].value : 'UNKNOWN'
+    Given path 'Patient'
+    And param identifier = identifierValue
+    And param _count = '5'
+    When method GET
+    Then status 200
+    And assert responseTime < 10000
+    And match responseHeaders['Content-Type'][0] contains 'application/fhir+json'
+    And match response.resourceType == 'Bundle'
+    And match response.type == 'searchset'
+    * karate.log('Identifier search total: ' + response.total)
+
+  Scenario: TC-PAT-016 | REQ-PAT-016 search by _id returns searchset Bundle
+    Given path 'Patient'
+    And param _id = patientId
+    And param _count = '5'
+    When method GET
+    Then status 200
+    And assert responseTime < 10000
+    And match responseHeaders['Content-Type'][0] contains 'application/fhir+json'
+    And match response.resourceType == 'Bundle'
+    And match response.type == 'searchset'
+    And match response.entry[0].resource.id == patientId
+    * karate.log('_id search confirmed patientId: ' + patientId)
