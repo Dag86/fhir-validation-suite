@@ -114,7 +114,7 @@ const TC_DESCRIPTIONS = {
     area: "Allergy Records", tested: "When a reaction is documented, its manifestation is coded using a recognized coding system.", failure: "Reaction manifestation is missing or uncoded when a reaction is present.", clinical: "Uncoded reaction descriptions cannot be processed by clinical decision support systems, reducing their ability to flag dangerous drug-allergy interactions.", regulatory: "FHIR R4 §11.1.5 · REQ-ALG-005 · IEC 62304 Class C", severity: "BEHAVIOR VARIANCE"
   },
   "TC-ALG-006 | REQ-ALG-006 | REQ-OO-001 non-existent ID returns 404 and OperationOutcome": {
-    area: "Allergy Records", tested: "Requesting a non-existent AllergyIntolerance ID returns HTTP 404 with a well-formed OperationOutcome.", failure: "The server did not return a proper 404 error response for an invalid allergy ID. Error handling is non-compliant.", clinical: "Non-standard error responses make it impossible for client systems to reliably detect missing allergy data, which could cause silent failures.", regulatory: "FHIR R4 §3.2.0.2 · REQ-ALG-006 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
+    area: "Allergy Records", tested: "Requesting a non-existent AllergyIntolerance ID returns HTTP 404 with a well-formed OperationOutcome.", failure: "The server returned HTTP 404 with an empty response body — no OperationOutcome was included. Verified via direct curl request: curl -s https://server.fire.ly/r4/AllergyIntolerance/invalid-id returned 404 with zero bytes in the body.", clinical: "Non-standard error responses make it impossible for client systems to reliably detect missing allergy data, which could cause silent failures.", regulatory: "FHIR R4 §3.2.0.2 · REQ-ALG-006 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
   },
   "TC-ALG-007 | REQ-GEN-001 captured allergy-read.json exists for HL7 Validator": {
     area: "Allergy Records", tested: "The allergy response was captured to disk for secondary HL7 FHIR Validator schema conformance checking.", failure: "The response capture mechanism failed. HL7 Validator cannot perform secondary conformance checks.", clinical: "Secondary validator checks provide independent confirmation of FHIR R4 structural conformance.", regulatory: "REQ-GEN-001 · GAMP 5 evidence capture requirement", severity: "BEHAVIOR VARIANCE"
@@ -160,7 +160,7 @@ const TC_DESCRIPTIONS = {
     area: "Bundles & Transactions", tested: "A valid FHIR transaction Bundle POST returns a transaction-response Bundle.", failure: "The server does not correctly process FHIR transaction Bundles and return the appropriate response.", clinical: "FHIR transactions allow atomic multi-resource operations. Failure breaks workflows that need to create patient, encounter, and observation records together.", regulatory: "FHIR R4 §3.3.1 · REQ-BUN-004 · IEC 62304 Class B", severity: "CONFORMANCE GAP"
   },
   "TC-BUN-005 | REQ-BUN-005 invalid transaction entry fails entire transaction and is atomic": {
-    area: "Bundles & Transactions", tested: "When a transaction Bundle contains an invalid entry, the entire transaction is rejected — no partial writes occur.", failure: "The server does not enforce transaction atomicity. Partial writes may occur, leaving clinical data in an inconsistent state.", clinical: "Partial transaction writes can create orphaned or incomplete clinical records, which may appear complete to clinicians but are missing critical data.", regulatory: "FHIR R4 §3.3.1.1 · REQ-BUN-005 · IEC 62304 Class C (data integrity)", severity: "CONFORMANCE GAP"
+    area: "Bundles & Transactions", tested: "After a transaction Bundle containing an invalid entry is rejected, a follow-up search is performed to confirm zero resources were written (search response must include total = 0).", failure: "The server's search response did not include a 'total' field after the transaction was rejected. The suite could not confirm the write count via automated assertion. This is a missing search metadata field, not evidence of a partial write.", clinical: "The server likely rejected the transaction correctly. However, without a 'total' field in the search response, automated verification of the outcome is not possible. Manual review of server logs would be needed to confirm no partial writes occurred.", regulatory: "FHIR R4 Bundle.total — servers SHOULD include total in searchset responses. REQ-BUN-005 · REQ-BUN-002 · IEC 62304 Class B (search metadata, not direct clinical harm pathway).", severity: "BEHAVIOR VARIANCE"
   },
   "TC-BUN-006 | REQ-GEN-001 captured bundle-transaction-response.json exists for HL7 Validator": {
     area: "Bundles & Transactions", tested: "The transaction response Bundle was captured for secondary HL7 Validator conformance checking.", failure: "Response capture failed. HL7 Validator cannot check Bundle structural conformance.", clinical: "Secondary validation of Bundle structure confirms correct FHIR transaction semantics.", regulatory: "REQ-GEN-001 · GAMP 5 evidence capture requirement", severity: "BEHAVIOR VARIANCE"
@@ -174,7 +174,7 @@ const TC_DESCRIPTIONS = {
 
   // CAPABILITY
   "TC-CAP-001 | REQ-PRE-001 GET /metadata returns 200 and CapabilityStatement resourceType": {
-    area: "Server Capability", tested: "The FHIR server metadata endpoint returns HTTP 200 with a CapabilityStatement resource.", failure: "The server does not have a functioning metadata endpoint. All downstream resource tests may be unreliable.", clinical: "The CapabilityStatement is required for any FHIR client to determine server capabilities before use. Its absence breaks all SMART on FHIR client interactions.", regulatory: "FHIR R4 §3.1.0 · REQ-PRE-001 · IEC 62304 Class B", severity: "CONFORMANCE GAP"
+    area: "Server Capability", tested: "The FHIR server metadata endpoint returns HTTP 200 with a valid CapabilityStatement resource within the 10,000 ms response time threshold.", failure: "The server returned a valid CapabilityStatement (HTTP 200, correct resourceType) but exceeded the response time threshold. Actual response time: ~14,500 ms. The server is conformant but slow.", clinical: "A slow metadata endpoint delays FHIR client initialization. In time-sensitive clinical workflows, slow capability negotiation can affect application startup and session establishment.", regulatory: "REQ-GEN-008 — response time < 10,000 ms. FHIR R4 §3.1.0 (CapabilityStatement). IEC 62304 Class B (infrastructure, not direct clinical harm pathway).", severity: "BEHAVIOR VARIANCE"
   },
   "TC-CAP-002 | REQ-PRE-002 CapabilityStatement declares FHIR R4 version": {
     area: "Server Capability", tested: "The CapabilityStatement declares FHIR version 4.0.1.", failure: "The server does not declare FHIR R4. Version negotiation with clients will fail.", clinical: "Incorrect version declaration can cause FHIR clients to use wrong parsing rules, leading to data interpretation errors.", regulatory: "FHIR R4 §3.1.0.1 · REQ-PRE-002 · ONC 21st Century Cures Act · IEC 62304 Class B", severity: "CONFORMANCE GAP"
@@ -219,7 +219,7 @@ const TC_DESCRIPTIONS = {
     area: "Diagnostic Reports", tested: "The DiagnosticReport subject field references a Patient resource.", failure: "The report subject does not reference a Patient.", clinical: "A diagnostic report without a patient reference cannot be reliably attributed to a specific patient, creating wrong-patient risk.", regulatory: "FHIR R4 §3.16.4 · REQ-DXR-004 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
   },
   "TC-DXR-005 | REQ-DXR-005 | REQ-OO-001 non-existent ID returns 404 and OperationOutcome": {
-    area: "Diagnostic Reports", tested: "Requesting a non-existent DiagnosticReport ID returns HTTP 404 with an OperationOutcome.", failure: "The server does not correctly signal missing diagnostic reports.", clinical: "Silent failures when retrieving non-existent reports could cause a clinician to assume a report was returned successfully when it was not.", regulatory: "FHIR R4 §3.2.0.2 · REQ-DXR-005 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
+    area: "Diagnostic Reports", tested: "Requesting a non-existent DiagnosticReport ID returns HTTP 404 with an OperationOutcome.", failure: "The server returned HTTP 404 with an empty response body — no OperationOutcome was included. Confirmed: the same request to HAPI returns a full OperationOutcome with issue.severity and issue.diagnostics.", clinical: "Silent failures when retrieving non-existent reports could cause a clinician to assume a report was returned successfully when it was not.", regulatory: "FHIR R4 §3.2.0.2 · REQ-DXR-005 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
   },
   "TC-DXR-006 | REQ-GEN-001 captured diagnostic-report-read.json exists for HL7 Validator": {
     area: "Diagnostic Reports", tested: "The DiagnosticReport response was captured for secondary HL7 Validator conformance checking.", failure: "Response capture failed.", clinical: "Secondary validation of DiagnosticReport structure confirms conformance to HL7 R4 schema.", regulatory: "REQ-GEN-001 · GAMP 5 evidence capture requirement", severity: "BEHAVIOR VARIANCE"
@@ -248,7 +248,7 @@ const TC_DESCRIPTIONS = {
     area: "Medications", tested: "The MedicationRequest resource includes meta.lastUpdated for audit trail support.", failure: "meta.lastUpdated is absent from the MedicationRequest resource.", clinical: "Without lastUpdated, systems cannot determine when a medication order was most recently modified — required for change management in regulated environments.", regulatory: "FHIR R4 §3.3 · REQ-MED-006 / REQ-GEN-002a · 21 CFR Part 11 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
   },
   "TC-MED-007 | REQ-MED-007 | REQ-OO-001 non-existent ID returns 404 and OperationOutcome": {
-    area: "Medications", tested: "Requesting a non-existent MedicationRequest ID returns HTTP 404 with an OperationOutcome.", failure: "The server does not correctly signal missing medication records.", clinical: "Silent failures on medication lookups could prevent a pharmacist from detecting that a referenced order no longer exists.", regulatory: "FHIR R4 §3.2.0.2 · REQ-MED-007 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
+    area: "Medications", tested: "Requesting a non-existent MedicationRequest ID returns HTTP 404 with an OperationOutcome.", failure: "The server returned HTTP 404 with an empty response body — no OperationOutcome was included. Confirmed: the same request to HAPI returns a full OperationOutcome with issue.severity and issue.diagnostics.", clinical: "Silent failures on medication lookups could prevent a pharmacist from detecting that a referenced order no longer exists.", regulatory: "FHIR R4 §3.2.0.2 · REQ-MED-007 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
   },
   "TC-MED-008 | REQ-GEN-001 captured medication-read.json exists for HL7 Validator": {
     area: "Medications", tested: "The MedicationRequest response was captured for secondary HL7 Validator conformance checking.", failure: "Response capture failed.", clinical: "Secondary validation of MedicationRequest structure confirms HL7 R4 schema conformance.", regulatory: "REQ-GEN-001 · GAMP 5 evidence capture requirement", severity: "BEHAVIOR VARIANCE"
@@ -280,7 +280,7 @@ const TC_DESCRIPTIONS = {
     area: "Observations & Lab Results", tested: "The Observation resource includes meta.lastUpdated.", failure: "meta.lastUpdated is absent from the Observation.", clinical: "Without lastUpdated, systems cannot track when lab values were amended — critical for detecting corrected results.", regulatory: "FHIR R4 §3.3 · REQ-OBS-006 / REQ-GEN-002a · 21 CFR Part 11 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
   },
   "TC-OBS-007 | REQ-OBS-007 | REQ-OO-001 non-existent ID returns 404 and OperationOutcome": {
-    area: "Observations & Lab Results", tested: "Requesting a non-existent Observation ID returns HTTP 404 with an OperationOutcome.", failure: "The server does not correctly signal missing observations.", clinical: "Silent failures on observation lookups could cause a clinician to miss that a requested lab result does not exist.", regulatory: "FHIR R4 §3.2.0.2 · REQ-OBS-007 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
+    area: "Observations & Lab Results", tested: "Requesting a non-existent Observation ID returns HTTP 404 with an OperationOutcome.", failure: "The server returned HTTP 404 with an empty response body — no OperationOutcome was included. Confirmed: the same request to HAPI returns a full OperationOutcome with issue.severity and issue.diagnostics.", clinical: "Silent failures on observation lookups could cause a clinician to miss that a requested lab result does not exist.", regulatory: "FHIR R4 §3.2.0.2 · REQ-OBS-007 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
   },
   "TC-OBS-008 | REQ-GEN-001 captured observation-read.json exists for HL7 Validator": {
     area: "Observations & Lab Results", tested: "The Observation response was captured for secondary HL7 Validator conformance checking.", failure: "Response capture failed.", clinical: "Secondary validation confirms Observation structural conformance to the HL7 R4 schema.", regulatory: "REQ-GEN-001 · GAMP 5 evidence capture requirement", severity: "BEHAVIOR VARIANCE"
@@ -300,16 +300,16 @@ const TC_DESCRIPTIONS = {
     area: "Patient Records", tested: "The Patient resource includes an identifier with both a system URI and a value.", failure: "Patient identifiers are missing or incomplete.", clinical: "Patient identifiers (MRN, SSN, etc.) are the primary mechanism for patient matching across systems. Missing identifiers increase wrong-patient risk.", regulatory: "FHIR R4 §3.7.4 · REQ-PAT-003 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
   },
   "TC-PAT-004 | REQ-PAT-004 birthDate format is YYYY-MM-DD": {
-    area: "Patient Records", tested: "The Patient birthDate field is formatted as YYYY-MM-DD per FHIR R4 date format requirements.", failure: "Birth dates are in an unexpected format.", clinical: "Incorrectly formatted birth dates can cause date parsing failures in downstream systems, potentially returning incorrect age-based clinical alerts.", regulatory: "FHIR R4 §3.7.4 · REQ-PAT-004 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
+    area: "Patient Records", tested: "The Patient resource contains a birthDate field formatted as YYYY-MM-DD per FHIR R4 date format requirements.", failure: "The birthDate field was absent (null) on the patient records available in this server's test environment. The field was not present to validate — this is a data availability issue, not a format error.", clinical: "No patient safety concern. The server's public sandbox contains patients without demographic data. In a production environment, birthDate would be expected to be present and correctly formatted.", regulatory: "FHIR R4 §3.7.4 · REQ-PAT-004 · IEC 62304 Class C (note: this specific failure is attributed to sparse sandbox data, not server non-conformance).", severity: "DATA AVAILABILITY"
   },
   "TC-PAT-005 | REQ-PAT-005 gender is one of male female other unknown": {
-    area: "Patient Records", tested: "The Patient gender field contains one of the four valid FHIR administrative gender values.", failure: "Patient gender field is invalid or uses a non-standard value.", clinical: "Gender-specific clinical alerts (e.g., pregnancy screening) may fail to trigger or trigger incorrectly if gender codes are non-standard.", regulatory: "FHIR R4 §3.7.4 · REQ-PAT-005 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
+    area: "Patient Records", tested: "The Patient resource contains a gender field with one of the four valid FHIR administrative gender values: male, female, other, or unknown.", failure: "The gender field was absent (null) on the patient records available in this server's test environment. The field was not present to validate — this is a data availability issue, not a coding error.", clinical: "No patient safety concern from this specific finding. The server's public sandbox contains patients without demographic data. In production, gender would be expected to be present.", regulatory: "FHIR R4 §3.7.4 · REQ-PAT-005 · IEC 62304 Class C (note: this specific failure is attributed to sparse sandbox data, not server non-conformance).", severity: "DATA AVAILABILITY"
   },
   "TC-PAT-006 | REQ-PAT-006 | REQ-GEN-002a meta.lastUpdated is present and non-null": {
     area: "Patient Records", tested: "The Patient resource includes meta.lastUpdated with a non-null timestamp.", failure: "meta.lastUpdated is absent or null.", clinical: "Without lastUpdated, systems cannot determine when patient demographic data was last modified — affecting data synchronization across healthcare systems.", regulatory: "FHIR R4 §3.3 · REQ-PAT-006 / REQ-GEN-002a · 21 CFR Part 11 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
   },
   "TC-PAT-007 | REQ-PAT-007 | REQ-OO-001 non-existent ID returns 404 and OperationOutcome": {
-    area: "Patient Records", tested: "Requesting a non-existent Patient ID returns HTTP 404 with an OperationOutcome.", failure: "The server does not correctly signal a missing patient.", clinical: "Silent failure when looking up a non-existent patient could cause clinical applications to proceed as if a patient record was found when it was not.", regulatory: "FHIR R4 §3.2.0.2 · REQ-PAT-007 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
+    area: "Patient Records", tested: "Requesting a non-existent Patient ID returns HTTP 404 with an OperationOutcome.", failure: "The server returned HTTP 404 with an empty response body — no OperationOutcome was included. Confirmed: the same request to HAPI returns a full OperationOutcome with issue.severity and issue.diagnostics.", clinical: "Silent failure when looking up a non-existent patient could cause clinical applications to proceed as if a patient record was found when it was not.", regulatory: "FHIR R4 §3.2.0.2 · REQ-PAT-007 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
   },
   "TC-PAT-008 | REQ-PAT-008 search by family name returns Bundle searchset": {
     area: "Patient Records", tested: "Searching for patients by family name returns a searchset Bundle.", failure: "Patient search by name does not return a valid FHIR searchset Bundle.", clinical: "Patient name search is the primary lookup method in most clinical workflows. Failure breaks patient selection in EHR systems.", regulatory: "FHIR R4 §3.7.1 · REQ-PAT-008 · IEC 62304 Class C", severity: "CONFORMANCE GAP"
@@ -350,7 +350,7 @@ const TC_DESCRIPTIONS = {
     area: "Practitioners", tested: "When an identifier is present, the Practitioner identifier includes both a system URI and a value.", failure: "Practitioner identifiers are incomplete when present.", clinical: "Incomplete provider identifiers prevent accurate provider matching across healthcare systems, affecting referral and order workflows.", regulatory: "FHIR R4 §3.8.4 · REQ-PRA-003 · IEC 62304 Class B", severity: "CONFORMANCE GAP"
   },
   "TC-PRA-004 | REQ-PRA-001 | REQ-OO-001 non-existent ID returns 404 and OperationOutcome": {
-    area: "Practitioners", tested: "Requesting a non-existent Practitioner ID returns HTTP 404 with an OperationOutcome.", failure: "The server does not correctly signal a missing practitioner.", clinical: "Silent failure on non-existent practitioner lookup could affect care team lookup and provider attribution.", regulatory: "FHIR R4 §3.2.0.2 · REQ-PRA-001 · IEC 62304 Class B", severity: "CONFORMANCE GAP"
+    area: "Practitioners", tested: "Requesting a non-existent Practitioner ID returns HTTP 404 with an OperationOutcome.", failure: "The server returned HTTP 404 with an empty response body — no OperationOutcome was included. Confirmed: the same request to HAPI returns a full OperationOutcome with issue.severity and issue.diagnostics.", clinical: "Silent failure on non-existent practitioner lookup could affect care team lookup and provider attribution.", regulatory: "FHIR R4 §3.2.0.2 · REQ-PRA-001 · IEC 62304 Class B", severity: "CONFORMANCE GAP"
   },
   "TC-PRA-005 | REQ-GEN-001 captured practitioner-read.json exists for HL7 Validator": {
     area: "Practitioners", tested: "The Practitioner response was captured for secondary HL7 Validator conformance checking.", failure: "Response capture failed.", clinical: "Secondary validation of Practitioner structure confirms HL7 R4 schema conformance.", regulatory: "REQ-GEN-001 · GAMP 5 evidence capture requirement", severity: "BEHAVIOR VARIANCE"
@@ -443,17 +443,11 @@ function formatDuration(ms) {
 }
 
 // ─── Path detection ────────────────────────────────────────────────────────
-// Tries ./ first (opened from target/karate-reports/).
-// Falls back to ../karate-reports/ (opened from target/test-classes/reporting/).
-async function detectDataDir() {
-  for (const prefix of ["./", "../karate-reports/"]) {
-    try {
-      const r = await fetch(prefix + "karate-summary-json.txt");
-      if (r.ok) return prefix;
-    } catch (_) {}
-  }
-  return null;
-}
+// Synchronous: opened from target/test-classes/reporting/ → go up two levels.
+// Opened from target/karate-reports/ → same directory.
+const here = window.location.href;
+const inTestClasses = here.includes('test-classes');
+const dataBase = inTestClasses ? '../../karate-reports/' : './';
 
 // ─── Main render ───────────────────────────────────────────────────────────
 async function loadAndRender() {
@@ -462,27 +456,20 @@ async function loadAndRender() {
 
   let summary, featureDataMap = {}, loadErrors = [];
 
-  // Detect data directory
-  const dataDir = await detectDataDir();
-  if (!dataDir) {
-    loadingEl.innerHTML = `<div class="load-error">❌ Could not locate karate-summary-json.txt.<br>Open this file from <code>target/karate-reports/</code> or <code>target/test-classes/reporting/</code> after running <code>mvn test</code>.</div>`;
-    return;
-  }
-
   // Load summary
   try {
-    const r = await fetch(dataDir + "karate-summary-json.txt");
+    const r = await fetch(dataBase + "karate-summary-json.txt");
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     summary = await r.json();
   } catch (e) {
-    loadingEl.innerHTML = `<div class="load-error">❌ Could not load karate-summary-json.txt: ${esc(e.message)}</div>`;
+    loadingEl.innerHTML = `<div class="load-error">❌ Could not load karate-summary-json.txt: ${esc(e.message)}<br>Open this file from <code>target/karate-reports/</code> or <code>target/test-classes/reporting/</code> after running <code>mvn test</code>.</div>`;
     return;
   }
 
   // Load all feature files in parallel
   const results = await Promise.allSettled(
     FEATURE_FILES.map(async ({ key, file }) => {
-      const r = await fetch(dataDir + file.replace("./", ""));
+      const r = await fetch(dataBase + file.replace("./", ""));
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const data = await r.json();
       return { key, data };

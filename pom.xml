@@ -66,10 +66,11 @@
       </plugin>
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
+        <version>3.4.0</version>
         <executions>
           <execution>
             <id>copy-report-template</id>
-            <phase>test</phase>
+            <phase>prepare-package</phase>
             <goals><goal>copy-resources</goal></goals>
             <configuration>
               <outputDirectory>${project.build.directory}/karate-reports</outputDirectory>
