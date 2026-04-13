@@ -61,7 +61,7 @@ docs/
   test-plan.md                   — TP-FHIR-001 v1.6 (83 TCs, Approved)
   traceability-matrix.md         — TM-FHIR-001 v1.6 (executed, 100% coverage)
   gap-analysis.md                — GA-FHIR-001 v1.2 (final)
-  validation-summary-report.md   — VA-FHIR-001 v1.3 (final)
+  validation-summary-report.md   — VA-FHIR-001 v1.4 (final)
   qualification/IQ.md            — TQ-FHIR-IQ-001 v1.3 (executed)
   qualification/OQ.md            — TQ-FHIR-OQ-001 v1.2 (executed)
   qualification/PQ.md            — TQ-FHIR-PQ-001 v1.4 (executed)
@@ -112,7 +112,7 @@ ALL MILESTONES COMPLETE.
 | Operational Qualification | TQ-FHIR-OQ-001 | 1.2 | PASS |
 | Performance Qualification | TQ-FHIR-PQ-001 | 1.4 | PASS |
 | Gap Analysis | GA-FHIR-001 | 1.2 | Final |
-| Validation Summary Report | VA-FHIR-001 | 1.3 | Final — VALIDATED |
+| Validation Summary Report | VA-FHIR-001 | 1.4 | Final — VALIDATED |
 
 ---
 
