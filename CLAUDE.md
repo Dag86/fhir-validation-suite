@@ -88,7 +88,7 @@ CLAUDE.md                        — this file
 | Run time | ~02:09 min |
 | Last local run | 2026-04-11 |
 | CI runs completed | 3 |
-| Closing commit SHA | 7118f602ec98fce9da12ffdf5e4b0c0f42cf1f2d |
+| Closing commit SHA | 91cd001 |
 
 TC count breakdown (83 total in TP-FHIR-001 v1.6):
 - 80 automated scenarios — implemented and passing
