@@ -55,9 +55,9 @@ src/test/resources/
   oq/oq-*.feature                        — 5 OQ qualification scenarios
 
 docs/
-  validation-plan.md             — VP-FHIR-001 v1.2
-  requirements-specification.md  — RS-FHIR-001 v1.2 (61 requirements)
-  architecture.md                — AD-FHIR-001 v1.1
+  validation-plan.md             — VP-FHIR-001 v1.3
+  requirements-specification.md  — RS-FHIR-001 v1.3 (67 requirements)
+  architecture.md                — AD-FHIR-001 v1.2
   test-plan.md                   — TP-FHIR-001 v1.5 (83 TCs)
   traceability-matrix.md         — TM-FHIR-001 v1.5 (executed, 100% coverage)
   gap-analysis.md                — GA-FHIR-001 v1.1 (final)
@@ -124,9 +124,9 @@ ALL MILESTONES COMPLETE.
 
 | Phase | Document | Version | Status |
 |---|---|---|---|
-| Validation Plan | VP-FHIR-001 | 1.2 | Approved |
-| Requirements Specification | RS-FHIR-001 | 1.2 | Approved |
-| Architecture | AD-FHIR-001 | 1.1 | Approved |
+| Validation Plan | VP-FHIR-001 | 1.3 | Approved |
+| Requirements Specification | RS-FHIR-001 | 1.3 | Approved |
+| Architecture | AD-FHIR-001 | 1.2 | Approved |
 | Test Plan | TP-FHIR-001 | 1.5 | Approved |
 | Traceability Matrix | TM-FHIR-001 | 1.5 | Executed |
 | Installation Qualification | TQ-FHIR-IQ-001 | 1.2 | PASS |
