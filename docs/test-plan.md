@@ -6,8 +6,8 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TP-FHIR-001 |
-| **Version** | 1.5 |
-| **Status** | Draft |
+| **Version** | 1.6 |
+| **Status** | Approved |
 | **Author** | Amir Choshov |
 | **Date** | 2026-04-11 |
 | **Project** | FHIR R4 API Validation Suite |
@@ -315,17 +315,17 @@ A test run executed against uncommitted changes produces evidence that cannot be
 | Resource | Total TCs | Positive | Negative | Boundary | Schema | Audit | Cross-ref |
 |---|---|---|---|---|---|---|---|
 | CapabilityStatement | 3 | 2 | 0 | 0 | 1 | 0 | 0 |
-| Patient | 11 | 6 | 2 | 0 | 1 | 2 | 0 |
+| Patient | 16 | 11 | 2 | 0 | 1 | 2 | 0 |
 | Observation | 9 | 4 | 1 | 1 | 1 | 2 | 1 |
 | AllergyIntolerance | 8 | 3 | 1 | 1 | 1 | 1 | 1 |
 | MedicationRequest | 10 | 4 | 2 | 0 | 1 | 2 | 1 |
 | DiagnosticReport | 7 | 3 | 1 | 0 | 1 | 1 | 1 |
 | AuditEvent | 7 | 4 | 0 | 0 | 1 | 2 | 0 |
 | OperationOutcome | 5 | 3 | 1 | 0 | 1 | 0 | 0 |
-| Bundle | 7 | 3 | 1 | 0 | 1 | 1 | 0 |
+| Bundle | 8 | 4 | 1 | 0 | 1 | 1 | 0 |
 | Practitioner | 6 | 2 | 1 | 1 | 1 | 1 | 0 |
 | Framework | 4 | 0 | 1 | 0 | 0 | 0 | 0 |
-| **Total** | **83** | **34** | **11** | **3** | **10** | **12** | **4** |
+| **Total** | **83** | **40** | **11** | **3** | **10** | **12** | **4** |
 
 *Audit column increase from 6 → 12 reflects addition of meta.versionId assertions (TC-OBS-009, TC-MED-010, TC-DXR-007, TC-AUD-007, TC-BUN-007, TC-PRA-006) — closing the REQ-GEN-002b coverage gap identified in gap analysis.*
 
@@ -408,7 +408,7 @@ All findings regardless of severity are documented in GA-FHIR-001 Gap Analysis. 
 - [ ] TQ-FHIR-IQ-001 completed and passed — including IQ-GIT all steps
 - [ ] TQ-FHIR-OQ-001 completed and passed — including OQ-GIT all steps
 - [ ] TQ-FHIR-PQ-001 completed and passed — including PQ-005
-- [ ] All 61 requirements in RS-FHIR-001 have at least one test case in this plan
+- [ ] All 68 requirements in RS-FHIR-001 v1.4 have at least one test case in this plan
 - [ ] Traceability Matrix (TM-FHIR-001) populated
 - [ ] Git repository on `main` branch with clean working tree
 - [ ] Branch protection confirmed active on `main`
@@ -417,12 +417,12 @@ All findings regardless of severity are documented in GA-FHIR-001 Gap Analysis. 
 
 ### 11.2 Exit Criteria — Testing Is Complete When:
 
-- [ ] All 77 test cases executed
+- [ ] All 83 test cases executed
 - [ ] All Class C test cases passed or deviations documented
 - [ ] All Class B test cases passed or deviations documented
 - [ ] TC-FRM-001, TC-FRM-002, TC-FRM-003, and TC-GEN-001 all passed
 - [ ] HL7 Validator run against all captured responses
-- [ ] Traceability Matrix shows 100% requirement coverage for all 61 requirements
+- [ ] Traceability Matrix shows 100% requirement coverage for all 68 active requirements in RS-FHIR-001 v1.4
 - [ ] Gap Analysis (GA-FHIR-001) complete
 - [ ] Test execution reports archived in GitHub Actions with timestamps and commit SHAs
 - [ ] Git commit SHA of final execution run recorded in validation package
@@ -453,6 +453,7 @@ This record links the completed validation package to the exact source state und
 | 1.3 | 2026-04-07 | Amir Choshov | Added implementation notes to TC-OO-002, TC-OO-003, TC-OO-004 (standalone Scenarios in common/operation-outcome.feature); added implementation note to TC-GEN-001 (standalone Scenario in common/general.feature); added non-automated notes to TC-FRM-001, TC-FRM-002, TC-FRM-003 (manual IQ/OQ checklist items, no feature file counterpart by design) |
 | 1.4 | 2026-04-09 | Amir Choshov | TC-CAP-003 expected value updated — fhirVersion assertion accepts any valid R4 patch version (4.0.x) not just 4.0.1. Reflects portability fix for multi-server conformance testing. |
 | 1.5 | 2026-04-11 | Amir Choshov | Added TC-PAT-012 through TC-PAT-016 and TC-BUN-008 from hardening pass. Total TC count updated from 77 to 83. |
+| 1.6 | 2026-04-12 | Amir Choshov | Status Draft → Approved; updated Patient TC count 11→16, Bundle 7→8; updated entry/exit criteria to 68 reqs / 83 TCs; updated RS citation to v1.4 |
 
 ---
 
@@ -465,4 +466,4 @@ This record links the completed validation package to the exact source state und
 
 ---
 
-*This Test Plan governs all test execution activities for the FHIR R4 API Validation Suite. All 77 test cases defined in this document must be executed and recorded before validation is considered complete. The Traceability Matrix must confirm 100% coverage of all 61 RS-FHIR-001 requirements before exit criteria are satisfied.*
+*This Test Plan governs all test execution activities for the FHIR R4 API Validation Suite. All 83 test cases defined in this document must be executed and recorded before validation is considered complete. The Traceability Matrix must confirm 100% coverage of all 68 RS-FHIR-001 v1.4 requirements before exit criteria are satisfied.*

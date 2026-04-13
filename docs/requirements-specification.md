@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | RS-FHIR-001 |
-| **Version** | 1.3 |
+| **Version** | 1.4 |
 | **Status** | Approved |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-11 |
+| **Date** | 2026-04-12 |
 | **Project** | FHIR R4 API Validation Suite |
 
 ---
@@ -760,6 +760,15 @@ The validation framework source code and all validation documents SHALL be maint
 
 ---
 
+**REQ-GEN-008**
+All FHIR R4 API responses SHALL be returned within 10,000 milliseconds under normal sandbox operating conditions.
+
+- **Source:** Non-functional conformance baseline — operational acceptance criterion
+- **IEC 62304 Class:** B
+- **ISO 14971 Risk:** System latency causing delayed access to clinical data
+
+---
+
 ## 6. Requirements Summary
 
 | ID | Resource | Description | IEC 62304 Class |
@@ -832,10 +841,11 @@ The validation framework source code and all validation documents SHALL be maint
 | REQ-GEN-005 | All | Configurable base URL | B |
 | REQ-GEN-006 | All | Test reports linked to Git commit SHA | B |
 | REQ-GEN-007 | All | Git version control with branch protection | B |
+| REQ-GEN-008 | All | API response time < 10,000ms | B |
 
-**Total Active Requirements: 67**
+**Total Active Requirements: 68**
 **Class C (Critical): 39**
-**Class B (High): 28**
+**Class B (High): 29**
 
 *REQ-GEN-002 retired in v1.2 — replaced by REQ-GEN-002a and REQ-GEN-002b. The retired requirement row is retained for traceability history.*
 
@@ -849,6 +859,7 @@ The validation framework source code and all validation documents SHALL be maint
 | 1.1 | 2026-03-30 | Amir Choshov | Added 21 CFR Part 820.40 to regulatory standards; added REQ-GEN-006 and REQ-GEN-007 for Git traceability and branch protection; updated requirements summary totals |
 | 1.2 | 2026-03-30 | Amir Choshov | Added REQ-OBS-007, REQ-ALG-006, REQ-MED-007, REQ-DXR-005 — dedicated 404 negative path requirements for all Class C resources; retired REQ-GEN-002 and replaced with REQ-GEN-002a (meta.lastUpdated) and REQ-GEN-002b (meta.versionId) for independent testability; updated REQ-DXR-002 to enumerate full DiagnosticReport status value set including partial and appended; updated summary table and totals (56 → 61 active requirements, Class C: 30 → 34) |
 | 1.3 | 2026-04-11 | Amir Choshov | Added REQ-PAT-012 through REQ-PAT-016 and REQ-BUN-006 from hardening pass. Updated REQ-PRE-003 to accept `4.0.x` regex rather than literal `4.0.1`. Status updated to Approved. Scope updated: added response time, header, conditional read, search parameter, pagination, and multi-server test types. Target system updated: SMART Health IT added as secondary server. Total requirements: 67 (39 Class C, 28 Class B). |
+| 1.4 | 2026-04-12 | Amir Choshov | Added REQ-GEN-008 (response time) to formally trace responseTime assertions in feature files; updated summary totals 67 → 68 (39 Class C, 29 Class B). |
 
 ---
 

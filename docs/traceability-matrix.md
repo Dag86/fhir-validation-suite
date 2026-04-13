@@ -6,13 +6,13 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TM-FHIR-001 |
-| **Version** | 1.5 |
+| **Version** | 1.6 |
 | **Status** | Executed |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-11 |
+| **Date** | 2026-04-12 |
 | **Project** | FHIR R4 API Validation Suite |
-| **Requirements Source** | RS-FHIR-001 v1.2 — 61 active requirements |
-| **Test Case Source** | TP-FHIR-001 v1.5 — 83 test cases |
+| **Requirements Source** | RS-FHIR-001 v1.4 — 68 active requirements |
+| **Test Case Source** | TP-FHIR-001 v1.6 — 83 test cases |
 
 ---
 
@@ -71,11 +71,11 @@ This document is a living artifact — test execution results are recorded here 
 | REQ-PAT-006 | meta.lastUpdated present | C | Inability to reconstruct data change history | TC-PAT-006 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 | REQ-PAT-007 | Non-existent ID returns 404 + OperationOutcome | C | Silent failure masking missing patient records | TC-PAT-007 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 | REQ-PAT-008 | Search returns searchset Bundle | C | Incorrect results leading to wrong patient selection | TC-PAT-008 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
-| REQ-PAT-012 | Conditional read returns 304 when ETag matches | Patient | TC-PAT-012 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
-| REQ-PAT-013 | Search by gender returns searchset Bundle | Patient | TC-PAT-013 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
-| REQ-PAT-014 | Search by birthdate returns searchset Bundle | Patient | TC-PAT-014 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
-| REQ-PAT-015 | Search by identifier returns searchset Bundle | Patient | TC-PAT-015 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
-| REQ-PAT-016 | Search by _id returns searchset Bundle | Patient | TC-PAT-016 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
+| REQ-PAT-012 | Conditional read returns 304 when ETag matches | C | Identity integrity — stale cache serving outdated patient record could lead to wrong treatment decision | TC-PAT-012 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
+| REQ-PAT-013 | Search by gender returns searchset Bundle | C | Identity — inability to filter by demographic could return wrong patient record | TC-PAT-013 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
+| REQ-PAT-014 | Search by birthdate returns searchset Bundle | C | Identity — incorrect birthdate search could return wrong patient record | TC-PAT-014 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
+| REQ-PAT-015 | Search by identifier returns searchset Bundle | C | Identity — identifier search is the primary mechanism for unique patient lookup in clinical systems | TC-PAT-015 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
+| REQ-PAT-016 | Search by _id returns searchset Bundle | C | Identity — _id search must return exactly the requested patient, not a similar one | TC-PAT-016 | PASS | 2026-04-11 | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
 
 ---
 
@@ -191,6 +191,7 @@ This document is a living artifact — test execution results are recorded here 
 | REQ-GEN-005 | Configurable base URL — no code changes required | B | Framework design | TC-FRM-001 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 | REQ-GEN-006 | Test reports linked to Git commit SHA | B | 21 CFR Part 820.40 | TC-FRM-002 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 | REQ-GEN-007 | Git branch protection on main | B | 21 CFR Part 820.40 / 21 CFR Part 11 | TC-FRM-003 | PASS | 2026-04-08 | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
+| REQ-GEN-008 | Response time < 10,000ms | B | System latency causing delayed access to clinical data | TC-CAP-001, TC-PAT-013, TC-PAT-014, TC-PAT-015, TC-PAT-016, TC-ALG-001, TC-OBS-001, TC-MED-001, TC-DXR-001, TC-BUN-001, TC-BUN-008, TC-OO-001, TC-GEN-001, TC-AUD-001, TC-PRA-001 | PASS | 2026-04-11 | 7118f602ec98fce9da12ffdf5e4b0c0f42cf1f2d |
 
 ---
 
@@ -322,17 +323,17 @@ This section confirms every test case traces to at least one requirement. Orphan
 | Category | Total Requirements | Covered | Gaps | Coverage % |
 |---|---|---|---|---|
 | Pre-Validation | 3 | 3 | 0 | 100% |
-| Patient | 8 | 8 | 0 | 100% |
+| Patient | 13 | 13 | 0 | 100% |
 | Observation | 7 | 7 | 0 | 100% |
 | AllergyIntolerance | 6 | 6 | 0 | 100% |
 | MedicationRequest | 7 | 7 | 0 | 100% |
 | DiagnosticReport | 5 | 5 | 0 | 100% |
 | AuditEvent | 5 | 5 | 0 | 100% |
 | OperationOutcome | 4 | 4 | 0 | 100% |
-| Bundle | 5 | 5 | 0 | 100% |
+| Bundle | 6 | 6 | 0 | 100% |
 | Practitioner | 3 | 3 | 0 | 100% |
-| General | 8 | 8 | 0 | 100% |
-| **Total** | **61** | **61** | **0** | **100%** |
+| General | 9 | 9 | 0 | 100% |
+| **Total** | **68** | **68** | **0** | **100%** |
 
 *REQ-GEN-002 retired — not counted. REQ-GEN-002a and REQ-GEN-002b counted as 2 active requirements in the General category.*
 
@@ -342,9 +343,9 @@ This section confirms every test case traces to at least one requirement. Orphan
 
 | Class | Total Active Requirements | Covered | Gaps |
 |---|---|---|---|
-| Class C | 34 | 34 | 0 |
-| Class B | 27 | 27 | 0 |
-| **Total** | **61** | **61** | **0** |
+| Class C | 39 | 39 | 0 |
+| Class B | 29 | 29 | 0 |
+| **Total** | **68** | **68** | **0** |
 
 All Class C and Class B requirements are covered. Partial and representative coverage dispositions are documented in Section 4.
 
@@ -352,13 +353,13 @@ All Class C and Class B requirements are covered. Partial and representative cov
 
 | Status | Count |
 |---|---|
-| Pass | 61 |
+| Pass | 68 |
 | Fail | 0 |
 | Skip | 0 |
 | Partial | 0 |
 | Pending | 0 |
 | Retired | 1 |
-| Total Requirements | 62 |
+| Total Requirements | 69 |
 
 *Update this table after each test execution run.*
 
@@ -395,6 +396,7 @@ Record each test execution run here. Each run must be linked to a Git commit SHA
 | 1.3 | 2026-04-08 | Amir Choshov | Execution log populated — CI Run #3, 61/61 requirements PASS, 74/74 automated TCs PASS |
 | 1.4 | 2026-04-09 | Amir Choshov | REQ-PRE-003 description updated — version assertion now accepts any valid R4 patch version per portability fix. |
 | 1.5 | 2026-04-11 | Amir Choshov | 6 new TCs added from hardening pass (TC-PAT-012 through TC-PAT-016, TC-BUN-008). REQ-PAT-012 through REQ-PAT-016 and REQ-BUN-006 forward trace rows added. Backward trace updated with 6 new rows. Execution log run #2 added. TP source updated to v1.5 (83 TCs). Counts updated: 83 total, 80 automated. |
+| 1.6 | 2026-04-12 | Amir Choshov | Updated RS citation to v1.4 (68 reqs); fixed column alignment in REQ-PAT-012–016 rows (ISO 14971 Risk field restored); added REQ-GEN-008 forward trace row; updated §6.1 and §6.2 coverage summary totals to 68; updated §6.3 execution status to 68 pass; updated TC source to TP v1.6 (83 TCs); updated footer closure statement |
 
 ---
 
@@ -407,4 +409,4 @@ Record each test execution run here. Each run must be linked to a Git commit SHA
 
 ---
 
-*This Traceability Matrix reflects 100% coverage of all 61 active requirements in RS-FHIR-001 v1.2 with 83 test cases from TP-FHIR-001 v1.5. Two documented coverage rationale notes (Section 4.1, 4.2) are on record. Zero orphan test cases. All Class C requirements are fully covered. Validation exit criteria in TP-FHIR-001 Section 11.2 can be satisfied when all 83 test cases are executed and results recorded with Git commit SHAs.*
+*This Traceability Matrix reflects 100% coverage of all 68 active requirements in RS-FHIR-001 v1.4 with 83 test cases from TP-FHIR-001 v1.6. Two documented coverage rationale notes (Section 4.1, 4.2) are on record. Zero orphan test cases. All Class C requirements are fully covered. Validation exit criteria in TP-FHIR-001 Section 11.2 can be satisfied when all 83 test cases are executed and results recorded with Git commit SHAs.*

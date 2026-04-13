@@ -6,12 +6,12 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | GA-FHIR-001 |
-| **Version** | 1.1 |
+| **Version** | 1.2 |
 | **Status** | Final |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-11 |
+| **Date** | 2026-04-12 |
 | **Project** | FHIR R4 API Validation Suite |
-| **Related Documents** | RS-FHIR-001 v1.2, TP-FHIR-001 v1.5, TM-FHIR-001 v1.5 |
+| **Related Documents** | RS-FHIR-001 v1.4, TP-FHIR-001 v1.6, TM-FHIR-001 v1.6 |
 
 ---
 
@@ -34,8 +34,8 @@ document provides that verification.
 
 | Item | Value |
 |---|---|
-| Requirements source | RS-FHIR-001 v1.2 |
-| Active requirements | 61 |
+| Requirements source | RS-FHIR-001 v1.4 |
+| Active requirements | 68 |
 | Retired requirements | 1 (REQ-GEN-002 — split into REQ-GEN-002a and REQ-GEN-002b) |
 | Test plan source | TP-FHIR-001 v1.5 |
 | Total test cases | 83 |
@@ -77,11 +77,11 @@ TM-FHIR-001 v1.5:
 
 | Metric | Count |
 |---|---|
-| Active requirements analyzed | 61 |
-| Requirements with ≥1 test case | 61 |
+| Active requirements analyzed | 68 |
+| Requirements with ≥1 test case | 68 |
 | Orphaned requirements (no test case) | 0 |
 
-**Result: No orphaned requirements. 100% forward coverage confirmed.**
+**Result: No orphaned requirements. 100% forward coverage confirmed (68/68 active requirements).**
 
 ### 4.2 Backward Trace Results
 
@@ -113,7 +113,7 @@ TCs in hardening pass (commit af2bf2c5, 2026-04-11).**
 |---|---|---|---|
 | TC-FRM-001 | Suite executes against configurable base URL | IQ verification step IQ-KAR-001 | Verified |
 | TC-FRM-002 | Test report linked to Git commit SHA | OQ verification step OQ-GHA-005 | Verified |
-| TC-FRM-003 | Git branch protection active on main | IQ verification step IQ-GIT-008 (DEV-IQ-001) | Conditional — branch protection pending |
+| TC-FRM-003 | Git branch protection active on main | IQ verification step IQ-GIT-008 (DEV-IQ-001) | Verified — DEV-IQ-001 resolved 2026-04-09 per IQ.md v1.3; branch protection confirmed active on main |
 
 ### 4.5 Retired Requirements
 
@@ -131,14 +131,14 @@ TCs in hardening pass (commit af2bf2c5, 2026-04-11).**
 | Orphaned test cases | 0 | None |
 | Untested active requirements | 0 | None |
 | Unexecuted automated TCs | 0 | None |
-| Open deviations affecting coverage | 1 | DEV-IQ-001: branch protection pending (TC-FRM-003 conditional) |
+| Open deviations affecting coverage | 0 | DEV-IQ-001 resolved 2026-04-09 — branch protection active on main; TC-FRM-003 Verified |
 
 ---
 
 ## 6. Conclusion
 
 Coverage analysis is complete. No gaps were identified in forward
-or backward traceability. All 61 active requirements are tested by
+or backward traceability. All 68 active requirements are tested by
 at least one of the 83 test cases. All 80 automated test cases
 passed execution across CI Run #3 and the hardening pass.
 Non-automated TCs are formally verified via IQ/OQ qualification
@@ -172,3 +172,4 @@ project. Author serves as sole reviewer.*
 |---|---|---|---|
 | 1.0 | 2026-04-08 | Amir Choshov | Initial release — coverage analysis complete, no gaps found |
 | 1.1 | 2026-04-11 | Amir Choshov | Updated to TP-FHIR-001 v1.5 (83 TCs, 80 automated) and TM-FHIR-001 v1.5. Counts updated throughout. No new gaps identified. |
+| 1.2 | 2026-04-12 | Amir Choshov | Updated RS/TP/TM citations to current versions (RS v1.4, TP v1.6, TM v1.6); updated requirement count 61→68, TC count 77→83; updated TC-FRM-003 disposition to Verified; corrected §5 to reflect DEV-IQ-001 resolution (open deviations affecting coverage 1→0) |

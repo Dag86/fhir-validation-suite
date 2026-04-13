@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | VA-FHIR-001 |
-| **Version** | 1.2 |
+| **Version** | 1.3 |
 | **Status** | Final |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-11 |
+| **Date** | 2026-04-12 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Related Documents** | VP-FHIR-001, RS-FHIR-001, TP-FHIR-001, TM-FHIR-001, GA-FHIR-001, TQ-FHIR-IQ-001, TQ-FHIR-OQ-001, TQ-FHIR-PQ-001 |
 
@@ -43,7 +43,7 @@ adequately validated.
 | Validation Scope | API behavior, FHIR R4 structural conformance, audit trail integrity |
 | Regulatory Standards | IEC 62304, ISO 14971, 21 CFR Part 11, 21 CFR Part 820 / QMSR, GAMP 5 |
 | Repository | https://github.com/Dag86/fhir-validation-suite |
-| Closing Commit SHA | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
+| Closing Commit SHA | 7118f602ec98fce9da12ffdf5e4b0c0f42cf1f2d |
 
 ---
 
@@ -53,16 +53,16 @@ adequately validated.
 
 | Document | ID | Version | Status | Date |
 |---|---|---|---|---|
-| Validation Plan | VP-FHIR-001 | 1.2 | Approved | 2026-03-30 |
-| Requirements Specification | RS-FHIR-001 | 1.2 | Approved | 2026-03-30 |
-| Architecture Document | AD-FHIR-001 | 1.1 | Approved | 2026-03-30 |
-| Test Plan | TP-FHIR-001 | 1.5 | Approved | 2026-04-11 |
-| Traceability Matrix | TM-FHIR-001 | 1.5 | Executed | 2026-04-11 |
-| Installation Qualification | TQ-FHIR-IQ-001 | 1.2 | Executed | 2026-04-08 |
+| Validation Plan | VP-FHIR-001 | 1.3 | Approved | 2026-04-11 |
+| Requirements Specification | RS-FHIR-001 | 1.4 | Approved | 2026-04-12 |
+| Architecture Document | AD-FHIR-001 | 1.2 | Approved | 2026-04-11 |
+| Test Plan | TP-FHIR-001 | 1.6 | Approved | 2026-04-12 |
+| Traceability Matrix | TM-FHIR-001 | 1.6 | Executed | 2026-04-12 |
+| Installation Qualification | TQ-FHIR-IQ-001 | 1.3 | Executed | 2026-04-09 |
 | Operational Qualification | TQ-FHIR-OQ-001 | 1.2 | Executed | 2026-04-08 |
-| Performance Qualification | TQ-FHIR-PQ-001 | 1.3 | Executed | 2026-04-09 |
-| Gap Analysis | GA-FHIR-001 | 1.1 | Final | 2026-04-11 |
-| Validation Summary Report | VA-FHIR-001 | 1.2 | Final | 2026-04-11 |
+| Performance Qualification | TQ-FHIR-PQ-001 | 1.4 | Executed | 2026-04-11 |
+| Gap Analysis | GA-FHIR-001 | 1.2 | Final | 2026-04-12 |
+| Validation Summary Report | VA-FHIR-001 | 1.3 | Final | 2026-04-12 |
 
 ### 3.2 Qualification Phase Outcomes
 
@@ -83,8 +83,8 @@ adequately validated.
 | Automated TCs passed | 80 |
 | Automated TCs failed | 0 |
 | Non-automated TCs verified | 3 (via IQ/OQ qualification evidence) |
-| Active requirements (RS-FHIR-001 v1.2) | 61 |
-| Requirements with passing test coverage | 61 |
+| Active requirements (RS-FHIR-001 v1.4) | 68 |
+| Requirements with passing test coverage | 68 |
 | Traceability gaps | 0 |
 | CI pipeline runs | 3 |
 | CI run used for PQ evidence | Run #3 |
@@ -99,7 +99,7 @@ Bidirectional traceability was verified in GA-FHIR-001 v1.1
 
 | Trace Direction | Result |
 |---|---|
-| Forward (requirement → test case) | 100% — 61/61 active requirements covered |
+| Forward (requirement → test case) | 100% — 68/68 active requirements covered |
 | Backward (test case → requirement) | 100% — 83/83 test cases mapped |
 | Orphaned requirements | 0 |
 | Orphaned test cases | 0 |
@@ -107,7 +107,7 @@ Bidirectional traceability was verified in GA-FHIR-001 v1.1
 REQ-GEN-002 was formally retired and replaced by REQ-GEN-002a
 (meta.lastUpdated) and REQ-GEN-002b (meta.versionId) to enable
 independent testability. This split is documented in RS-FHIR-001
-v1.2 and TM-FHIR-001 v1.3.
+v1.4 and TM-FHIR-001 v1.6.
 
 ---
 
@@ -237,7 +237,7 @@ Based on the evidence summarized in this report:
 
 | Assessment Area | Conclusion |
 |---|---|
-| Requirements coverage | COMPLETE — 61/61 active requirements tested |
+| Requirements coverage | COMPLETE — 68/68 active requirements tested |
 | Test execution | PASS — 80/80 automated TCs passing, 3/3 manual TCs verified |
 | Traceability | COMPLETE — 100% bidirectional, 0 gaps |
 | Tool qualification | PASS — IQ/OQ/PQ all passed |
@@ -264,7 +264,25 @@ This conclusion is contingent on:
 
 ---
 
-## 9. Approval
+## 9. Post-Closing Repository Activity
+
+Following validation closure at commit af2bf2c5 (2026-04-11), four
+documentation-only commits were made to main:
+
+- 6ead23e: docs consolidation — TP v1.5, TM v1.5, GA v1.1, VA v1.2, PQ v1.4
+- 13b9cb2: update diagram TC counts post-hardening
+- e5dfe28: update VP, AD, RS to reflect current project state
+- 7118f60: update CLAUDE.md document version table
+
+None of these commits modified test code, feature files, CI configuration,
+or the HL7 Validator version. No requalification trigger was created.
+A subsequent remediation pass (this document version) addressed audit findings
+from the Claude Code document audit. The closing SHA for the final validated
+package is 7118f602ec98fce9da12ffdf5e4b0c0f42cf1f2d.
+
+---
+
+## 10. Approval
 
 | Role | Name | Signature | Date |
 |---|---|---|---|
@@ -273,10 +291,11 @@ This conclusion is contingent on:
 
 ---
 
-## 10. Change History
+## 11. Change History
 
 | Version | Date | Author | Description |
 |---|---|---|---|
 | 1.0 | 2026-04-09 | Amir Choshov | Initial release — validation lifecycle closed, suite declared validated |
 | 1.1 | 2026-04-09 | Amir Choshov | DEV-IQ-001 resolved — branch protection active on main. Deviation count updated from 3 open to 2 open + 1 resolved. |
 | 1.2 | 2026-04-11 | Amir Choshov | Hardening pass incorporated — TP updated to v1.5 (83 TCs, 80 automated), TM updated to v1.5, GA updated to v1.1. Closing commit SHA updated to af2bf2c5. Multi-server result added: SMART Health IT 73/80. Traceability backward coverage updated to 83/83. |
+| 1.3 | 2026-04-12 | Amir Choshov | Updated closing SHA to 7118f60; updated §3.1 document package to current versions (VP v1.3, RS v1.4, AD v1.2, TP v1.6, TM v1.6, IQ v1.3, PQ v1.4, GA v1.2); updated req/TC counts to 68/83; corrected RS citation to v1.4 throughout; added §9 post-closing activity disclosure |

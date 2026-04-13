@@ -56,13 +56,13 @@ src/test/resources/
 
 docs/
   validation-plan.md             — VP-FHIR-001 v1.3
-  requirements-specification.md  — RS-FHIR-001 v1.3 (67 requirements)
+  requirements-specification.md  — RS-FHIR-001 v1.4 (68 requirements)
   architecture.md                — AD-FHIR-001 v1.2
-  test-plan.md                   — TP-FHIR-001 v1.5 (83 TCs)
-  traceability-matrix.md         — TM-FHIR-001 v1.5 (executed, 100% coverage)
-  gap-analysis.md                — GA-FHIR-001 v1.1 (final)
-  validation-summary-report.md   — VA-FHIR-001 v1.2 (final)
-  qualification/IQ.md            — TQ-FHIR-IQ-001 v1.2 (executed)
+  test-plan.md                   — TP-FHIR-001 v1.6 (83 TCs, Approved)
+  traceability-matrix.md         — TM-FHIR-001 v1.6 (executed, 100% coverage)
+  gap-analysis.md                — GA-FHIR-001 v1.2 (final)
+  validation-summary-report.md   — VA-FHIR-001 v1.3 (final)
+  qualification/IQ.md            — TQ-FHIR-IQ-001 v1.3 (executed)
   qualification/OQ.md            — TQ-FHIR-OQ-001 v1.2 (executed)
   qualification/PQ.md            — TQ-FHIR-PQ-001 v1.4 (executed)
 
@@ -88,9 +88,9 @@ CLAUDE.md                        — this file
 | Run time | ~02:09 min |
 | Last local run | 2026-04-11 |
 | CI runs completed | 3 |
-| Closing commit SHA | af2bf2c5d540652079d27d632bb8c06f296d9aa8 |
+| Closing commit SHA | 7118f602ec98fce9da12ffdf5e4b0c0f42cf1f2d |
 
-TC count breakdown (83 total in TP-FHIR-001 v1.5):
+TC count breakdown (83 total in TP-FHIR-001 v1.6):
 - 80 automated scenarios — implemented and passing
 - 3 non-automated (TC-FRM-001, TC-FRM-002, TC-FRM-003) — verified
   as IQ/OQ checklist items, no feature file by design
@@ -104,15 +104,15 @@ ALL MILESTONES COMPLETE.
 | Phase | Document | Version | Status |
 |---|---|---|---|
 | Validation Plan | VP-FHIR-001 | 1.3 | Approved |
-| Requirements Specification | RS-FHIR-001 | 1.3 | Approved |
+| Requirements Specification | RS-FHIR-001 | 1.4 | Approved |
 | Architecture | AD-FHIR-001 | 1.2 | Approved |
-| Test Plan | TP-FHIR-001 | 1.5 | Approved |
-| Traceability Matrix | TM-FHIR-001 | 1.5 | Executed |
-| Installation Qualification | TQ-FHIR-IQ-001 | 1.2 | PASS |
+| Test Plan | TP-FHIR-001 | 1.6 | Approved |
+| Traceability Matrix | TM-FHIR-001 | 1.6 | Executed |
+| Installation Qualification | TQ-FHIR-IQ-001 | 1.3 | PASS |
 | Operational Qualification | TQ-FHIR-OQ-001 | 1.2 | PASS |
 | Performance Qualification | TQ-FHIR-PQ-001 | 1.4 | PASS |
-| Gap Analysis | GA-FHIR-001 | 1.1 | Final |
-| Validation Summary Report | VA-FHIR-001 | 1.2 | Final — VALIDATED |
+| Gap Analysis | GA-FHIR-001 | 1.2 | Final |
+| Validation Summary Report | VA-FHIR-001 | 1.3 | Final — VALIDATED |
 
 ---
 
