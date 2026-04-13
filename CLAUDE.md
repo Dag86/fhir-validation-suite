@@ -53,6 +53,8 @@ src/test/resources/
   common/general.feature                 — TC-GEN-001
   common/capture-response.feature        — @ignore helper
   oq/oq-*.feature                        — 5 OQ qualification scenarios
+  reporting/
+    fhir-report.html               — unvalidated human-readable report generator
 
 docs/
   validation-plan.md             — VP-FHIR-001 v1.4
@@ -194,6 +196,8 @@ REQ-GEN-002 split into REQ-GEN-002a and REQ-GEN-002b:
 - Do not create feature files for TC-FRM-001, TC-FRM-002, TC-FRM-003
 - Do not amend commits that are already on main without force pushing
   and documenting the reason
+- Do not reference fhir-report.html in RS, TP, TM, IQ, OQ, PQ, or GA
+- Do not run mvn clean before checking fhir-report.html renders correctly
 
 ---
 
