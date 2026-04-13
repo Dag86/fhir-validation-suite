@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | RS-FHIR-001 |
-| **Version** | 1.2 |
-| **Status** | Draft |
+| **Version** | 1.3 |
+| **Status** | Approved |
 | **Author** | Amir Choshov |
-| **Date** | 2026-03-30 |
+| **Date** | 2026-04-11 |
 | **Project** | FHIR R4 API Validation Suite |
 
 ---
@@ -33,6 +33,12 @@ All test cases produced in this project must trace back to a requirement defined
 - Audit trail and metadata assertions relevant to 21 CFR Part 11
 - CI/CD pipeline execution via GitHub Actions
 - Git version control for source code, documentation, and evidence traceability
+- Response time validation (server latency assertions per FHIR R4 performance expectations)
+- HTTP response header validation (`Content-Type`, `ETag` per FHIR R4 Section 3.1.0.2)
+- Conditional read behavior (`If-None-Match` / HTTP 304 Not Modified)
+- Patient search parameter coverage (`gender`, `birthdate`, `identifier`, `_id`)
+- Pagination link structure validation (Bundle `self` link per FHIR search framework)
+- Multi-server conformance testing (HAPI FHIR as primary target; SMART Health IT as secondary verification server)
 
 ### 2.2 Out of Scope
 
@@ -47,10 +53,13 @@ All test cases produced in this project must trace back to a requirement defined
 
 | Field | Value |
 |---|---|
-| **System** | HAPI FHIR Public Sandbox |
-| **FHIR Version** | R4 (4.0.1) |
-| **Base URL** | https://hapi.fhir.org/baseR4 |
+| **Primary System** | HAPI FHIR Public Sandbox |
+| **FHIR Version** | R4 (4.0.x) |
+| **Primary Base URL** | https://hapi.fhir.org/baseR4 |
 | **Authentication** | None (public sandbox) |
+| **Secondary System** | SMART Health IT Sandbox |
+| **Secondary Base URL** | https://launch.smarthealthit.org/v/r4/fhir |
+| **Secondary Purpose** | Multi-server conformance verification — 73/80 TCs pass; 7 conformance findings identified |
 
 ---
 
@@ -104,7 +113,7 @@ The CapabilityStatement response SHALL have HTTP status 200 and `resourceType` o
 ---
 
 **REQ-PRE-003**
-The CapabilityStatement SHALL declare FHIR version `4.0.1`.
+The CapabilityStatement SHALL declare a valid FHIR R4 version (`4.0.x` patch series).
 
 - **Source:** HL7 FHIR R4 CapabilityStatement.fhirVersion
 - **IEC 62304 Class:** B
@@ -187,6 +196,56 @@ A `GET /Patient?name={value}` search SHALL return a `Bundle` resource of type `s
 - **Source:** HL7 FHIR R4 Search Framework
 - **IEC 62304 Class:** C
 - **ISO 14971 Risk:** Incorrect search results leading to wrong patient selection
+
+---
+
+**REQ-PAT-012**
+The server SHALL return HTTP 304 Not Modified when a conditional read request includes an `If-None-Match` header matching the current resource ETag.
+
+- **Source:** HL7 FHIR R4 Section 3.1.0.2 — Conditional Read
+- **IEC 62304 Class:** C
+- **ISO 14971 Risk:** Identity integrity — stale cache serving outdated patient record could lead to wrong treatment decision
+- **Test reference:** TC-PAT-012
+
+---
+
+**REQ-PAT-013**
+The server SHALL support search by `gender` parameter and return a `searchset` Bundle.
+
+- **Source:** HL7 FHIR R4 Patient search parameters
+- **IEC 62304 Class:** C
+- **ISO 14971 Risk:** Identity — inability to filter by demographic could return wrong patient record
+- **Test reference:** TC-PAT-013
+
+---
+
+**REQ-PAT-014**
+The server SHALL support search by `birthdate` parameter and return a `searchset` Bundle.
+
+- **Source:** HL7 FHIR R4 Patient search parameters
+- **IEC 62304 Class:** C
+- **ISO 14971 Risk:** Identity — incorrect birthdate search could return wrong patient record
+- **Test reference:** TC-PAT-014
+
+---
+
+**REQ-PAT-015**
+The server SHALL support search by `identifier` parameter and return a `searchset` Bundle.
+
+- **Source:** HL7 FHIR R4 Patient search parameters
+- **IEC 62304 Class:** C
+- **ISO 14971 Risk:** Identity — identifier search is the primary mechanism for unique patient lookup in clinical systems
+- **Test reference:** TC-PAT-015
+
+---
+
+**REQ-PAT-016**
+The server SHALL support search by `_id` parameter and return a `searchset` Bundle containing the matching resource.
+
+- **Source:** HL7 FHIR R4 Patient search parameters
+- **IEC 62304 Class:** C
+- **ISO 14971 Risk:** Identity — `_id` search must return exactly the requested patient, not a similar one
+- **Test reference:** TC-PAT-016
 
 ---
 
@@ -584,6 +643,16 @@ If any entry in a `transaction` Bundle is invalid, the entire transaction SHALL 
 
 ---
 
+**REQ-BUN-006**
+The server SHALL include a `self` link relation in the `link` array of every `searchset` Bundle response.
+
+- **Source:** HL7 FHIR R4 Bundle.link — search result navigation
+- **IEC 62304 Class:** B
+- **ISO 14971 Risk:** Interoperability — absence of self link breaks FHIR client navigation and pagination patterns
+- **Test reference:** TC-BUN-008
+
+---
+
 ### 4.10 Practitioner Resource Requirements
 
 ---
@@ -697,7 +766,7 @@ The validation framework source code and all validation documents SHALL be maint
 |---|---|---|---|
 | REQ-PRE-001 | CapabilityStatement | Pre-check before all tests | B |
 | REQ-PRE-002 | CapabilityStatement | Valid response structure | B |
-| REQ-PRE-003 | CapabilityStatement | FHIR version 4.0.1 declared | B |
+| REQ-PRE-003 | CapabilityStatement | Valid FHIR R4 version (4.0.x) declared | B |
 | REQ-PAT-001 | Patient | Valid GET returns 200 | C |
 | REQ-PAT-002 | Patient | name.family required | C |
 | REQ-PAT-003 | Patient | identifier required | C |
@@ -706,6 +775,11 @@ The validation framework source code and all validation documents SHALL be maint
 | REQ-PAT-006 | Patient | meta.lastUpdated present | C |
 | REQ-PAT-007 | Patient | 404 returns OperationOutcome | C |
 | REQ-PAT-008 | Patient | Search returns searchset Bundle | C |
+| REQ-PAT-012 | Patient | Conditional read returns 304 when ETag matches | C |
+| REQ-PAT-013 | Patient | Search by gender returns searchset Bundle | C |
+| REQ-PAT-014 | Patient | Search by birthdate returns searchset Bundle | C |
+| REQ-PAT-015 | Patient | Search by identifier returns searchset Bundle | C |
+| REQ-PAT-016 | Patient | Search by _id returns searchset Bundle | C |
 | REQ-OBS-001 | Observation | Valid GET returns 200 | C |
 | REQ-OBS-002 | Observation | status value set | C |
 | REQ-OBS-003 | Observation | code required | C |
@@ -745,6 +819,7 @@ The validation framework source code and all validation documents SHALL be maint
 | REQ-BUN-003 | Bundle | entry has resource and fullUrl | B |
 | REQ-BUN-004 | Bundle | transaction returns response Bundle | B |
 | REQ-BUN-005 | Bundle | transaction atomicity on failure | C |
+| REQ-BUN-006 | Bundle | searchset Bundle contains self link | B |
 | REQ-PRA-001 | Practitioner | Valid GET returns 200 | B |
 | REQ-PRA-002 | Practitioner | name required | B |
 | REQ-PRA-003 | Practitioner | identifier structure | B |
@@ -758,9 +833,9 @@ The validation framework source code and all validation documents SHALL be maint
 | REQ-GEN-006 | All | Test reports linked to Git commit SHA | B |
 | REQ-GEN-007 | All | Git version control with branch protection | B |
 
-**Total Active Requirements: 61**
-**Class C (Critical): 34**
-**Class B (High): 27**
+**Total Active Requirements: 67**
+**Class C (Critical): 39**
+**Class B (High): 28**
 
 *REQ-GEN-002 retired in v1.2 — replaced by REQ-GEN-002a and REQ-GEN-002b. The retired requirement row is retained for traceability history.*
 
@@ -772,7 +847,8 @@ The validation framework source code and all validation documents SHALL be maint
 |---|---|---|---|
 | 1.0 | 2026-03-30 | Amir Choshov | Initial draft |
 | 1.1 | 2026-03-30 | Amir Choshov | Added 21 CFR Part 820.40 to regulatory standards; added REQ-GEN-006 and REQ-GEN-007 for Git traceability and branch protection; updated requirements summary totals |
-| 1.2 | 2026-03-30 | [Your Name] | Added REQ-OBS-007, REQ-ALG-006, REQ-MED-007, REQ-DXR-005 — dedicated 404 negative path requirements for all Class C resources; retired REQ-GEN-002 and replaced with REQ-GEN-002a (meta.lastUpdated) and REQ-GEN-002b (meta.versionId) for independent testability; updated REQ-DXR-002 to enumerate full DiagnosticReport status value set including partial and appended; updated summary table and totals (56 → 61 active requirements, Class C: 30 → 34) |
+| 1.2 | 2026-03-30 | Amir Choshov | Added REQ-OBS-007, REQ-ALG-006, REQ-MED-007, REQ-DXR-005 — dedicated 404 negative path requirements for all Class C resources; retired REQ-GEN-002 and replaced with REQ-GEN-002a (meta.lastUpdated) and REQ-GEN-002b (meta.versionId) for independent testability; updated REQ-DXR-002 to enumerate full DiagnosticReport status value set including partial and appended; updated summary table and totals (56 → 61 active requirements, Class C: 30 → 34) |
+| 1.3 | 2026-04-11 | Amir Choshov | Added REQ-PAT-012 through REQ-PAT-016 and REQ-BUN-006 from hardening pass. Updated REQ-PRE-003 to accept `4.0.x` regex rather than literal `4.0.1`. Status updated to Approved. Scope updated: added response time, header, conditional read, search parameter, pagination, and multi-server test types. Target system updated: SMART Health IT added as secondary server. Total requirements: 67 (39 Class C, 28 Class B). |
 
 ---
 

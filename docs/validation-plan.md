@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | VP-FHIR-001 |
-| **Version** | 1.2 |
-| **Status** | Draft |
+| **Version** | 1.3 |
+| **Status** | Approved |
 | **Author** | Amir Choshov |
-| **Date** | 2026-03-30 |
+| **Date** | 2026-04-11 |
 | **Project** | FHIR R4 API Validation Suite |
 
 ---
@@ -110,6 +110,12 @@ This validation suite is designed in alignment with the FDA's 2022 Guidance on C
 - Audit trail metadata validation relevant to 21 CFR Part 11
 - CI/CD pipeline execution via GitHub Actions
 - Tool qualification (IQ/OQ/PQ) for the validation toolchain including Git
+- Response time validation (server latency assertions per FHIR R4 performance expectations)
+- HTTP response header validation (`Content-Type`, `ETag` per FHIR R4 Section 3.1.0.2)
+- Conditional read behavior (`If-None-Match` / HTTP 304 Not Modified per REQ-PAT-012)
+- Patient search parameter coverage (`gender`, `birthdate`, `identifier`, `_id` per REQ-PAT-013 through REQ-PAT-016)
+- Pagination link structure validation (Bundle `self` link per REQ-BUN-006)
+- Multi-server conformance testing (HAPI FHIR as primary target; SMART Health IT as secondary verification server)
 
 ### 4.2 Out of Scope
 
@@ -175,14 +181,18 @@ Phase 4 — Evidence and Reporting
 
 | Component | Specification |
 |---|---|
-| **Version Control** | Git 2.x |
-| **Test Framework** | Karate DSL 1.5.x |
-| **Build Tool** | Apache Maven 3.9.x |
-| **Java Version** | Java 17 (LTS) |
-| **FHIR Validator** | HL7 FHIR Validator CLI (latest stable) |
+| **Version Control** | Git 2.51.2 |
+| **Test Framework** | Karate DSL 1.5.1 |
+| **Build Tool** | Apache Maven 3.9.14 |
+| **Java Version** | Java 17.0.18 (Eclipse Adoptium Temurin) |
+| **FHIR Validator** | HL7 FHIR Validator CLI 6.4.0 (pinned) |
 | **CI Platform** | GitHub Actions |
-| **Target System** | HAPI FHIR Public Sandbox — https://hapi.fhir.org/baseR4 |
-| **Operating System** | Ubuntu 22.04 LTS (CI) / macOS or Windows (local) |
+| **Target System** | HAPI FHIR Public Sandbox — https://hapi.fhir.org/baseR4 (primary); SMART Health IT sandbox (secondary) |
+| **Operating System** | Ubuntu 22.04 LTS (CI) / macOS (local — Darwin 25.2.0) |
+
+The suite has been validated against two FHIR R4 servers:
+- Primary: HAPI FHIR public sandbox (hapi.fhir.org/baseR4) — Result: 80/80 PASS
+- Secondary: SMART Health IT sandbox (launch.smarthealthit.org/v/r4/fhir) — Result: 73/80 — 7 conformance findings identified
 
 ### 5.4 Test Data Strategy
 
@@ -212,12 +222,14 @@ Full qualification details are documented in the IQ/OQ/PQ Tool Qualification doc
 
 | Tool | Version | Purpose | Qualification Phase |
 |---|---|---|---|
-| Git | 2.x | Source control, document versioning, CI trigger, change audit trail | IQ |
-| Java 17 JDK | 17 LTS | Runtime environment for all JVM tools | IQ |
-| Apache Maven | 3.9.x | Build management and test runner | IQ |
-| Karate DSL | 1.5.x | API test execution and assertion | IQ + OQ |
-| HL7 FHIR Validator CLI | Latest stable | Authoritative spec conformance validation | IQ + OQ |
+| Git | 2.51.2 | Source control, document versioning, CI trigger, change audit trail | IQ |
+| Java 17 JDK | 17.0.18 (Eclipse Adoptium Temurin) | Runtime environment for all JVM tools | IQ |
+| Apache Maven | 3.9.14 | Build management and test runner | IQ |
+| Karate DSL | 1.5.1 | API test execution and assertion | IQ + OQ |
+| HL7 FHIR Validator CLI | 6.4.0 (pinned) | Authoritative spec conformance validation | IQ + OQ |
 | GitHub Actions | N/A | CI pipeline execution and evidence archiving | OQ + PQ |
+
+**Note on HL7 Validator version:** The HL7 FHIR Validator is pinned to version 6.4.0. Pinning is required — a floating version would constitute an uncontrolled change to the validation toolchain between runs, which is a change control violation in regulated contexts.
 
 ---
 
@@ -225,27 +237,27 @@ Full qualification details are documented in the IQ/OQ/PQ Tool Qualification doc
 
 ### 7.1 Entry Criteria — Validation May Begin When:
 
-- [ ] Validation Plan approved
-- [ ] Requirements Specification complete and reviewed
-- [ ] Architecture Document complete
-- [ ] IQ/OQ/PQ Tool Qualification complete for all tools including Git
-- [ ] Test Plan complete and reviewed
-- [ ] Git repository initialized on GitHub with branch protection enabled on `main`
-- [ ] `.gitignore` confirmed present and covering all generated artifacts
-- [ ] HAPI FHIR sandbox accessible and responding
-- [ ] GitHub Actions pipeline configured and running
-- [ ] Traceability Matrix populated with all requirements
+- [x] Validation Plan approved
+- [x] Requirements Specification complete and reviewed
+- [x] Architecture Document complete
+- [x] IQ/OQ/PQ Tool Qualification complete for all tools including Git
+- [x] Test Plan complete and reviewed
+- [x] Git repository initialized on GitHub with branch protection enabled on `main`
+- [x] `.gitignore` confirmed present and covering all generated artifacts
+- [x] HAPI FHIR sandbox accessible and responding
+- [x] GitHub Actions pipeline configured and running
+- [x] Traceability Matrix populated with all requirements
 
 ### 7.2 Exit Criteria — Validation Is Complete When:
 
-- [ ] All 61 requirements in RS-FHIR-001 have at least one corresponding test case
-- [ ] Traceability Matrix shows 100% requirement coverage
-- [ ] All Class C test cases have been executed and results recorded
-- [ ] All Class B test cases have been executed and results recorded
-- [ ] All deviations have been classified and documented in the Gap Analysis
-- [ ] Test execution reports are archived in GitHub Actions with timestamps and commit SHAs
-- [ ] No open Critical deviations without documented disposition
-- [ ] Git commit log provides unbroken history from project initialization to final test execution
+- [x] All 67 requirements in RS-FHIR-001 v1.3 have at least one corresponding test case
+- [x] Traceability Matrix shows 100% requirement coverage
+- [x] All Class C test cases have been executed and results recorded
+- [x] All Class B test cases have been executed and results recorded
+- [x] All deviations have been classified and documented in the Gap Analysis
+- [x] Test execution reports are archived in GitHub Actions with timestamps and commit SHAs
+- [x] No open Critical deviations without documented disposition
+- [x] Git commit log provides unbroken history from project initialization to final test execution
 
 ### 7.3 Suspension Criteria
 
@@ -307,6 +319,7 @@ Validation execution shall be suspended if:
 | 1.0 | 2026-03-30 | Amir Choshov | Initial draft |
 | 1.1 | 2026-03-30 | Amir Choshov | Added Git to toolchain and environment; formalized Git as document control system; added 820.40 citation; updated entry/exit criteria and risk assessment |
 | 1.2 | 2026-03-30 | Amir Choshov | Updated exit criteria requirement count from 54 to 61 to reflect RS-FHIR-001 v1.2 (added REQ-OBS-007, REQ-ALG-006, REQ-MED-007, REQ-DXR-005, REQ-GEN-002a, REQ-GEN-002b; retired REQ-GEN-002) |
+| 1.3 | 2026-04-11 | Amir Choshov | Status updated to Approved. Tool versions updated to exact pinned values (Karate 1.5.1, Maven 3.9.14, Java 17.0.18 Temurin, HL7 Validator 6.4.0, Git 2.51.2). HL7 Validator pinning rationale added. Scope updated with 6 new test types from hardening pass (response time, headers, conditional read, search params, pagination, multi-server). Entry/exit criteria marked complete. Exit criteria requirement count updated to 67 (RS-FHIR-001 v1.3). Multi-server execution results added to §5.3. |
 
 ### 11.2 Git as the Document Control System
 

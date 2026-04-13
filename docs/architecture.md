@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | AD-FHIR-001 |
-| **Version** | 1.1 |
-| **Status** | Draft |
+| **Version** | 1.2 |
+| **Status** | Approved |
 | **Author** | Amir Choshov |
-| **Date** | 2026-03-30 |
+| **Date** | 2026-04-11 |
 | **Project** | FHIR R4 API Validation Suite |
 
 ---
@@ -152,7 +152,7 @@ Karate assertions encode the engineer's interpretation of the spec. The HL7 Vali
 
 **Source:** https://github.com/hapifhir/org.hl7.fhir.core — official HL7 tooling
 
-**Note on version management:** The `validator_cli.jar` is a large binary (100MB+) and is NOT committed to the Git repository. It is downloaded fresh in every CI pipeline run from the official HL7 GitHub releases URL. The `.gitignore` file excludes `validator/validator_cli.jar` from source control. The SHA-256 checksum of the downloaded binary is recorded during IQ qualification for version traceability.
+**Note on version management:** The HL7 FHIR Validator is pinned to version 6.4.0 in the CI workflow. Pinning is required per change control principles — a floating version would introduce uncontrolled changes to validation behavior between runs. The `validator_cli.jar` is a large binary (100MB+) and is NOT committed to the Git repository. It is downloaded fresh in every CI pipeline run from the pinned 6.4.0 release URL. The `.gitignore` file excludes `validator/validator_cli.jar` from source control. The SHA-256 checksum of the downloaded binary is recorded during IQ qualification for version traceability.
 
 ---
 
@@ -182,7 +182,7 @@ Karate assertions encode the engineer's interpretation of the spec. The HL7 Vali
 - Queries `GET /metadata` before any resource tests run
 - Parses the CapabilityStatement to determine which resources the server supports
 - Conditionally skips test suites for unsupported resources rather than failing them
-- Asserts FHIR version is 4.0.1
+- TC-CAP-002 asserts `fhirVersion` matches the regex `4\.0\.[0-9]+`, accepting any valid R4 patch version (4.0.0, 4.0.1, etc.) for server-agnostic portability
 
 **Why this matters:**
 A test that fails because the server doesn't support the resource is not a finding — it's a scope mismatch. The CapabilityStatement pre-check prevents false failures and makes the suite genuinely server-agnostic.
@@ -191,16 +191,28 @@ A test that fails because the server doesn't support the resource is not a findi
 
 ### 3.7 Schema Definition Files
 
-**Role:** Local JSON schema definitions for Karate schema matching.
+The `schemas/` directory is reserved for future external schema definition files. In the current implementation, all FHIR resource schema validation is performed inline using Karate's native `match` assertions within each feature file. No external schema files are used.
 
-**Responsibilities:**
-- Define the expected structure of each FHIR resource type
-- Used by Karate's `match` assertions for structural validation
-- Derived from HL7 R4 StructureDefinitions
-- Maintained in `schemas/` directory and version-controlled in Git
+The `schemas/.gitkeep` placeholder file maintains the directory in Git version control pending future schema file additions.
 
-**Relationship to HL7 Validator:**
-Schema files provide fast, inline structural assertions during test execution. The HL7 Validator provides deep conformance validation post-execution. They are complementary, not redundant.
+---
+
+### 3.8 Multi-Server Execution
+
+The suite is designed to execute against any FHIR R4 server via the `-DbaseUrl` system property. The suite has been verified against two servers:
+
+| Server | URL | Result |
+|---|---|---|
+| HAPI FHIR sandbox | hapi.fhir.org/baseR4 | 80/80 PASS |
+| SMART Health IT | launch.smarthealthit.org/v/r4/fhir | 73/80 — 7 conformance findings |
+
+SMART Health IT conformance findings (correctly detected by the suite):
+- ETag header absent on 4 resource types (non-conformant per FHIR R4 Section 3.1.0.2)
+- Content-Type returns `application/json` instead of `application/fhir+json` on `/metadata` (non-conformant)
+- `_total` parameter ignored — `total` absent from searchset Bundle responses (non-conformant)
+- No Practitioner resources available on server (environmental — not a conformance defect)
+
+All findings represent the suite correctly differentiating conformant from non-conformant server behavior. They do not indicate suite defects.
 
 ---
 
@@ -307,6 +319,15 @@ fhir-validation-suite/
 │   ├── test-plan.md                       # TP-FHIR-001
 │   ├── traceability-matrix.md             # TM-FHIR-001
 │   ├── gap-analysis.md                    # GA-FHIR-001
+│   ├── validation-summary-report.md       # VA-FHIR-001
+│   ├── diagrams/                          # Mermaid architecture and traceability diagrams
+│   │   ├── 01-system-context.md
+│   │   ├── 02-component-architecture.md
+│   │   ├── 03-test-execution-flow.md
+│   │   ├── 04-document-dependency.md
+│   │   ├── 05-traceability-chain.md
+│   │   ├── 06-risk-classification.md
+│   │   └── README.md
 │   └── qualification/
 │       ├── IQ.md                          # Installation Qualification
 │       ├── OQ.md                          # Operational Qualification
@@ -330,7 +351,8 @@ fhir-validation-suite/
 │           ├── patient/
 │           │   └── patient.feature
 │           ├── observation/
-│           │   └── observation.feature
+│           │   ├── observation.feature
+│           │   └── assert-value-quantity.feature  # @ignore helper
 │           ├── allergy/
 │           │   └── allergy.feature
 │           ├── medication/
@@ -338,25 +360,25 @@ fhir-validation-suite/
 │           ├── diagnostic/
 │           │   └── diagnostic-report.feature
 │           ├── audit/
-│           │   └── audit-event.feature
+│           │   ├── audit-event.feature
+│           │   ├── assert-audit-agent.feature     # @ignore helper
+│           │   ├── assert-audit-capture.feature   # @ignore helper
+│           │   ├── assert-audit-outcome.feature   # @ignore helper
+│           │   ├── assert-audit-read.feature      # @ignore helper
+│           │   ├── assert-audit-recorded.feature  # @ignore helper
+│           │   ├── assert-audit-type.feature      # @ignore helper
+│           │   └── assert-audit-version.feature   # @ignore helper
 │           ├── bundle/
 │           │   └── bundle.feature
 │           ├── practitioner/
 │           │   └── practitioner.feature
 │           └── common/
-│               └── operation-outcome.feature
+│               ├── operation-outcome.feature
+│               ├── general.feature               # TC-GEN-001
+│               └── capture-response.feature      # @ignore helper
 │
-├── schemas/                               # FHIR R4 schema definitions — version controlled
-│   ├── patient-schema.json
-│   ├── observation-schema.json
-│   ├── allergy-schema.json
-│   ├── medication-request-schema.json
-│   ├── diagnostic-report-schema.json
-│   ├── audit-event-schema.json
-│   ├── bundle-schema.json
-│   ├── practitioner-schema.json
-│   ├── operation-outcome-schema.json
-│   └── capability-statement-schema.json
+├── schemas/                               # Reserved for future schema files
+│   └── .gitkeep                          # Placeholder — no external schemas in current implementation
 │
 ├── validator/                             # HL7 Validator directory
 │   └── .gitkeep                          # Keeps directory in Git; jar excluded by .gitignore
@@ -366,12 +388,13 @@ fhir-validation-suite/
 │   ├── invalid-patient.json
 │   └── invalid-date-patient.json
 │
-├── responses/                             # Captured response files — GITIGNORED
+├── target/                                # Maven build output — GITIGNORED
+│   ├── karate-reports/                    # Generated HTML reports
+│   └── responses/                         # Captured FHIR response files (via karate.write())
 │                                          # Generated per run, not source artifacts
 │
-├── target/                                # Maven build output — GITIGNORED
-│   └── karate-reports/                    # Generated HTML reports
-│
+├── README.md                              # Project overview and quick start
+├── CLAUDE.md                              # AI-assisted development context
 └── pom.xml                                # Maven project definition — version controlled
 ```
 
@@ -492,7 +515,7 @@ jobs:
 
       - name: Download HL7 FHIR Validator
         run: |
-          wget -q https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar \
+          wget -q https://github.com/hapifhir/org.hl7.fhir.core/releases/download/6.4.0/validator_cli.jar \
             -O validator/validator_cli.jar
           echo "Validator SHA-256: $(sha256sum validator/validator_cli.jar)"
 
@@ -506,7 +529,7 @@ jobs:
 
       - name: Run HL7 FHIR Validator
         run: |
-          find responses -name "*.json" | while read f; do
+          find target/responses -name "*.json" | while read f; do
             java -jar validator/validator_cli.jar "$f" \
               -version 4.0.1 \
               -output "$(dirname $f)/$(basename $f .json)-validation.json"
@@ -530,6 +553,16 @@ jobs:
           echo "Commit: ${{ github.sha }}"
           echo "Branch: ${{ github.ref_name }}"
 ```
+
+**Additional CI steps (implemented, not shown in abbreviated YAML above):**
+
+The workflow also requires `permissions: contents: write` at the job level to allow the gh-pages publish step to push to the `gh-pages` branch.
+
+Two additional steps run after the Report status step:
+
+1. **Create index.html redirect** (`if: always()`): Generates an `index.html` file in `target/karate-reports/` containing an HTML redirect to `karate-summary.html`. This ensures the GitHub Pages root URL redirects visitors to the Karate report automatically.
+
+2. **Publish Karate report to GitHub Pages** (`if: always()`): Uses `peaceiris/actions-gh-pages@v3` to publish the `target/karate-reports/` directory to the `gh-pages` branch with `destination_dir: .`. The live report is accessible at `https://dag86.github.io/fhir-validation-suite/`.
 
 ---
 
@@ -640,7 +673,7 @@ jobs:
 
 **Decision:** The HL7 Validator binary is excluded from Git via `.gitignore` and downloaded fresh in CI.
 
-**Rationale:** The binary is 100MB+ — committing it would make every clone slow and bloat the repository history permanently. More importantly, downloading from the official source on every CI run and recording the SHA-256 checksum provides stronger integrity assurance than a committed binary whose provenance may be unclear over time. The download URL is pinned to the official HL7 release source in the workflow definition.
+**Rationale:** The binary is 100MB+ — committing it would make every clone slow and bloat the repository history permanently. More importantly, downloading from the official pinned release (6.4.0) on every CI run and recording the SHA-256 checksum provides stronger integrity assurance than a committed binary whose provenance may be unclear over time. The download URL is pinned to version 6.4.0 in the workflow definition — not the floating `/releases/latest/` URL — per change control requirements.
 
 ### 9.7 Branch Protection on Main
 
@@ -669,6 +702,7 @@ jobs:
 |---|---|---|---|
 | 1.0 | 2026-03-30 | Amir Choshov | Initial draft |
 | 1.1 | 2026-03-30 | Amir Choshov | Added Section 3.1 Git component; added Section 6 .gitignore specification; added validator_cli.jar handling rationale to Section 3.4; added Git commit SHA to data flow; added oq/ directory and .gitignore to directory structure; added branch strategy table; added design decisions 9.6 and 9.7; updated security considerations; updated CI workflow to echo commit SHA and branch |
+| 1.2 | 2026-04-11 | Amir Choshov | HL7 Validator pinned to 6.4.0 (was "latest stable" — floating version is a change control violation). CI workflow wget URL updated to pinned 6.4.0 release. Validator scan path corrected to target/responses/. GitHub Pages steps documented. CapabilityStatement version assertion updated to 4.0.x regex. Schema section corrected — external schemas not implemented; inline Karate assertions used. Directory structure corrected: schemas/.gitkeep only, target/responses/ path, missing helper features and docs added. Multi-server execution section added (§3.8). Status updated to Approved. |
 
 ---
 
