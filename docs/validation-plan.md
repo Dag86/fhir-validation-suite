@@ -6,7 +6,7 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | VP-FHIR-001 |
-| **Version** | 1.3 |
+| **Version** | 1.4 |
 | **Status** | Approved |
 | **Author** | Amir Choshov |
 | **Date** | 2026-04-11 |
@@ -250,7 +250,7 @@ Full qualification details are documented in the IQ/OQ/PQ Tool Qualification doc
 
 ### 7.2 Exit Criteria — Validation Is Complete When:
 
-- [x] All 67 requirements in RS-FHIR-001 v1.3 have at least one corresponding test case
+- [x] All 68 requirements in RS-FHIR-001 v1.4 have at least one corresponding test case
 - [x] Traceability Matrix shows 100% requirement coverage
 - [x] All Class C test cases have been executed and results recorded
 - [x] All Class B test cases have been executed and results recorded
@@ -320,6 +320,7 @@ Validation execution shall be suspended if:
 | 1.1 | 2026-03-30 | Amir Choshov | Added Git to toolchain and environment; formalized Git as document control system; added 820.40 citation; updated entry/exit criteria and risk assessment |
 | 1.2 | 2026-03-30 | Amir Choshov | Updated exit criteria requirement count from 54 to 61 to reflect RS-FHIR-001 v1.2 (added REQ-OBS-007, REQ-ALG-006, REQ-MED-007, REQ-DXR-005, REQ-GEN-002a, REQ-GEN-002b; retired REQ-GEN-002) |
 | 1.3 | 2026-04-11 | Amir Choshov | Status updated to Approved. Tool versions updated to exact pinned values (Karate 1.5.1, Maven 3.9.14, Java 17.0.18 Temurin, HL7 Validator 6.4.0, Git 2.51.2). HL7 Validator pinning rationale added. Scope updated with 6 new test types from hardening pass (response time, headers, conditional read, search params, pagination, multi-server). Entry/exit criteria marked complete. Exit criteria requirement count updated to 67 (RS-FHIR-001 v1.3). Multi-server execution results added to §5.3. |
+| 1.4 | 2026-04-13 | Amir Choshov | Updated exit criteria: requirement count 67→68, RS citation v1.3→v1.4 to match current RS-FHIR-001 v1.4 |
 
 ### 11.2 Git as the Document Control System
 

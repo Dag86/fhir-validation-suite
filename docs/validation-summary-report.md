@@ -6,7 +6,7 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | VA-FHIR-001 |
-| **Version** | 1.4 |
+| **Version** | 1.5 |
 | **Status** | Final |
 | **Author** | Amir Choshov |
 | **Date** | 2026-04-12 |
@@ -62,21 +62,21 @@ adequately validated.
 | Operational Qualification | TQ-FHIR-OQ-001 | 1.2 | Executed | 2026-04-08 |
 | Performance Qualification | TQ-FHIR-PQ-001 | 1.4 | Executed | 2026-04-11 |
 | Gap Analysis | GA-FHIR-001 | 1.2 | Final | 2026-04-12 |
-| Validation Summary Report | VA-FHIR-001 | 1.3 | Final | 2026-04-12 |
+| Validation Summary Report | VA-FHIR-001 | 1.5 | Final | 2026-04-13 |
 
 ### 3.2 Qualification Phase Outcomes
 
 | Phase | Document | Result | Date | Executor |
 |---|---|---|---|---|
-| Installation Qualification (IQ) | TQ-FHIR-IQ-001 v1.2 | PASS | 2026-04-08 | Amir Choshov |
+| Installation Qualification (IQ) | TQ-FHIR-IQ-001 v1.3 | PASS | 2026-04-08 | Amir Choshov |
 | Operational Qualification (OQ) | TQ-FHIR-OQ-001 v1.2 | PASS | 2026-04-08 | Amir Choshov |
-| Performance Qualification (PQ) | TQ-FHIR-PQ-001 v1.3 | PASS | 2026-04-09 | Amir Choshov |
+| Performance Qualification (PQ) | TQ-FHIR-PQ-001 v1.4 | PASS | 2026-04-09 | Amir Choshov |
 
 ### 3.3 Test Execution Summary
 
 | Metric | Value |
 |---|---|
-| Total test cases (TP-FHIR-001 v1.5) | 83 |
+| Total test cases (TP-FHIR-001 v1.6) | 83 |
 | Automated test cases | 80 |
 | Non-automated test cases | 3 (TC-FRM-001, TC-FRM-002, TC-FRM-003) |
 | Automated TCs executed | 80 |
@@ -94,8 +94,8 @@ adequately validated.
 
 ## 4. Traceability Verification
 
-Bidirectional traceability was verified in GA-FHIR-001 v1.1
-(2026-04-11) against TM-FHIR-001 v1.5.
+Bidirectional traceability was verified in GA-FHIR-001 v1.3
+against TM-FHIR-001 v1.6.
 
 | Trace Direction | Result |
 |---|---|
@@ -317,3 +317,4 @@ package is 7118f602ec98fce9da12ffdf5e4b0c0f42cf1f2d.
 | 1.2 | 2026-04-11 | Amir Choshov | Hardening pass incorporated — TP updated to v1.5 (83 TCs, 80 automated), TM updated to v1.5, GA updated to v1.1. Closing commit SHA updated to af2bf2c5. Multi-server result added: SMART Health IT 73/80. Traceability backward coverage updated to 83/83. |
 | 1.3 | 2026-04-12 | Amir Choshov | Updated closing SHA to 7118f60; updated §3.1 document package to current versions (VP v1.3, RS v1.4, AD v1.2, TP v1.6, TM v1.6, IQ v1.3, PQ v1.4, GA v1.2); updated req/TC counts to 68/83; corrected RS citation to v1.4 throughout; added §9 post-closing activity disclosure |
 | 1.4 | 2026-04-12 | Amir Choshov | Re-executed full suite against both servers. HAPI 80/80 confirmed — no regression. SMART 73/80 confirmed — finding composition changed: TC-PAT-001 and TC-PRA-002 through TC-PRA-006 fixed; TC-OBS-001 new finding; TC-PRA-001 failure mode changed. Net 73/80 unchanged. §5.4 multi-server table and findings updated. |
+| 1.5 | 2026-04-13 | Amir Choshov | Fixed §3.1 package table: VA self-ref v1.3→v1.5, IQ v1.2→v1.3, PQ v1.3→v1.4, TP v1.5→v1.6; updated traceability section citations GA v1.1→v1.3, TM v1.5→v1.6 |

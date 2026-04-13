@@ -11,7 +11,7 @@ The dependency chain defines the required authoring order. A document may not be
 flowchart TD
     VP["Validation Plan\nVP-FHIR-001\n─────────────\nGoverning document\nScope · standards · approach\nEntry/exit criteria"]
 
-    RS["Requirements Specification\nRS-FHIR-001\n─────────────\n61 testable requirements\nIEC 62304 class per req\nISO 14971 risk per req"]
+    RS["Requirements Specification\nRS-FHIR-001\n─────────────\n68 testable requirements\nIEC 62304 class per req\nISO 14971 risk per req"]
 
     AD["Architecture Document\nAD-FHIR-001\n─────────────\nTool stack · data flow\nDirectory structure\n.gitignore · CI workflow"]
 
@@ -23,7 +23,7 @@ flowchart TD
 
     TP["Test Plan\nTP-FHIR-001\n─────────────\n83 test cases\nPreconditions · expected results\nPass/fail criteria"]
 
-    TM["Traceability Matrix\nTM-FHIR-001\n─────────────\nREQ → TC bidirectional\n61 reqs · 83 TCs\n100% coverage · 0 orphans"]
+    TM["Traceability Matrix\nTM-FHIR-001\n─────────────\nREQ → TC bidirectional\n68 reqs · 83 TCs\n100% coverage · 0 orphans"]
 
     BUILD["Build Phase\nKarate feature files\npom.xml · karate-config.js\nGitHub Actions workflow"]
 

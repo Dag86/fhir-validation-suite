@@ -6,7 +6,7 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | GA-FHIR-001 |
-| **Version** | 1.2 |
+| **Version** | 1.3 |
 | **Status** | Final |
 | **Author** | Amir Choshov |
 | **Date** | 2026-04-12 |
@@ -37,11 +37,11 @@ document provides that verification.
 | Requirements source | RS-FHIR-001 v1.4 |
 | Active requirements | 68 |
 | Retired requirements | 1 (REQ-GEN-002 — split into REQ-GEN-002a and REQ-GEN-002b) |
-| Test plan source | TP-FHIR-001 v1.5 |
+| Test plan source | TP-FHIR-001 v1.6 |
 | Total test cases | 83 |
 | Automated test cases | 80 |
 | Non-automated test cases | 3 (TC-FRM-001, TC-FRM-002, TC-FRM-003) |
-| Traceability source | TM-FHIR-001 v1.5 |
+| Traceability source | TM-FHIR-001 v1.6 |
 | Analysis date | 2026-04-11 |
 | Analyst | Amir Choshov |
 
@@ -50,7 +50,7 @@ document provides that verification.
 ## 3. Methodology
 
 Coverage was verified by bidirectional traceability review of
-TM-FHIR-001 v1.5:
+TM-FHIR-001 v1.6:
 
 1. **Forward trace** — each active requirement mapped to at least
    one test case (requirement → test). Orphaned requirements
@@ -67,7 +67,7 @@ TM-FHIR-001 v1.5:
 
 4. **Non-automated coverage** — TC-FRM-001, TC-FRM-002, TC-FRM-003
    verified as manual IQ/OQ checklist items per their disposition
-   in TP-FHIR-001 v1.5.
+   in TP-FHIR-001 v1.6.
 
 ---
 
@@ -144,10 +144,10 @@ passed execution across CI Run #3 and the hardening pass.
 Non-automated TCs are formally verified via IQ/OQ qualification
 evidence.
 
-One open deviation (DEV-IQ-001) affects TC-FRM-003 (branch
-protection). This is assessed as LOW risk — branch protection is
-a repository configuration item, not a FHIR API behavior test.
-It does not affect the functional validation scope of the suite.
+All open deviations have been resolved. DEV-IQ-001 (branch protection)
+was resolved on 2026-04-09 and TC-FRM-003 is Verified per IQ.md v1.3.
+Zero open deviations affect coverage. The suite meets all exit criteria
+defined in TP-FHIR-001 v1.6.
 
 **The suite is approved to proceed to Performance Qualification
 (PQ) execution.**
@@ -173,3 +173,4 @@ project. Author serves as sole reviewer.*
 | 1.0 | 2026-04-08 | Amir Choshov | Initial release — coverage analysis complete, no gaps found |
 | 1.1 | 2026-04-11 | Amir Choshov | Updated to TP-FHIR-001 v1.5 (83 TCs, 80 automated) and TM-FHIR-001 v1.5. Counts updated throughout. No new gaps identified. |
 | 1.2 | 2026-04-12 | Amir Choshov | Updated RS/TP/TM citations to current versions (RS v1.4, TP v1.6, TM v1.6); updated requirement count 61→68, TC count 77→83; updated TC-FRM-003 disposition to Verified; corrected §5 to reflect DEV-IQ-001 resolution (open deviations affecting coverage 1→0) |
+| 1.3 | 2026-04-13 | Amir Choshov | Fixed stale TP/TM citations v1.5→v1.6 in scope table and §3 body; corrected §6 conclusion to reflect DEV-IQ-001 resolution (0 open deviations); consistent with §4.4 and §5 |

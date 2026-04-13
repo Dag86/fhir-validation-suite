@@ -43,7 +43,7 @@ stateDiagram-v2
         Precondition:
         TQ-FHIR-PQ-001 signed off.
         Working tree clean.
-        All 61 requirements have
+        All 68 requirements have
         at least one test case.
     end note
 
@@ -52,7 +52,7 @@ stateDiagram-v2
     Executing --> Suspended : Suspension criteria triggered\nSandbox unavailable 24h+\nCI non-deterministic\nGit history broken
     Suspended --> Executing : Suspension resolved\nand documented
 
-    Executing --> Complete : All exit criteria met\n77 TCs executed\n100% req coverage\nSHA recorded\nGap Analysis complete
+    Executing --> Complete : All exit criteria met\n83 TCs executed\n100% req coverage\nSHA recorded\nGap Analysis complete
 
     Complete --> [*]
 
@@ -98,4 +98,4 @@ stateDiagram-v2
 
 ## Liveness Property
 
-The system must eventually reach Complete given sufficient time and absence of permanent suspension. All 61 requirements must reach a terminal result state (Pass, Fail, Skip) before the validation lifecycle closes.
+The system must eventually reach Complete given sufficient time and absence of permanent suspension. All 68 requirements must reach a terminal result state (Pass, Fail, Skip) before the validation lifecycle closes.

@@ -53,7 +53,7 @@ flowchart TD
         end
 
         subgraph GENERAL["General Framework"]
-            GEN["General Requirements\nREQ-GEN-001 through 007\n──────────────────\nHL7 Validator · meta fields\nmalformed JSON · base URL\nGit SHA · branch protection\n──────────────────\n8 requirements · mixed TCs"]
+            GEN["General Requirements\nREQ-GEN-001 through 008\n──────────────────\nHL7 Validator · meta fields\nmalformed JSON · base URL\nGit SHA · branch protection\n──────────────────\n9 requirements · mixed TCs"]
         end
     end
 
