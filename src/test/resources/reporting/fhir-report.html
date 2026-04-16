@@ -54,6 +54,10 @@
   .sev-variance { background: #fef3c7; color: #92400e; }
   .sev-data { background: #dbeafe; color: #1e40af; }
   .sev-unknown { background: #f1f5f9; color: #475569; }
+  .sev-unavailable { background: #f1f5f9; color: #475569; }
+  .finding-card-unavailable .finding-header { background: #f8fafc; border-bottom-color: #cbd5e1; }
+  .finding-card-unavailable .finding-area { color: #475569; }
+  .finding-card-unavailable .finding-name { color: #334155; }
 
   .finding-body { padding: 16px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 640px) { .finding-body { grid-template-columns: 1fr; } }
@@ -93,6 +97,8 @@
   </div>
   <div id="report-content" style="display:none"></div>
 </div>
+
+<script id="injected-data">// DATA_INJECTION_PLACEHOLDER</script>
 
 <script>
 // ─── TC Descriptions lookup ───────────────────────────────────────────────
@@ -363,8 +369,8 @@ const TC_DESCRIPTIONS = {
 const FALLBACK_TC = {
   area: "Unknown",
   tested: "A validation check was performed.",
-  failure: "This scenario did not pass.",
-  clinical: "Review the technical Karate report for details.",
+  failure: "This scenario did not pass. The specific failure reason is available in the technical Karate report.",
+  clinical: "Review the Karate report for details.",
   regulatory: "See regulated documentation package.",
   severity: "UNKNOWN"
 };
@@ -384,28 +390,14 @@ const AREA_NAMES = {
   "practitioner.practitioner": "Practitioners"
 };
 
-// Feature JSON filenames in fetch order
-const FEATURE_FILES = [
-  { key: "allergy.allergy",            file: "./allergy.allergy.json" },
-  { key: "audit.audit-event",          file: "./audit.audit-event.json" },
-  { key: "bundle.bundle",              file: "./bundle.bundle.json" },
-  { key: "capability.capability-check",file: "./capability.capability-check.json" },
-  { key: "common.general",             file: "./common.general.json" },
-  { key: "common.operation-outcome",   file: "./common.operation-outcome.json" },
-  { key: "diagnostic.diagnostic-report",file: "./diagnostic.diagnostic-report.json" },
-  { key: "medication.medication",      file: "./medication.medication.json" },
-  { key: "observation.observation",    file: "./observation.observation.json" },
-  { key: "patient.patient",            file: "./patient.patient.json" },
-  { key: "practitioner.practitioner",  file: "./practitioner.practitioner.json" }
-];
-
 // ─── Utilities ─────────────────────────────────────────────────────────────
 function sev(s) {
   const map = {
     "CONFORMANCE GAP":   { cls: "sev-conformance", color: "#dc2626" },
     "BEHAVIOR VARIANCE": { cls: "sev-variance",    color: "#d97706" },
     "DATA AVAILABILITY": { cls: "sev-data",        color: "#2563eb" },
-    "UNKNOWN":           { cls: "sev-unknown",     color: "#6b7280" }
+    "UNKNOWN":           { cls: "sev-unknown",     color: "#6b7280" },
+    "SERVER UNAVAILABLE": { cls: "sev-unavailable", color: "#6b7280" }
   };
   return map[s] || map["UNKNOWN"];
 }
@@ -442,53 +434,39 @@ function formatDuration(ms) {
   return (ms / 1000).toFixed(2) + "s";
 }
 
-// ─── Path detection ────────────────────────────────────────────────────────
-// Synchronous: opened from target/test-classes/reporting/ → go up two levels.
-// Opened from target/karate-reports/ → same directory.
-const here = window.location.href;
-const inTestClasses = here.includes('test-classes');
-const dataBase = inTestClasses ? '../../karate-reports/' : './';
-
 // ─── Main render ───────────────────────────────────────────────────────────
 async function loadAndRender() {
   const loadingEl = document.getElementById("loading-state");
   const contentEl = document.getElementById("report-content");
 
-  let summary, featureDataMap = {}, loadErrors = [];
-
-  // Load summary
-  try {
-    const r = await fetch(dataBase + "karate-summary-json.txt");
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    summary = await r.json();
-  } catch (e) {
-    loadingEl.innerHTML = `<div class="load-error">❌ Could not load karate-summary-json.txt: ${esc(e.message)}<br>Open this file from <code>target/karate-reports/</code> or <code>target/test-classes/reporting/</code> after running <code>mvn test</code>.</div>`;
+  // Check if data was injected by generate-report.feature
+  if (typeof INJECTED_REPORT_DATA === 'undefined') {
+    loadingEl.innerHTML = `
+      <div class="load-error">
+        ❌ Report data not yet generated.<br><br>
+        After running <code>mvn test</code>, generate this report by running:<br>
+        <code>./scripts/generate-report.sh</code><br><br>
+        Then open <code>target/karate-reports/fhir-report.html</code>
+      </div>`;
     return;
   }
 
-  // Load all feature files in parallel
-  const results = await Promise.allSettled(
-    FEATURE_FILES.map(async ({ key, file }) => {
-      const r = await fetch(dataBase + file.replace("./", ""));
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const data = await r.json();
-      return { key, data };
-    })
-  );
+  const summary = INJECTED_REPORT_DATA.summary;
+  const featureDataMap = INJECTED_REPORT_DATA.features;
 
-  results.forEach((result, i) => {
-    if (result.status === "fulfilled") {
-      featureDataMap[result.value.key] = result.value.data;
-    } else {
-      loadErrors.push(`${FEATURE_FILES[i].file}: ${result.reason.message}`);
-    }
-  });
+  loadingEl.style.display = 'none';
+  contentEl.style.display = 'block';
+  renderReport(summary, featureDataMap);
+}
+
+function renderReport(summary, featureDataMap) {
+  const contentEl = document.getElementById("report-content");
 
   // Extract baseUrl from first available feature
   let serverUrl = "Unknown";
-  for (const { key } of FEATURE_FILES) {
-    if (featureDataMap[key]) {
-      const found = extractBaseUrl(featureDataMap[key]);
+  for (const featureData of Object.values(featureDataMap)) {
+    if (featureData) {
+      const found = extractBaseUrl(featureData);
       if (found) { serverUrl = found; break; }
     }
   }
@@ -518,12 +496,52 @@ async function loadAndRender() {
       const areaName = AREA_NAMES[key] || feat.name;
       const featureData = featureDataMap[key];
       if (!featureData) {
-        cards.push(`<div class="load-error">⚠️ Could not load detail for ${esc(areaName)} — feature JSON unavailable.</div>`);
+        cards.push(`<div class="load-error">⚠️ Could not load detail for ${esc(areaName)} — feature data unavailable.</div>`);
         continue;
       }
       for (const feature of featureData) {
         for (const el of (feature.elements || [])) {
-          if (el.type === "background" || !el.name || !scenarioFailed(el)) continue;
+          if (el.type === "background" || !scenarioFailed(el)) continue;
+
+          // Detect Background failure — empty-named element with a failed method step
+          const isBackgroundFailure = (
+            (!el.name || el.name.trim() === '') &&
+            el.steps && el.steps.some(s =>
+              s.result && s.result.status === 'failed' &&
+              s.name && s.name.startsWith('method ')
+            )
+          );
+          if (isBackgroundFailure) {
+            const sevBg = sev('SERVER UNAVAILABLE');
+            cards.push(`<div class="finding-card finding-card-unavailable">
+  <div class="finding-header">
+    <span class="finding-area">${esc(areaName)}</span>
+    <span class="finding-name">🔌 Background setup failed — server unreachable or timed out</span>
+    <span class="severity-badge ${sevBg.cls}">SERVER UNAVAILABLE</span>
+  </div>
+  <div class="finding-body">
+    <div class="finding-field">
+      <label>What Was Tested</label>
+      <p>Before each scenario runs, the suite contacts the server to retrieve a test resource ID. This precondition step failed.</p>
+    </div>
+    <div class="finding-field">
+      <label>What the Server Did</label>
+      <p>The server did not respond within the timeout period (55 seconds). This is a network connectivity or server availability issue, not a FHIR conformance finding. All scenarios in this feature area were skipped as a result.</p>
+    </div>
+    <div class="finding-field">
+      <label>Why This Matters</label>
+      <p>No conformance conclusion can be drawn. The server was unreachable during this test run. Re-run the suite when the server is available to get a valid conformance result.</p>
+    </div>
+    <div class="finding-field">
+      <label>Regulatory Reference</label>
+      <p>Not applicable — test precondition failure. Re-execution required per validation protocol.</p>
+    </div>
+  </div>
+</div>`);
+            continue;
+          }
+          if (!el.name || el.name.trim() === '') continue;
+
           const desc = TC_DESCRIPTIONS[el.name] || FALLBACK_TC;
           const sevInfo = sev(desc.severity);
           cards.push(`
@@ -608,12 +626,7 @@ async function loadAndRender() {
         </div>
       </div>`;
 
-  const loadErrorHtml = loadErrors.length
-    ? `<div style="margin-bottom:16px">${loadErrors.map(e => `<div class="load-error">⚠️ ${esc(e)}</div>`).join("")}</div>`
-    : "";
-
   const html = `
-${loadErrorHtml}
 <div class="report-header">
   <h1>FHIR R4 Validation Suite — Execution Report</h1>
   <div class="subtitle">Human-Readable Summary for Stakeholders</div>
@@ -658,9 +671,7 @@ ${findingsHtml}
   Suite: FHIR R4 API Validation Suite · Author: Amir Choshov
 </div>`;
 
-  loadingEl.style.display = "none";
   contentEl.innerHTML = html;
-  contentEl.style.display = "block";
 }
 
 loadAndRender();

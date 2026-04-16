@@ -26,6 +26,8 @@ When in doubt, ask before changing anything structural.
 | Apache Maven | 3.9.14 | Build and test orchestration |
 | Java | 17.0.18 Temurin | Runtime — JAVA_HOME set in ~/.zshrc |
 | HL7 FHIR Validator CLI | 6.4.0 (pinned) | Second validation layer in CI |
+| Report Generator | scripts/generate-report.sh | Reads Karate JSON output, injects data into HTML template, writes standalone report |
+| python3 | System (macOS built-in) | Used by generate-report.sh — no install required, stdlib only (json, sys, os) |
 | GitHub Actions | N/A | CI pipeline and evidence archiving |
 | HAPI FHIR sandbox | hapi.fhir.org/baseR4 | System under test |
 
@@ -54,7 +56,11 @@ src/test/resources/
   common/capture-response.feature        — @ignore helper
   oq/oq-*.feature                        — 5 OQ qualification scenarios
   reporting/
-    fhir-report.html               — unvalidated human-readable report generator
+    fhir-report.html            — HTML report template (unvalidated utility)
+
+scripts/
+  generate-report.sh            — generates standalone HTML report after mvn test
+                                  requires python3 (system); run: ./scripts/generate-report.sh
 
 docs/
   validation-plan.md             — VP-FHIR-001 v1.4
@@ -196,8 +202,28 @@ REQ-GEN-002 split into REQ-GEN-002a and REQ-GEN-002b:
 - Do not create feature files for TC-FRM-001, TC-FRM-002, TC-FRM-003
 - Do not amend commits that are already on main without force pushing
   and documenting the reason
-- Do not reference fhir-report.html in RS, TP, TM, IQ, OQ, PQ, or GA
-- Do not run mvn clean before checking fhir-report.html renders correctly
+- Do not reference fhir-report.html or generate-report.sh in
+  RS, TP, TM, IQ, OQ, PQ, or GA — these are unvalidated utilities
+- Do not run ./scripts/generate-report.sh before mvn test —
+  it reads from target/karate-reports/ which must exist first
+- Do not add any reporting feature files to ALL_PATHS in
+  ValidationRunner
+
+---
+
+## Report Generator (Unvalidated Utility)
+
+After running mvn test, generate the human-readable HTML report:
+
+  ./scripts/generate-report.sh
+
+Output: target/karate-reports/fhir-report.html
+The report embeds all Karate JSON data inline — works when opened
+from any location without a local HTTP server.
+
+This is NOT a validated artifact. Do not reference in regulated
+documentation. The authoritative evidence is karate-summary.html
+and the docs/ package.
 
 ---
 

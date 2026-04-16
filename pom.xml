@@ -64,28 +64,6 @@
           </systemPropertyVariables>
         </configuration>
       </plugin>
-      <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>3.4.0</version>
-        <executions>
-          <execution>
-            <id>copy-report-template</id>
-            <phase>prepare-package</phase>
-            <goals><goal>copy-resources</goal></goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/karate-reports</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>src/test/resources/reporting</directory>
-                  <includes>
-                    <include>fhir-report.html</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
 
