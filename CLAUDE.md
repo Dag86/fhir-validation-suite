@@ -235,3 +235,17 @@ After reading this file, confirm by stating:
 3. Number of open deviations
 
 Then wait for instructions.
+
+---
+
+## Task Execution Protocol
+
+Before implementing any change:
+1. State what you understand the task to be
+2. List any files you intend to touch
+3. Define how you will verify the change is correct
+
+Do not begin implementation until this is confirmed.
+For test changes: state the TC ID, expected behavior, and which
+document versions (TM, TP) would need updating as a result.
+
