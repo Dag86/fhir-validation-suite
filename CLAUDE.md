@@ -97,27 +97,6 @@ TC count breakdown (83 total in TP-FHIR-001 v1.5):
 
 ---
 
-## Commit History
-
-| SHA | Description |
-|---|---|
-| 7c3aa35 | Initial validated suite — build complete |
-| 6e99a28 | CI workflow added |
-| ab0f836 | IQ.md executed + validator glob fix |
-| 4458f7d | OQ.md executed |
-| 61871dd | TM execution log populated |
-| b1c5f2f | GA-FHIR-001 created |
-| 4115c24 | PQ.md executed |
-| 2a56d65 | VA-FHIR-001 — validation lifecycle closed |
-| 259e61a | ci: add index.html redirect for GitHub Pages Karate report |
-| b671fc5 | ci: grant GITHUB_TOKEN write permission for gh-pages publish |
-| b0cf7ab | ci: publish Karate report to GitHub Pages after every CI run |
-| dc3d1d7 | docs: replace ASCII architecture diagram with Mermaid flowchart |
-| 1411863 | test: add resourceType precondition assertions to all B->C Backgrounds |
-| af2bf2c | docs: consolidation — TP v1.5, TM v1.5, GA v1.1, VA v1.2, PQ v1.4, README, CLAUDE.md |
-
----
-
 ## Validation Lifecycle Status
 
 ALL MILESTONES COMPLETE.
@@ -137,15 +116,6 @@ ALL MILESTONES COMPLETE.
 
 ---
 
-## Open Deviations
-
-| ID | Description | Severity | Action Required |
-|---|---|---|---|
-| DEV-IQ-001 | Branch protection on main not configured | Low | RESOLVED 2026-04-09 — branch protection active on main |
-| DEV-OQ-001 | GitHub Actions Node.js 20 deprecation warning | Low | Update action versions before Sep 2026 |
-| DEV-PQ-001 | Same as DEV-OQ-001 — recurred in PQ run | Low | Same as DEV-OQ-001 |
-
----
 
 ## ValidationRunner Behaviour
 
