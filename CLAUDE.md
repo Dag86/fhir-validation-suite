@@ -229,12 +229,14 @@ and the docs/ package.
 
 ## Session Start Confirmation
 
-After reading this file, confirm by stating:
-1. Current passing scenario count
-2. Validation lifecycle status (complete or in progress)
-3. Number of open deviations
+Before taking any action, confirm the following in one line each:
+- Passing scenario count
+- Validation lifecycle status
+- Open deviations count
+- Active development phase (current focus)
 
-Then wait for instructions.
+Example: "80 passing | Lifecycle COMPLETE | 2 open deviations |
+Active: Docker + Synthea"
 
 ---
 
@@ -248,4 +250,12 @@ Before implementing any change:
 Do not begin implementation until this is confirmed.
 For test changes: state the TC ID, expected behavior, and which
 document versions (TM, TP) would need updating as a result.
+
+---
+
+## Open Items
+
+| ID | Description | Deadline |
+|---|---|---|
+| DEV-OQ-001 | Update GitHub Actions action versions — Node.js 20 deprecation warning | Before Sep 2026 |
 
