@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TQ-FHIR-IQ-001 |
-| **Version** | 1.3 |
+| **Version** | 1.4 |
 | **Status** | Executed |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-09 |
+| **Date** | 2026-04-16 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Related Documents** | TQ-FHIR-OQ-001, TQ-FHIR-PQ-001 |
 
@@ -265,7 +265,47 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 
 ---
 
-## 10. IQ Summary
+## 10. IQ — Local Docker Environment
+
+**Objective:** Confirm Docker Desktop is installed and running, the HAPI FHIR image is available, the Compose file is valid, the local server starts and becomes healthy, and all Synthea scripts are present and executable.
+
+**Acceptance Criteria:**
+
+- `docker --version` returns a version string without error
+- `hapiproject/hapi:v7.4.0` image pulls successfully and digest is confirmed
+- `docker compose -f docker/docker-compose.yml config` exits 0 with project name `fhir-validation`
+- `scripts/local-server-start.sh` completes without error; `GET /fhir/metadata` returns HTTP 200
+- `java -version` returns 17 or higher (required for Synthea execution)
+- `scripts/synthea-generate.sh` is present with execute bit set
+- `scripts/synthea-load.sh` is present with execute bit set
+
+**Verification Steps:**
+
+| Step ID | Command / Action | Expected Result | Actual Result | Pass/Fail | Date | Initials |
+|---|---|---|---|---|---|---|
+| IQ-010 | `docker --version` | Docker version present in output, exits 0 | | | | |
+| IQ-011 | `docker pull hapiproject/hapi:v7.4.0` | Completes without error; image digest confirmed, version tag v7.4.0 | | | | |
+| IQ-012 | `docker compose -f docker/docker-compose.yml config` | Exits 0; project name `fhir-validation`, volume `fhir-validation_hapi-data`, network `fhir-validation_default` | | | | |
+| IQ-013 | `scripts/local-server-start.sh` then `curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/fhir/metadata` | Script completes without error; HTTP 200 returned; CapabilityStatement with fhirVersion 4.0.1 | | | | |
+| IQ-014 | `java -version` | Version string confirms Java 17+ | | | | |
+| IQ-015 | `ls -la scripts/synthea-generate.sh` | `-rwxr-xr-x` permissions confirmed | | | | |
+| IQ-016 | `ls -la scripts/synthea-load.sh` | `-rwxr-xr-x` permissions confirmed | | | | |
+
+**Environment Record:**
+
+| Field | Value |
+|---|---|
+| Docker Version | |
+| HAPI FHIR Image | hapiproject/hapi:v7.4.0 |
+| Image Digest | |
+| Compose Project Name | fhir-validation |
+| IQ Date | |
+
+**IQ-DOC Overall Result:** ☐ Pass  ☐ Fail
+
+---
+
+## 11. IQ Summary
 
 | Tool | Steps | Passed | Failed | Overall | Date Completed | Initials |
 |---|---|---|---|---|---|---|
@@ -275,13 +315,14 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 | Karate DSL | 4 | 4 | 0 | PASS | 2026-04-07 | AC |
 | HL7 FHIR Validator CLI | 5 | 5 | 0 | PASS | 2026-04-07 | AC |
 | GitHub Actions | 5 | 5 | 0 | PASS | 2026-04-07 | AC |
-| **Total** | **30** | **30** | **0** | | | |
+| Local Docker Environment | 7 | — | — | PENDING | | |
+| **Total** | **37** | **30** | **0** | | | |
 
-**IQ Overall Status:** ☑ Pass  ☐ Fail — Proceed to OQ
+**IQ Overall Status:** ☑ Pass (original toolchain)  ☐ Fail — Local Docker Environment (§10) pending execution
 
 ---
 
-## 11. Deviation Log
+## 12. Deviation Log
 
 | ID | Step | Deviation Description | Resolution | Resolved Date | Initials |
 |---|---|---|---|---|---|
@@ -289,7 +330,7 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 
 ---
 
-## 12. Document Control
+## 13. Document Control
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
@@ -297,10 +338,11 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 | 1.1 | 2026-03-30 | Amir Choshov | Added Section 4 Git IQ with 9 verification steps; added IQ-VAL-005 verifying validator_cli.jar is gitignored; added IQ-GHA-005 verifying workflow file is in Git history; updated IQ summary totals |
 | 1.2 | 2026-04-07 | Amir Choshov | Filled all execution fields; recorded environment values; marked all verification steps PASS (IQ-GIT-008 CONDITIONAL PASS — branch protection pending); added DEV-IQ-001 to deviation log; added IQ-GHA environment record; status updated to Executed |
 | 1.3 | 2026-04-09 | Amir Choshov | DEV-IQ-001 resolved — branch protection configured on main |
+| 1.4 | 2026-04-16 | Amir Choshov | Added §10 IQ — Local Docker Environment (IQ-010 through IQ-016): Docker runtime, HAPI FHIR image, Compose file validation, server startup, Synthea Java runtime, and Synthea script executability. Renumbered §10–13 to §11–14. Updated IQ Summary: 37 total steps, 30 passed, Docker section pending execution. |
 
 ---
 
-## 13. Approval
+## 14. Approval
 
 | Role | Name | Signature | Date |
 |---|---|---|---|

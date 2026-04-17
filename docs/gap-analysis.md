@@ -174,3 +174,50 @@ project. Author serves as sole reviewer.*
 | 1.1 | 2026-04-11 | Amir Choshov | Updated to TP-FHIR-001 v1.5 (83 TCs, 80 automated) and TM-FHIR-001 v1.5. Counts updated throughout. No new gaps identified. |
 | 1.2 | 2026-04-12 | Amir Choshov | Updated RS/TP/TM citations to current versions (RS v1.4, TP v1.6, TM v1.6); updated requirement count 61→68, TC count 77→83; updated TC-FRM-003 disposition to Verified; corrected §5 to reflect DEV-IQ-001 resolution (open deviations affecting coverage 1→0) |
 | 1.3 | 2026-04-13 | Amir Choshov | Fixed stale TP/TM citations v1.5→v1.6 in scope table and §3 body; corrected §6 conclusion to reflect DEV-IQ-001 resolution (0 open deviations); consistent with §4.4 and §5 |
+
+---
+
+## 9. Change Control Register
+
+| Field | Detail |
+|---|---|
+| **Change ID** | CCR-004 |
+| **Date** | 2026-04-16 |
+| **Author** | Amir Choshov |
+| **Type** | Infrastructure Addition |
+| **Description** | Add local Docker-based HAPI FHIR R4 server as the validated test execution target. Add Synthea synthetic patient generation with fixed seed for controlled, reproducible test data. Replaces dependency on public HAPI sandbox (hapi.fhir.org/baseR4). |
+| **Affected Documents** | AD, IQ, OQ, PQ, VA |
+| **Rationale** | Public sandbox is an uncontrolled environment — subject to outages, data mutation, and schema changes outside this project's change control. Local server with fixed Synthea seed satisfies reproducibility requirements for a maintained validated state. |
+| **Status** | Open |
+
+---
+
+## 10. Known Issues
+
+### KI-001 — CVE in bundled HL7 Validator (hapiproject/hapi:v7.4.0)
+
+| Field | Detail |
+|---|---|
+| **Date Identified** | 2026-04-17 |
+| **Component** | org.hl7.fhir.validation-6.3.11.jar bundled in hapiproject/hapi:v7.4.0 |
+| **CVE CVSS Score** | 9.8 (Critical) |
+| **Fix Version per CVE** | org.hl7.fhir.validation 6.9.0+ |
+| **Owner** | Amir Choshov |
+
+**Remediation evaluated:**
+hapiproject/hapi:v7.6.0 bundles org.hl7.fhir.validation-6.4.0 — still below fix version.
+Additionally, v7.6.0 introduces confirmed behavioral regressions: `allow_multiple_delete`
+env var ignored; search result cache env var ignored (defaults to 60000ms vs required 0ms).
+v7.6.0 rejected.
+
+**Mitigating factors:**
+
+- Server is local-only, port 8080 not exposed to internet
+- No PHI — dataset is Synthea synthetic patients only
+- No production use — portfolio/development environment
+
+**Risk decision:** Accepted for portfolio use
+
+**Remediation path:** Monitor HAPI releases for a version that bundles
+org.hl7.fhir.validation 6.9.0+ without behavioral regressions.
+Re-evaluate on next image upgrade cycle.

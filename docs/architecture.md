@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | AD-FHIR-001 |
-| **Version** | 1.2 |
+| **Version** | 1.3 |
 | **Status** | Approved |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-11 |
+| **Date** | 2026-04-16 |
 | **Project** | FHIR R4 API Validation Suite |
 
 ---
@@ -213,6 +213,39 @@ SMART Health IT conformance findings (correctly detected by the suite):
 - No Practitioner resources available on server (environmental — not a conformance defect)
 
 All findings represent the suite correctly differentiating conformant from non-conformant server behavior. They do not indicate suite defects.
+
+---
+
+### 3.9 Local Test Environment
+
+**Role:** Fully controlled, reproducible local execution target replacing dependency on the public HAPI sandbox.
+
+**Components:**
+
+| Component | Detail |
+|---|---|
+| Container runtime | Docker Desktop |
+| FHIR server image | hapiproject/hapi:v7.4.0 |
+| Data persistence | Named Docker volume: `fhir-validation_hapi-data` |
+| Synthetic data generator | Synthea 3.2.0 |
+| Generation parameters | Seed 42, population 50, state: Massachusetts |
+| Data format | FHIR R4 transaction bundles (JSON) |
+| Load mechanism | POST to `http://localhost:8080/fhir` via `scripts/synthea-load.sh` |
+
+**Rationale:**
+The public HAPI sandbox (hapi.fhir.org/baseR4) is an uncontrolled environment subject to outages, data mutation by other users, and schema changes outside this project's change control. A local server with a fixed Synthea seed produces a deterministic, reproducible dataset — satisfying reproducibility requirements for a maintained validated state.
+
+**Environment targeting:**
+The suite targets the local server via `-DbaseUrl=http://localhost:8080/fhir` passed as a Maven property. No feature file changes are required to switch between the local server and any other FHIR R4 environment. The server URL is resolved at runtime via `karate-config.js`.
+
+**Supporting scripts:**
+
+| Script | Purpose |
+| --- | --- |
+| `scripts/local-server-start.sh` | Starts HAPI FHIR container; polls `/fhir/metadata` until ready |
+| `scripts/local-server-stop.sh` | Stops and removes the container |
+| `scripts/synthea-generate.sh` | Downloads Synthea jar if absent; generates 50 patients with seed 42 |
+| `scripts/synthea-load.sh` | POSTs all generated FHIR bundles to the local server |
 
 ---
 
@@ -703,6 +736,7 @@ Two additional steps run after the Report status step:
 | 1.0 | 2026-03-30 | Amir Choshov | Initial draft |
 | 1.1 | 2026-03-30 | Amir Choshov | Added Section 3.1 Git component; added Section 6 .gitignore specification; added validator_cli.jar handling rationale to Section 3.4; added Git commit SHA to data flow; added oq/ directory and .gitignore to directory structure; added branch strategy table; added design decisions 9.6 and 9.7; updated security considerations; updated CI workflow to echo commit SHA and branch |
 | 1.2 | 2026-04-11 | Amir Choshov | HL7 Validator pinned to 6.4.0 (was "latest stable" — floating version is a change control violation). CI workflow wget URL updated to pinned 6.4.0 release. Validator scan path corrected to target/responses/. GitHub Pages steps documented. CapabilityStatement version assertion updated to 4.0.x regex. Schema section corrected — external schemas not implemented; inline Karate assertions used. Directory structure corrected: schemas/.gitkeep only, target/responses/ path, missing helper features and docs added. Multi-server execution section added (§3.8). Status updated to Approved. |
+| 1.3 | 2026-04-16 | Amir Choshov | Added §3.9 Local Test Environment — Docker-based HAPI FHIR R4 server (hapiproject/hapi:v7.4.0), named volume fhir-validation_hapi-data, Synthea 3.2.0 synthetic patient generation (seed 42, population 50, Massachusetts), supporting scripts inventory. Documents -DbaseUrl targeting mechanism and no-feature-file-change environment switching. |
 
 ---
 

@@ -152,6 +152,51 @@ resources -> one per scanned file.
 | `request {}` in OperationOutcome tests | Empty body fails at FHIR parse layer (HAPI-1843) guaranteeing a 400 with a validation-specific OperationOutcome -> a body with `resourceType: Patient` reaches the database and returns 412 |
 | `fhirVersion` regex match | Accepts `4.0.0` and `4.0.1` -> hardcoding a patch version breaks portability across valid R4 servers |
 
+## Local Server Setup
+
+The suite is server-agnostic. By default it targets the public HAPI FHIR
+sandbox. For a fully controlled, reproducible local environment use the
+Docker-based setup below.
+
+### Prerequisites
+
+- Docker Desktop running
+- Java 17+ on PATH (for Synthea generation)
+
+### First-time setup
+
+```bash
+# 1. Start local HAPI FHIR R4 server
+scripts/local-server-start.sh
+
+# 2. Generate 50 synthetic patients (fixed seed — reproducible)
+scripts/synthea-generate.sh
+
+# 3. Load patient data into local server
+scripts/synthea-load.sh
+```
+
+### Run the suite against the local server
+
+```bash
+mvn test -DbaseUrl=http://localhost:8080/fhir
+```
+
+### Stop the server
+
+```bash
+scripts/local-server-stop.sh
+```
+
+### Notes
+
+- Patient data persists in a named Docker volume between restarts.
+  Re-run steps 2 and 3 only if you delete the volume.
+- To reset to a clean state: `docker compose -f docker/docker-compose.yml down -v`
+- Seed 42, population 50, Massachusetts — fixed dataset for reproducibility.
+
+---
+
 ### Running the Suite
 
 **Prerequisites:** Java 17 Temurin, Apache Maven 3.9.x

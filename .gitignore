@@ -23,3 +23,7 @@ validator/validator_cli.jar
 
 # Claude Code internal state — session transcripts and tool caches
 .claude/
+
+# Synthea generated patient data and downloaded jar
+synthea-output/
+scripts/synthea-with-dependencies.jar
