@@ -9,7 +9,7 @@
 | **Version** | 1.3 |
 | **Status** | Final |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-12 |
+| **Date** | 2026-04-13 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Related Documents** | RS-FHIR-001 v1.4, TP-FHIR-001 v1.6, TM-FHIR-001 v1.6 |
 
@@ -188,7 +188,9 @@ project. Author serves as sole reviewer.*
 | **Description** | Add local Docker-based HAPI FHIR R4 server as the validated test execution target. Add Synthea synthetic patient generation with fixed seed for controlled, reproducible test data. Replaces dependency on public HAPI sandbox (hapi.fhir.org/baseR4). |
 | **Affected Documents** | AD, IQ, OQ, PQ, VA |
 | **Rationale** | Public sandbox is an uncontrolled environment — subject to outages, data mutation, and schema changes outside this project's change control. Local server with fixed Synthea seed satisfies reproducibility requirements for a maintained validated state. |
-| **Status** | Open |
+| **Status** | Closed |
+| **Closure Date** | 2026-04-18 |
+| **Closure Note** | IQ-010 through IQ-016 executed and passed. IQ-FHIR-IQ-001 updated to v1.5, overall status PASS. Docker local environment qualification complete. |
 
 ---
 

@@ -65,12 +65,12 @@ scripts/
 docs/
   validation-plan.md             — VP-FHIR-001 v1.4
   requirements-specification.md  — RS-FHIR-001 v1.4 (68 requirements)
-  architecture.md                — AD-FHIR-001 v1.2
+  architecture.md                — AD-FHIR-001 v1.3
   test-plan.md                   — TP-FHIR-001 v1.6 (83 TCs, Approved)
   traceability-matrix.md         — TM-FHIR-001 v1.6 (executed, 100% coverage)
   gap-analysis.md                — GA-FHIR-001 v1.3 (final)
-  validation-summary-report.md   — VA-FHIR-001 v1.5 (final)
-  qualification/IQ.md            — TQ-FHIR-IQ-001 v1.3 (executed)
+  validation-summary-report.md   — VA-FHIR-001 v1.6 (final)
+  qualification/IQ.md            — TQ-FHIR-IQ-001 v1.5 (executed)
   qualification/OQ.md            — TQ-FHIR-OQ-001 v1.2 (executed)
   qualification/PQ.md            — TQ-FHIR-PQ-001 v1.4 (executed)
 
@@ -96,7 +96,7 @@ CLAUDE.md                        — this file
 | Run time | ~02:09 min |
 | Last local run | 2026-04-11 |
 | CI runs completed | 3 |
-| Closing commit SHA | 91cd001 |
+| Closing commit SHA | c6046db |
 
 TC count breakdown (83 total in TP-FHIR-001 v1.6):
 - 80 automated scenarios — implemented and passing
@@ -113,14 +113,14 @@ ALL MILESTONES COMPLETE.
 |---|---|---|---|
 | Validation Plan | VP-FHIR-001 | 1.4 | Approved |
 | Requirements Specification | RS-FHIR-001 | 1.4 | Approved |
-| Architecture | AD-FHIR-001 | 1.2 | Approved |
+| Architecture | AD-FHIR-001 | 1.3 | Approved |
 | Test Plan | TP-FHIR-001 | 1.6 | Approved |
 | Traceability Matrix | TM-FHIR-001 | 1.6 | Executed |
-| Installation Qualification | TQ-FHIR-IQ-001 | 1.3 | PASS |
+| Installation Qualification | TQ-FHIR-IQ-001 | 1.5 | PASS |
 | Operational Qualification | TQ-FHIR-OQ-001 | 1.2 | PASS |
 | Performance Qualification | TQ-FHIR-PQ-001 | 1.4 | PASS |
 | Gap Analysis | GA-FHIR-001 | 1.3 | Final |
-| Validation Summary Report | VA-FHIR-001 | 1.5 | Final — VALIDATED |
+| Validation Summary Report | VA-FHIR-001 | 1.6 | Final — VALIDATED |
 
 ---
 
@@ -256,6 +256,7 @@ document versions (TM, TP) would need updating as a result.
 ## Open Items
 
 | ID | Description | Deadline |
-|---|---|---|
+| --- | --- | --- |
 | DEV-OQ-001 | Update GitHub Actions action versions — Node.js 20 deprecation warning | Before Sep 2026 |
+| DEV-PQ-001 | Same as DEV-OQ-001 — deprecation warning recurred in PQ CI run, carried forward | Before Sep 2026 |
 

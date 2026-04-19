@@ -6,10 +6,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | VA-FHIR-001 |
-| **Version** | 1.5 |
+| **Version** | 1.6 |
 | **Status** | Final |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-12 |
+| **Date** | 2026-04-18 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Related Documents** | VP-FHIR-001, RS-FHIR-001, TP-FHIR-001, TM-FHIR-001, GA-FHIR-001, TQ-FHIR-IQ-001, TQ-FHIR-OQ-001, TQ-FHIR-PQ-001 |
 
@@ -53,22 +53,22 @@ adequately validated.
 
 | Document | ID | Version | Status | Date |
 |---|---|---|---|---|
-| Validation Plan | VP-FHIR-001 | 1.3 | Approved | 2026-04-11 |
+| Validation Plan | VP-FHIR-001 | 1.4 | Approved | 2026-04-11 |
 | Requirements Specification | RS-FHIR-001 | 1.4 | Approved | 2026-04-12 |
-| Architecture Document | AD-FHIR-001 | 1.2 | Approved | 2026-04-11 |
+| Architecture Document | AD-FHIR-001 | 1.3 | Approved | 2026-04-11 |
 | Test Plan | TP-FHIR-001 | 1.6 | Approved | 2026-04-12 |
 | Traceability Matrix | TM-FHIR-001 | 1.6 | Executed | 2026-04-12 |
-| Installation Qualification | TQ-FHIR-IQ-001 | 1.3 | Executed | 2026-04-09 |
+| Installation Qualification | TQ-FHIR-IQ-001 | 1.5 | Executed | 2026-04-18 |
 | Operational Qualification | TQ-FHIR-OQ-001 | 1.2 | Executed | 2026-04-08 |
 | Performance Qualification | TQ-FHIR-PQ-001 | 1.4 | Executed | 2026-04-11 |
-| Gap Analysis | GA-FHIR-001 | 1.2 | Final | 2026-04-12 |
-| Validation Summary Report | VA-FHIR-001 | 1.5 | Final | 2026-04-13 |
+| Gap Analysis | GA-FHIR-001 | 1.3 | Final | 2026-04-12 |
+| Validation Summary Report | VA-FHIR-001 | 1.6 | Final | 2026-04-18 |
 
 ### 3.2 Qualification Phase Outcomes
 
 | Phase | Document | Result | Date | Executor |
 |---|---|---|---|---|
-| Installation Qualification (IQ) | TQ-FHIR-IQ-001 v1.3 | PASS | 2026-04-08 | Amir Choshov |
+| Installation Qualification (IQ) | TQ-FHIR-IQ-001 v1.5 | PASS (updated) | 2026-04-18 | Amir Choshov |
 | Operational Qualification (OQ) | TQ-FHIR-OQ-001 v1.2 | PASS | 2026-04-08 | Amir Choshov |
 | Performance Qualification (PQ) | TQ-FHIR-PQ-001 v1.4 | PASS | 2026-04-09 | Amir Choshov |
 
@@ -299,7 +299,21 @@ package is 7118f602ec98fce9da12ffdf5e4b0c0f42cf1f2d.
 
 ---
 
-## 10. Approval
+## 10. Known Issues
+
+| ID | Severity | Component | Status | Reference |
+| --- | --- | --- | --- | --- |
+| KI-001 | Critical (CVSS 9.8) | org.hl7.fhir.validation-6.3.11.jar in hapiproject/hapi:v7.4.0 | Accepted — local/dev use only, no PHI | GA-FHIR-001 §10 |
+
+Note: KI-001 identified 2026-04-17, post-closure of VA v1.5.
+Risk acceptance rationale documented in GA-FHIR-001 §10 KI-001.
+v7.6.0 evaluated and rejected — CVE not resolved in that version,
+behavioral regressions confirmed. Remediation deferred pending
+a HAPI release bundling org.hl7.fhir.validation 6.9.0+.
+
+---
+
+## 11. Approval
 
 | Role | Name | Signature | Date |
 |---|---|---|---|
@@ -308,7 +322,7 @@ package is 7118f602ec98fce9da12ffdf5e4b0c0f42cf1f2d.
 
 ---
 
-## 11. Change History
+## 12. Change History
 
 | Version | Date | Author | Description |
 |---|---|---|---|
@@ -318,3 +332,4 @@ package is 7118f602ec98fce9da12ffdf5e4b0c0f42cf1f2d.
 | 1.3 | 2026-04-12 | Amir Choshov | Updated closing SHA to 7118f60; updated §3.1 document package to current versions (VP v1.3, RS v1.4, AD v1.2, TP v1.6, TM v1.6, IQ v1.3, PQ v1.4, GA v1.2); updated req/TC counts to 68/83; corrected RS citation to v1.4 throughout; added §9 post-closing activity disclosure |
 | 1.4 | 2026-04-12 | Amir Choshov | Re-executed full suite against both servers. HAPI 80/80 confirmed — no regression. SMART 73/80 confirmed — finding composition changed: TC-PAT-001 and TC-PRA-002 through TC-PRA-006 fixed; TC-OBS-001 new finding; TC-PRA-001 failure mode changed. Net 73/80 unchanged. §5.4 multi-server table and findings updated. |
 | 1.5 | 2026-04-13 | Amir Choshov | Fixed §3.1 package table: VA self-ref v1.3→v1.5, IQ v1.2→v1.3, PQ v1.3→v1.4, TP v1.5→v1.6; updated traceability section citations GA v1.1→v1.3, TM v1.5→v1.6 |
+| 1.6 | 2026-04-18 | Amir Choshov | Post-closure revision: corrected §3.1 document package citations (VP v1.3→1.4, AD v1.2→1.3, IQ v1.3→1.5, GA v1.2→1.3); updated §3.2 IQ qualification status to reflect v1.5 execution including Docker environment (IQ-010–IQ-016); added §10 Known Issues cross-referencing KI-001 (CVSS 9.8 CVE) from GA-FHIR-001. |
