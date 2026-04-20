@@ -21,7 +21,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"187f0ade-587d-440a-b886-08ddae249efc",karate_version:"1.5.1",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"f2e4f6c5-8c3b-4756-8a06-9219c9c6b02d",karate_version:"1.5.1",karate_meta:null});
   }
 });
 </script>
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-04-19 11:41:56 PM</div>
+    <div>2026-04-20 12:08:13 AM</div>
   </div>
 </div>
 
@@ -131,8 +131,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12">23:41:35.695 baseUrl: https://hapi.fhir.org/baseR4 
-23:41:35.695 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.12">00:07:52.179 baseUrl: https://hapi.fhir.org/baseR4 
+00:07:52.179 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -208,7 +208,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">5024</div>
+    <div class="time-cell passed">5032</div>
   </div>
 
    
@@ -217,7 +217,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">23:41:35.697 request:
+  <div class="preformatted" data-parent="0.15">00:07:52.181 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport?subject%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -225,21 +225,21 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:40.720 response time in milliseconds: 5022
+00:07:57.211 response time in milliseconds: 5030
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 19 Apr 2026 23:41:40 GMT
+1 &lt; Date: Mon, 20 Apr 2026 00:07:57 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: axNQ8wddfGTnPTlY
-1 &lt; Last-Modified: Sun, 19 Apr 2026 23:41:40 GMT
+1 &lt; X-Request-ID: OBh5wXCBNCozoWoF
+1 &lt; Last-Modified: Mon, 20 Apr 2026 00:07:57 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;484ac7c9-0571-44e3-9382-3db1c0a75060&quot;,
+  &quot;id&quot;: &quot;3e964d81-bc89-4be5-a500-01eeb102176f&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-19T23:41:40.671+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-20T00:07:57.149+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -247,7 +247,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport?_count=1&amp;subject%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=484ac7c9-0571-44e3-9382-3db1c0a75060&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=3e964d81-bc89-4be5-a500-01eeb102176f&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport/105794583&quot;,
@@ -347,7 +347,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -468,7 +468,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">23:41:40.722 Resolved diagnosticReportId: 105794583 
+  <div class="preformatted" data-parent="0.21">00:07:57.214 Resolved diagnosticReportId: 105794583 
 </div>   
 
   
@@ -516,7 +516,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4970</div>
+    <div class="time-cell passed">4961</div>
   </div>
 
    
@@ -525,7 +525,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.25">23:41:40.723 request:
+  <div class="preformatted" data-parent="0.25">00:07:57.215 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport/105794583
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -533,16 +533,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:45.692 response time in milliseconds: 4968
+00:08:02.175 response time in milliseconds: 4960
 2 &lt; 200
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 19 Apr 2026 23:41:45 GMT
+2 &lt; Date: Mon, 20 Apr 2026 00:08:02 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
 2 &lt; ETag: W/&quot;1&quot;
-2 &lt; X-Request-ID: ANk71rZM9fCVQGmn
+2 &lt; X-Request-ID: asgApLNmrudF7DcY
 2 &lt; Content-Location: https://hapi.fhir.org/baseR4/DiagnosticReport/105794583/_history/1
 2 &lt; Last-Modified: Tue, 10 Feb 2026 17:48:06 GMT
 {
@@ -636,7 +636,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>assert responseTime &lt; 10000</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -748,7 +748,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>karate.write(response, &#39;responses/diagnostic/diagnostic-report-read.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -757,7 +757,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.31">23:41:45.694 write to file: target/responses/diagnostic/diagnostic-report-read.json
+  <div class="preformatted" data-parent="0.31">00:08:02.179 write to file: target/responses/diagnostic/diagnostic-report-read.json
 </div>   
 
   
@@ -778,7 +778,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>9974</span>
+              <span>ms:</span>&nbsp;<span>9973</span>
             </div>
           </div>
           <div class="step-row">
@@ -810,8 +810,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12">23:41:36.714 baseUrl: https://hapi.fhir.org/baseR4 
-23:41:36.714 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.12">00:07:53.197 baseUrl: https://hapi.fhir.org/baseR4 
+00:07:53.197 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -887,7 +887,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">5044</div>
+    <div class="time-cell passed">4987</div>
   </div>
 
    
@@ -896,7 +896,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">23:41:36.715 request:
+  <div class="preformatted" data-parent="0.15">00:07:53.199 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport?subject%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -904,22 +904,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:41.758 response time in milliseconds: 5042
+00:07:58.184 response time in milliseconds: 4984
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 19 Apr 2026 23:41:41 GMT
+1 &lt; Date: Mon, 20 Apr 2026 00:07:58 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: oTkQSYQwpGkaZLPd
-1 &lt; Last-Modified: Sun, 19 Apr 2026 23:41:40 GMT
+1 &lt; X-Request-ID: 3LECzqHdvYoGcIeZ
+1 &lt; Last-Modified: Mon, 20 Apr 2026 00:07:57 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;484ac7c9-0571-44e3-9382-3db1c0a75060&quot;,
+  &quot;id&quot;: &quot;3e964d81-bc89-4be5-a500-01eeb102176f&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-19T23:41:40.671+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-20T00:07:57.149+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -927,7 +927,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport?_count=1&amp;subject%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=484ac7c9-0571-44e3-9382-3db1c0a75060&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=3e964d81-bc89-4be5-a500-01eeb102176f&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport/105794583&quot;,
@@ -1148,7 +1148,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">23:41:41.760 Resolved diagnosticReportId: 105794583 
+  <div class="preformatted" data-parent="0.21">00:07:58.186 Resolved diagnosticReportId: 105794583 
 </div>   
 
   
@@ -1196,7 +1196,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4927</div>
+    <div class="time-cell passed">4983</div>
   </div>
 
    
@@ -1205,7 +1205,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.35">23:41:41.761 request:
+  <div class="preformatted" data-parent="0.35">00:07:58.187 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport/105794583
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -1213,16 +1213,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:46.687 response time in milliseconds: 4926
+00:08:03.169 response time in milliseconds: 4981
 2 &lt; 200
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 19 Apr 2026 23:41:46 GMT
+2 &lt; Date: Mon, 20 Apr 2026 00:08:03 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
 2 &lt; ETag: W/&quot;1&quot;
-2 &lt; X-Request-ID: xh3D1zRPoyN5vd4d
+2 &lt; X-Request-ID: 0GnY9GNjv66nN5OL
 2 &lt; Content-Location: https://hapi.fhir.org/baseR4/DiagnosticReport/105794583/_history/1
 2 &lt; Last-Modified: Tue, 10 Feb 2026 17:48:06 GMT
 {
@@ -1316,7 +1316,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.status == &#39;#regex (registered|partial|preliminary|final|amended|corrected|appended|cancelled|entered-in-error|unknown)&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1344,7 +1344,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>karate.log(&#39;status: &#39; + response.status)</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1353,7 +1353,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.38">23:41:46.688 status: final 
+  <div class="preformatted" data-parent="0.38">00:08:03.170 status: final 
 </div>   
 
   
@@ -1374,7 +1374,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>9994</span>
+              <span>ms:</span>&nbsp;<span>9993</span>
             </div>
           </div>
           <div class="step-row">
@@ -1406,8 +1406,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12">23:41:37.696 baseUrl: https://hapi.fhir.org/baseR4 
-23:41:37.696 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.12">00:07:54.179 baseUrl: https://hapi.fhir.org/baseR4 
+00:07:54.179 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -1483,7 +1483,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">5220</div>
+    <div class="time-cell passed">5003</div>
   </div>
 
    
@@ -1492,7 +1492,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">23:41:37.698 request:
+  <div class="preformatted" data-parent="0.15">00:07:54.181 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport?subject%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -1500,22 +1500,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:42.917 response time in milliseconds: 5218
+00:07:59.182 response time in milliseconds: 5001
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 19 Apr 2026 23:41:42 GMT
+1 &lt; Date: Mon, 20 Apr 2026 00:07:59 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: 7DV2jqPgfbaNEsC9
-1 &lt; Last-Modified: Sun, 19 Apr 2026 23:41:40 GMT
+1 &lt; X-Request-ID: gt3YONrOZWqC9RzR
+1 &lt; Last-Modified: Mon, 20 Apr 2026 00:07:57 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;484ac7c9-0571-44e3-9382-3db1c0a75060&quot;,
+  &quot;id&quot;: &quot;3e964d81-bc89-4be5-a500-01eeb102176f&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-19T23:41:40.671+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-20T00:07:57.149+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -1523,7 +1523,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport?_count=1&amp;subject%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=484ac7c9-0571-44e3-9382-3db1c0a75060&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=3e964d81-bc89-4be5-a500-01eeb102176f&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport/105794583&quot;,
@@ -1744,7 +1744,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">23:41:42.918 Resolved diagnosticReportId: 105794583 
+  <div class="preformatted" data-parent="0.21">00:07:59.185 Resolved diagnosticReportId: 105794583 
 </div>   
 
   
@@ -1792,7 +1792,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4769</div>
+    <div class="time-cell passed">4985</div>
   </div>
 
    
@@ -1801,7 +1801,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.42">23:41:42.919 request:
+  <div class="preformatted" data-parent="0.42">00:07:59.186 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport/105794583
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -1809,16 +1809,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:47.688 response time in milliseconds: 4768
+00:08:04.170 response time in milliseconds: 4983
 2 &lt; 200
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 19 Apr 2026 23:41:47 GMT
+2 &lt; Date: Mon, 20 Apr 2026 00:08:04 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
 2 &lt; ETag: W/&quot;1&quot;
-2 &lt; X-Request-ID: dYQdQEych66ZmRiZ
+2 &lt; X-Request-ID: LweazB7A4k3Pjjic
 2 &lt; Content-Location: https://hapi.fhir.org/baseR4/DiagnosticReport/105794583/_history/1
 2 &lt; Last-Modified: Tue, 10 Feb 2026 17:48:06 GMT
 {
@@ -2024,7 +2024,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>karate.log(&#39;code system: &#39; + response.code.coding[0].system)</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2033,7 +2033,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.48">23:41:47.691 code system: http://loinc.org 
+  <div class="preformatted" data-parent="0.48">00:08:04.172 code system: http://loinc.org 
 </div>   
 
   
@@ -2053,7 +2053,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>karate.log(&#39;code code: &#39; + response.code.coding[0].code)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2062,7 +2062,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.49">23:41:47.691 code code: 24323-8 
+  <div class="preformatted" data-parent="0.49">00:08:04.173 code code: 24323-8 
 </div>   
 
   
@@ -2083,7 +2083,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>9994</span>
+              <span>ms:</span>&nbsp;<span>9986</span>
             </div>
           </div>
           <div class="step-row">
@@ -2115,8 +2115,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12">23:41:38.695 baseUrl: https://hapi.fhir.org/baseR4 
-23:41:38.695 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.12">00:07:55.186 baseUrl: https://hapi.fhir.org/baseR4 
+00:07:55.186 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -2192,7 +2192,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">5135</div>
+    <div class="time-cell passed">4998</div>
   </div>
 
    
@@ -2201,7 +2201,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">23:41:38.697 request:
+  <div class="preformatted" data-parent="0.15">00:07:55.187 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport?subject%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -2209,22 +2209,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:43.831 response time in milliseconds: 5134
+00:08:00.184 response time in milliseconds: 4996
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 19 Apr 2026 23:41:43 GMT
+1 &lt; Date: Mon, 20 Apr 2026 00:08:00 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: cMb1DmEImGMYpKK6
-1 &lt; Last-Modified: Sun, 19 Apr 2026 23:41:40 GMT
+1 &lt; X-Request-ID: 72886ZHvJzZZA8SX
+1 &lt; Last-Modified: Mon, 20 Apr 2026 00:07:57 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;484ac7c9-0571-44e3-9382-3db1c0a75060&quot;,
+  &quot;id&quot;: &quot;3e964d81-bc89-4be5-a500-01eeb102176f&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-19T23:41:40.671+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-20T00:07:57.149+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -2232,7 +2232,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport?_count=1&amp;subject%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=484ac7c9-0571-44e3-9382-3db1c0a75060&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=3e964d81-bc89-4be5-a500-01eeb102176f&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport/105794583&quot;,
@@ -2453,7 +2453,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">23:41:43.833 Resolved diagnosticReportId: 105794583 
+  <div class="preformatted" data-parent="0.21">00:08:00.186 Resolved diagnosticReportId: 105794583 
 </div>   
 
   
@@ -2501,7 +2501,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4855</div>
+    <div class="time-cell passed">4984</div>
   </div>
 
    
@@ -2510,7 +2510,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.53">23:41:43.834 request:
+  <div class="preformatted" data-parent="0.53">00:08:00.187 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport/105794583
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -2518,16 +2518,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:48.688 response time in milliseconds: 4854
+00:08:05.170 response time in milliseconds: 4982
 2 &lt; 200
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 19 Apr 2026 23:41:48 GMT
+2 &lt; Date: Mon, 20 Apr 2026 00:08:05 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
 2 &lt; ETag: W/&quot;1&quot;
-2 &lt; X-Request-ID: TGefCjMMMjYJ0IQD
+2 &lt; X-Request-ID: uazaz6yzIVgweoLY
 2 &lt; Content-Location: https://hapi.fhir.org/baseR4/DiagnosticReport/105794583/_history/1
 2 &lt; Last-Modified: Tue, 10 Feb 2026 17:48:06 GMT
 {
@@ -2621,7 +2621,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.subject == &#39;#present&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2714,7 +2714,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.58">23:41:48.690 subject reference: Patient/testmartin 
+  <div class="preformatted" data-parent="0.58">00:08:05.172 subject reference: Patient/testmartin 
 </div>   
 
   
@@ -2735,7 +2735,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>9998</span>
+              <span>ms:</span>&nbsp;<span>9995</span>
             </div>
           </div>
           <div class="step-row">
@@ -2767,8 +2767,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12">23:41:39.696 baseUrl: https://hapi.fhir.org/baseR4 
-23:41:39.696 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.12">00:07:56.180 baseUrl: https://hapi.fhir.org/baseR4 
+00:07:56.180 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -2844,7 +2844,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">5225</div>
+    <div class="time-cell passed">5002</div>
   </div>
 
    
@@ -2853,7 +2853,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">23:41:39.698 request:
+  <div class="preformatted" data-parent="0.15">00:07:56.182 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport?subject%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -2861,22 +2861,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:44.922 response time in milliseconds: 5223
+00:08:01.183 response time in milliseconds: 5000
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 19 Apr 2026 23:41:44 GMT
+1 &lt; Date: Mon, 20 Apr 2026 00:08:01 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: 2lAakz9ATVTN0yOX
-1 &lt; Last-Modified: Sun, 19 Apr 2026 23:41:40 GMT
+1 &lt; X-Request-ID: vhrfxte28l2PPhJi
+1 &lt; Last-Modified: Mon, 20 Apr 2026 00:07:57 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;484ac7c9-0571-44e3-9382-3db1c0a75060&quot;,
+  &quot;id&quot;: &quot;3e964d81-bc89-4be5-a500-01eeb102176f&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-19T23:41:40.671+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-20T00:07:57.149+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -2884,7 +2884,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport?_count=1&amp;subject%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=484ac7c9-0571-44e3-9382-3db1c0a75060&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=3e964d81-bc89-4be5-a500-01eeb102176f&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport/105794583&quot;,
@@ -2984,7 +2984,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def hasEntry = response.entry != null &amp;&amp; response.entry.length &gt; 0</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -3105,7 +3105,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">23:41:44.924 Resolved diagnosticReportId: 105794583 
+  <div class="preformatted" data-parent="0.21">00:08:01.185 Resolved diagnosticReportId: 105794583 
 </div>   
 
   
@@ -3153,7 +3153,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4769</div>
+    <div class="time-cell passed">4989</div>
   </div>
 
    
@@ -3162,7 +3162,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.62">23:41:44.925 request:
+  <div class="preformatted" data-parent="0.62">00:08:01.186 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport/INVALID-ID-99999
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -3170,15 +3170,15 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:49.693 response time in milliseconds: 4767
+00:08:06.174 response time in milliseconds: 4987
 2 &lt; 404
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 19 Apr 2026 23:41:49 GMT
+2 &lt; Date: Mon, 20 Apr 2026 00:08:06 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-2 &lt; X-Request-ID: NF56NQZjnIOL4Fx3
+2 &lt; X-Request-ID: rUvo6wtAKnI1G2iX
 {
   &quot;resourceType&quot;: &quot;OperationOutcome&quot;,
   &quot;text&quot;: {
@@ -3239,7 +3239,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.resourceType == &#39;OperationOutcome&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -3304,7 +3304,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.66">23:41:49.694 404 severity: error 
+  <div class="preformatted" data-parent="0.66">00:08:06.176 404 severity: error 
 </div>   
 
   
@@ -3324,7 +3324,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>karate.log(&#39;404 code: &#39; + response.issue[0].code)</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -3333,7 +3333,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.67">23:41:49.695 404 code: processing 
+  <div class="preformatted" data-parent="0.67">00:08:06.176 404 code: processing 
 </div>   
 
   
@@ -3386,8 +3386,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12">23:41:45.696 baseUrl: https://hapi.fhir.org/baseR4 
-23:41:45.696 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.12">00:08:02.184 baseUrl: https://hapi.fhir.org/baseR4 
+00:08:02.184 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -3463,7 +3463,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">5001</div>
+    <div class="time-cell passed">5002</div>
   </div>
 
    
@@ -3472,7 +3472,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">23:41:45.698 request:
+  <div class="preformatted" data-parent="0.15">00:08:02.185 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport?subject%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -3480,22 +3480,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:50.698 response time in milliseconds: 4999
+00:08:07.186 response time in milliseconds: 4999
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 19 Apr 2026 23:41:50 GMT
+1 &lt; Date: Mon, 20 Apr 2026 00:08:07 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: goxJ2FgUJQ1dvlbk
-1 &lt; Last-Modified: Sun, 19 Apr 2026 23:41:40 GMT
+1 &lt; X-Request-ID: 1GcQhbWIYbU4ZWKg
+1 &lt; Last-Modified: Mon, 20 Apr 2026 00:07:57 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;484ac7c9-0571-44e3-9382-3db1c0a75060&quot;,
+  &quot;id&quot;: &quot;3e964d81-bc89-4be5-a500-01eeb102176f&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-19T23:41:40.671+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-20T00:07:57.149+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -3503,7 +3503,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport?_count=1&amp;subject%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=484ac7c9-0571-44e3-9382-3db1c0a75060&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=3e964d81-bc89-4be5-a500-01eeb102176f&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport/105794583&quot;,
@@ -3724,7 +3724,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">23:41:50.699 Resolved diagnosticReportId: 105794583 
+  <div class="preformatted" data-parent="0.21">00:08:07.187 Resolved diagnosticReportId: 105794583 
 </div>   
 
   
@@ -3808,7 +3808,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>9998</span>
+              <span>ms:</span>&nbsp;<span>9997</span>
             </div>
           </div>
           <div class="step-row">
@@ -3840,8 +3840,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12">23:41:46.690 baseUrl: https://hapi.fhir.org/baseR4 
-23:41:46.690 fhirVersion: 4.0.1 
+  <div class="preformatted" data-parent="0.12">00:08:03.174 baseUrl: https://hapi.fhir.org/baseR4 
+00:08:03.174 fhirVersion: 4.0.1 
 </div>   
 
   
@@ -3917,7 +3917,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">5009</div>
+    <div class="time-cell passed">5014</div>
   </div>
 
    
@@ -3926,7 +3926,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">23:41:46.692 request:
+  <div class="preformatted" data-parent="0.15">00:08:03.175 request:
 1 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport?subject%3Amissing=false&amp;_count=1
 1 &gt; Host: hapi.fhir.org
 1 &gt; Connection: Keep-Alive
@@ -3934,22 +3934,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:51.700 response time in milliseconds: 5007
+00:08:08.188 response time in milliseconds: 5011
 1 &lt; 200
 1 &lt; Server: nginx/1.24.0 (Ubuntu)
-1 &lt; Date: Sun, 19 Apr 2026 23:41:51 GMT
+1 &lt; Date: Mon, 20 Apr 2026 00:08:08 GMT
 1 &lt; Content-Type: application/fhir+json;charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; X-Cache: HIT from https://hapi.fhir.org/baseR4
 1 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
-1 &lt; X-Request-ID: 7wPnsA4kAYjHKDNR
-1 &lt; Last-Modified: Sun, 19 Apr 2026 23:41:40 GMT
+1 &lt; X-Request-ID: Z1e2BvnwGhWbGAVm
+1 &lt; Last-Modified: Mon, 20 Apr 2026 00:07:57 GMT
 {
   &quot;resourceType&quot;: &quot;Bundle&quot;,
-  &quot;id&quot;: &quot;484ac7c9-0571-44e3-9382-3db1c0a75060&quot;,
+  &quot;id&quot;: &quot;3e964d81-bc89-4be5-a500-01eeb102176f&quot;,
   &quot;meta&quot;: {
-    &quot;lastUpdated&quot;: &quot;2026-04-19T23:41:40.671+00:00&quot;
+    &quot;lastUpdated&quot;: &quot;2026-04-20T00:07:57.149+00:00&quot;
   },
   &quot;type&quot;: &quot;searchset&quot;,
   &quot;link&quot;: [ {
@@ -3957,7 +3957,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport?_count=1&amp;subject%3Amissing=false&quot;
   }, {
     &quot;relation&quot;: &quot;next&quot;,
-    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=484ac7c9-0571-44e3-9382-3db1c0a75060&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
+    &quot;url&quot;: &quot;https://hapi.fhir.org/baseR4?_getpages=3e964d81-bc89-4be5-a500-01eeb102176f&amp;_getpagesoffset=1&amp;_count=1&amp;_pretty=true&amp;_bundletype=searchset&quot;
   } ],
   &quot;entry&quot;: [ {
     &quot;fullUrl&quot;: &quot;https://hapi.fhir.org/baseR4/DiagnosticReport/105794583&quot;,
@@ -4178,7 +4178,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">23:41:51.701 Resolved diagnosticReportId: 105794583 
+  <div class="preformatted" data-parent="0.21">00:08:08.190 Resolved diagnosticReportId: 105794583 
 </div>   
 
   
@@ -4226,7 +4226,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">4987</div>
+    <div class="time-cell passed">4981</div>
   </div>
 
    
@@ -4235,7 +4235,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.76">23:41:51.702 request:
+  <div class="preformatted" data-parent="0.76">00:08:08.191 request:
 2 &gt; GET https://hapi.fhir.org/baseR4/DiagnosticReport/105794583
 2 &gt; Host: hapi.fhir.org
 2 &gt; Connection: Keep-Alive
@@ -4243,16 +4243,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-23:41:56.688 response time in milliseconds: 4985
+00:08:13.170 response time in milliseconds: 4978
 2 &lt; 200
 2 &lt; Server: nginx/1.24.0 (Ubuntu)
-2 &lt; Date: Sun, 19 Apr 2026 23:41:56 GMT
+2 &lt; Date: Mon, 20 Apr 2026 00:08:13 GMT
 2 &lt; Content-Type: application/fhir+json;charset=utf-8
 2 &lt; Transfer-Encoding: chunked
 2 &lt; Connection: keep-alive
 2 &lt; X-Powered-By: HAPI FHIR 8.9.4-SNAPSHOT/eee190b153/2026-02-26 REST Server (FHIR Server; FHIR 4.0.1/R4)
 2 &lt; ETag: W/&quot;1&quot;
-2 &lt; X-Request-ID: 0LBS19pkxCGJmSwM
+2 &lt; X-Request-ID: JGQJAu4V4jiKxbdf
 2 &lt; Content-Location: https://hapi.fhir.org/baseR4/DiagnosticReport/105794583/_history/1
 2 &lt; Last-Modified: Tue, 10 Feb 2026 17:48:06 GMT
 {
@@ -4383,7 +4383,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.79">23:41:56.688 meta.versionId: 1 
+  <div class="preformatted" data-parent="0.79">00:08:13.171 meta.versionId: 1 
 </div>   
 
   
