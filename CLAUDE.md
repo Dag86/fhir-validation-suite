@@ -72,7 +72,7 @@ docs/
   validation-summary-report.md   — VA-FHIR-001 v1.6 (final)
   qualification/IQ.md            — TQ-FHIR-IQ-001 v1.5 (executed)
   qualification/OQ.md            — TQ-FHIR-OQ-001 v1.2 (executed)
-  qualification/PQ.md            — TQ-FHIR-PQ-001 v1.4 (executed)
+  qualification/PQ.md            — TQ-FHIR-PQ-001 v1.5 (executed)
 
 .github/workflows/
   fhir-validation.yml            — CI pipeline (active)
@@ -96,7 +96,13 @@ CLAUDE.md                        — this file
 | Run time | ~02:09 min |
 | Last local run | 2026-04-11 |
 | CI runs completed | 3 |
-| Closing commit SHA | c6046db |
+| Closing commit SHA | c2d0e4c |
+
+Local server run (2026-04-20):
+  Target:  <http://localhost:8080/fhir> (local Docker HAPI FHIR R4)
+  Dataset: Synthea seed 42, 55 patients (Massachusetts)
+  Result:  80/80 PASS
+  SHA:     c2d0e4c
 
 TC count breakdown (83 total in TP-FHIR-001 v1.6):
 
@@ -119,7 +125,7 @@ ALL MILESTONES COMPLETE.
 | Traceability Matrix | TM-FHIR-001 | 1.6 | Executed |
 | Installation Qualification | TQ-FHIR-IQ-001 | 1.5 | PASS |
 | Operational Qualification | TQ-FHIR-OQ-001 | 1.2 | PASS |
-| Performance Qualification | TQ-FHIR-PQ-001 | 1.4 | PASS |
+| Performance Qualification | TQ-FHIR-PQ-001 | 1.5 | PASS |
 | Gap Analysis | GA-FHIR-001 | 1.3 | Final |
 | Validation Summary Report | VA-FHIR-001 | 1.6 | Final — VALIDATED |
 

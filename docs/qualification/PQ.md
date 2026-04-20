@@ -7,10 +7,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TQ-FHIR-PQ-001 |
-| **Version** | 1.4 |
+| **Version** | 1.5 |
 | **Status** | Executed |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-11 |
+| **Date** | 2026-04-20 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Related Documents** | TQ-FHIR-IQ-001, TQ-FHIR-OQ-001 |
 | **Prerequisite** | TQ-FHIR-IQ-001 and TQ-FHIR-OQ-001 must be completed and passed |
@@ -153,12 +153,13 @@ Execute `mvn test` three times consecutively against the same target server with
 | Run 2 | 74 | 74 | 0 | 0 | Yes | 2026-04-09 | 00:12:52 PDT | AC |
 | Run 3 | 74 | 74 | 0 | 0 | Yes | 2026-04-09 | 00:15:05 PDT | AC |
 | Run 4 | 80 | 80 | 0 | 0 | Yes | 2026-04-11 | N/A | AC |
+| Run 5 | 80 | 80 | 0 | 0 | Yes | 2026-04-20 | 19:27:41 PDT | AC |
 
 **Variance Analysis:**
 
 | Field | Value |
 |---|---|
-| Passed count consistent across all runs | Yes — 74/74 across runs 1-3; 80/80 on run 4 (6 new TCs added) |
+| Passed count consistent across all runs | Yes — 74/74 across runs 1-3; 80/80 on runs 4-5 |
 | Failed count consistent across all runs | Yes — 0 across all 4 runs |
 | Git status clean after each run | Yes — working tree clean after each run |
 | Variance observed | None |
@@ -195,8 +196,9 @@ Execute `mvn test` three times consecutively against the same target server with
 |---|---|---|---|---|
 | PQ-004-1 | `mvn test -DbaseUrl=https://hapi.fhir.org/baseR4` | Suite runs against R4 sandbox, reports generated | PASS — karate-config.js reads baseUrl from karate.properties['baseUrl'] system property with fallback to <https://hapi.fhir.org/baseR4> — no hardcoded URL in feature files | PASS |
 | PQ-004-2 | `mvn test -DbaseUrl=https://hapi.fhir.org/baseR5` | Suite runs against R5 endpoint without code changes | PASS — fhirVersion reads from karate.properties['fhirVersion'] system property with fallback to 4.0.1 — configurable without code change | PASS |
-| PQ-004-3 | `grep -r "hapi.fhir.org" src/test/resources/` | Returns only `karate-config.js` — no hardcoded URLs in feature files | PASS — authToken reads from karate.properties['authToken'] — optional Bearer token injection supported for authenticated endpoints | PASS |
-| PQ-004-4 | Review `karate-config.js` | `baseUrl` reads from `karate.properties['baseUrl']` with fallback default | PASS — override syntax confirmed: mvn test -DbaseUrl=<https://alternate.fhir.server/baseR4> would redirect all tests without modifying source files | PASS |
+| PQ-004-3 | `mvn test -DbaseUrl=http://localhost:8080/fhir` | Suite runs against local Docker HAPI FHIR R4 server seeded with Synthea synthetic data (seed 42, 55 patients) | PASS — 80/80 scenarios passed, 0 failed. karate-config.js correctly reads -DbaseUrl property. No feature file changes required. Execution SHA: c2d0e4c | PASS |
+| PQ-004-4 | `grep -r "hapi.fhir.org" src/test/resources/` | Returns only `karate-config.js` — no hardcoded URLs in feature files | PASS — authToken reads from karate.properties['authToken'] — optional Bearer token injection supported for authenticated endpoints | PASS |
+| PQ-004-5 | Review `karate-config.js` | `baseUrl` reads from `karate.properties['baseUrl']` with fallback default | PASS — override syntax confirmed: mvn test -DbaseUrl=<https://alternate.fhir.server/baseR4> would redirect all tests without modifying source files | PASS |
 
 **PQ-004 Overall Result:** ☑ PASS  ☐ Fail
 
@@ -246,10 +248,10 @@ Execute `mvn test` three times consecutively against the same target server with
 |---|---|---|---|---|---|---|
 | PQ-001: Local Execution | 7 | 7 | 0 | PASS | 2026-04-09 | AC |
 | PQ-002: CI Execution | 7 | 7 | 0 | PASS | 2026-04-08 | AC |
-| PQ-003: Reproducibility | 4 | 3 | 0 | PASS | 2026-04-09 | AC |
-| PQ-004: Config Switch | 4 | 4 | 0 | PASS | 2026-04-09 | AC |
+| PQ-003: Reproducibility | 5 | 3 | 0 | PASS | 2026-04-20 | AC |
+| PQ-004: Config Switch | 5 | 5 | 0 | PASS | 2026-04-20 | AC |
 | PQ-005: Git Audit Trail | 7 | 7 | 0 | PASS | 2026-04-09 | AC |
-| **Total** | **29** | **28** | **0** | | | |
+| **Total** | **31** | **30** | **0** | | | |
 
 **PQ Overall Status:** ☑ PASS  ☐ Fail
 
@@ -307,6 +309,7 @@ This qualification must be repeated or partially repeated if any of the followin
 | 1.2 | 2026-04-06 | Amir Choshov | Added scope note to PQ-004 clarifying R5 endpoint use is a forward-compatibility configuration experiment, not a PQ acceptance criterion. Consistent with VP-FHIR-001 Section 2.2 scope exclusion. |
 | 1.3 | 2026-04-09 | Amir Choshov | Execution record completed — 3 local runs + CI Run #3, all PQ scenarios PASS |
 | 1.4 | 2026-04-11 | Amir Choshov | Hardening pass — 6 new TCs (TC-PAT-012 through TC-PAT-016, TC-BUN-008) added. PQ-001 execution summary updated to 80 TCs. PQ-003 run 4 added: 80/80 PASS. |
+| 1.5 | 2026-04-20 | Amir Choshov | Run 5 added to PQ-003 — local Docker HAPI FHIR R4, Synthea seed 42, 55 patients, 80/80 PASS (SHA c2d0e4c). PQ-004-3 added: local server URL portability confirmed. pom.xml dependency updates verified clean. |
 
 ---
 

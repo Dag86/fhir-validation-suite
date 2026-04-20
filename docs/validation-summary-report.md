@@ -7,10 +7,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | VA-FHIR-001 |
-| **Version** | 1.6 |
+| **Version** | 1.7 |
 | **Status** | Final |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-18 |
+| **Date** | 2026-04-20 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Related Documents** | VP-FHIR-001, RS-FHIR-001, TP-FHIR-001, TM-FHIR-001, GA-FHIR-001, TQ-FHIR-IQ-001, TQ-FHIR-OQ-001, TQ-FHIR-PQ-001 |
 
@@ -71,7 +71,7 @@ adequately validated.
 |---|---|---|---|---|
 | Installation Qualification (IQ) | TQ-FHIR-IQ-001 v1.5 | PASS (updated) | 2026-04-18 | Amir Choshov |
 | Operational Qualification (OQ) | TQ-FHIR-OQ-001 v1.2 | PASS | 2026-04-08 | Amir Choshov |
-| Performance Qualification (PQ) | TQ-FHIR-PQ-001 v1.4 | PASS | 2026-04-09 | Amir Choshov |
+| Performance Qualification (PQ) | TQ-FHIR-PQ-001 v1.5 | PASS — Run 5 added — local Docker HAPI FHIR R4, Synthea seed 42, 55 patients, 80/80 PASS (2026-04-20) | 2026-04-20 | Amir Choshov |
 
 ### 3.3 Test Execution Summary
 
@@ -169,6 +169,7 @@ server-agnostic portability per REQ-GEN-005.
 | HAPI FHIR sandbox | hapi.fhir.org/baseR4 | 2026-04-12 | 80/80 PASS | Re-execution — confirmed, no regression |
 | SMART Health IT | launch.smarthealthit.org/v/r4/fhir | 2026-04-11 | 73/80 | 7 conformance findings — initial run |
 | SMART Health IT | launch.smarthealthit.org/v/r4/fhir | 2026-04-12 | 73/80 | 7 conformance findings — re-execution; finding composition changed (see below) |
+| Local Docker HAPI FHIR R4 | localhost:8080/fhir (hapiproject/hapi:v7.4.0) | 2026-04-20 | 80/80 PASS | Synthea synthetic patients, seed 42, 55 patients (Massachusetts); SHA c2d0e4c |
 
 SMART Health IT conformance findings — initial run (2026-04-11):
 
@@ -337,3 +338,4 @@ a HAPI release bundling org.hl7.fhir.validation 6.9.0+.
 | 1.4 | 2026-04-12 | Amir Choshov | Re-executed full suite against both servers. HAPI 80/80 confirmed — no regression. SMART 73/80 confirmed — finding composition changed: TC-PAT-001 and TC-PRA-002 through TC-PRA-006 fixed; TC-OBS-001 new finding; TC-PRA-001 failure mode changed. Net 73/80 unchanged. §5.4 multi-server table and findings updated. |
 | 1.5 | 2026-04-13 | Amir Choshov | Fixed §3.1 package table: VA self-ref v1.3→v1.5, IQ v1.2→v1.3, PQ v1.3→v1.4, TP v1.5→v1.6; updated traceability section citations GA v1.1→v1.3, TM v1.5→v1.6 |
 | 1.6 | 2026-04-18 | Amir Choshov | Post-closure revision: corrected §3.1 document package citations (VP v1.3→1.4, AD v1.2→1.3, IQ v1.3→1.5, GA v1.2→1.3); updated §3.2 IQ qualification status to reflect v1.5 execution including Docker environment (IQ-010–IQ-016); added §10 Known Issues cross-referencing KI-001 (CVSS 9.8 CVE) from GA-FHIR-001. |
+| 1.7 | 2026-04-20 | Amir Choshov | Post-closure revision: PQ v1.4→v1.5 reference updated; local Docker HAPI FHIR R4 execution recorded (80/80 PASS, SHA c2d0e4c, Synthea seed 42). Suite confirmed server-agnostic. |
