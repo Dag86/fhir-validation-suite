@@ -54,16 +54,16 @@ test coverage, and SOUP documentation throughout.
 
 | Phase | Document | Version | Status |
 |---|---|---|---|
-| Planning | Validation Plan (VP-FHIR-001) | 1.2 | Approved |
-| Requirements | Requirements Specification (RS-FHIR-001) | 1.2 | Approved -> 61 requirements |
-| Architecture | Architecture Document (AD-FHIR-001) | 1.1 | Approved |
-| Testing | Test Plan (TP-FHIR-001) | 1.5 | Approved -> 83 TCs |
-| Traceability | Traceability Matrix (TM-FHIR-001) | 1.5 | Executed -> 100% coverage |
-| Installation | IQ (TQ-FHIR-IQ-001) | 1.3 | **PASS** |
+| Planning | Validation Plan (VP-FHIR-001) | 1.4 | Approved |
+| Requirements | Requirements Specification (RS-FHIR-001) | 1.4 | Approved — 68 requirements |
+| Architecture | Architecture Document (AD-FHIR-001) | 1.3 | Approved |
+| Testing | Test Plan (TP-FHIR-001) | 1.6 | Approved — 83 TCs |
+| Traceability | Traceability Matrix (TM-FHIR-001) | 1.6 | Executed — 100% coverage |
+| Installation | IQ (TQ-FHIR-IQ-001) | 1.5 | **PASS** |
 | Operation | OQ (TQ-FHIR-OQ-001) | 1.2 | **PASS** |
-| Performance | PQ (TQ-FHIR-PQ-001) | 1.3 | **PASS** |
-| Coverage | Gap Analysis (GA-FHIR-001) | 1.1 | Final -> 0 gaps |
-| Closure | Validation Summary Report (VA-FHIR-001) | 1.2 | **VALIDATED** |
+| Performance | PQ (TQ-FHIR-PQ-001) | 1.5 | **PASS** |
+| Coverage | Gap Analysis (GA-FHIR-001) | 1.3 | Final — 0 gaps |
+| Closure | Validation Summary Report (VA-FHIR-001) | 1.7 | **VALIDATED** |
 
 All documents live in [`docs/`](docs/) and are versioned under
 21 CFR Part 820.40 document control requirements.
@@ -71,15 +71,15 @@ All documents live in [`docs/`](docs/) and are versioned under
 ### Traceability Chain
 
 ```text
-RS-FHIR-001 (61 requirements)
+RS-FHIR-001 (68 requirements)
     -> TP-FHIR-001 (83 test cases)
         -> Feature files (80 automated scenarios)
-            -> CI Run #3 + hardening run (GitHub Actions + local execution evidence)
-                -> Commit SHA af2bf2c5 (immutable audit anchor)
+            -> CI Run #3 + hardening run + local Docker run (2026-04-20)
+                -> Closing SHA e2908ed (immutable audit anchor)
 ```
 
-- Forward coverage (requirement -> test): 100% -> 61/61 requirements covered
-- Backward coverage (test -> requirement): 100% -> 83/83 TCs mapped
+- Forward coverage (requirement -> test): 100% -- 68/68 requirements covered
+- Backward coverage (test -> requirement): 100% -- 83/83 TCs mapped
 - Orphaned requirements: 0
 - Orphaned test cases: 0
 
@@ -254,6 +254,7 @@ Or view the latest CI report published live at:
 |---|---|---|---|
 | HAPI FHIR sandbox | `hapi.fhir.org/baseR4` | **80/80 PASS** | Primary validation target |
 | SMART Health IT | `launch.smarthealthit.org/v/r4/fhir` | **73/80** | 7 conformance findings correctly detected |
+| Local Docker HAPI R4 | `localhost:8080/fhir` (hapiproject/hapi:v7.4.0) | **80/80 PASS** | Synthea synthetic data, seed 42, 55 patients — SHA e2908ed |
 
 SMART Health IT findings (all correct conformance detections):
 
@@ -313,7 +314,7 @@ fhir-validation-suite/
 | Document | Purpose |
 |---|---|
 | [Validation Plan](docs/validation-plan.md) | Scope, approach, risk classification, acceptance criteria |
-| [Requirements Specification](docs/requirements-specification.md) | 61 functional and non-functional requirements |
+| [Requirements Specification](docs/requirements-specification.md) | 68 functional and non-functional requirements |
 | [Architecture Document](docs/architecture.md) | System design, component relationships, SOUP inventory |
 | [Test Plan](docs/test-plan.md) | 83 test cases with risk linkage and coverage rationale |
 | [Traceability Matrix](docs/traceability-matrix.md) | Bidirectional requirements -> test case mapping |
@@ -353,6 +354,6 @@ compliance on clinical trials platforms.
 ---
 
 *Validation evidence is anchored to commit
-[`de3c025`](https://github.com/Dag86/fhir-validation-suite/commit/de3c0255187dfb5efe7a348518b0d360aafd95e3).
+[`e2908ed`](https://github.com/Dag86/fhir-validation-suite/commit/e2908ed).
 All CI artifacts are archived in
 [GitHub Actions](https://github.com/Dag86/fhir-validation-suite/actions).*

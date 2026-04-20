@@ -30,6 +30,9 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
+      - name: Verify traceability
+        run: bash scripts/verify-traceability.sh
+
       - name: Run Karate test suite
         run: mvn test -B
 

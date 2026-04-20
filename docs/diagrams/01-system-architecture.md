@@ -32,6 +32,7 @@ flowchart TD
 
     subgraph TARGET["Target Server — Configurable"]
         HAPI["HAPI FHIR Public Sandbox\nhapi.fhir.org/baseR4\n— or any FHIR R4 server —"]
+        LOCAL["Local Docker HAPI FHIR R4\nhapiproject/hapi:v7.4.0\nlocalhost:8080/fhir\nSynthea seed 42 · 55 patients"]
     end
 
     subgraph LAYER2["Layer 2 — Schema Conformance  HL7 Validator"]

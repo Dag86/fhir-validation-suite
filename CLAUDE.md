@@ -61,6 +61,9 @@ src/test/resources/
 scripts/
   generate-report.sh            — generates standalone HTML report after mvn test
                                   requires python3 (system); run: ./scripts/generate-report.sh
+  verify-traceability.sh        — bidirectional REQ<->TC coverage
+                                  verification; run before mvn test
+                                  or via CI automatically
 
 docs/
   validation-plan.md             — VP-FHIR-001 v1.4
@@ -69,7 +72,7 @@ docs/
   test-plan.md                   — TP-FHIR-001 v1.6 (83 TCs, Approved)
   traceability-matrix.md         — TM-FHIR-001 v1.6 (executed, 100% coverage)
   gap-analysis.md                — GA-FHIR-001 v1.3 (final)
-  validation-summary-report.md   — VA-FHIR-001 v1.6 (final)
+  validation-summary-report.md   — VA-FHIR-001 v1.7 (final)
   qualification/IQ.md            — TQ-FHIR-IQ-001 v1.5 (executed)
   qualification/OQ.md            — TQ-FHIR-OQ-001 v1.2 (executed)
   qualification/PQ.md            — TQ-FHIR-PQ-001 v1.5 (executed)
@@ -94,7 +97,7 @@ CLAUDE.md                        — this file
 | Failed | 0 |
 | Build | SUCCESS |
 | Run time | ~02:09 min |
-| Last local run | 2026-04-11 |
+| Last local run | 2026-04-20 |
 | CI runs completed | 3 |
 | Closing commit SHA | c2d0e4c |
 
@@ -127,7 +130,7 @@ ALL MILESTONES COMPLETE.
 | Operational Qualification | TQ-FHIR-OQ-001 | 1.2 | PASS |
 | Performance Qualification | TQ-FHIR-PQ-001 | 1.5 | PASS |
 | Gap Analysis | GA-FHIR-001 | 1.3 | Final |
-| Validation Summary Report | VA-FHIR-001 | 1.6 | Final — VALIDATED |
+| Validation Summary Report | VA-FHIR-001 | 1.7 | Final — VALIDATED |
 
 ---
 

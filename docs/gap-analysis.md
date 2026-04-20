@@ -70,6 +70,13 @@ TM-FHIR-001 v1.6:
    verified as manual IQ/OQ checklist items per their disposition
    in TP-FHIR-001 v1.6.
 
+5. **Automated traceability verification** — scripts/verify-traceability.sh
+   executed in CI on every push to main. Checks: (a) every automated TC
+   in feature files is present in TM, (b) every non-FRM TC in TM has a
+   feature file implementation, (c) total active requirement count matches
+   68. Script exits non-zero on any gap, failing the CI pipeline before
+   test execution begins.
+
 ---
 
 ## 4. Findings
@@ -107,6 +114,11 @@ TM-FHIR-001 v1.6:
 **Result: 100% automated execution coverage. All 80 automated TCs
 passed — 74 in CI Run #3 (commit 4458f7dd, 2026-04-08) and 6 new
 TCs in hardening pass (commit af2bf2c5, 2026-04-11).**
+
+Run 5 (2026-04-20): 80/80 PASS against local Docker HAPI FHIR R4
+(hapiproject/hapi:v7.4.0), Synthea synthetic data seed 42, 55 patients
+(Massachusetts). SHA c2d0e4c. Full execution record in TQ-FHIR-PQ-001
+v1.5 §6 PQ-003 Run 5.
 
 ### 4.4 Non-Automated TC Disposition
 

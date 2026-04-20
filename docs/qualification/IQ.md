@@ -7,10 +7,10 @@
 | Field | Detail |
 |---|---|
 | **Document ID** | TQ-FHIR-IQ-001 |
-| **Version** | 1.5 |
+| **Version** | 1.6 |
 | **Status** | Executed |
 | **Author** | Amir Choshov |
-| **Date** | 2026-04-18 |
+| **Date** | 2026-04-20 |
 | **Project** | FHIR R4 API Validation Suite |
 | **Related Documents** | TQ-FHIR-OQ-001, TQ-FHIR-PQ-001 |
 
@@ -314,7 +314,27 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 
 ---
 
-## 11. IQ Summary
+## 11. IQ — Traceability Verification Script
+
+**Objective:** Confirm `scripts/verify-traceability.sh` is present and executable, providing automated bidirectional REQ↔TC coverage verification on every CI run.
+
+**Acceptance Criteria:**
+
+- `scripts/verify-traceability.sh` is present at project root scripts directory
+- Execute bit is set (`-rwxr-xr-x`)
+- Script is committed to Git and tracked in repository
+
+**Verification Steps:**
+
+| Step ID | Command / Action | Expected Result | Actual Result | Pass/Fail | Date | Initials |
+|---|---|---|---|---|---|---|
+| IQ-017 | `ls -la scripts/verify-traceability.sh` | `-rwxr-xr-x` permissions confirmed | PASS — -rwxr-xr-x confirmed, file size 1513 bytes | PASS | 2026-04-20 | AC |
+
+**IQ-TRC Overall Result:** ☑ Pass  ☐ Fail
+
+---
+
+## 12. IQ Summary
 
 | Tool | Steps | Passed | Failed | Overall | Date Completed | Initials |
 |---|---|---|---|---|---|---|
@@ -325,13 +345,14 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 | HL7 FHIR Validator CLI | 5 | 5 | 0 | PASS | 2026-04-07 | AC |
 | GitHub Actions | 5 | 5 | 0 | PASS | 2026-04-07 | AC |
 | Local Docker Environment | 7 | 7 | 0 | PASS | 2026-04-18 | AC |
-| **Total** | **37** | **37** | **0** | | | |
+| Traceability Script | 1 | 1 | 0 | PASS | 2026-04-20 | AC |
+| **Total** | **38** | **38** | **0** | | | |
 
-**IQ Overall Status:** ☑ Pass  ☐ Fail — All 37 steps passed
+**IQ Overall Status:** ☑ Pass  ☐ Fail — All 38 steps passed
 
 ---
 
-## 12. Deviation Log
+## 13. Deviation Log
 
 | ID | Step | Deviation Description | Resolution | Resolved Date | Initials |
 |---|---|---|---|---|---|
@@ -339,7 +360,7 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 
 ---
 
-## 13. Document Control
+## 14. Document Control
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
@@ -349,10 +370,11 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 | 1.3 | 2026-04-09 | Amir Choshov | DEV-IQ-001 resolved — branch protection configured on main |
 | 1.4 | 2026-04-16 | Amir Choshov | Added §10 IQ — Local Docker Environment (IQ-010 through IQ-016): Docker runtime, HAPI FHIR image, Compose file validation, server startup, Synthea Java runtime, and Synthea script executability. Renumbered §10–13 to §11–14. Updated IQ Summary: 37 total steps, 30 passed, Docker section pending execution. |
 | 1.5 | 2026-04-18 | Amir Choshov | IQ-010 through IQ-016 executed and passed. Local Docker environment qualification complete. Overall IQ status updated to PASS. |
+| 1.6 | 2026-04-20 | Amir Choshov | Added §11 IQ — Traceability Verification Script (IQ-017): scripts/verify-traceability.sh present with -rwxr-xr-x permissions confirmed. Renumbered §11–14 to §12–15. Updated IQ Summary totals from 37 to 38. |
 
 ---
 
-## 14. Approval
+## 15. Approval
 
 | Role | Name | Signature | Date |
 |---|---|---|---|

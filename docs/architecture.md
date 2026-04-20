@@ -247,12 +247,13 @@ The suite targets the local server via `-DbaseUrl=http://localhost:8080/fhir` pa
 
 **Supporting scripts:**
 
-| Script | Purpose |
-| --- | --- |
-| `scripts/local-server-start.sh` | Starts HAPI FHIR container; polls `/fhir/metadata` until ready |
-| `scripts/local-server-stop.sh` | Stops and removes the container |
-| `scripts/synthea-generate.sh` | Downloads Synthea jar if absent; generates 50 patients with seed 42 |
-| `scripts/synthea-load.sh` | POSTs all generated FHIR bundles to the local server |
+| Script | Purpose | Regulatory Rationale |
+| --- | --- | --- |
+| `scripts/local-server-start.sh` | Starts HAPI FHIR container; polls `/fhir/metadata` until ready | — |
+| `scripts/local-server-stop.sh` | Stops and removes the container | — |
+| `scripts/synthea-generate.sh` | Downloads Synthea jar if absent; generates 50 patients with seed 42 | — |
+| `scripts/synthea-load.sh` | POSTs all generated FHIR bundles to the local server | — |
+| Traceability Verification Script | Automated bidirectional REQ↔TC coverage check on every CI run | 21 CFR Part 820.70(i) — automated controls where feasible; prevents undocumented TC additions or requirement gaps from reaching main |
 
 ---
 

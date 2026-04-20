@@ -30,3 +30,6 @@ scripts/synthea-with-dependencies.jar
 
 # Markdownlint config — local tooling, not a project artifact
 .markdownlint.json
+
+# Temporary traceability verification files
+/tmp/tcs-*.txt
