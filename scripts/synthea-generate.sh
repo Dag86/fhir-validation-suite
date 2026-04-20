@@ -15,7 +15,7 @@ java -jar "$SYNTHEA_JAR" \
   --exporter.baseDirectory=synthea-output \
   --exporter.fhir.export=true \
   --exporter.fhir.use_r4=true \
-  --exporter.hospital.fhir.export=false \
-  --exporter.practitioner.fhir.export=false
+  --exporter.hospital.fhir.export=true \
+  --exporter.practitioner.fhir.export=true
 
 echo "Synthea generation complete. Output: synthea-output/fhir/"

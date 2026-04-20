@@ -12,8 +12,32 @@ success=0
 failure=0
 total=0
 
+echo "Pass 1: loading hospital and practitioner bundles..."
+for file in "$FHIR_DIR"/hospitalInformation*.json \
+            "$FHIR_DIR"/practitionerInformation*.json; do
+  [ -f "$file" ] || continue
+  filename="$(basename "$file")"
+  total=$((total + 1))
+
+  http_code=$(curl -s -o /dev/null -w "%{http_code}" \
+    -X POST "$BASE_URL" \
+    -H "Content-Type: application/fhir+json" \
+    --data-binary "@$file")
+
+  if [ "$http_code" = "200" ] || [ "$http_code" = "201" ]; then
+    echo "OK: $filename"
+    success=$((success + 1))
+  else
+    echo "FAIL (HTTP $http_code): $filename"
+    failure=$((failure + 1))
+  fi
+done
+
+echo "Pass 2: loading patient bundles..."
 for file in "$FHIR_DIR"/*.json; do
   filename="$(basename "$file")"
+  [[ "$filename" == hospitalInformation* ]] && continue
+  [[ "$filename" == practitionerInformation* ]] && continue
   total=$((total + 1))
 
   http_code=$(curl -s -o /dev/null -w "%{http_code}" \

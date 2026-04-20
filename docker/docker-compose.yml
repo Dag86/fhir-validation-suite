@@ -1,17 +1,29 @@
 name: fhir-validation
 
 services:
+  volume-permissions:
+    image: busybox
+    command: ["sh", "-c", "chmod 777 /data/hapi"]
+    volumes:
+      - hapi-data:/data/hapi
+    restart: "no"
+
   hapi-fhir:
     image: hapiproject/hapi:v7.4.0
+    depends_on:
+      volume-permissions:
+        condition: service_completed_successfully
     ports:
       - "8080:8080"
     environment:
       hapi.fhir.fhir_version: R4
       hapi.fhir.allow_multiple_delete: "true"
       hapi.fhir.reuse_cached_search_results_millis: "0"
+      spring.datasource.url: "jdbc:h2:file:/data/hapi/h2;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1"
     volumes:
       - hapi-data:/data/hapi
     restart: unless-stopped
 
 volumes:
   hapi-data:
+    name: fhir-validation_hapi-data
