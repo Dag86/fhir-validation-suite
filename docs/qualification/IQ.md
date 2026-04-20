@@ -1,4 +1,5 @@
 # Installation Qualification (IQ)
+
 ## FHIR R4 API Validation Suite
 
 ---
@@ -22,6 +23,7 @@ This Installation Qualification document verifies that each tool in the FHIR R4 
 IQ is the first phase of tool qualification. It must be completed and passed before Operational Qualification (OQ) begins.
 
 Aligned with:
+
 - FDA General Principles of Software Validation (2002) — Section 6
 - FDA Guidance on Computer Software Assurance (2022)
 - GAMP 5 Category 1: Infrastructure Software qualification principles
@@ -59,6 +61,7 @@ Aligned with:
 **Objective:** Confirm Git 2.x is installed, the repository is correctly initialized, branch protection is configured on `main`, and `.gitignore` is present and correctly excludes generated artifacts.
 
 **Acceptance Criteria:**
+
 - `git --version` returns 2.x.x
 - Repository remote points to the correct GitHub URL
 - `.gitignore` file is present at project root
@@ -70,7 +73,7 @@ Aligned with:
 | Step ID | Command / Action | Expected Result | Actual Result | Pass/Fail | Date | Initials |
 |---|---|---|---|---|---|---|
 | IQ-GIT-001 | `git --version` | Output contains `git version 2.` | PASS — git version 2.51.2 confirmed | PASS | 2026-04-07 | AC |
-| IQ-GIT-002 | `git remote -v` | Remote `origin` points to correct GitHub repository URL | PASS — origin points to https://github.com/Dag86/fhir-validation-suite.git | PASS | 2026-04-07 | AC |
+| IQ-GIT-002 | `git remote -v` | Remote `origin` points to correct GitHub repository URL | PASS — origin points to <https://github.com/Dag86/fhir-validation-suite.git> | PASS | 2026-04-07 | AC |
 | IQ-GIT-003 | `ls -la .gitignore` | `.gitignore` file exists at project root | PASS — .gitignore present at project root | PASS | 2026-04-07 | AC |
 | IQ-GIT-004 | `cat .gitignore \| grep "target/"` | `target/` present in `.gitignore` | PASS — target/ found in .gitignore | PASS | 2026-04-07 | AC |
 | IQ-GIT-005 | `cat .gitignore \| grep "responses/"` | `responses/` present in `.gitignore` | PASS — responses/ exclusion confirmed in .gitignore | PASS | 2026-04-07 | AC |
@@ -84,13 +87,14 @@ Aligned with:
 | Field | Value |
 |---|---|
 | Git Version | 2.51.2 |
-| Repository Remote URL | https://github.com/Dag86/fhir-validation-suite.git |
+| Repository Remote URL | <https://github.com/Dag86/fhir-validation-suite.git> |
 | Default Branch | main |
 | Branch Protection Confirmed | Yes — configured on main (2026-04-09); requires PR and passing CI status check (validate job) |
-| .gitignore Present | Yes — excludes target/, .claude/, validator/, .env, .idea/, *.class, *.log |
+| .gitignore Present | Yes — excludes target/, .claude/, validator/, .env, .idea/, *.class,*.log |
 | IQ Date | 2026-04-07 |
 
 **Notes:**
+
 - IQ-GIT-007 must be verified in the GitHub repository web interface under Settings → Branches. It cannot be verified from the command line without admin API access.
 - If `git status` shows untracked files in `responses/` or `target/`, the `.gitignore` is not correctly configured. Resolve before proceeding.
 - `validator/validator_cli.jar` should not appear in `git status` output. If it does, it has not been excluded correctly and must not be committed.
@@ -104,6 +108,7 @@ Aligned with:
 **Objective:** Confirm Java 17 LTS is installed and accessible in the execution environment.
 
 **Acceptance Criteria:**
+
 - `java -version` returns version 17.x.x
 - `javac -version` returns version 17.x.x
 - Distribution is Eclipse Temurin (OpenJDK)
@@ -137,6 +142,7 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 **Objective:** Confirm Maven 3.9.x is installed, configured correctly, and can resolve dependencies from Maven Central.
 
 **Acceptance Criteria:**
+
 - `mvn -version` returns 3.9.x
 - `settings.xml` does not override Maven Central repository
 - `mvn dependency:resolve` completes without error
@@ -168,6 +174,7 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 **Objective:** Confirm Karate 1.5.1 is declared as a dependency, resolved correctly, and the test runner class is accessible.
 
 **Acceptance Criteria:**
+
 - `pom.xml` declares `io.karatelabs:karate-junit5:1.5.1`
 - Dependency resolves without conflict
 - `ValidationRunner.java` compiles without error
@@ -199,6 +206,7 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 **Objective:** Confirm the official HL7 FHIR Validator CLI is present, executable, the correct build from the official source, and excluded from Git as required.
 
 **Acceptance Criteria:**
+
 - `validator_cli.jar` is present at `validator/validator_cli.jar`
 - Jar is executable by Java 17
 - Downloaded from official HL7 GitHub releases only — not a third-party mirror
@@ -223,7 +231,7 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 |---|---|
 | Validator Version | 6.4.0 (pinned) |
 | SHA-256 Checksum | Recorded in CI run log — sha256sum output captured in GitHub Actions stdout at each run. Local binary not retained by design per AD-FHIR-001 §3.4. Checksum is reproducible: re-downloading validator_cli.jar from the pinned 6.4.0 release URL produces the same SHA-256 value. |
-| Download Source URL | https://github.com/hapifhir/org.hl7.fhir.core/releases/download/6.4.0/validator_cli.jar |
+| Download Source URL | <https://github.com/hapifhir/org.hl7.fhir.core/releases/download/6.4.0/validator_cli.jar> |
 | Download Date | 2026-04-07 (first CI run) |
 | Recorded By | Amir Choshov |
 
@@ -236,6 +244,7 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 **Objective:** Confirm the CI pipeline configuration is syntactically valid, references correct pinned action versions, and is committed to the Git repository.
 
 **Acceptance Criteria:**
+
 - `.github/workflows/fhir-validation.yml` passes GitHub Actions syntax validation
 - Actions reference pinned versions (`actions/checkout@v4`, `actions/setup-java@v4`)
 - Artifact retention is set to 90 days minimum
@@ -256,7 +265,7 @@ Java version must be exactly 17 LTS. Java 11 is not supported by Karate 1.5.x pa
 
 | Field | Value |
 |---|---|
-| GitHub Actions URL | https://github.com/Dag86/fhir-validation-suite/actions |
+| GitHub Actions URL | <https://github.com/Dag86/fhir-validation-suite/actions> |
 | Repository Commit SHA | 7c3aa35042eefe29b8181cb8536d0837262db00b |
 | Executor / Initials | Amir Choshov / AC |
 | Execution Date | 2026-04-07 |

@@ -1,4 +1,5 @@
 # Validation Summary Report
+
 ## FHIR R4 API Validation Suite
 
 ---
@@ -42,7 +43,7 @@ adequately validated.
 | Target System Under Test | HAPI FHIR public sandbox (hapi.fhir.org/baseR4) |
 | Validation Scope | API behavior, FHIR R4 structural conformance, audit trail integrity |
 | Regulatory Standards | IEC 62304, ISO 14971, 21 CFR Part 11, 21 CFR Part 820 / QMSR, GAMP 5 |
-| Repository | https://github.com/Dag86/fhir-validation-suite |
+| Repository | <https://github.com/Dag86/fhir-validation-suite> |
 | Closing Commit SHA | 7118f602ec98fce9da12ffdf5e4b0c0f42cf1f2d |
 
 ---
@@ -191,6 +192,7 @@ SMART Health IT conformance findings — re-execution (2026-04-12):
 | TC-PRA-001 | ETag header absent in responses | Server non-compliance with FHIR R4 HTTP spec | KNOWN (failure mode changed — prior run failed due to no Practitioner resources; server now has Practitioner data, TC-PRA-001 now fails on ETag assertion instead) |
 
 Changes from initial run:
+
 - FIXED: TC-PAT-001 — ETag now present in SMART Patient responses (was failing, now passing)
 - FIXED: TC-PRA-002 through TC-PRA-006 — Practitioner resources now available on SMART server (5 scenarios, all now passing)
 - NEW: TC-OBS-001 — ETag now absent in SMART Observation responses (was passing, now failing)
@@ -240,6 +242,7 @@ negative test coverage, and SOUP documentation throughout the
 validation lifecycle.
 
 Risk controls implemented:
+
 - Negative test cases for all five high-risk resource types
 - Boundary value testing for critical fields
 - HL7 Validator as independent second validation layer
@@ -275,6 +278,7 @@ constitutes valid validation evidence under:
 - FDA Computer Software Assurance (2022)
 
 This conclusion is contingent on:
+
 1. No changes to the validated configuration without following
    the requalification triggers defined in TQ-FHIR-PQ-001 §11
 2. Resolution of DEV-OQ-001 / DEV-PQ-001 before September 2026

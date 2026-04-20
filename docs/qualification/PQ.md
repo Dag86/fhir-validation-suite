@@ -1,4 +1,5 @@
 # Performance Qualification (PQ)
+
 ## FHIR R4 API Validation Suite
 
 ---
@@ -120,7 +121,7 @@ Before executing any PQ step, confirm the following:
 
 | Field | Value |
 |---|---|
-| GitHub Repository | https://github.com/Dag86/fhir-validation-suite |
+| GitHub Repository | <https://github.com/Dag86/fhir-validation-suite> |
 | Run Number | Run #3 |
 | Merge Commit SHA | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
 | SHA in Pipeline Log | 4458f7dd63e0fd904b1122db075bb26dbdecb740 |
@@ -166,6 +167,7 @@ Execute `mvn test` three times consecutively against the same target server with
 **Acceptance Criteria:** Pass/fail counts are identical across all three runs for the same server state. `git status` must be clean after each run — generated artifacts must not accumulate in the working tree. Any variance must be investigated and documented before PQ-003 is considered complete.
 
 **Known acceptable variance sources:**
+
 - HAPI sandbox data changes between runs (resource IDs added or removed) — document as environment variance, not tool failure
 - Network timeout on single request — document and re-run
 
@@ -191,10 +193,10 @@ Execute `mvn test` three times consecutively against the same target server with
 
 | Step ID | Command | Expected Result | Actual Result | Pass/Fail |
 |---|---|---|---|---|
-| PQ-004-1 | `mvn test -DbaseUrl=https://hapi.fhir.org/baseR4` | Suite runs against R4 sandbox, reports generated | PASS — karate-config.js reads baseUrl from karate.properties['baseUrl'] system property with fallback to https://hapi.fhir.org/baseR4 — no hardcoded URL in feature files | PASS |
+| PQ-004-1 | `mvn test -DbaseUrl=https://hapi.fhir.org/baseR4` | Suite runs against R4 sandbox, reports generated | PASS — karate-config.js reads baseUrl from karate.properties['baseUrl'] system property with fallback to <https://hapi.fhir.org/baseR4> — no hardcoded URL in feature files | PASS |
 | PQ-004-2 | `mvn test -DbaseUrl=https://hapi.fhir.org/baseR5` | Suite runs against R5 endpoint without code changes | PASS — fhirVersion reads from karate.properties['fhirVersion'] system property with fallback to 4.0.1 — configurable without code change | PASS |
 | PQ-004-3 | `grep -r "hapi.fhir.org" src/test/resources/` | Returns only `karate-config.js` — no hardcoded URLs in feature files | PASS — authToken reads from karate.properties['authToken'] — optional Bearer token injection supported for authenticated endpoints | PASS |
-| PQ-004-4 | Review `karate-config.js` | `baseUrl` reads from `karate.properties['baseUrl']` with fallback default | PASS — override syntax confirmed: mvn test -DbaseUrl=https://alternate.fhir.server/baseR4 would redirect all tests without modifying source files | PASS |
+| PQ-004-4 | Review `karate-config.js` | `baseUrl` reads from `karate.properties['baseUrl']` with fallback default | PASS — override syntax confirmed: mvn test -DbaseUrl=<https://alternate.fhir.server/baseR4> would redirect all tests without modifying source files | PASS |
 
 **PQ-004 Overall Result:** ☑ PASS  ☐ Fail
 

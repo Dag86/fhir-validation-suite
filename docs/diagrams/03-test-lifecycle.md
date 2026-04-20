@@ -1,4 +1,5 @@
 # Test Case Lifecycle
+
 ## FHIR R4 API Validation Suite
 
 **Document reference:** TP-FHIR-001 Section 7
@@ -65,7 +66,7 @@ stateDiagram-v2
 
 A test case reaches **Pass** only when both layers agree:
 
-```
+```text
 Layer 1: Karate assertion    → PASS
 Layer 2: HL7 Validator       → No errors
                                ─────────
@@ -77,6 +78,7 @@ If Karate passes but HL7 Validator flags errors — or vice versa — the test c
 ## Traceability Requirement
 
 Every terminal result (Pass, Fail, Skip) must be recorded in TM-FHIR-001 with:
+
 - Execution date
 - Git commit SHA of the run (per REQ-GEN-006)
 - GitHub Actions run number

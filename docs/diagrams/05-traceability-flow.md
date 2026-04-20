@@ -1,4 +1,5 @@
 # Regulatory Traceability Flow
+
 ## FHIR R4 API Validation Suite
 
 **Document reference:** TM-FHIR-001 Section 1, REQ-GEN-006, REQ-GEN-007
@@ -102,6 +103,7 @@ flowchart TD
 An FDA auditor's core question: *"Show me that requirement X was tested, that the test passed, and that you can reproduce that result."*
 
 This chain answers all three parts:
+
 1. **Requirement X was tested** — TM forward trace shows TC-X maps to REQ-X
 2. **The test passed** — TM result row shows Pass on a specific date
 3. **You can reproduce it** — Git commit SHA identifies the exact code state; `git checkout {SHA}` and `mvn test` reproduces the run

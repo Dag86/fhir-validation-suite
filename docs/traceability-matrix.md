@@ -1,4 +1,5 @@
 # Traceability Matrix
+
 ## FHIR R4 API Validation Suite
 
 ---
@@ -39,6 +40,7 @@ This document is a living artifact — test execution results are recorded here 
 **After test execution:** Review the Coverage Summary in Section 6. Any requirement without a Pass result must have a documented disposition in the Gap Analysis (GA-FHIR-001).
 
 **Result values:**
+
 - **Pass** — all mapped test cases passed for this requirement
 - **Fail** — one or more mapped test cases failed
 - **Skip** — test cases skipped because server does not support the resource

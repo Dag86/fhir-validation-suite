@@ -9,7 +9,7 @@ owner to re-explain state. Read it completely before taking any action.
 ## What This Project Is
 
 A regulatory-grade FHIR R4 API validation suite targeting the HAPI
-FHIR public sandbox (https://hapi.fhir.org/baseR4). Built to
+FHIR public sandbox (<https://hapi.fhir.org/baseR4>). Built to
 demonstrate FDA-regulated software validation methodology for a
 portfolio targeting healthcare and medical device QA roles.
 
@@ -85,7 +85,7 @@ CLAUDE.md                        — this file
 
 ## Current Test Suite State
 
-**VALIDATION COMPLETE — 2026-04-11**
+### VALIDATION COMPLETE — 2026-04-11
 
 | Metric | Value |
 |---|---|
@@ -99,6 +99,7 @@ CLAUDE.md                        — this file
 | Closing commit SHA | c6046db |
 
 TC count breakdown (83 total in TP-FHIR-001 v1.6):
+
 - 80 automated scenarios — implemented and passing
 - 3 non-automated (TC-FRM-001, TC-FRM-002, TC-FRM-003) — verified
   as IQ/OQ checklist items, no feature file by design
@@ -123,7 +124,6 @@ ALL MILESTONES COMPLETE.
 | Validation Summary Report | VA-FHIR-001 | 1.6 | Final — VALIDATED |
 
 ---
-
 
 ## ValidationRunner Behaviour
 
@@ -230,6 +230,7 @@ and the docs/ package.
 ## Session Start Confirmation
 
 Before taking any action, confirm the following in one line each:
+
 - Passing scenario count
 - Validation lifecycle status
 - Open deviations count
@@ -243,6 +244,7 @@ Active: Docker + Synthea"
 ## Task Execution Protocol
 
 Before implementing any change:
+
 1. State what you understand the task to be
 2. List any files you intend to touch
 3. Define how you will verify the change is correct
@@ -259,4 +261,3 @@ document versions (TM, TP) would need updating as a result.
 | --- | --- | --- |
 | DEV-OQ-001 | Update GitHub Actions action versions — Node.js 20 deprecation warning | Before Sep 2026 |
 | DEV-PQ-001 | Same as DEV-OQ-001 — deprecation warning recurred in PQ CI run, carried forward | Before Sep 2026 |
-

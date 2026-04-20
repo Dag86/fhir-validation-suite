@@ -70,7 +70,7 @@ All documents live in [`docs/`](docs/) and are versioned under
 
 ### Traceability Chain
 
-```
+```text
 RS-FHIR-001 (61 requirements)
     -> TP-FHIR-001 (83 test cases)
         -> Feature files (80 automated scenarios)
@@ -130,6 +130,7 @@ structure validation. The suite detects non-conformance, not just
 conformance.
 
 **Conditional guards vs. hard assertions** -> a deliberate distinction:
+
 - Hard assertion: resource field must be present regardless of server
   state (e.g. `patient` on AllergyIntolerance -> absence is a conformance
   failure)
@@ -243,7 +244,7 @@ open target/karate-reports/karate-summary.html
 ```
 
 Or view the latest CI report published live at:
-https://dag86.github.io/fhir-validation-suite/
+<https://dag86.github.io/fhir-validation-suite/>
 
 ---
 
@@ -270,7 +271,7 @@ from partially compliant server behavior.
 
 ## Project Structure
 
-```
+```text
 fhir-validation-suite/
 --- src/test/java/fhir/
 |   --- ValidationRunner.java         # JUnit 5 entry point
@@ -346,7 +347,7 @@ fhir-validation-suite/
 into healthcare and medical device QA. Background includes 21 CFR Part 11
 compliance on clinical trials platforms.
 
-[LinkedIn](https://www.linkedin.com/in/amirchoshov)  | 
+[LinkedIn](https://www.linkedin.com/in/amirchoshov)  |
 [GitHub](https://github.com/Dag86)
 
 ---

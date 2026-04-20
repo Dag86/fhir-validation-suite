@@ -27,3 +27,6 @@ validator/validator_cli.jar
 # Synthea generated patient data and downloaded jar
 synthea-output/
 scripts/synthea-with-dependencies.jar
+
+# Markdownlint config — local tooling, not a project artifact
+.markdownlint.json

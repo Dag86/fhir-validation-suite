@@ -1,4 +1,5 @@
 # Test Plan
+
 ## FHIR R4 API Validation Suite
 
 ---
@@ -72,7 +73,7 @@ Both layers must pass for a requirement to be considered satisfied.
 
 Every test execution must produce evidence linked to a specific Git commit SHA. This satisfies REQ-GEN-006 and 21 CFR Part 820.40. The traceability chain for every execution is:
 
-```
+```text
 Git Commit SHA
       │
       ▼
@@ -93,7 +94,7 @@ Test results that cannot be linked to a specific commit SHA are not valid regula
 
 The following sequence must be followed on every test run. Tests that depend on CapabilityStatement results must not run before the pre-check completes.
 
-```
+```text
 Step 0: Pre-execution Git State Check
   └── Confirm working tree is clean — no uncommitted changes
   └── Record current commit SHA — this SHA will appear in CI pipeline log
@@ -403,7 +404,7 @@ All findings regardless of severity are documented in GA-FHIR-001 Gap Analysis. 
 
 ## 11. Entry and Exit Criteria
 
-### 11.1 Entry Criteria — Testing May Begin When:
+### 11.1 Entry Criteria — Testing May Begin When
 
 - [ ] TQ-FHIR-IQ-001 completed and passed — including IQ-GIT all steps
 - [ ] TQ-FHIR-OQ-001 completed and passed — including OQ-GIT all steps
@@ -415,7 +416,7 @@ All findings regardless of severity are documented in GA-FHIR-001 Gap Analysis. 
 - [ ] GitHub Actions pipeline executing successfully
 - [ ] HAPI FHIR sandbox confirmed accessible
 
-### 11.2 Exit Criteria — Testing Is Complete When:
+### 11.2 Exit Criteria — Testing Is Complete When
 
 - [ ] All 83 test cases executed
 - [ ] All Class C test cases passed or deviations documented

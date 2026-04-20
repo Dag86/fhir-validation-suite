@@ -1,4 +1,5 @@
 # Architecture Document
+
 ## FHIR R4 API Validation Suite
 
 ---
@@ -26,7 +27,7 @@ This document provides the technical foundation for the IQ/OQ/PQ Tool Qualificat
 
 The FHIR R4 API Validation Suite is a three-layer validation framework:
 
-```
+```text
 ┌─────────────────────────────────────────────────────┐
 │                  Layer 1: Test Execution             │
 │                                                      │
@@ -75,6 +76,7 @@ The FHIR R4 API Validation Suite is a three-layer validation framework:
 **Role:** Source control, document versioning, change audit trail, and CI pipeline trigger.
 
 **Responsibilities:**
+
 - Maintains complete, immutable history of all source code and documentation changes
 - Provides author identity, timestamp, and change description for every commit
 - Triggers GitHub Actions CI pipeline on push and pull request events
@@ -127,6 +129,7 @@ Commits to `main` via pull request should include a meaningful description. For 
 **Role:** Build management, dependency resolution, and test execution orchestration.
 
 **Responsibilities:**
+
 - Declares and resolves Karate dependency via `pom.xml`
 - Provides `mvn test` command consumed by GitHub Actions
 - Manages Java classpath and test runner configuration
@@ -142,6 +145,7 @@ Maven's declarative XML configuration is more auditable than Gradle's imperative
 **Role:** Authoritative specification conformance validation layer.
 
 **Responsibilities:**
+
 - Receives FHIR resource JSON files captured from test responses
 - Validates each resource against the official HL7 R4 StructureDefinitions
 - Produces structured validation output indicating conformance status, errors, and warnings
@@ -150,7 +154,7 @@ Maven's declarative XML configuration is more auditable than Gradle's imperative
 **Why this matters regulatorily:**
 Karate assertions encode the engineer's interpretation of the spec. The HL7 Validator encodes the spec itself. When both agree a resource is valid, the evidence is defensible. When they disagree, the discrepancy is a finding worth documenting.
 
-**Source:** https://github.com/hapifhir/org.hl7.fhir.core — official HL7 tooling
+**Source:** <https://github.com/hapifhir/org.hl7.fhir.core> — official HL7 tooling
 
 **Note on version management:** The HL7 FHIR Validator is pinned to version 6.4.0 in the CI workflow. Pinning is required per change control principles — a floating version would introduce uncontrolled changes to validation behavior between runs. The `validator_cli.jar` is a large binary (100MB+) and is NOT committed to the Git repository. It is downloaded fresh in every CI pipeline run from the pinned 6.4.0 release URL. The `.gitignore` file excludes `validator/validator_cli.jar` from source control. The SHA-256 checksum of the downloaded binary is recorded during IQ qualification for version traceability.
 
@@ -161,6 +165,7 @@ Karate assertions encode the engineer's interpretation of the spec. The HL7 Vali
 **Role:** Automated test execution on every code push.
 
 **Responsibilities:**
+
 - Triggers on push and pull request to `main` branch
 - Installs Java 17 and Maven
 - Downloads HL7 FHIR Validator CLI from official source
@@ -179,6 +184,7 @@ Karate assertions encode the engineer's interpretation of the spec. The HL7 Vali
 **Role:** Server capability discovery before test execution.
 
 **Responsibilities:**
+
 - Queries `GET /metadata` before any resource tests run
 - Parses the CapabilityStatement to determine which resources the server supports
 - Conditionally skips test suites for unsupported resources rather than failing them
@@ -207,6 +213,7 @@ The suite is designed to execute against any FHIR R4 server via the `-DbaseUrl` 
 | SMART Health IT | launch.smarthealthit.org/v/r4/fhir | 73/80 — 7 conformance findings |
 
 SMART Health IT conformance findings (correctly detected by the suite):
+
 - ETag header absent on 4 resource types (non-conformant per FHIR R4 Section 3.1.0.2)
 - Content-Type returns `application/json` instead of `application/fhir+json` on `/metadata` (non-conformant)
 - `_total` parameter ignored — `total` absent from searchset Bundle responses (non-conformant)
@@ -253,7 +260,7 @@ The suite targets the local server via `-DbaseUrl=http://localhost:8080/fhir` pa
 
 ### 4.1 Single Resource Validation Flow
 
-```
+```text
 1. Developer commits code and pushes to GitHub
    Git records: author, timestamp, SHA, changed files
          │
@@ -312,7 +319,7 @@ The suite targets the local server via `-DbaseUrl=http://localhost:8080/fhir` pa
 
 ### 4.2 Negative Path Flow
 
-```
+```text
 1. Karate sends intentionally invalid request
    (missing required field, malformed JSON,
     invalid ID, wrong resource type)
@@ -337,7 +344,7 @@ The suite targets the local server via `-DbaseUrl=http://localhost:8080/fhir` pa
 
 ## 5. Project Directory Structure
 
-```
+```text
 fhir-validation-suite/
 │
 ├── .gitignore                             # Excludes generated artifacts from Git
@@ -479,7 +486,7 @@ validator/validator_cli.jar
 
 ### 7.2 Pipeline Stage Sequence
 
-```
+```text
 Stage 1: Setup
 ├── Checkout repository (actions/checkout@v4)
 │   Records commit SHA in pipeline metadata

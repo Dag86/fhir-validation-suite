@@ -1,4 +1,5 @@
 # Requirements Specification
+
 ## FHIR R4 API Validation Suite
 
 ---
@@ -55,10 +56,10 @@ All test cases produced in this project must trace back to a requirement defined
 |---|---|
 | **Primary System** | HAPI FHIR Public Sandbox |
 | **FHIR Version** | R4 (4.0.x) |
-| **Primary Base URL** | https://hapi.fhir.org/baseR4 |
+| **Primary Base URL** | <https://hapi.fhir.org/baseR4> |
 | **Authentication** | None (public sandbox) |
 | **Secondary System** | SMART Health IT Sandbox |
-| **Secondary Base URL** | https://launch.smarthealthit.org/v/r4/fhir |
+| **Secondary Base URL** | <https://launch.smarthealthit.org/v/r4/fhir> |
 | **Secondary Purpose** | Multi-server conformance verification — 73/80 TCs pass; 7 conformance findings identified |
 
 ---

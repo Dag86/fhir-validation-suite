@@ -1,4 +1,5 @@
 # System Architecture
+
 ## FHIR R4 API Validation Suite
 
 **Document reference:** AD-FHIR-001 Section 2

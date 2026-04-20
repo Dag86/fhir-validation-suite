@@ -1,4 +1,5 @@
 # Risk Classification Hierarchy
+
 ## FHIR R4 API Validation Suite
 
 **Document reference:** RS-FHIR-001 Section 3.1, VP-FHIR-001 Section 3.3
@@ -84,7 +85,7 @@ flowchart TD
 
 AllergyIntolerance executes first among clinical resources because it carries the highest patient safety risk — the allergy-to-medication harm chain is the most direct path from data error to patient death. The execution sequence is not alphabetical — it is risk-ordered.
 
-```
+```text
 1. CapabilityStatement (gates everything)
 2. OperationOutcome (required by all negative path tests)
 3. Patient (identity — all other resources reference it)

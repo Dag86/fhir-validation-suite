@@ -1,4 +1,5 @@
 # Validation Plan
+
 ## FHIR R4 API Validation Suite
 
 ---
@@ -149,7 +150,7 @@ This validation follows a **risk-based approach** aligned with FDA CSA guidance.
 
 ### 5.2 Validation Phases
 
-```
+```text
 Phase 1 — Planning and Documentation
 ├── Validation Plan (this document)
 ├── Requirements Specification
@@ -187,10 +188,11 @@ Phase 4 — Evidence and Reporting
 | **Java Version** | Java 17.0.18 (Eclipse Adoptium Temurin) |
 | **FHIR Validator** | HL7 FHIR Validator CLI 6.4.0 (pinned) |
 | **CI Platform** | GitHub Actions |
-| **Target System** | HAPI FHIR Public Sandbox — https://hapi.fhir.org/baseR4 (primary); SMART Health IT sandbox (secondary) |
+| **Target System** | HAPI FHIR Public Sandbox — <https://hapi.fhir.org/baseR4> (primary); SMART Health IT sandbox (secondary) |
 | **Operating System** | Ubuntu 22.04 LTS (CI) / macOS (local — Darwin 25.2.0) |
 
 The suite has been validated against two FHIR R4 servers:
+
 - Primary: HAPI FHIR public sandbox (hapi.fhir.org/baseR4) — Result: 80/80 PASS
 - Secondary: SMART Health IT sandbox (launch.smarthealthit.org/v/r4/fhir) — Result: 73/80 — 7 conformance findings identified
 
@@ -235,7 +237,7 @@ Full qualification details are documented in the IQ/OQ/PQ Tool Qualification doc
 
 ## 7. Entry and Exit Criteria
 
-### 7.1 Entry Criteria — Validation May Begin When:
+### 7.1 Entry Criteria — Validation May Begin When
 
 - [x] Validation Plan approved
 - [x] Requirements Specification complete and reviewed
@@ -248,7 +250,7 @@ Full qualification details are documented in the IQ/OQ/PQ Tool Qualification doc
 - [x] GitHub Actions pipeline configured and running
 - [x] Traceability Matrix populated with all requirements
 
-### 7.2 Exit Criteria — Validation Is Complete When:
+### 7.2 Exit Criteria — Validation Is Complete When
 
 - [x] All 68 requirements in RS-FHIR-001 v1.4 have at least one corresponding test case
 - [x] Traceability Matrix shows 100% requirement coverage
