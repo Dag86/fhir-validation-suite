@@ -205,6 +205,17 @@ project. Author serves as sole reviewer.*
 | **Closure Date** | 2026-04-18 |
 | **Closure Note** | IQ-010 through IQ-016 executed and passed. IQ-FHIR-IQ-001 updated to v1.5, overall status PASS. Docker local environment qualification complete. |
 
+| Field | Detail |
+|---|---|
+| **Change ID** | CCR-005 |
+| **Date** | 2026-04-21 |
+| **Author** | Amir Choshov |
+| **Type** | Dependency Update |
+| **Description** | Update peaceiris/actions-gh-pages from v3 to v4.0.0 in .github/workflows/fhir-validation.yml. Resolves Node.js 20 deprecation warning generated on every CI run (DEV-OQ-001, DEV-PQ-001). v4.0.0 runs on Node.js 20+ with no deprecation. No parameter changes required — github_token, publish_dir, and destination_dir are compatible across versions. |
+| **Affected Documents** | OQ, PQ |
+| **Rationale** | GitHub will remove Node.js 20 runner support in September 2026. Proactive update eliminates recurring deviation before it becomes a blocking issue. |
+| **Status** | Open |
+
 ---
 
 ## 10. Known Issues
