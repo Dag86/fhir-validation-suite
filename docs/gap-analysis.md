@@ -214,7 +214,9 @@ project. Author serves as sole reviewer.*
 | **Description** | Update all GitHub Actions action versions to Node.js 24 compatible releases. actions/checkout v4→v5, actions/cache v4→v5, actions/setup-java v4→v5, actions/upload-artifact v4→v6, peaceiris/actions-gh-pages v3→v4 (already applied in SHA 8921e3b). Resolves Node.js 20 deprecation warnings on every CI run (DEV-OQ-001, DEV-PQ-001). Node.js 24 becomes the default runtime on June 2, 2026 — all actions must be updated before that date. |
 | **Affected Documents** | OQ, PQ |
 | **Rationale** | GitHub will remove Node.js 20 runner support in September 2026. Proactive update eliminates recurring deviation before it becomes a blocking issue. |
-| **Status** | Open |
+| **Status** | Partially Closed |
+| **Closure Date** | 2026-04-21 |
+| **Closure Note** | actions/checkout v4→v5, actions/cache v4→v5, actions/setup-java v4→v5, actions/upload-artifact v4→v6 all updated to Node.js 24 compatible versions. peaceiris/actions-gh-pages@v4 remains on Node.js 20 — no upstream Node.js 24 release available as of 2026-04-21. Monitoring for upstream update before June 2, 2026 deadline. DEV-OQ-001 and DEV-PQ-001 remain Open — pending upstream release. |
 
 ---
 

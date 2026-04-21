@@ -518,7 +518,7 @@ to generate validation evidence.
 
 | ID | Step | Deviation Description | Resolution | Resolved Date | Initials |
 |---|---|---|---|---|---|
-| DEV-OQ-001 | OQ-GHA-001 | GitHub Actions Node.js 20 deprecation warning issued by runner. Actions/cache, checkout, setup-java, upload-artifact running on Node.js 20 which will be removed September 2026. No functional impact on current execution. Action required: update action versions before September 2026. Severity: Low | Status: Open | 2026-04-08 | AC |
+| DEV-OQ-001 | OQ-GHA-001 | GitHub Actions Node.js 20 deprecation warning issued by runner. Actions/cache, checkout, setup-java, upload-artifact running on Node.js 20 which will be removed September 2026. No functional impact on current execution. Action required: update action versions before September 2026. Severity: Low | Partially resolved 2026-04-21 (SHA c5a8f2e): actions/checkout, actions/cache, actions/setup-java, actions/upload-artifact all updated to Node.js 24 compatible versions. Remaining: peaceiris/actions-gh-pages@v4 — upstream maintainer has not released a Node.js 24 compatible version as of 2026-04-21. Monitoring for upstream update before June 2, 2026 deadline. Status: Open — pending upstream release. | 2026-04-08 | AC |
 
 ---
 
